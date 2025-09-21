@@ -2,6 +2,9 @@
 # Adapted version of Micropython's .gitignore file
 #=================================================
 
+# PlatformIO
+.pio
+
 # Pre-compiled Python modules
 #############################
 *.mpy
