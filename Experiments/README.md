@@ -7,6 +7,7 @@ but inform the product development. Each experiment contains a README file
 with detailed documentation and its findings. The following experiments are
 contained:
 
+| **Directory**                         | **Contained Experiment ** |
 | [LCD-Board](LCD-Board/)               | PlatformIO basics, serialy connected UI board prototype, rotary encoders |
 | [ESP32-OSC](ESP32-OSC/)               | Sending and receiving OSC messages with the ESP32 (todo) |
 | [ESP32-MIDI](ESP32-MIDI/)             | Sending and receiving MIDI via a hardware MIDI connection (todo) |
