@@ -158,8 +158,9 @@ constexpr int encoder_a_pin = 2;
 constexpr int encoder_b_pin = 3;
 constexpr int button_pin    = A0;
 
-bool sendMsg  = false;
-char sendChar = 0;
+volatile uint8_t rotEnc = 0;
+volatile bool sendMsg   = false;
+volatile char sendChar  = 0;
 
 /**
  * Initialize hardware after power up.
@@ -169,10 +170,11 @@ void setup() {
   pinMode(encoder_b_pin, INPUT_PULLUP);
   pinMode(button_pin,    INPUT_PULLUP);
 
-  attachInterrupt(digitalPinToInterrupt(encoder_a_pin), rotaryEncoderISR, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoder_a_pin), rotaryEncoderISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoder_b_pin), rotaryEncoderISR, CHANGE);
 
   while (!Serial);
-  Serial.begin(9600);
+  Serial.begin(LCD_SERIAL_SPEED);
 }
 
 /**
@@ -184,7 +186,7 @@ void loop() {
     delay(100);
 
     if (digitalRead(button_pin) == LOW) {
-      Serial.write(LCD_CMD_BUTTON_PRESSED); // 'b'
+      Serial.write(LCD_CMD_BUTTON_PRESSED);
     }
   }
 
@@ -200,7 +202,6 @@ void loop() {
 
   switch (msg) {
     case LCD_CMD_INIT_DISPLAY: {
-      // 'I' = Init
       char cols = receiveChar();
       char rows = receiveChar();
       lcd.begin(cols, rows);
@@ -208,29 +209,24 @@ void loop() {
       break;
     }
     case LCD_CMD_CLEAR_SCREEN: {
-      // 'C' = Clear Screen
       lcd.clear();
       break;
     }
     case LCD_CMD_PRINT: {
-      // 'P' = Print
       lcd.print(mapSpecialChars(receiveString()).c_str());
       break;
     }
     case LCD_CMD_LOCATE: {
-      // 'L' = Locate
       char col = receiveChar();
       char row = receiveChar();
       lcd.setCursor(col, row);
       break;
     }
     case LCD_CMD_SHOW_CURSOR: {
-      // 'S' = Show Cursor
       receiveChar() ? lcd.cursor() : lcd.noCursor();
       break;
     }
     case LCD_CMD_BLINK_CURSOR: {
-      // 'B' = Blink Cursor
       receiveChar() ? lcd.blink() : lcd.noBlink();
       break;
     }
@@ -241,14 +237,45 @@ void loop() {
  * Interrupt handler for the rotary encoder. Detects the rotation direction and stores a message
  * in the global variables so it can be sent in loop(). The interrupt handler itself must finish
  * as quickly as possible and cannot perform actions that rely on interrupts being recognized.
+ * 
+ * This implementation uses a small state-machine that is updated on each signal change of both
+ * encoder outputs, which is a bit more code but more robust then interpreting one signal as
+ * clock and the other as direction.
+ * 
+ * NOTE: A roatary encoder is a quadrature encoder, meaning that it produces four valid transitions
+ * for each detent (click). For higher accurary you want to cound all transitions but use hardware
+ * debouncing. For precise editing you want to cound only when it resets to 0b00, meaning the user
+ * moved it a single step.
  */
 void rotaryEncoderISR() {
-  sendMsg = true;
+  uint8_t state = (digitalRead(encoder_a_pin) << 1) | digitalRead(encoder_b_pin);
 
-  if (digitalRead(encoder_b_pin) == HIGH) {
-    sendChar = LCD_CMD_ENCODER_RIGHT; // 'r'
-  } else {
-    sendChar = LCD_CMD_ENCODER_LEFT; // 'l'
+  // Valid CW transitions: 00->01->11->10->00
+  // Valid CCW transitions: 00->10->11->01->00
+  if (
+    (rotEnc == 0b00 && state == 0b01) ||
+    (rotEnc == 0b01 && state == 0b11) ||
+    (rotEnc == 0b11 && state == 0b10) ||
+    (rotEnc == 0b10 && state == 0b00)
+  ) {
+    rotEnc = state;
+
+    if (state == 0b00) {
+      sendMsg = true;
+      sendChar = LCD_CMD_ENCODER_RIGHT;
+    }
+  } else if (
+    (rotEnc == 0b00 && state == 0b10) ||
+    (rotEnc == 0b10 && state == 0b11) ||
+    (rotEnc == 0b11 && state == 0b01) ||
+    (rotEnc == 0b01 && state == 0b00)
+  ) {
+    rotEnc = state;
+
+    if (state == 0b00) {
+      sendMsg = true;
+      sendChar = LCD_CMD_ENCODER_LEFT;
+    }
   }
 }
 

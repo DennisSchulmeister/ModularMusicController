@@ -1,9 +1,9 @@
 /**
- * Test Program for Atmega Display Board
- * =====================================
+ * Test Program for Atmega328p Display Board
+ * =========================================
  *
  * This is a small test program for any Arduino board to test our custom-built
- * Atmega 328p display board. The program displays a counter on the display,
+ * Atmega328p display board. The program displays a counter on the display,
  * which can be changed using the rotary encoder and confirmed by pressing the button.
  *
  * Hardware Setup:
@@ -31,8 +31,11 @@
  * Initialize hardware after power up.
  */
 void setup() {
+  #ifndef ARDUINO_ARCH_ESP32
   while (!Serial);
-  Serial.begin(9600);
+  #endif
+
+  Serial.begin(LCD_SERIAL_SPEED);
 
   // Wait a little for the LCD board to become ready
   delay(500);
@@ -86,7 +89,7 @@ void loop() {
     Serial.write(0);    // Row
 
     Serial.write(LCD_CMD_PRINT);
-    Serial.println("Zähler:");
+    Serial.println("Counter:");
 
     Serial.write(LCD_CMD_LOCATE);
     Serial.write(0);    // Column

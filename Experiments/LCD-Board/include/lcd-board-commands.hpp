@@ -1,5 +1,8 @@
 #pragma once
 
+// Serial baud rate
+constexpr int LCD_SERIAL_SPEED = 9600;
+
 // Constants for received messages
 constexpr char LCD_CMD_ENCODER_LEFT   = 'l';
 constexpr char LCD_CMD_ENCODER_RIGHT  = 'r';
