@@ -13,4 +13,5 @@ contained:
 | [ESP32-OSC](ESP32-OSC/)               | Sending and receiving OSC messages with the ESP32 (todo) |
 | [ESP32-MIDI](ESP32-MIDI/)             | Sending and receiving MIDI via a hardware MIDI connection (todo) |
 | [Multi-Master-I2C](Multi-Master-I2C/) | Interfacing multiple MCUs with a shared I2C bus (todo) |
+| [External-ADC](External-ADC)          | Usage of an 12-bit 8-channel ADC via SPI |
 | [Faceplates](Faceplates/)             | Different options for manufacturing face plates (todo) |

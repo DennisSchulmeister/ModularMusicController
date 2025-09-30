@@ -136,6 +136,7 @@
 #include "lcd-board-commands.hpp"
 
 void rotaryEncoderISR();
+char readRotaryEncoder(int pin_a, int pin_b, volatile int& state);
 char receiveChar();
 String receiveString();
 String mapSpecialChars(String str);
@@ -154,24 +155,53 @@ LiquidCrystal lcd(
   /* D7 */ 13
 );
 
-constexpr int encoder_a_pin = 2;
-constexpr int encoder_b_pin = 3;
-constexpr int button_pin    = A0;
+constexpr int encoder_pin_a     = 2;
+constexpr int encoder_pin_b     = 3;
+constexpr int button_pin        = A0;
 
-volatile uint8_t rotEnc = 0;
-volatile bool sendMsg   = false;
-volatile char sendChar  = 0;
+constexpr int buffer_size = 25;
+
+/**
+ * Quick and dirty FIFO buffer for encoder values detected in the ISR.
+ * To make sure we are missing no detents while we are sending, like
+ * we would due to a race condition, if the buffer was a single value.
+ */
+volatile struct {
+  int write_index = 0;
+  int read_index  = 0;
+  char buffer[buffer_size] = {};
+
+  bool empty() const volatile {
+    return read_index == write_index;
+  }
+
+  bool full() const volatile {
+    return ((write_index + 1) % buffer_size) == read_index;
+  }
+
+  char read() volatile {
+    if (empty()) return 0;
+    read_index = (read_index + 1) % buffer_size;
+    return buffer[read_index];
+  }
+
+  void write(char value) volatile {
+    if (full()) return;
+    write_index = (write_index + 1) % buffer_size;
+    buffer[write_index] = value;
+  }
+} encoder_msg_fifo;
 
 /**
  * Initialize hardware after power up.
  */
 void setup() {
-  pinMode(encoder_a_pin, INPUT_PULLUP);
-  pinMode(encoder_b_pin, INPUT_PULLUP);
+  pinMode(encoder_pin_a, INPUT_PULLUP);
+  pinMode(encoder_pin_b, INPUT_PULLUP);
   pinMode(button_pin,    INPUT_PULLUP);
 
-  attachInterrupt(digitalPinToInterrupt(encoder_a_pin), rotaryEncoderISR, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoder_b_pin), rotaryEncoderISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoder_pin_a), rotaryEncoderISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoder_pin_b), rotaryEncoderISR, CHANGE);
 
   while (!Serial);
   Serial.begin(LCD_SERIAL_SPEED);
@@ -191,9 +221,8 @@ void loop() {
   }
 
   // Send message for rotary encoder, if available
-  if (sendMsg) {
-    Serial.write(sendChar);
-    sendMsg = false;
+  while (!encoder_msg_fifo.empty()) {
+    Serial.write(encoder_msg_fifo.read());
   }
 
   // Receive and execute message
@@ -234,49 +263,64 @@ void loop() {
 }
 
 /**
- * Interrupt handler for the rotary encoder. Detects the rotation direction and stores a message
- * in the global variables so it can be sent in loop(). The interrupt handler itself must finish
- * as quickly as possible and cannot perform actions that rely on interrupts being recognized.
- * 
- * This implementation uses a small state-machine that is updated on each signal change of both
- * encoder outputs, which is a bit more code but more robust then interpreting one signal as
- * clock and the other as direction.
- * 
+ * Interrupt handler for the rotary encoder. Normally the recommendation is to sample the
+ * encoder at fixed intervals like every millisecond to make sure that bounces don't produce
+ * ecessive CPU usage. But I found that this would skip many detents even going down to zero
+ * detected movement when the encoder is moved quickly. Since we are not doing much here
+ * except reading the inputs and sending the result, excessive CPU usage is not a problem –
+ * so back to the ISR.
+ */
+void rotaryEncoderISR() {
+  volatile static int encoder_state = 0;
+  char msg = readRotaryEncoder(encoder_pin_a, encoder_pin_b, encoder_state);
+  if (msg) encoder_msg_fifo.write(msg);
+}
+
+/**
+ * Read a quadrature rotary encoder. Updates the given state variable to implement a simple
+ * state machine that detects the valid transitions and rejects all invalid transitions due
+ * to bouncing. To be called at fixed intervals, usually each millisecond.
+ *
  * NOTE: A roatary encoder is a quadrature encoder, meaning that it produces four valid transitions
  * for each detent (click). For higher accurary you want to cound all transitions but use hardware
  * debouncing. For precise editing you want to cound only when it resets to 0b00, meaning the user
  * moved it a single step.
+ * 
+ * @param pin_a Encoder pin A
+ * @param pin_b Encoder pin B
+ * @param state Last valid encoder state
+ * @returns Encoder direction or zero
  */
-void rotaryEncoderISR() {
-  uint8_t state = (digitalRead(encoder_a_pin) << 1) | digitalRead(encoder_b_pin);
+char readRotaryEncoder(int pin_a, int pin_b, volatile int& state) {
+  int new_state = (digitalRead(pin_a) << 1) | digitalRead(pin_b);
 
   // Valid CW transitions: 00->01->11->10->00
   // Valid CCW transitions: 00->10->11->01->00
   if (
-    (rotEnc == 0b00 && state == 0b01) ||
-    (rotEnc == 0b01 && state == 0b11) ||
-    (rotEnc == 0b11 && state == 0b10) ||
-    (rotEnc == 0b10 && state == 0b00)
+    (state == 0b00 && new_state == 0b01) ||
+    (state == 0b01 && new_state == 0b11) ||
+    (state == 0b11 && new_state == 0b10) ||
+    (state == 0b10 && new_state == 0b00)
   ) {
-    rotEnc = state;
+    state = new_state;
 
     if (state == 0b00) {
-      sendMsg = true;
-      sendChar = LCD_CMD_ENCODER_RIGHT;
+      return LCD_CMD_ENCODER_RIGHT;
     }
   } else if (
-    (rotEnc == 0b00 && state == 0b10) ||
-    (rotEnc == 0b10 && state == 0b11) ||
-    (rotEnc == 0b11 && state == 0b01) ||
-    (rotEnc == 0b01 && state == 0b00)
+    (state == 0b00 && new_state == 0b10) ||
+    (state == 0b10 && new_state == 0b11) ||
+    (state == 0b11 && new_state == 0b01) ||
+    (state == 0b01 && new_state == 0b00)
   ) {
-    rotEnc = state;
+    state = new_state;
 
     if (state == 0b00) {
-      sendMsg = true;
-      sendChar = LCD_CMD_ENCODER_LEFT;
+      return LCD_CMD_ENCODER_LEFT;
     }
   }
+
+  return 0;
 }
 
 /**

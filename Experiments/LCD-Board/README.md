@@ -34,14 +34,14 @@ Schematics and Pictures
 <table>
     <tr>
         <td>
-            <img src="doc/schematic/TODO.png" width="450">
+            <img src="doc/schematic/LCD-Board.svg" width="450">
         </td>
         <td>
             <img src="doc/prototype/lcd-board-breadboard-prototype_bb.png" width="450">
         </td>
     </tr>
     <tr>
-        <td>TODO: LCD-Board schematics</td>
+        <td>LCD-Board schematics</td>
         <td>Breadboard layout</td>
     </tr>
     <tr>
@@ -340,6 +340,9 @@ For more details than you ever wanted to know (in German) see [mikrocontroller.n
 The default solution, when no dedicated hardware is available, seems to be option 2. Sample at least
 every millisecond (if it is a relatively slow encoder). The sample interval must be chosen in accordance
 to the maximum frequency of the encoder so that every state change is reliabley sampled at least once.
+But in this example I found that this doesn't work well at all. Even when sampling at every iteration
+in `loop()` we would miss a lot of detents – even going down to zero detected movement when the encoder
+is moved quickly. Only with an ISR this could be prevented.
 
 ### Connecting many many rotary encoders
 
@@ -360,7 +363,6 @@ Other Learnings
 ---------------
 
 1. [Arduino's `Serial` on ESP32](#arduinos-serial-on-esp32)
-1. [Serial Communication Speed](#serial-communication-speed)
 1. [Updating the LCD](#updating-the-lcd)
 
 ### Arduino's `Serial` on ESP32
@@ -372,14 +374,12 @@ It basically works the same as on the Arduino Uno. However, there are a few diff
 1. The Arduino library for ESP32 defines additional `Serial1` and `Serial2` objects for the other UARTs.
 1. The Arduino library only allows to change the default pins for `Serial1` and `Serial2`.
 
-### Serial Communication Speed
-
-9600 Baud for the serial communication between the LCD board and the MCU works better than 115200.
-Both work, but with 115200 I observed quite some delays between screen updates. Will talk to Agent
-Mulder for a new X file. 👽
-
 ### Updating the LCD
 
 Clearing the LCD before printing new text produces a quick noticeable flicker. In the real product
 we must be careful enough to only update the parts that have actually changed and not to clear the
 LCD every time in between.
+
+At a certain speed the screen gets curropted, which I couldn't find a good solution for. Clearing
+the screen before every update helps but flickers. Not clearing but trying to update all characters
+doesn't work, since the LCD seems to skip characters. Maybe a buffer overrun on the display controller?

@@ -82,19 +82,17 @@ void loop() {
   if (counter != prevCounter) {
     prevCounter = counter;
 
-    Serial.write(LCD_CMD_CLEAR_SCREEN);
-
+    // NOTE: Update the whole screen without clearing first, because clearing flickers.
+    // Unfortunately this increases the chance for corruption.
     Serial.write(LCD_CMD_LOCATE);
     Serial.write(0);    // Column
     Serial.write(0);    // Row
-
     Serial.write(LCD_CMD_PRINT);
-    Serial.println("Counter:");
+    Serial.println("Counter:        ");
 
     Serial.write(LCD_CMD_LOCATE);
     Serial.write(0);    // Column
     Serial.write(1);    // Row
-
     Serial.write(LCD_CMD_PRINT);
     Serial.println(counter);
 
@@ -102,8 +100,9 @@ void loop() {
     Serial.write(LCD_CMD_LOCATE);
     Serial.write(6);    // Column
     Serial.write(1);    // Row
-
     Serial.write(LCD_CMD_PRINT);
     Serial.println("ÄÖÜäöü←→~\\");
+
+    Serial.flush();
   }
 }
