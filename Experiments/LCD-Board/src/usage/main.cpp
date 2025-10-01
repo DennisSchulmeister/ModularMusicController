@@ -27,6 +27,9 @@
 #include <Arduino.h>
 #include "lcd-board-commands.hpp"
 
+constexpr unsigned long message_ms = 1000;
+constexpr unsigned long redraw_ms  = 100;
+
 /**
  * Initialize hardware after power up.
  */
@@ -51,8 +54,12 @@ void setup() {
  * Main program logic.
  */
 void loop() {
+  // Update state upon user input
   static int counter = 0;
-  static int prevCounter = -1;
+  static unsigned long message = 0;
+  static bool redraw = true;
+
+  unsigned long current_time = millis();
 
   while (Serial.available()) {
     char msg = Serial.read();
@@ -60,11 +67,33 @@ void loop() {
     switch (msg) {
       case LCD_CMD_ENCODER_LEFT:
         counter--;
+        redraw  = true;
         break;
       case LCD_CMD_ENCODER_RIGHT:
         counter++;
+        redraw  = true;
         break;
       case LCD_CMD_BUTTON_PRESSED:
+        message = current_time;
+        redraw  = true;
+    }
+  }
+
+  if (message && (current_time - message >= message_ms)) {
+    message = 0;
+    redraw  = true;
+  }
+
+  // Display updated state. We need to be a little careful to not redraw the
+  // the display too quickly when many changes occur in a row, as this could
+  // cause garbled output.
+  static unsigned long prev_redraw_time = 0;
+
+  if (redraw && (current_time - prev_redraw_time > redraw_ms)) {
+    redraw = false;
+    prev_redraw_time = current_time;
+
+    if (message) {
         Serial.write(LCD_CMD_CLEAR_SCREEN);
 
         Serial.write(LCD_CMD_LOCATE);
@@ -73,35 +102,27 @@ void loop() {
 
         Serial.write(LCD_CMD_PRINT);
         Serial.println("Okay");
+    } else {
+      // NOTE: Update the whole screen without clearing first, because clearing flickers.
+      // Unfortunately this increases the chance for corruption.
+      Serial.write(LCD_CMD_LOCATE);
+      Serial.write(0);    // Column
+      Serial.write(1);    // Row
+      Serial.write(LCD_CMD_PRINT);
+      Serial.println("      ÄÖÜäöü←→~\\");
 
-        Serial.flush();
-        delay(500);
+      Serial.write(LCD_CMD_LOCATE);
+      Serial.write(0);    // Column
+      Serial.write(0);    // Row
+      Serial.write(LCD_CMD_PRINT);
+      Serial.println("Counter:        ");
+  
+      Serial.write(LCD_CMD_LOCATE);
+      Serial.write(0);    // Column
+      Serial.write(1);    // Row
+      Serial.write(LCD_CMD_PRINT);
+      Serial.println(counter);
     }
-  }
-
-  if (counter != prevCounter) {
-    prevCounter = counter;
-
-    // NOTE: Update the whole screen without clearing first, because clearing flickers.
-    // Unfortunately this increases the chance for corruption.
-    Serial.write(LCD_CMD_LOCATE);
-    Serial.write(0);    // Column
-    Serial.write(0);    // Row
-    Serial.write(LCD_CMD_PRINT);
-    Serial.println("Counter:        ");
-
-    Serial.write(LCD_CMD_LOCATE);
-    Serial.write(0);    // Column
-    Serial.write(1);    // Row
-    Serial.write(LCD_CMD_PRINT);
-    Serial.println(counter);
-
-    // Test of the special character mapping
-    Serial.write(LCD_CMD_LOCATE);
-    Serial.write(6);    // Column
-    Serial.write(1);    // Row
-    Serial.write(LCD_CMD_PRINT);
-    Serial.println("ÄÖÜäöü←→~\\");
 
     Serial.flush();
   }

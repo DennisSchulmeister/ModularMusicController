@@ -380,6 +380,9 @@ Clearing the LCD before printing new text produces a quick noticeable flicker. I
 we must be careful enough to only update the parts that have actually changed and not to clear the
 LCD every time in between.
 
-At a certain speed the screen gets curropted, which I couldn't find a good solution for. Clearing
-the screen before every update helps but flickers. Not clearing but trying to update all characters
-doesn't work, since the LCD seems to skip characters. Maybe a buffer overrun on the display controller?
+At a certain speed the screen gets curropted. Clearing the screen before every update helps but flickers.
+By limiting the update rate to at most 100 redraws per second (maybe more) this could be solved.
+
+To further reduce flickering it would be best to compose the entire screen in a character buffer and then
+update the whole screen at once, instead of first clearing an area with blanks and then print the new
+value at the same location.
