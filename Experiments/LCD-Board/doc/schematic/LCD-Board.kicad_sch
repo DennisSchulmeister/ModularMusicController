@@ -9,9 +9,9 @@
 		(date "2025-09-30")
 		(rev "1")
 		(company "Dennis Schulmeister-Zimolong")
-		(comment 2 "A Pin-Header providers power and a UART serial connection.")
-		(comment 3 "with an LC-Display, and a Switch / Rotary Encoder.")
-		(comment 4 "This is just a very basic Atmega328p MCU-Board")
+		(comment 2 "A pin header provides power and a UART serial connection.")
+		(comment 3 "with a 16x8 LCD and a switch / rotary encoder.")
+		(comment 4 "This is just a very basic Atmega328p MCU board")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Pin"
@@ -2361,7 +2361,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Pin-Header"
+	(text "Pin Header"
 		(exclude_from_sim no)
 		(at 26.162 38.608 0)
 		(effects
@@ -2374,7 +2374,7 @@
 		)
 		(uuid "017cb730-f0e1-457d-86ca-b01283acc7d6")
 	)
-	(text "Microcontroller"
+	(text "Micro Controller"
 		(exclude_from_sim no)
 		(at 101.346 37.846 0)
 		(effects
