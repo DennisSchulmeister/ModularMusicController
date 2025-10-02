@@ -44,7 +44,7 @@ Learnings
 1. [ESP-IDF instead of Arduino](#esp-idf-instead-of-arduino)
 1. [ESP32 Flash Memory Size](#esp32-flash-memory-size)
 
-# ESP-IDF instead of Arduino
+### ESP-IDF instead of Arduino
 
 Simply replace `framework = arduino` in `platformio.ini` with `framework = espidf`.
 
@@ -55,7 +55,7 @@ pio run -t menuconfig
 pio run --target menuconfig
 ```
 
-# ESP32 Flash Memory Size
+### ESP32 Flash Memory Size
 
 By default the ESP32 configuration created by PlatformIO assumes 2MB on-board flash memory.
 But e.g. on the “ESP32 WROOM-32” it is actually 4MB. Make sure to run `menuconfig` at least

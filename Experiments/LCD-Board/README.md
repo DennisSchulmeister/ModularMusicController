@@ -58,7 +58,6 @@ Schematics and Pictures
     </tr>
 </table>
 
-
 For quick testing it can be built with on a breadboard. But be aware that the connections are
 very unreliable. Thus for the final prototype I decided to do a permanent build on a breadboard
 PCB (a PCB with the same connection scheme than a normal breadboard), as can be seen in the
@@ -141,7 +140,7 @@ to define which environment build which program. e.g. like this:
 ```ini
 [env:lcd-board]
 ; Platform, Board, Framework, ...
-build_src_filter = 
+build_src_filter =
     +<lcd-board>
 
 [env:usage-example-arduino-uno]
