@@ -1,0 +1,11 @@
+# See: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/partition-tables.html
+# 4 MB flash = 36 kB for bootloader and the partition table itself + 4060 kB for the partitions below
+# nvs (64 kB); app (1024 kB); static (2844); var (128 kB)
+# Note that in the final firmware we might need to adjust these sizes
+
+
+#Name,  Type, SubType,  Offset, Size,     Flags
+nvs,    data, nvs,      ,       0x6000,
+app,    app,  factory,  ,       0x100000,
+static, data, littlefs, ,       0x2C7000, readonly
+var,    data, littlefs, ,       0x20000,

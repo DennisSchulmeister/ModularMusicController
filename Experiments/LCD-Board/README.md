@@ -93,22 +93,10 @@ This is actually much easier than all the [solutions in the documentation](https
 
 ### PlatformIO IDE and mono repos
 
-Like so often with VS Code, the IDE and its extension assume a single repo, where each code repository
-(actually workspace) hosts exactly one project. That is, the PlatformIO IDE extension **and** VS Code
-assume that the `platformio.ini` file lies at the root of your workspace / repository. If like me you
-like to bundle all that belongs to a "project" (meaning a project in real-life, not the technical term
-used by the IDE that is nothing more than a plain source directory) in a mono-repo, you can do that.
-
-But you must always open only the sub-directory with the sub-project that you are currently working on.
-Never open the whole repository as a workspace in VS Code. Because then the PlatfromIO IDE extension won't
-find the `platformio.ini` file, as it only looks for it in the root directory of the workspace. Thus it
-never generates the `.vscode/*.json` files that VS Code also expects to find at the workspace root. The
-result will be that you cannot use the IDE functions to build projects and that VS Code reports a lot of
-errors due to seemingly missing header files.
-
-If it looks like the left image, all is fine: If it looks like the right image, you are in trouble.
-You need to close the workspace and reopen only the directory with the PlatformIO project that you are
-working on.
+VS Code and the Platform IO extension by default assume that the `platformio.ini` file, that defines
+a PlatformIO project, resides at the workspace root. This works fine for a single project but is a
+bit inconvenient for mono repos, like this one. Because you cannot simply open the whole repo to work
+on the individual projects. Instead you need to open each project separately.
 
 <table>
     <tr>
@@ -125,6 +113,38 @@ working on.
     </tr>
 </table>
 
+The problem is that the PlatformIO IDE extension can't find the `platformio.ini` file if it is in
+a sub-directory. As a result it doesn't generate the `.vscode/*.json` files that VS Code needs to
+understand the source-tree layout. VS Code then reports a lot of errors due to seemingly missing
+header files. There are two workarounds for this:
+
+1. **Multi-Root Workspace:** Using `File → Add Folder to Workspace` each sub-project can be added
+   to the workspace, which itself can be saved as a JSON file in the repository. This seems good
+   but flattens the directory layout of the repository.
+
+1. **Root PlatformIO Project:** This is the solution that we chose for this repo. The root of the
+  repository as well as each sub-directory that contains PlatformIO projects needs its own `platformio.ini`
+  file that references the contained sub-projects. The downside is that these files must be maintained
+  manually and that the PlatformIO environment names must be kept unique. But it works regardless of the
+  IDE, allows the declare shared settings and keeps the directory layout in tact.
+
+The only rule of thumb is that when adding a new PlatformIO sub-project, is must be added to the
+`platformio.ini` file in the same directory, like so:
+
+```ini
+[platformio]
+; Sub-projects (need a platformio.ini)
+extra_configs =
+    sub-project1/platformio.ini
+    sub-project2/platformio.ini
+    sub-project3/platformio.ini
+
+; Libraries (need a library.json file)
+lib_dir =
+    library1
+    library2
+```
+
 ### How to build different firmwares for different targets
 
 By default PlatformIO assumes that you want to build the exact same source for each environment defined
@@ -138,18 +158,18 @@ In that case, create sub-directories for each program below `src` and use [`buil
 to define which environment build which program. e.g. like this:
 
 ```ini
-[env:lcd-board]
+[env:ex-lcd-board-main]
 ; Platform, Board, Framework, ...
 build_src_filter =
     +<lcd-board>
 
-[env:usage-example-arduino-uno]
+[env:ex-lcd-board-uno]
 ; Platform, Board, Framework, ...
 build_src_filter =
     +<usage-example>
 
-[env:usage-example-esp32]
-extends = env:usage-example-arduino-uno
+[env:ex-lcd-board-esp32]
+extends = env:ex-lcd-board-uno
 ; Different Platform, Board, Framework, ...
 ```
 

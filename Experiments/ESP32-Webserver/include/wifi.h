@@ -10,9 +10,57 @@
 #pragma once
 #include <string>       // std::string
 
-using namespace std;
-
 namespace my_wifi {
+
+/**
+ * WiFi mode
+ */
+enum class mode_t {
+    /**
+     * WiFi disabled
+     */
+    disabled,
+
+    /**
+     * Access point mode – Run a built-in WiFi access point with its own network
+     */
+    access_point,
+    
+    /**
+     * Station mode – Connect to a WiFi network nearby
+     */
+    station,
+};
+
+/**
+ * Connection status
+ */
+enum class state_t {
+    /**
+     * Disconnected
+     */
+    disconnected,
+
+    /**
+     * Searching for nearby networks
+     */
+    searching,
+
+    /**
+     * Connecting as station, retrieving IP
+     */
+    connecting,
+
+    /**
+     * Connected and IP retrieved
+     */
+    connected,
+
+    /**
+     * Serving as access point
+     */
+    access_point,
+};
 
 /**
  * WiFi configuration
@@ -21,27 +69,42 @@ struct config_t {
     /**
      * WiFi mode
      */
-    enum class mode {
-        /**
-         * Access point mode – Run a built-in WiFi access point with its own network
-         */
-        ap,
-        
-        /**
-         * Station mode – Connect to a WiFi network nearby
-         */
-        station,
-    } mode;
+    mode_t mode;
 
     /**
-     * Station id of either the built-in access point or the network to connect to
+     * Station id (access point or station)
      */
-    string ssid;
+    std::string ssid;
 
     /**
-     * Pre-Shared Key of either the built-in access point or the network to connect to
+     * Pre-Shared Key (access point or station)
      */
-    string psk;
+    std::string psk;
+};
+
+/**
+ * WiFi status
+ */
+struct status_t {
+    /**
+     * Current WiFi mode
+     */
+    mode_t mode;
+
+    /**
+     * Connection status
+     */
+    state_t state;
+
+    /**
+     * Current station id (access point or station)
+     */
+    std::string ssid;
+
+    /**
+     * Current IP address
+     */
+    std::string ip;
 };
 
 /**
@@ -55,6 +118,11 @@ void save_config(const config_t& config);
  * @returns The WiFi configuration
  */
 config_t read_config();
+
+/**
+ * Get current WiFi status
+ */
+status_t get_status();
 
 /**
  * Start or restart WiFi either in access point or station mode, depending

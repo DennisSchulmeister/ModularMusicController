@@ -1,0 +1,9 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "Shared data structures and helpers for all boards",
+  "build": {
+    "includeDir": "include",
+    "srcDir": "src"
+  }
+}

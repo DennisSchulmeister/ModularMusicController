@@ -13,28 +13,28 @@ using namespace std;
 
 namespace my_wifi {
 
-/**
- * Write WiFi configuration.
- */
+// Current connection status
+status_t status = {
+    .mode  = mode_t::disabled,
+    .state = state_t::disconnected,
+    .ssid  = "",
+    .ip    = "",
+};
+
 void save_config(const config_t& config) {
 }
 
-/**
- * Read WiFi configuration.
- */
 config_t read_config() {
     return {};
 }
 
-/**
- * Start or restart WiFi according to the saved WiFi configuration.
- */
+status_t get_status() {
+    return status;
+}
+
 void restart() {
 }
 
-/**
- * Stop all WiFi functionality.
- */
 void stop() {
 }
 

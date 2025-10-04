@@ -7,12 +7,18 @@ but inform the product development. Each experiment contains a README file
 with detailed documentation and its findings. The following experiments are
 contained:
 
-| **Directory**                         | **Contained Experiment** |
-|---------------------------------------|--------------------------|
-| [LCD-Board](LCD-Board/)               | PlatformIO basics, serialy connected UI board prototype, rotary encoders |
+| **Directory**                         | **Contents** |
+|---------------------------------------|--------------|
+| [LCD-Board](LCD-Board/)               | PlatformIO basics, serially connected UI board prototype, rotary encoders |
 | [ESP32-OSC](ESP32-OSC/)               | Sending and receiving OSC messages with the ESP32 (todo) |
 | [ESP32-MIDI](ESP32-MIDI/)             | Sending and receiving MIDI via a hardware MIDI connection (todo) |
 | [ESP32-Webserver](ESP32-Webserver/)   | Web-based configuration tool running on the device |
 | [Multi-Master-I2C](Multi-Master-I2C/) | Interfacing multiple MCUs with a shared I2C bus (todo) |
 | [External-ADC](External-ADC)          | Usage of an 12-bit 8-channel ADC via SPI |
 | [Faceplates](Faceplates/)             | Different options for manufacturing face plates (todo) |
+
+When adding a new sub-folder make sure to include it in the parent [`platformio.ini`](./platformio.ini).
+Also beware, that when doing so, the PlatformIO environments must have globally unique names.
+Such is the price for being able to edit all projects at once and share settings between them.
+Use names that start with `fw-` for firmwares and `ex-` for experiments, followed by a string
+that resembles the directory name.
