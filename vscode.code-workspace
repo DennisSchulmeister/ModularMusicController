@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "Firmware/common"
+		},
+		{
+			"path": "Firmware/controller"
+		},
+		{
+			"path": "Firmware/main"
+		},
+		{
+			"path": "Experiments/LCD-Board"
+		},
+		{
+			"path": "Experiments/ESP32-Webserver"
+		}
+	]
+}

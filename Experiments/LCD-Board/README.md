@@ -116,34 +116,15 @@ on the individual projects. Instead you need to open each project separately.
 The problem is that the PlatformIO IDE extension can't find the `platformio.ini` file if it is in
 a sub-directory. As a result it doesn't generate the `.vscode/*.json` files that VS Code needs to
 understand the source-tree layout. VS Code then reports a lot of errors due to seemingly missing
-header files. There are two workarounds for this:
+header files. It seems that the PlatformIO and its IDE extension are not made for monorepos.
+So working with monorepos is always a bit inconvenient.
 
-1. **Multi-Root Workspace:** Using `File → Add Folder to Workspace` each sub-project can be added
-   to the workspace, which itself can be saved as a JSON file in the repository. This seems good
-   but flattens the directory layout of the repository.
+What kind of works is to set up a "multi-root workspace" in VS Code, that contains every project
+directory that you want to be working on. Additional folders can simply be added using `File → Add Folder to Workspace`.
+But this never presents the whole repository and flattens its directory layout. Plus, it only
+works when the following setting is checked:
 
-1. **Root PlatformIO Project:** This is the solution that we chose for this repo. The root of the
-  repository as well as each sub-directory that contains PlatformIO projects needs its own `platformio.ini`
-  file that references the contained sub-projects. The downside is that these files must be maintained
-  manually and that the PlatformIO environment names must be kept unique. But it works regardless of the
-  IDE, allows the declare shared settings and keeps the directory layout in tact.
-
-The only rule of thumb is that when adding a new PlatformIO sub-project, is must be added to the
-`platformio.ini` file in the same directory, like so:
-
-```ini
-[platformio]
-; Sub-projects (need a platformio.ini)
-extra_configs =
-    sub-project1/platformio.ini
-    sub-project2/platformio.ini
-    sub-project3/platformio.ini
-
-; Libraries (need a library.json file)
-lib_dir =
-    library1
-    library2
-```
+`Extensions → PlatformIO IDE → Activate Project on Text Editor Change".
 
 ### How to build different firmwares for different targets
 
