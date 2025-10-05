@@ -18,6 +18,8 @@ constexpr char const* TAG = "main";
  * Put the CPU into deep sleep without wakeup events when the given return
  * code is not ESP_OK. This is the best we can do in software to halt the
  * CPU without consuming much power.
+ * 
+ * @param[in] ret Return code
  */
 void sleep_on_error(esp_err_t ret) {
     if (ret == ESP_OK) return;

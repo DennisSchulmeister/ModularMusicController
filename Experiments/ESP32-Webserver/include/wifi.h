@@ -7,6 +7,11 @@
  * (at your option) any later version.
  */
 
+/**
+ * @file wifi.h
+ * @brief Configuration, status and functions for WiFi connectivity
+ */
+
 #pragma once
 #include <esp_system.h>     // esp_err_t
 #include <string>           // std::string
@@ -17,95 +22,39 @@ namespace my_wifi {
  * WiFi mode
  */
 enum class mode_t {
-    /**
-     * WiFi disabled
-     */
-    disabled,
-
-    /**
-     * Access point mode – Run a built-in WiFi access point with its own network
-     */
-    access_point,
-    
-    /**
-     * Station mode – Connect to a WiFi network nearby
-     */
-    station,
+    disabled,           ///< WiFi disabled
+    access_point,       ///< Access point mode – Run a built-in WiFi access point with its own network
+    station,            ///< Station mode – Connect to a WiFi network nearby
 };
 
 /**
  * Connection status
  */
 enum class state_t {
-    /**
-     * Disconnected
-     */
-    disconnected,
-
-    /**
-     * Searching for nearby networks
-     */
-    searching,
-
-    /**
-     * Connecting as station, retrieving IP
-     */
-    connecting,
-
-    /**
-     * Connected and IP retrieved
-     */
-    connected,
-
-    /**
-     * Serving as access point
-     */
-    access_point,
+    disconnected,       ///< Disconnected
+    searching,          ///< Searching for nearby networks
+    connecting,         ///< Connecting as station, retrieving IP
+    connected,          ///< Connected and IP retrieved
+    access_point,       ///< Serving as access point
 };
 
 /**
  * WiFi configuration
  */
 struct config_t {
-    /**
-     * WiFi mode
-     */
-    mode_t mode;
-
-    /**
-     * Station id (access point or station)
-     */
-    std::string ssid;
-
-    /**
-     * Pre-Shared Key (access point or station)
-     */
-    std::string psk;
+    mode_t mode;        ///< WiFi mode
+    std::string ssid;   ///< Station id (access point or station)
+    std::string psk;    ///< Pre-Shared Key (access point or station)
 };
 
 /**
  * WiFi status
  */
 struct status_t {
-    /**
-     * Current WiFi mode
-     */
-    mode_t mode;
-
-    /**
-     * Connection status
-     */
-    state_t state;
-
-    /**
-     * Current station id (access point or station)
-     */
-    std::string ssid;
-
-    /**
-     * Current IP address
-     */
-    std::string ip;
+    mode_t mode;        ///< Current WiFi mode
+    state_t state;      ///< Connection status
+    std::string ssid;   ///< Current station id (access point or station)
+    std::string ip;     ///< Current IP address
 };
 
 /**

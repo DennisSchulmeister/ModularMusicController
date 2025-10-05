@@ -7,6 +7,11 @@
  * (at your option) any later version.
  */
 
+/**
+ * @file fs.h
+ * @brief Mounting and unmounting the flash filesystems
+ */
+
 #pragma once
 #include <esp_system.h>     // esp_err_t
 
