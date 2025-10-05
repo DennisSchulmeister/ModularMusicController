@@ -7,5 +7,5 @@
 #Name,  Type, SubType,  Offset, Size,     Flags
 nvs,    data, nvs,      ,       0x6000,
 app,    app,  factory,  ,       0x100000,
-static, data, littlefs, ,       0x2C7000, readonly
+static, data, littlefs, ,       0x2C7000,
 var,    data, littlefs, ,       0x20000,

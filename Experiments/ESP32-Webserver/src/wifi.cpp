@@ -12,6 +12,7 @@ using namespace std;
 #include "wifi.h"
 
 namespace my_wifi {
+constexpr char const* TAG = "wifi";
 
 // Current connection status
 status_t status = {
@@ -32,10 +33,12 @@ status_t get_status() {
     return status;
 }
 
-void restart() {
+esp_err_t restart() {
+    return ESP_OK;
 }
 
-void stop() {
+esp_err_t stop() {
+    return ESP_OK;
 }
 
 } // namespace my_wifi

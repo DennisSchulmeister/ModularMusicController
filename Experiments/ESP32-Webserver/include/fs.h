@@ -8,11 +8,27 @@
  */
 
 #pragma once
-
 #include <esp_system.h>     // esp_err_t
 
 namespace my_fs {
 
-//esp_err_t init();
+/**
+ * Mount all filesystems into the VFS. Usually it is okay to leave the filesystems
+ * mounted forever, unless the partitions are rewritten or reformated during normal
+ * operation (not the bootloader stage when flashing a new firmware) or the system
+ * is put into deep sleep with powered off flash chips. But this is very seldom.
+ * 
+ * Mounts the following paths:
+ * 
+ * - `/static`: Static read-only data e.g. for the web portal
+ * - `/var`: Variable data e.g. for configuration files or logging
+ */
+esp_err_t mount_all();
+
+/**
+ * Unmount all filesystems from the VFS. Does nothing if the filesystems have not
+ * been mounted before.
+ */
+void unmount_all();
 
 } // namespace my_fs

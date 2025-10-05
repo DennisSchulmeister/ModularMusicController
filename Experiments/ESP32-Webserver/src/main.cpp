@@ -7,13 +7,28 @@
  * (at your option) any later version.
  */
 
+#include "fs.h"
 #include "wifi.h"
+#include <esp_log.h>    // ESP_LOG…
+#include <esp_sleep.h>  // esp_deep_sleep_start
 
-#include <esp_log.h>
+constexpr char const* TAG = "main";
+
+/**
+ * Put the CPU into deep sleep without wakeup events when the given return
+ * code is not ESP_OK. This is the best we can do in software to halt the
+ * CPU without consuming much power.
+ */
+void sleep_on_error(esp_err_t ret) {
+    if (ret == ESP_OK) return;
+    ESP_LOGE(TAG, "Going into deep sleep due to unrecoverable error");
+    esp_deep_sleep_start();
+}
 
 /**
  * Main entry point
  */
 extern "C" void app_main() {
-    my_wifi::restart();
+    sleep_on_error(my_fs::mount_all());
+    sleep_on_error(my_wifi::restart());
 }

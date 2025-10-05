@@ -8,7 +8,8 @@
  */
 
 #pragma once
-#include <string>       // std::string
+#include <esp_system.h>     // esp_err_t
+#include <string>           // std::string
 
 namespace my_wifi {
 
@@ -128,11 +129,11 @@ status_t get_status();
  * Start or restart WiFi either in access point or station mode, depending
  * on the saved WiFi configuration values.
  */
-void restart();
+esp_err_t restart();
 
 /**
  * Stop WiFi.
  */
-void stop();
+esp_err_t stop();
 
 } // namespace my_wifi
