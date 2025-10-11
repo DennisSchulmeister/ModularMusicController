@@ -15,21 +15,21 @@ namespace my_wifi {
 constexpr char const* TAG = "wifi";
 
 // Current connection status
-status_t status = {
-    .mode  = mode_t::disabled,
-    .state = state_t::disconnected,
+Status status = {
+    .mode  = Mode::disabled,
+    .state = State::disconnected,
     .ssid  = "",
     .ip    = "",
 };
 
-void save_config(const config_t& config) {
+void save_config(const Config& config) {
 }
 
-config_t read_config() {
+Config read_config() {
     return {};
 }
 
-status_t get_status() {
+Status get_status() {
     return status;
 }
 

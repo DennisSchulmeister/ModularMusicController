@@ -27,13 +27,21 @@ namespace my_fs {
  * 
  * - `/static`: Static read-only data e.g. for the web portal
  * - `/var`: Variable data e.g. for configuration files or logging
+ *
+ * @return
+ *   - ESP_OK on success
+ *   - Error code otherwise
  */
-esp_err_t mount_all();
+esp_err_t mount_all() noexcept;
 
 /**
- * Unmount all filesystems from the VFS. Does nothing if the filesystems have not
- * been mounted before.
+ * Unmount all filesystems from the VFS.
+ * 
+ * If the filesystems have not been mounted before, this function does nothing.
+ * If unmounting fails for any filesystem, the function will silently ignore the error
+ * and continue attempting to unmount any remaining filesystems.
+ * No error is reported to the caller.
  */
-void unmount_all();
+void unmount_all() noexcept;
 
 } // namespace my_fs

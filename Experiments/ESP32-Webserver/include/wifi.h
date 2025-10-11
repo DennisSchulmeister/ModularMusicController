@@ -21,7 +21,7 @@ namespace my_wifi {
 /**
  * WiFi mode
  */
-enum class mode_t {
+enum class Mode {
     disabled,           ///< WiFi disabled
     access_point,       ///< Access point mode – Run a built-in WiFi access point with its own network
     station,            ///< Station mode – Connect to a WiFi network nearby
@@ -30,7 +30,7 @@ enum class mode_t {
 /**
  * Connection status
  */
-enum class state_t {
+enum class State {
     disconnected,       ///< Disconnected
     searching,          ///< Searching for nearby networks
     connecting,         ///< Connecting as station, retrieving IP
@@ -41,8 +41,8 @@ enum class state_t {
 /**
  * WiFi configuration
  */
-struct config_t {
-    mode_t mode;        ///< WiFi mode
+struct Config {
+    Mode mode;        ///< WiFi mode
     std::string ssid;   ///< Station id (access point or station)
     std::string psk;    ///< Pre-Shared Key (access point or station)
 };
@@ -50,9 +50,9 @@ struct config_t {
 /**
  * WiFi status
  */
-struct status_t {
-    mode_t mode;        ///< Current WiFi mode
-    state_t state;      ///< Connection status
+struct Status {
+    Mode mode;        ///< Current WiFi mode
+    State state;      ///< Connection status
     std::string ssid;   ///< Current station id (access point or station)
     std::string ip;     ///< Current IP address
 };
@@ -61,28 +61,28 @@ struct status_t {
  * Write WiFi configuration to non-volatile memory.
  * @param config The WiFi configuration
  */
-void save_config(const config_t& config);
+void save_config(const Config& config) noexcept;
 
 /**
  * Read WiFi configuration from non-volatile memory or return default values, if missing.
  * @returns The WiFi configuration
  */
-config_t read_config();
+Config read_config() noexcept;
 
 /**
  * Get current WiFi status
  */
-status_t get_status();
+Status get_status() noexcept;
 
 /**
  * Start or restart WiFi either in access point or station mode, depending
  * on the saved WiFi configuration values.
  */
-esp_err_t restart();
+esp_err_t restart() noexcept;
 
 /**
  * Stop WiFi.
  */
-esp_err_t stop();
+esp_err_t stop() noexcept;
 
 } // namespace my_wifi
