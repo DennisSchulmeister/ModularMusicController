@@ -16,7 +16,7 @@ import logging from "logging";
 export const logger = logging("main");
 
 /**
- * Utility function for throwing an error that is sent to the client as a JSON-formated
+ * Utility function for throwing an error that is sent to the client as a JSON-formatted
  * error object. Basically this just throws a `new Error()` as an exception, but adds
  * the error name and HTTP status code.
  * 
