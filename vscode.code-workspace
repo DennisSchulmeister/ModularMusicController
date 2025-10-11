@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "Experiments/ESP32-Webserver"
+		},
+		{
+			"path": "Webconfig"
 		}
 	]
 }

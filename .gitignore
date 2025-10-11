@@ -2,6 +2,12 @@
 # Adapted version of Micropython's .gitignore file
 #=================================================
 
+# Node.js
+node_modules/
+
+# Mockserver
+db.json
+
 # PlatformIO
 .pio
 
