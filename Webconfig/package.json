@@ -10,9 +10,13 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node src/main.js",
-    "watch": "nodemon --ignore db.json src/main.js",
-    "debug": "node --inspect-brk src/main.js"
+    "start": "conc -c auto -n browser,server 'npm run watch:browser' 'npm run watch:server'",
+    "watch:browser": "tsx bin/esbuild-bundle.ts --watch",
+    "watch:server": "tsx watch --exclude db.json server/main.ts",
+    "debug": "tsx watch --inspect-brk src/main.ts",
+    "clean": "shx rm static/*.bundle.*",
+    "build": "tsx bin/esbuild.ts",
+    "deploy": "npm run build; tsx bin/deploy.ts static ../Firmware/main/data/web"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
@@ -25,9 +29,12 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/qs": "^6.14.0",
+    "concurrently": "^9.2.1",
     "esbuild": "^0.25.10",
+    "fast-glob": "^3.3.3",
     "htmx.org": "^2.0.7",
     "nodemon": "^3.1.10",
+    "shx": "github:shelljs/shx",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
