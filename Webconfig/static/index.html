@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Configuration | Modular Music Controller</title>
+        <title>Modular Music Controller</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!--
@@ -16,8 +16,70 @@
         -->
 
         <script src="index.bundle.js"></script>
+        <link rel="stylesheet" href="index.bundle.css">
+        <link rel="icon" href="favicon.svg">
     </head>
     <body>
-        <h1>Modular Music Controller – Configuration</h1>
+        <!-- Page header with logo and navigation -->
+        <header>
+            <h1 class="mb-4">Modular Music Controller</h1>
+    
+            <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+                <div class="container-fluid p-0">
+                    <!-- Hamburger menu for mobile devices -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <!-- Main navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class        = "nav-link active"
+                                    aria-current = "page"
+                                    hx-get       = "pages/general.html"
+                                    hx-target    = "#page-content"
+                                >
+                                    General Settings
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class     = "nav-link"
+                                    hx-get    = "pages/osc-servers.html"
+                                    hx-target = "#page-content"
+                                >
+                                    OSC Applications
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class     = "nav-link"
+                                    hx-get    = "pages/mqtt-servers.html"
+                                    hx-target = "#page-content"
+                                >
+                                    MQTT Brokers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class     = "nav-link"
+                                    hx-get    = "pages/controls.html"
+                                    hx-target = "#page-content"
+                                >
+                                    Hardware Controls
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Selected page content -->
+        <main id="page-content">
+            TODO
+        </main>
     </body>
 </html>

@@ -23,7 +23,7 @@ if (!srcDir || !outDir) {
     process.exit(1);
 }
 
-const srcGlob = path.join(srcDir, "*");
+const srcGlob = path.join(srcDir, "**");
 const files = await glob(srcGlob, { dot: true, onlyFiles: true, absolute: true });
 
 for (const file of files) {

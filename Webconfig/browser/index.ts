@@ -7,6 +7,10 @@
  * (at your option) any later version.
  */
 
-window.addEventListener("DOMContentLoaded", () => {
-    alert("Hello world!");
-});
+import "alpinejs";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "htmx.org";
+
+import "./style.css";

@@ -1,0 +1,45 @@
+/* Modular Music Controller - Web Configuration Portal
+ * (C) 2025 Dennis Schulmeister-Zimolong <dennis@windows3.de>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    padding: 2rem;
+}
+
+body {
+    flex: 1;
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    /* Same color as in the favicon */
+    color: rgb(152, 99, 192);
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}

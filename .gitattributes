@@ -11,6 +11,8 @@
 *.bat text eol=crlf
 
 # These are binary so should never be modified by git.
+Firmware/main/data/* binary
+
 *.pd binary
 
 *.a binary
