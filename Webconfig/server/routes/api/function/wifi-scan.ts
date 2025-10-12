@@ -11,12 +11,12 @@ import type { Application, Request, Response } from "express";
 
 /**
  * Add route handlers to the express application:
- * Choose control
+ * Scan WiFi Networks
  *
  * @param {Express.Application} app Express application
  */
 export default function registerRoutes(app: Application): void {
-    app.get("/api/function/scan-wifi", async (req: Request, res: Response) => {
+    app.get("/api/function/wifi-scan", async (req: Request, res: Response) => {
         // Random timeout
         await new Promise(resolve => window.setTimeout(resolve, Math.random() * 4500));
 

@@ -22,6 +22,8 @@ import api__config__wifi             from "./api/config/wifi.js";
 import api__function__choose_control from "./api/function/choose-control.js";
 import api__function__export         from "./api/function/export.js";
 import api__function__import         from "./api/function/import.js";
+import api__function__wifi_reconnect from "./api/function/wifi-reconnect.js";
+import api__function__wifi_scan      from "./api/function/wifi-scan.js";
 
 // Reexport of all route handlers to satisfy the open/closed principle,
 // so that we don't want to edit the main.ts file when the routes change.
@@ -41,4 +43,6 @@ export default [
     api__function__choose_control,
     api__function__export,
     api__function__import,
+    api__function__wifi_reconnect,
+    api__function__wifi_scan,
 ];

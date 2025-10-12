@@ -13,8 +13,6 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-
-    padding: 2rem;
 }
 
 body {
@@ -25,6 +23,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
 }
 
 main {

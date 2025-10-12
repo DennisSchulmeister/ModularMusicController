@@ -1,5 +1,4 @@
 TODO:
 
+  - General settings as template
   - README file
-  - htmx basic structure
-  - bootstrap?
