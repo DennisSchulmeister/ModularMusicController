@@ -9,7 +9,7 @@
 
 import type { Application, Request, Response } from "express";
 import type { ControlMIDI, MIDIMessageType } from "../../../database.js";
-import { db, getControlOr404, midiVersions, midiMessageTypes } from "../../../database.js";
+import { db, getControlOr404, midiMessageTypes } from "../../../database.js";
 import { throwError } from "../../../utils.js";
 
 /**
@@ -38,17 +38,10 @@ export default function registerRoutes(app: Application): void {
             i++;
             if (!midiMessageTypes.includes(message.message)) throwError("invalid-value", `Invalid value for key '[${i}].message'`, 400);
 
-            let j = 0;
-            for (let version of message.versions || []) {
-                j++;
-                if (!midiVersions.includes(version)) throwError("invalid-value", `Invalid value for key '[${i}].version[${j}]'`, 400);
-            }
-
             new_data.push({
                 send:     message.id   ? true : false,
                 receive:  message.name ? true : false,
-                versions: message.versions || [],
-                channel:  parseInt(`${message.channel|| "0"}`.trim()),
+                channel:  parseInt(`${message.channel || "0"}`.trim()),
                 message:  `${message.message || ""}`.trim() as MIDIMessageType,
                 data:     `${message.data    || ""}`.trim(),
             });

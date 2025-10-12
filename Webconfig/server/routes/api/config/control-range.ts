@@ -35,9 +35,10 @@ export default function registerRoutes(app: Application): void {
         function _move(src: any, dst: RangeParameters) {
             let keys = Object.keys(src);
 
-            if (keys.includes("from"))        dst.from        = parseFloat(src.from || "0.0");
-            if (keys.includes("to"))          dst.to          = parseFloat(src.to   || "0.0");
-            if (keys.includes("decimals"))    dst.decimals    = parseInt(`${src.decimals} || "0"`);
+            if (keys.includes("from"))        dst.from        = parseFloat(`${src.from    || "0.0"}`);
+            if (keys.includes("to"))          dst.to          = parseFloat(`${src.to      || "0.0"}`);
+            if (keys.includes("initial"))     dst.initial     = parseFloat(`${src.initial || "0.0"}`);
+            if (keys.includes("decimals"))    dst.decimals    = parseInt(`${src.decimals  || "0"}`);
             if (keys.includes("placeholder")) dst.placeholder = `${req.body.a.placeholder || ""}`.trim();
             if (keys.includes("separator"))   dst.placeholder = `${req.body.a.separator   || "."}`.trim();
         }

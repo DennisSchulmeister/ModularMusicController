@@ -26,10 +26,8 @@ export default function registerRoutes(app: Application): void {
 
     // Update values
     app.post("/api/config/device", async (req: Request, res: Response) => {
-        let prev_data = db.data.device;
-
         let new_data: Device = {
-            name: `${req.body.name || prev_data.name}`.trim(),
+            name: `${req.body.name || ""}`.trim(),
         };
 
         db.data.device = new_data;

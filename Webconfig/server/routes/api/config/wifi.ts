@@ -29,14 +29,12 @@ export default function registerRoutes(app: Application): void {
     app.post("/api/config/wifi", async (req: Request, res: Response) => {
         if (!wifiModes.includes(req.body.mode)) throwError("invalid-value", "Invalid value for key 'mode'", 400);
 
-        let prev_data = db.data.wifi;
-
         let new_data: Wifi = {
-            mode:     `${req.body.mode     || prev_data.mode}`.trim() as WifiMode,
-            ssid:     `${req.body.ssid     || prev_data.ssid}`.trim(),
-            psk:      `${req.body.psk      || prev_data.psk}`.trim(),
-            username: `${req.body.username || prev_data.username}`.trim(),
-            password: `${req.body.password || prev_data.password}`.trim(),
+            mode:     `${req.body.mode     || "disabled"}`.trim() as WifiMode,
+            ssid:     `${req.body.ssid     || ""}`.trim(),
+            psk:      `${req.body.psk      || ""}`.trim(),
+            username: `${req.body.username || ""}`.trim(),
+            password: `${req.body.password || ""}`.trim(),
         };
 
         db.data.wifi = new_data;

@@ -34,8 +34,12 @@ export default function registerRoutes(app: Application): void {
     
         if (!controlTypes.includes(control.general.type)) throwError("invalid-value", "Invalid value for key 'type'", 400);
 
-        if (req.body.type) control.general.type = `${req.body.type}`.trim() as ControlType;
-        if (req.body.name) control.general.name = `${req.body.name}`.trim();
+        control.general = {
+            board: control.general.board,
+            slot:  control.general.slot,
+            type: `${req.body.type}`.trim() as ControlType,
+            name: `${req.body.name}`.trim(),
+        }
 
         await db.write();
 

@@ -8,8 +8,8 @@
  */
 
 import type { Application, Request, Response } from "express";
-import type { AllData, Control, EnableStatus, Format, MIDIMessageType, MQTTProtocol, OSCArgument, OSCProtocol, OSCType, RangeParameters, WifiMode } from "../../../database.js";
-import { controlTypes, enableStatus, formats, midiMessageTypes, midiVersions, mqttProtocols, oscTypes, oscProtocols, wifiModes } from "../../../database.js";
+import type { AllData, Control, Format, MIDIMessageType, MQTTProtocol, OSCArgument, OSCProtocol, OSCType, RangeParameters, SerialParity, SerialStopBits, SerialWordLength, WifiMode } from "../../../database.js";
+import { controlTypes, formats, midiMessageTypes, midiVersions, mqttProtocols, oscTypes, oscProtocols, serialWordLengths, serialParities, serialStopBits, wifiModes } from "../../../database.js";
 import { db } from "../../../database.js";
 import { throwError } from "../../../utils.js";
 
@@ -35,11 +35,19 @@ export default function registerRoutes(app: Application): void {
             },
             connections: {
                 usb: {
-                    serial: "enabled",
-                    midi:   "enabled",
+                    serial: {
+                        enabled:     false,
+                        speed:       115200,
+                        word_length: 8,
+                        parity:      "none",
+                        stop_bits:   1,
+                    },
+                    midi: {
+                        enabled: true,
+                    },
                 },
                 midi: {
-                    connectors: "enabled",
+                    connectors: true,
                     versions: ["1.0", "2.0"],
                 },
             },
@@ -50,12 +58,12 @@ export default function registerRoutes(app: Application): void {
 
         if (req.body?.wifi?.mode && !wifiModes.includes(req.body.wifi.mode)) {
             throwError("invalid-value", "Invalid value for key 'wifi.mode'", 400);
-        } else if (req.body?.connections?.usb?.serial && !enableStatus.includes(req.body.req.body.connections.usb.serial)) {
-            throwError("invalid-value", "Invalid value for key 'connections.usb.serial'", 400);
-        } else if (req.body?.connections?.usb?.midi && !enableStatus.includes(req.body.req.body.connections.usb.midi)) {
-            throwError("invalid-value", "Invalid value for key 'connections.usb.midi'", 400);
-        } else if (req.body?.connections?.midi?.connectors && !enableStatus.includes(req.body.req.body.connections.midi.connectors)) {
-            throwError("invalid-value", "Invalid value for key 'connections.midi.connectors'", 400);
+        } else if (req.body?.connections?.usb?.serial?.word_length && !serialWordLengths.includes(req.body.req.body.connections.usb.serial.word_length)) {
+            throwError("invalid-value", "Invalid value for key 'connections.usb.serial.word_length'", 400);
+        } else if (req.body?.connections?.usb?.serial?.parity && !serialParities.includes(req.body.req.body.connections.usb.serial.parity)) {
+            throwError("invalid-value", "Invalid value for key 'connections.usb.serial.parity'", 400);
+        } else if (req.body?.connections?.usb?.serial?.stop_bits && !serialStopBits.includes(req.body.req.body.connections.usb.serial.stop_bits)) {
+            throwError("invalid-value", "Invalid value for key 'connections.midi.serial.stop_bits'", 400);
         }
 
         i = 0;
@@ -67,16 +75,21 @@ export default function registerRoutes(app: Application): void {
             }
         }
 
-        if (req.body?.device?.name)                  new_data.device.name                 = `${req.body.device.name}`;
-        if (req.body?.wifi?.mode)                    new_data.wifi.mode                   = `${req.body.wifi.mode}` as WifiMode;
-        if (req.body?.wifi?.ssid)                    new_data.wifi.ssid                   = `${req.body.wifi.ssid}`;
-        if (req.body?.wifi?.psk)                     new_data.wifi.psk                    = `${req.body.wifi.psk}`;
-        if (req.body?.wifi?.username)                new_data.wifi.username               = `${req.body.wifi.username}`;
-        if (req.body?.wifi?.password)                new_data.wifi.password               = `${req.body.wifi.password}`;
-        if (req.body?.connections?.usb?.serial)      new_data.connections.usb.serial      = `${req.body.connections.usb.serial}` as EnableStatus;
-        if (req.body?.connections?.usb?.midi)        new_data.connections.usb.midi        = `${req.body.connections.usb.midi}` as EnableStatus;
-        if (req.body?.connections?.midi?.connectors) new_data.connections.midi.connectors = `${req.body.connections.midi.connectors}` as EnableStatus;
-        if (req.body?.connections?.midi?.versions)   new_data.connections.midi.versions   = req.body.connections.midi.versions || [];
+        if (req.body?.device?.name)                          new_data.device.name                        = `${req.body.device.name}`;
+        if (req.body?.wifi?.mode)                            new_data.wifi.mode                          = `${req.body.wifi.mode}` as WifiMode;
+        if (req.body?.wifi?.ssid)                            new_data.wifi.ssid                          = `${req.body.wifi.ssid}`;
+        if (req.body?.wifi?.psk)                             new_data.wifi.psk                           = `${req.body.wifi.psk}`;
+        if (req.body?.wifi?.username)                        new_data.wifi.username                      = `${req.body.wifi.username}`;
+        if (req.body?.wifi?.password)                        new_data.wifi.password                      = `${req.body.wifi.password}`;
+        if (req.body?.connections?.usb?.serial?.speed)       new_data.connections.usb.serial.speed       = parseInt(`${req.body.connections.usb.serial.speed}`);
+        if (req.body?.connections?.usb?.serial?.word_length) new_data.connections.usb.serial.word_length = parseInt(`${req.body.connections.usb.serial.word_length}`) as SerialWordLength;
+        if (req.body?.connections?.usb?.serial?.parity)      new_data.connections.usb.serial.parity      = `${req.body.connections.usb.serial.parity}` as SerialParity
+        if (req.body?.connections?.usb?.serial?.stop_bits)   new_data.connections.usb.serial.stop_bits   = parseInt(`${req.body.connections.usb.serial.stop_bits}`) as SerialStopBits;
+        if (req.body?.connections?.midi?.versions)           new_data.connections.midi.versions   = req.body.connections.midi.versions || [];
+
+        new_data.connections.usb.serial.enabled = req.body?.connections?.usb?.serial?.enabled ? true : false;
+        new_data.connections.usb.midi.enabled   = req.body?.connections?.usb?.midi?.enabled   ? true : false;
+        new_data.connections.midi.connectors    = req.body?.connections?.midi?.connectors     ? true : false;
 
         i = 0;
         for (let oscServer of req.body?.oscServers || []) {
@@ -131,11 +144,11 @@ export default function registerRoutes(app: Application): void {
                     name:  `Control ${board}-${slot}`,
                 },
                 range: {
-                    a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                    b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                    c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                    a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                    a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
                 },
 
                 midi:   [],
@@ -157,9 +170,10 @@ export default function registerRoutes(app: Application): void {
             function _move_range(src: any, dst: RangeParameters) {
                 let keys = Object.keys(src);
     
-                if (keys.includes("from"))        dst.from        = parseFloat(src.from || "0.0");
-                if (keys.includes("to"))          dst.to          = parseFloat(src.to   || "0.0");
-                if (keys.includes("decimals"))    dst.decimals    = parseInt(`${src.decimals} || "0"`);
+                if (keys.includes("from"))        dst.from        = parseFloat(`${src.from    || "0.0"}`);
+                if (keys.includes("to"))          dst.to          = parseFloat(`${src.to      || "0.0"}`);
+                if (keys.includes("initial"))     dst.initial     = parseFloat(`${src.initial || "0.0"}`);
+                if (keys.includes("decimals"))    dst.decimals    = parseInt(`${src.decimals  || "0"}`);
                 if (keys.includes("placeholder")) dst.placeholder = `${req.body.a.placeholder || ""}`.trim();
                 if (keys.includes("separator"))   dst.placeholder = `${req.body.a.separator   || "."}`.trim();
             }
@@ -177,18 +191,9 @@ export default function registerRoutes(app: Application): void {
                     throwError("invalid-value", `Invalid value for key 'controls[${i}].midi[${j}].message'`, 400);
                 }
 
-                let k = 0;
-                for (let version of message.versions || []) {
-                    k++;
-                    if (!midiVersions.includes(version)) {
-                        throwError("invalid-value", `Invalid value for key 'controls[${i}].midi[${j}].version[${k}]'`, 400);
-                    }
-                }
-
                 new_control.midi.push({
                     send:     message.id   ? true : false,
                     receive:  message.name ? true : false,
-                    versions: message.versions || [],
                     channel:  parseInt(`${message.channel|| "0"}`.trim()),
                     message:  `${message.message || ""}`.trim() as MIDIMessageType,
                     data:     `${message.data    || ""}`.trim(),

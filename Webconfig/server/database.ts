@@ -29,16 +29,30 @@ export type Wifi = {
 export type MIDIVersion = "1.0" | "2.0";
 export const midiVersions = ["1.0", "2.0"];
 
-export type EnableStatus = "disabled" | "enabled";
-export const enableStatus = ["disabled", "enabled"]
+export type SerialWordLength = 5 | 6 | 7 | 8;
+export const serialWordLengths = [5, 6, 7, 8];
+
+export type SerialParity = "none" | "even" | "odd";
+export const serialParities = ["none", "even", "odd"];
+
+export type SerialStopBits = 1 | 1.5 | 2;
+export const serialStopBits = [1, 1.5, 2];
 
 export type Connections = {
     usb: {
-        serial: EnableStatus;
-        midi:   EnableStatus;
+        serial: {
+            enabled:     boolean;
+            speed:       number;
+            word_length: SerialWordLength;
+            parity:      SerialParity,
+            stop_bits:   SerialStopBits,
+        },
+        midi: {
+            enabled: boolean;
+        }
     },
     midi: {
-        connectors: EnableStatus;
+        connectors: boolean;
         versions:   MIDIVersion[];
     },
 };
@@ -87,6 +101,7 @@ export type ControlGeneral = {
 export type RangeParameters = {
     from:        number;
     to:          number;
+    initial:     number;
     placeholder: string;
     decimals:    number;
     separator:   string;
@@ -140,7 +155,6 @@ export const midiMessageTypes = ["80", "90", "A0", "B0", "C0", "D0", "E0", "F0",
 export type ControlMIDI = {
     send:     boolean;
     receive:  boolean;
-    versions: MIDIVersion[];
     channel:  number;
     message:  MIDIMessageType;
     data:     string;
@@ -214,12 +228,20 @@ const defaultData: AllData = {
     },
     connections: {
         usb: {
-            serial: "enabled",
-            midi:   "enabled",
+            serial: {
+                enabled:     true,
+                speed:       115200,
+                word_length: 8,
+                parity:      "none",
+                stop_bits:   1.5,
+            },
+            midi: {
+                enabled: true,
+            },
         },
         midi: {
-            connectors: "disabled",
-            versions:   ["1.0"],
+            connectors: true,
+            versions:   ["1.0", "2.0"],
         }
     },
     oscServers: [{
@@ -245,13 +267,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 0, type: "knob", name: "OSC1 Volume"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "00 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "00 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/volume", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/volume", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-volume {A0};"}],
@@ -259,13 +281,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 1, type: "knob", name: "OSC1 Detune"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "01 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "01 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/detune", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/detune", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-detune {A0};"}],
@@ -273,13 +295,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 2, type: "knob", name: "OSC1 Cutoff"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "02 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "02 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/cutoff", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/cutoff", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-cutoff {A0};"}],
@@ -287,13 +309,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 3, type: "knob", name: "OSC1 Resonance"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "03 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "03 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/resonance", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/resonance", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-resonance {A0};"}],
@@ -301,13 +323,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 4, type: "knob", name: "OSC2 Volume"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "10 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "10 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/volume", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/volume", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-volume {A0};"}],
@@ -315,13 +337,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 5, type: "knob", name: "OSC2 Detune"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "11 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "11 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/detune", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/detune", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-detune {A0};"}],
@@ -329,13 +351,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 6, type: "knob", name: "OSC2 Cutoff"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "12 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "12 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/cutoff", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/cutoff", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-cutoff {A0};"}],
@@ -343,13 +365,13 @@ const defaultData: AllData = {
         {
             general: {board: 0, slot: 7, type: "knob", name: "OSC2 Resonance"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "13 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "13 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/resonance", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/resonance", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-resonance {A0};"}],
@@ -359,13 +381,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 0, type: "knob", name: "OSC1 Attack"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "04 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "04 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/attack", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/attack", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-attack {A0};"}],
@@ -373,13 +395,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 1, type: "knob", name: "OSC1 Decay"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "05 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "05 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/decay", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/decay", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-decay {A0};"}],
@@ -387,13 +409,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 2, type: "knob", name: "OSC1 Sustain"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "06 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "06 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/sustain", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/sustain", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-sustain {A0};"}],
@@ -401,13 +423,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 3, type: "knob", name: "OSC1 Release"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "07 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "07 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/release", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc1/release", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc1-release {A0};"}],
@@ -415,13 +437,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 4, type: "knob", name: "OSC2 Attack"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "14 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "14 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/attack", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/attack", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-attack {A0};"}],
@@ -429,13 +451,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 5, type: "knob", name: "OSC2 Decay"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "15 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "15 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/decay", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/decay", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-decay {A0};"}],
@@ -443,13 +465,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 6, type: "knob", name: "OSC2 Sustain"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "16 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "16 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/sustain", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/sustain", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-sustain {A0};"}],
@@ -457,13 +479,13 @@ const defaultData: AllData = {
         {
             general: {board: 1, slot: 7, type: "knob", name: "OSC2 Release"},
             range:   {
-                a:  {from: 0.0, to: 1.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
             },
-            midi:    [{send: true, receive: true, versions: ["1.0", "2.0"], channel: 1, message: "C0", data: "17 {A0}"}],
+            midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "17 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/release", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
             mqtt:    [{send: true, receive: true, server: "broker1", topic: "/osc2/release", format: "text", data: "set {A0}"}],
             serial:  [{send: true, receive: true, format: "text", data: "osc2-release {A0};"}],

@@ -8,8 +8,8 @@
  */
 
 import type { Application, Request, Response } from "express";
-import type { Connections, EnableStatus } from "../../../database.js";
-import { db, enableStatus, midiVersions } from "../../../database.js";
+import type { Connections, SerialStopBits, SerialWordLength } from "../../../database.js";
+import { db, midiVersions, serialWordLengths, serialParities, serialStopBits } from "../../../database.js";
 import { throwError } from "../../../utils.js";
 
 /**
@@ -27,9 +27,13 @@ export default function registerRoutes(app: Application): void {
 
     // Update values
     app.post("/api/config/connections", async (req: Request, res: Response) => {
-        if (!enableStatus.includes(req.body.usb?.serial))      throwError("invalid-value", "Invalid value for key 'usb.serial'", 400);
-        if (!enableStatus.includes(req.body.usb?.midi))        throwError("invalid-value", "Invalid value for key 'usb.midi'", 400);
-        if (!enableStatus.includes(req.body.midi?.connectors)) throwError("invalid-value", "Invalid value for key 'midi.connectors'", 400);
+        if (req.body.usb?.serial?.speed && !serialWordLengths.includes(req.body.usb.serial.word_length)) {
+            throwError("invalid-value", "Invalid value for key 'usb.serial.word_length'", 400);
+        } else if (req.body.usb?.serial?.parity && !serialParities.includes(req.body.usb.serial.parity)) {
+            throwError("invalid-value", "Invalid value for key 'usb.serial.parity'", 400);
+        } else if (req.body.usb?.serial.stop_bits && !serialStopBits.includes(req.body.usb.serial.stop_bits)) {
+            throwError("invalid-value", "Invalid value for key 'usb.serial.stop_bits'", 400);
+        }
 
         let i = 0;
         for (let midi_version of req.body.midi?.versions || []) {
@@ -38,16 +42,22 @@ export default function registerRoutes(app: Application): void {
             if (!midiVersions.includes(midi_version)) throwError("invalid-value", `Invalid value for key 'midi.versions[${i}]'`, 400);
         }
 
-        let prev_data = db.data.connections;
-
         let new_data: Connections = {
             usb: {
-                serial: `${req.body.usb?.serial || prev_data.usb.serial}`.trim() as EnableStatus,
-                midi:   `${req.body.usb?.midi   || prev_data.usb.midi}`.trim() as EnableStatus,
+                serial: {
+                    enabled:     req.body.usb?.serial?.enabled ? true : false,
+                    speed:       parseInt(`${req.body.usb?.serial?.speed || "115200"}`),
+                    word_length: parseInt(`${req.body.usb?.serial?.word_length || "8"}`) as SerialWordLength,
+                    parity:      req.body.usb?.serial?.parity || "none",
+                    stop_bits:   parseFloat(`${req.body.usb?.serial?.stop_bits || "1"}`) as SerialStopBits,
+                },
+                midi: {
+                    enabled: req.body.usb?.midi?.enabled ? true : false,
+                }
             },
             midi: {
-                connectors: `${req.body.midi?.connectors || prev_data.midi.connectors}`.trim() as EnableStatus,
-                versions:   req.body.midi?.versions || [],
+                connectors: req.body.midi?.connectors ? true : false,
+                versions:   req.body.midi?.versions || ["1.0", "2.0"],
             },
         };
 
