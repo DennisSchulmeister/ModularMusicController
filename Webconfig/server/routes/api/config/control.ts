@@ -7,10 +7,15 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { ControlType } from "../../../database.js";
-import { controlTypes, db, getControlOr404 } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application} from "express";
+import type {Request}     from "express";
+import type {Response}    from "express";
+import type {ControlType} from "../../../../types/control.js";
+
+import {controlTypes}     from "../../../../types/control.js";
+import {db}               from "../../../database.js";
+import {getControlOr404}  from "../../../database.js";
+import {throwError}       from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

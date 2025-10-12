@@ -7,7 +7,11 @@
  * (at your option) any later version.
  */
 
-import { Request, Response, NextFunction, ErrorRequestHandler, RequestHandler } from 'express';
+import {Request}             from "express";
+import {Response}            from "express";
+import {NextFunction}        from "express";
+import {ErrorRequestHandler} from "express";
+import {RequestHandler}      from "express";
 
 /**
  * This function creates an Express middleware that logs a line to the console

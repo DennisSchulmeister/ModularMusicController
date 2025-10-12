@@ -7,10 +7,19 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { Connections, SerialStopBits, SerialWordLength } from "../../../database.js";
-import { db, midiVersions, serialWordLengths, serialParities, serialStopBits } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application}      from "express";
+import type {Request}          from "express";
+import type {Response}         from "express";
+import type {Connections}      from "../../../../types/device.js";
+import type {SerialStopBits}   from "../../../../types/serial.js";
+import type {SerialWordLength} from "../../../../types/serial.js";
+
+import {midiVersions}          from "../../../../types/midi.js";
+import {serialParities}        from "../../../../types/serial.js";
+import {serialStopBits}        from "../../../../types/serial.js";
+import {serialWordLengths}     from "../../../../types/serial.js";
+import {db}                    from "../../../database.js";
+import {throwError}            from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

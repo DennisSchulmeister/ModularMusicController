@@ -7,10 +7,16 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { ControlMIDI, MIDIMessageType } from "../../../database.js";
-import { db, getControlOr404, midiMessageTypes } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application}      from "express";
+import type {Request}          from "express";
+import type {Response}         from "express";
+import type {ControlMIDI}      from "../../../../types/control.js";
+import type {MIDIMessageType } from "../../../../types/midi.js";
+
+import {db}                    from "../../../database.js";
+import {getControlOr404}       from "../../../database.js";
+import {midiMessageTypes}      from "../../../../types/midi.js";
+import {throwError}            from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

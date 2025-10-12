@@ -7,11 +7,36 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { AllData, Control, Format, MIDIMessageType, MQTTProtocol, OSCArgument, OSCProtocol, OSCType, RangeParameters, SerialParity, SerialStopBits, SerialWordLength, WifiMode } from "../../../database.js";
-import { controlTypes, formats, midiMessageTypes, midiVersions, mqttProtocols, oscTypes, oscProtocols, serialWordLengths, serialParities, serialStopBits, wifiModes } from "../../../database.js";
-import { db } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application}      from "express";
+import type {Request}          from "express";
+import type {Response}         from "express";
+import type {Control}          from "../../../../types/control.js";
+import type {RangeParameters}  from "../../../../types/control.js";
+import type {Format}           from "../../../../types/binary.js";
+import type {MIDIMessageType}  from "../../../../types/midi.js";
+import type {MQTTProtocol}     from "../../../../types/mqtt.js";
+import type {OSCArgument}      from "../../../../types/osc.js";
+import type {OSCProtocol}      from "../../../../types/osc.js";
+import type {OSCType}          from "../../../../types/osc.js";
+import type {SerialParity}     from "../../../../types/serial.js";
+import type {SerialStopBits}   from "../../../../types/serial.js";
+import type {SerialWordLength} from "../../../../types/serial.js";
+import type {WiFiMode}         from "../../../../types/wifi.js";
+import type {AllData}          from "../../../database.js";
+
+import {controlTypes}          from "../../../../types/control.js";
+import {formats}               from "../../../../types/binary.js";
+import {midiMessageTypes}      from "../../../../types/midi.js";
+import {midiVersions}          from "../../../../types/midi.js";
+import {mqttProtocols}         from "../../../../types/mqtt.js";
+import {oscProtocols}          from "../../../../types/osc.js";
+import {oscTypes}              from "../../../../types/osc.js";
+import {serialParities}        from "../../../../types/serial.js";
+import {serialStopBits}        from "../../../../types/serial.js";
+import {serialWordLengths}     from "../../../../types/serial.js";
+import {wiFiModes}             from "../../../../types/wifi.js";
+import {db}                    from "../../../database.js";
+import {throwError}            from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:
@@ -56,7 +81,7 @@ export default function registerRoutes(app: Application): void {
             controls:    [],
         };
 
-        if (req.body?.wifi?.mode && !wifiModes.includes(req.body.wifi.mode)) {
+        if (req.body?.wifi?.mode && !wiFiModes.includes(req.body.wifi.mode)) {
             throwError("invalid-value", "Invalid value for key 'wifi.mode'", 400);
         } else if (req.body?.connections?.usb?.serial?.word_length && !serialWordLengths.includes(req.body.req.body.connections.usb.serial.word_length)) {
             throwError("invalid-value", "Invalid value for key 'connections.usb.serial.word_length'", 400);
@@ -76,7 +101,7 @@ export default function registerRoutes(app: Application): void {
         }
 
         if (req.body?.device?.name)                          new_data.device.name                        = `${req.body.device.name}`;
-        if (req.body?.wifi?.mode)                            new_data.wifi.mode                          = `${req.body.wifi.mode}` as WifiMode;
+        if (req.body?.wifi?.mode)                            new_data.wifi.mode                          = `${req.body.wifi.mode}` as WiFiMode;
         if (req.body?.wifi?.ssid)                            new_data.wifi.ssid                          = `${req.body.wifi.ssid}`;
         if (req.body?.wifi?.psk)                             new_data.wifi.psk                           = `${req.body.wifi.psk}`;
         if (req.body?.wifi?.username)                        new_data.wifi.username                      = `${req.body.wifi.username}`;

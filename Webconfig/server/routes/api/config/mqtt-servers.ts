@@ -7,10 +7,15 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { MQTTProtocol, MQTTServer } from "../../../database.js";
-import { db, mqttProtocols } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application}  from "express";
+import type {Request}      from "express";
+import type {Response}     from "express";
+import type {MQTTProtocol} from "../../../../types/mqtt.js";
+import type {MQTTServer}   from "../../../../types/mqtt.js";
+
+import {mqttProtocols}     from "../../../../types/mqtt.js";
+import {db}                from "../../../database.js";
+import {throwError}        from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

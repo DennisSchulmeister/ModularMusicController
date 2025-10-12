@@ -7,10 +7,15 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { OSCProtocol, OSCServer } from "../../../database.js";
-import { db, oscProtocols } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application} from "express";
+import type {Request}     from "express";
+import type {Response}    from "express";
+import type {OSCProtocol} from "../../../../types/osc.js";
+import type {OSCServer}   from "../../../../types/osc.js";
+
+import {oscProtocols}     from "../../../../types/osc.js";
+import {db}               from "../../../database.js";
+import {throwError}       from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

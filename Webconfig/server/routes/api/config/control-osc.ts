@@ -6,10 +6,19 @@
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
  */
-import type { Application, Request, Response } from "express";
-import type { ControlOSC, OSCArgument, OSCType, Format } from "../../../database.js";
-import { db, getControlOr404, oscTypes, formats } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application} from "express";
+import type {Request}     from "express";
+import type {Response}    from "express";
+import type {Format}      from "../../../../types/binary.js";
+import type {ControlOSC}  from "../../../../types/control.js";
+import type {OSCArgument} from "../../../../types/osc.js";
+import type {OSCType}     from "../../../../types/osc.js";
+
+import {formats}          from "../../../../types/binary.js";
+import {oscTypes}         from "../../../../types/osc.js";
+import {db}               from "../../../database.js";
+import {getControlOr404}  from "../../../database.js";
+import {throwError}       from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

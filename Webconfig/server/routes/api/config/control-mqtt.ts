@@ -7,10 +7,16 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { ControlMQTT, Format } from "../../../database.js";
-import { db, getControlOr404, formats } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application} from "express";
+import type {Request}     from "express";
+import type {Response}    from "express";
+import type {ControlMQTT} from "../../../../types/control.js";
+import type {Format}      from "../../../../types/binary.js";
+
+import {formats}          from "../../../../types/binary.js";
+import {db}               from "../../../database.js";
+import {getControlOr404}  from "../../../database.js";
+import {throwError}       from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:

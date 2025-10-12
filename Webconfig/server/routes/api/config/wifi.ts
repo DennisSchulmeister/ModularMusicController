@@ -7,10 +7,15 @@
  * (at your option) any later version.
  */
 
-import type { Application, Request, Response } from "express";
-import type { Wifi, WifiMode } from "../../../database.js";
-import { db, wifiModes } from "../../../database.js";
-import { throwError } from "../../../utils.js";
+import type {Application} from "express";
+import type {Request}     from "express";
+import type {Response}    from "express";
+import type {WiFi}        from "../../../../types/wifi.js";
+import type {WiFiMode}    from "../../../../types/wifi.js";
+
+import {wiFiModes}        from "../../../../types/wifi.js";
+import {db}               from "../../../database.js";
+import {throwError}       from "../../../utils.js";
 
 /**
  * Add route handlers to the express application:
@@ -27,10 +32,10 @@ export default function registerRoutes(app: Application): void {
 
     // Update values
     app.post("/api/config/wifi", async (req: Request, res: Response) => {
-        if (!wifiModes.includes(req.body.mode)) throwError("invalid-value", "Invalid value for key 'mode'", 400);
+        if (!wiFiModes.includes(req.body.mode)) throwError("invalid-value", "Invalid value for key 'mode'", 400);
 
-        let new_data: Wifi = {
-            mode:     `${req.body.mode     || "disabled"}`.trim() as WifiMode,
+        let new_data: WiFi = {
+            mode:     `${req.body.mode     || "disabled"}`.trim() as WiFiMode,
             ssid:     `${req.body.ssid     || ""}`.trim(),
             psk:      `${req.body.psk      || ""}`.trim(),
             username: `${req.body.username || ""}`.trim(),
