@@ -1,0 +1,12 @@
+<div
+    hx-get     = "components/tab-card.html"
+    hx-trigger = "load"
+    x-data     = "{
+        tabs: [
+            {id: 'wifi', label: 'WiFi Connection',  page: 'pages/network/wifi.html'},
+            {id: 'osc',  label: 'OSC Applications', page: 'pages/network/osc-servers.html'},
+            {id: 'mqtt', label: 'MQTT Brokers',     page: 'pages/network/mqtt-servers.html'},
+        ],
+        active: 'wifi',
+    }"
+><div>

@@ -13,6 +13,14 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+
+    /* Same color as in the favicon */
+    --brand-color: rgb(152, 99, 192);
+
+    /* https://pixabay.com/photos/stage-microphone-music-live-3620844/ */
+    background-image: url(background.jpg);    
+    background-size: cover;
+    background-position: center;
 }
 
 body {
@@ -23,6 +31,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
 }
 
 html, body {
@@ -36,13 +47,23 @@ main {
 
 h1 {
     /* Same color as in the favicon */
-    color: rgb(152, 99, 192);
+    color: var(--brand-color);
 }
 
 a {
     cursor: pointer;
 }
 
-a:hover {
+header a:hover {
     text-decoration: underline;
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .show > .nav-link {
+    font-weight: normal;
+    border-bottom-color: var(--brand-color);
+}
+
+input[readonly] {
+    background: rgb(240, 240, 240);
 }

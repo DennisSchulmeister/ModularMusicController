@@ -1,0 +1,11 @@
+<div
+    hx-get     = "components/tab-card.html"
+    hx-trigger = "load"
+    x-data     = "{
+        tabs: [
+            {id: 'parameters',  label: 'Global Parameters',    page: 'pages/device/parameters.html'},
+            {id: 'connections', label: 'Hardware Connections', page: 'pages/device/connections.html'},
+        ],
+        active: 'parameters',
+    }"
+><div>

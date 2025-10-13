@@ -43,16 +43,13 @@
             </div>
 
             <!-- Navigation menu -->
-            <nav id="nav-menu" class="navbar collapse d-md-block bg-body-tertiary shadow-sm ps-3 pe-3">
+            <nav id="nav-menu" class="navbar rounded collapse d-md-block bg-body-tertiary shadow-sm ps-3 pe-3">
                 <ul class="navbar-nav d-flex flex-md-row align-center gap-2 gap-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/general.html" hx-target="#page-content">General Settings</a>
+                        <a class="nav-link" hx-get="pages/device.html" hx-target="#page-content">Device Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/osc-servers.html" hx-target="#page-content">OSC Applications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/mqtt-servers.html" hx-target="#page-content">MQTT Brokers</a>
+                        <a class="nav-link" hx-get="pages/network.html" hx-target="#page-content">Network Settings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" hx-get="pages/controls.html" hx-target="#page-content">Hardware Controls</a>
@@ -62,8 +59,9 @@
         </header>
 
         <!-- Selected page content -->
-        <main id="page-content" class="ps-md-3 pe-md-3">
-        </main>
+        <div class="flex-md-fill"></div>
+        <main id="page-content" class="align-self-md-center ps-md-3 pe-md-3"></main>
+        <div class="flex-md-fill"></div>
 
         <!-- Popup window for error messages and the occasional modal UX -->
         <div

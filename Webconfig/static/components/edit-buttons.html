@@ -1,0 +1,15 @@
+<div class="col">
+    <button type="button" class="btn btn-primary" x-show="!edit" @click="edit = true">
+        Edit
+    </button>
+
+    <div class="btn-group" x-show="edit">
+        <button type="submit" class="btn btn-primary active">
+            Save
+        </button>
+    
+        <button type="button" class="btn btn-dark" @click="cancel">
+            Cancel
+        </button>
+    </div>
+</div>

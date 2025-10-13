@@ -1,0 +1,38 @@
+<div class="card shadow" style="width: 50em; max-width: 100%;">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <template x-for="tab in tabs">
+                <li class="nav-item" role="presentation">
+                    <button
+                        :id             = "`tab-button-${tab.id}`"
+                        :class          = "`nav-link ${tab.id === active ? 'active' : ''}`"
+                        data-bs-toggle  = "tab"
+                        :data-bs-target = "`#tab-page-${tab.id}`"
+                        type            = "button"
+                        role            = "tab"
+                        :aria-controls  = "`tab-page-${tab.id}`"
+                        :aria-selected  = "tab.id === active ? 'true' : 'false'"
+                        x-text          = "tab.label"
+                        :hx-get         = "tab.page"
+                        :hx-target      = "`#tab-page-${tab.id}`"
+                        hx-trigger      = "load"
+                    ></button>
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <div class="card-body">
+        <div id="tab-content" class="tab-content">
+            <template x-for="tab in tabs">
+                <div
+                    :id              = "`tab-page-${tab.id}`"
+                    :class           = "`tab-pane ${tab.id === active ? 'show active' : ''}`"
+                    role             = "tabpanel"
+                    :aria-labelledby = "`tab-button-${tab.id}`"
+                    tabindex         = "0"
+                ></div>
+            </template>
+        </div>
+    </div>
+</div>

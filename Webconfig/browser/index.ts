@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./style.css";
 
+import "./backend.js";
 import "./popup.js";
 
 // Initialize page
