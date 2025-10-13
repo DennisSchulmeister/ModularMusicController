@@ -19,6 +19,11 @@ import "./page.js";
 import "./popup.js";
 
 window.addEventListener("DOMContentLoaded", () => {
+    Alpine.store("nav", {
+        visible: true,
+        enabled: true,
+    });
+
     Alpine.start();
 });
 

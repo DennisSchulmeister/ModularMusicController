@@ -12,6 +12,7 @@
                     :aria-controls  = "`tab-page-${tab.id}`"
                     :aria-selected  = "tab.id === active ? 'true' : 'false'"
                     x-text          = "tab.label"
+                    :disabled       = "!$store.nav.enabled"
                 ></button>
             </li>
         </template>

@@ -7,7 +7,7 @@
  * (at your option) any later version.
  */
 
-import {Popup} from "./popup.js";
+import Alpine from "alpinejs";
 
 /**
  * Utility class to exchange data with the backend API.
@@ -78,6 +78,15 @@ export class Backend<Data> {
     }
 
     /**
+     * Toggle edit and display mode
+     * @param edit Edit mode, if `true`.
+     */
+    editMode(edit: boolean) {
+        this.edit = edit;
+        (Alpine.store("nav") as any).enabled = !edit;
+    }
+
+    /**
      * Apply changes and save the changed data on the backend.
      */
     async save() {
@@ -96,6 +105,8 @@ export class Backend<Data> {
         } else {
             this.edit = false;
         }
+
+        (Alpine.store("nav") as any).enabled = true;
     }
 
     /**
@@ -105,6 +116,7 @@ export class Backend<Data> {
         if (confirm("All changes will be lost. Are you sure?")) {
             this.data = JSON.parse(JSON.stringify(this.saved));
             this.edit = false;
+            (Alpine.store("nav") as any).enabled = true;
         }
     }
 
