@@ -7,22 +7,15 @@
  * (at your option) any later version.
  */
 
-import "alpinejs";
+import Alpine from "alpinejs";
 import "bootstrap";
+import "htmx.org";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
-import htmx from "htmx.org";
-
 import "./style.css";
 
-// Extend the Window interface to include 'htmx'
-declare global {
-	interface Window {
-		htmx: typeof htmx;
-	}
-}
-
-window.htmx = htmx;
+import {Popup} from "./popup.js";
 
 // Initialize page
 window.addEventListener("DOMContentLoaded", () => {
@@ -44,5 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Switch to first page on page load
     let firstNavLink = document.querySelector("header .nav-item:first-child a");
     if (firstNavLink) (firstNavLink as HTMLElement).click();
+
+    // Get Alpine.js going
+    Alpine.start();
 });
 

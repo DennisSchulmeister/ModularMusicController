@@ -64,5 +64,42 @@
         <!-- Selected page content -->
         <main id="page-content" class="ps-md-3 pe-md-3">
         </main>
+
+        <!-- Popup window for error messages and the occasional modal UX -->
+        <div
+            id              = "popup"
+            class           = "modal fade" 
+            tabindex        = "-1"
+            aria-labelledby = "popup-title"
+            aria-hidden     = "true"
+            x-data          = "popupData"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div id="popup-header" class="modal-header">
+                        <h5 id="popup-title" class="modal-title" x-text="title"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div id="popup-body" class="modal-body">
+                    </div>
+
+                    <!-- Footer -->
+                    <div id="popup-footer" class="modal-footer" x-show="buttons.length">
+                        <template x-for="button in buttons">
+                            <button
+                                type         = "button"
+                                x-bind:id    = "button.id"
+                                x-bind:class = "`btn ${button.class}`"
+                                x-text       = "button.text"
+                                x-init       = "button.init($el)"
+                            ></button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
