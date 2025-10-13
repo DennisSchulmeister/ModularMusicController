@@ -12,6 +12,7 @@
 
 # These are binary so should never be modified by git.
 Firmware/main/data/* binary
+Webconfig/static/*.bundle.* binary
 
 *.pd binary
 

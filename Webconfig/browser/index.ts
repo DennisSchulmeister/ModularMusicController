@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./style.css";
 
-import {Popup} from "./popup.js";
+import "./popup.js";
 
 // Initialize page
 window.addEventListener("DOMContentLoaded", () => {

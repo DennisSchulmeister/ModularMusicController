@@ -27,6 +27,8 @@ const srcGlob = path.join(srcDir, "**");
 const files = await glob(srcGlob, { dot: true, onlyFiles: true, absolute: true });
 
 for (const file of files) {
+    if (file.endsWith(".map")) continue;    // Skip rather large code maps
+
     const relPath = path.relative(srcDir, file);
     const outPath = path.join(outDir, relPath);
 
