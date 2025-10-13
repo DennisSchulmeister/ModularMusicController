@@ -57,6 +57,16 @@
                         </select>
                     </div>
                 </div>
+                <template x-if="edit">
+                    <div class="d-flex gap-2 mb-3">
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">4800</a>
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">9600</a>
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">19200</a>
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">38400</a>
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">57600</a>
+                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">115200</a>
+                    </div>
+                </template>
             </section>
     
             <section class="mb-4">
