@@ -63,8 +63,11 @@ export class Popup {
      */
     async show() {
         // Render popup content
+        let popupData = Alpine.store("popup") as PopupData;
         popupData.title   = this.options.title;
         popupData.buttons = [];
+        popupData.obj     = this;
+        popupData.result  = undefined;
 
         for (let button of this.options.buttons || []) {
             popupData.buttons.push({
@@ -113,6 +116,7 @@ export class Popup {
             // Remove popup content
             popupData.title   = "";
             popupData.buttons = [];
+            popupData.obj     = undefined;
 
             // Dispatch popup-close event
             for (let listener of this.closeEventListeners) {
@@ -140,6 +144,22 @@ export class Popup {
      */
     close() {
         if (this.bsModal) this.bsModal.hide();
+    }
+
+    /**
+     * Set result data for the caller from within the popup.
+     * @param result Result data
+     */
+    setResult(result: any) {
+        (Alpine.store("popup") as PopupData).result = result;
+    }
+
+    /**
+     * Get the popup result, if any,
+     * @returns The popup result or `undefined`.
+     */
+    getResult(): any {
+        return (Alpine.store("popup") as PopupData).result;
     }
 
     /**
@@ -176,14 +196,20 @@ export class Popup {
     }
 }
 
-let popupData: {
-    title:   string,
-    buttons: PopupButton[],
-} = {
+type PopupData = {obj?: Popup, result: any, title: string, buttons: PopupButton[]};
+
+Alpine.store("popup", {
+    obj:     undefined,
+    result:  undefined,
     title:   "",
     buttons: [],
-};
-
-Alpine.data("popupData", () => {
-    return popupData;
 });
+
+// Export for usage in Alpine.js HTML components
+declare global {
+    interface Window {
+        Popup: typeof Popup;
+    }
+}
+
+window.Popup = Popup;

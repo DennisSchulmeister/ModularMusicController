@@ -18,7 +18,7 @@ import type {Response}    from "express";
  * @param {Express.Application} app Express application
  */
 export default function registerRoutes(app: Application): void {
-    app.get("/api/function/wifi-reconnect", async (req: Request, res: Response) => {
+    app.post("/api/function/wifi-reconnect", async (req: Request, res: Response) => {
         res.status(201);
         res.send();
     });

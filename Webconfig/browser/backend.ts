@@ -13,13 +13,13 @@ import {Popup} from "./popup.js";
  * Utility class to exchange data with the backend API.
  */
 export class Backend<Data> {
-    url:    string;
-    popup:  boolean;
-    error:  string;
+    url?:   string;
     ready:  boolean;
     edit:   boolean;
     data?:  Data;
     saved?: Data;
+
+    abortController = new AbortController();
 
     /**
      * Initialize the object.
@@ -28,14 +28,15 @@ export class Backend<Data> {
      * @param initial Empty initial data object (required by Alpine.js to avoid rendering errors)
      * @param popup Show popup on error (otherwise `error` must be manually rendered)
      */
-    constructor(url: string, initial: Data, popup = true) {
+    constructor(url?: string, initial?: Data) {
         this.url   = url;
-        this.popup = popup;
-        this.error = "";
         this.ready = false;
         this.edit  = false;
-        this.data  = JSON.parse(JSON.stringify(initial));
-        this.saved = JSON.parse(JSON.stringify(initial));
+
+        if (initial) {
+            this.data  = JSON.parse(JSON.stringify(initial));
+            this.saved = JSON.parse(JSON.stringify(initial));
+        }
     }
 
     /**
@@ -45,7 +46,7 @@ export class Backend<Data> {
      * @param func Function route to call (without the "/api/function/" prefix)
      * @returns Response data
      */
-    async call_function<Result>(method: "get"|"post", func: string, data?: any): Promise<Result|undefined> {
+    async callFunction<Result>(method: "get"|"post", func: string, data?: any): Promise<Result|undefined> {
         let options: RequestInit = {method: method};
 
         if (method !== "get" && data) {
@@ -61,11 +62,16 @@ export class Backend<Data> {
      * Note that Alpine.js will call this method automatically due to the name `init()`.
      */
     async init() {
-        let result = await this._fetch(`/api${this.url}`) as Data|undefined;
-
-        if (result) {
-            this.saved = result;
-            this.data  = JSON.parse(JSON.stringify(this.saved));
+        if (this.url) {
+            let result = await this._fetch(`/api${this.url}`) as Data|undefined;
+    
+            if (result) {
+                this.saved = result;
+                this.data  = JSON.parse(JSON.stringify(this.saved));
+                this.edit  = false;
+                this.ready = true;
+            }
+        } else {
             this.edit  = false;
             this.ready = true;
         }
@@ -75,16 +81,20 @@ export class Backend<Data> {
      * Apply changes and save the changed data on the backend.
      */
     async save() {
-        let result = await this._fetch(`/api${this.url}`, {
-            method:  "post",
-            headers: {"content-type": "application/json"},
-            body:    JSON.stringify(this.data),
-        }) as Data|undefined;
-
-        if (result) {
-            this.saved = result;
-            this.data  = JSON.parse(JSON.stringify(this.saved));
-            this.edit  = false;
+        if (this.url) {
+            let result = await this._fetch(`/api${this.url}`, {
+                method:  "post",
+                headers: {"content-type": "application/json"},
+                body:    JSON.stringify(this.data),
+            }) as Data|undefined;
+    
+            if (result) {
+                this.saved = result;
+                this.data  = JSON.parse(JSON.stringify(this.saved));
+                this.edit  = false;
+            }
+        } else {
+            this.edit = false;
         }
     }
 
@@ -99,8 +109,14 @@ export class Backend<Data> {
     }
 
     /**
-     * Call the remote API and return its result. In case of an error populate the
-     * `error` property and show a popup, if this is enabled.
+     * Abort the currently running request, if any.
+     */
+    abort() {
+        this.abortController.abort();
+    }
+
+    /**
+     * Call the remote API and return its result. In case of an error show an alert().
      * 
      * @param url The URL to call
      * @param options Options for the `fetch()` call
@@ -108,21 +124,29 @@ export class Backend<Data> {
      */
     async _fetch<Result>(url: string, options?: RequestInit): Promise<Result|undefined> {
         try {
-            let response = await fetch(url, options);
-            let result: Result = await response.json() as Result;
-            return result;
-        } catch (error) {
-            if (typeof error === "object" && error !== null && "message" in error) {
-                this.error = String((error as { message?: unknown }).message);
+            let response = await fetch(url, {...options, signal: this.abortController.signal});
+
+            if (response.status == 201) {
+                return;
             } else {
-                this.error = String(error);
+                let result: Result = await response.json() as Result;
+                return result;
+            }
+        } catch (error) {
+            if ((error as Error).name === "AbortError") {
+                return;
             }
 
-            if (this.popup) {
-                let popup_body = document.createElement("div");
-                popup_body.textContent = this.error;
-                new Popup({"title": "Remote Error", "body": popup_body}).show();
+            console.error(error);
+            let message = "Remote Error – ";
+            
+            if (typeof error === "object" && error !== null && "message" in error) {
+                message += String((error as { message?: unknown }).message);
+            } else {
+                message += String(error);
             }
+
+            alert(message);
         }
     }
 }

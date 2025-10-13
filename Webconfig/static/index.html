@@ -29,7 +29,7 @@
                 <!-- Toggle menu on mobile devices -->
                 <button
                     type           = "button"
-                    class          = "btn d-md-none p-0"
+                    class          = "btn d-md-none p-0 text-light"
                     data-bs-toggle = "collapse"
                     data-bs-target = "#nav-menu"
                     aria-controls  = "nav-menu"
@@ -92,13 +92,13 @@
             tabindex        = "-1"
             aria-labelledby = "popup-title"
             aria-hidden     = "true"
-            x-data          = "popupData"
+            x-data          = ""
         >
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <!-- Header -->
                     <div id="popup-header" class="modal-header">
-                        <h5 id="popup-title" class="modal-title" x-text="title"></h5>
+                        <h5 id="popup-title" class="modal-title" x-text="$store.popup.title"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
@@ -107,14 +107,14 @@
                     </div>
 
                     <!-- Footer -->
-                    <div id="popup-footer" class="modal-footer" x-show="buttons.length">
-                        <template x-for="button in buttons">
+                    <div id="popup-footer" class="modal-footer" x-show="$store.popup.buttons.length">
+                        <template x-for="button in $store.popup.buttons">
                             <button
-                                type         = "button"
-                                x-bind:id    = "button.id"
-                                x-bind:class = "`btn ${button.class}`"
-                                x-text       = "button.text"
-                                x-init       = "button.init($el)"
+                                type   = "button"
+                                :id    = "button.id"
+                                :class = "`btn ${button.class}`"
+                                x-text = "button.text"
+                                x-init = "button.init($el)"
                             ></button>
                         </template>
                     </div>

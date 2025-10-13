@@ -18,9 +18,9 @@ import type {Response}    from "express";
  * @param {Express.Application} app Express application
  */
 export default function registerRoutes(app: Application): void {
-    app.get("/api/function/wifi-scan", async (req: Request, res: Response) => {
+    app.post("/api/function/wifi-scan", async (req: Request, res: Response) => {
         // Random timeout
-        await new Promise(resolve => window.setTimeout(resolve, Math.random() * 4500));
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 4500));
 
         res.status(200);
         res.send([
