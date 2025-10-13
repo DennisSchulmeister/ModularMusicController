@@ -19,27 +19,29 @@ export const controlTypes = [
     "rotary", "rotary+button", "joystick", "touchpad", "display", "generic",
 ];
 
-export type ControlGeneral = {
-    board: number;
-    slot:  number;
-    type:  ControlType;
-    name:  string;
+export type ControlBase = {
+    general: {
+        board: number;
+        slot:  number;
+        type:  ControlType;
+        name:  string;
+    };
+    inputs: {
+        a:  InputParameters;
+        b:  InputParameters;
+        c:  InputParameters;
+        a0: InputParameters;
+        a1: InputParameters;
+    };
 };
 
-export type RangeParameters = {
+export type InputParameters = {
     from:        number;
     to:          number;
     initial:     number;
     placeholder: string;
     decimals:    number;
     separator:   string;
-};
-export type ControlRange = {
-    a:  RangeParameters;
-    b:  RangeParameters;
-    c:  RangeParameters;
-    a0: RangeParameters;
-    a1: RangeParameters;
 };
 
 export type ControlMIDI = {
@@ -75,8 +77,7 @@ export type ControlSerial = {
 };
 
 export type Control = {
-    general: ControlGeneral;
-    range:   ControlRange;
+    base:    ControlBase;
     midi:    ControlMIDI[];
     osc:     ControlOSC[];
     mqtt:    ControlMQTT[];

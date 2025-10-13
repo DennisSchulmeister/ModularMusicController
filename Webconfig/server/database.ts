@@ -77,13 +77,15 @@ const defaultData: AllData = {
     controls: [
         // Board 1: 2 Oscillators – Volume, Detune, Cutoff, Resonance
         {
-            general: {board: 0, slot: 0, type: "knob", name: "OSC1 Volume"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 0, type: "knob", name: "OSC1 Volume"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "00 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/volume", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -91,13 +93,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-volume {A0};"}],
         },
         {
-            general: {board: 0, slot: 1, type: "knob", name: "OSC1 Detune"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 1, type: "knob", name: "OSC1 Detune"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "01 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/detune", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -105,13 +109,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-detune {A0};"}],
         },
         {
-            general: {board: 0, slot: 2, type: "knob", name: "OSC1 Cutoff"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 2, type: "knob", name: "OSC1 Cutoff"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "02 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/cutoff", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -119,13 +125,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-cutoff {A0};"}],
         },
         {
-            general: {board: 0, slot: 3, type: "knob", name: "OSC1 Resonance"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 3, type: "knob", name: "OSC1 Resonance"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "03 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/resonance", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -133,13 +141,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-resonance {A0};"}],
         },
         {
-            general: {board: 0, slot: 4, type: "knob", name: "OSC2 Volume"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 4, type: "knob", name: "OSC2 Volume"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "10 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/volume", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -147,13 +157,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-volume {A0};"}],
         },
         {
-            general: {board: 0, slot: 5, type: "knob", name: "OSC2 Detune"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 5, type: "knob", name: "OSC2 Detune"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "11 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/detune", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -161,13 +173,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-detune {A0};"}],
         },
         {
-            general: {board: 0, slot: 6, type: "knob", name: "OSC2 Cutoff"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 6, type: "knob", name: "OSC2 Cutoff"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "12 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/cutoff", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -175,13 +189,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-cutoff {A0};"}],
         },
         {
-            general: {board: 0, slot: 7, type: "knob", name: "OSC2 Resonance"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 0, slot: 7, type: "knob", name: "OSC2 Resonance"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "13 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/resonance", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -191,13 +207,15 @@ const defaultData: AllData = {
 
         // Board 2: 2 Oscillators – Attack, Decay, Sustain, Release
         {
-            general: {board: 1, slot: 0, type: "knob", name: "OSC1 Attack"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 0, type: "knob", name: "OSC1 Attack"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "04 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/attack", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -205,13 +223,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-attack {A0};"}],
         },
         {
-            general: {board: 1, slot: 1, type: "knob", name: "OSC1 Decay"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 1, type: "knob", name: "OSC1 Decay"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "05 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/decay", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -219,13 +239,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-decay {A0};"}],
         },
         {
-            general: {board: 1, slot: 2, type: "knob", name: "OSC1 Sustain"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 2, type: "knob", name: "OSC1 Sustain"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "06 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/sustain", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -233,13 +255,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-sustain {A0};"}],
         },
         {
-            general: {board: 1, slot: 3, type: "knob", name: "OSC1 Release"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 3, type: "knob", name: "OSC1 Release"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "07 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc1/release", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -247,13 +271,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc1-release {A0};"}],
         },
         {
-            general: {board: 1, slot: 4, type: "knob", name: "OSC2 Attack"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 4, type: "knob", name: "OSC2 Attack"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "14 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/attack", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -261,13 +287,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-attack {A0};"}],
         },
         {
-            general: {board: 1, slot: 5, type: "knob", name: "OSC2 Decay"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 5, type: "knob", name: "OSC2 Decay"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "15 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/decay", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -275,13 +303,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-decay {A0};"}],
         },
         {
-            general: {board: 1, slot: 6, type: "knob", name: "OSC2 Sustain"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 6, type: "knob", name: "OSC2 Sustain"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "16 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/sustain", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -289,13 +319,15 @@ const defaultData: AllData = {
             serial:  [{send: true, receive: true, format: "text", data: "osc2-sustain {A0};"}],
         },
         {
-            general: {board: 1, slot: 7, type: "knob", name: "OSC2 Release"},
-            range:   {
-                a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+            base: {
+                general: {board: 1, slot: 7, type: "knob", name: "OSC2 Release"},
+                inputs: {
+                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
+                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
+                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
+                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                },
             },
             midi:    [{send: true, receive: true, channel: 1, message: "C0", data: "17 {A0}"}],
             osc:     [{send: true, receive: true, server: "synth-osc", address: "/osc2/release", arguments: [{type: "f", format: "binary", value: "{A0}"}]}],
@@ -317,7 +349,7 @@ export const db = await JSONFilePreset("db.json", defaultData);
  * @returns Control configuration
  */
 export function getControlOr404(board: number, slot: number): Control {
-    let result = db.data.controls.find(e => e.general.board === board && e.general.slot === slot);
+    let result = db.data.controls.find(e => e.base.general.board === board && e.base.general.slot === slot);
     if (!result) throwNotFound();
     return result;
 }

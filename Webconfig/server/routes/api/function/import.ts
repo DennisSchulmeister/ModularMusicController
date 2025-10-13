@@ -11,8 +11,8 @@ import type {Application}      from "express";
 import type {Request}          from "express";
 import type {Response}         from "express";
 import type {Control}          from "../../../../types/control.js";
-import type {RangeParameters}  from "../../../../types/control.js";
 import type {Format}           from "../../../../types/binary.js";
+import type {InputParameters}  from "../../../../types/control.js";
 import type {MIDIMessageType}  from "../../../../types/midi.js";
 import type {MQTTProtocol}     from "../../../../types/mqtt.js";
 import type {OSCArgument}      from "../../../../types/osc.js";
@@ -63,9 +63,9 @@ export default function registerRoutes(app: Application): void {
                     serial: {
                         enabled:     false,
                         speed:       115200,
-                        word_length: 8,
+                        word_length: "8",
                         parity:      "none",
-                        stop_bits:   1,
+                        stop_bits:   "1",
                     },
                     midi: {
                         enabled: true,
@@ -107,9 +107,9 @@ export default function registerRoutes(app: Application): void {
         if (req.body?.wifi?.username)                        new_data.wifi.username                      = `${req.body.wifi.username}`;
         if (req.body?.wifi?.password)                        new_data.wifi.password                      = `${req.body.wifi.password}`;
         if (req.body?.connections?.usb?.serial?.speed)       new_data.connections.usb.serial.speed       = parseInt(`${req.body.connections.usb.serial.speed}`);
-        if (req.body?.connections?.usb?.serial?.word_length) new_data.connections.usb.serial.word_length = parseInt(`${req.body.connections.usb.serial.word_length}`) as SerialWordLength;
-        if (req.body?.connections?.usb?.serial?.parity)      new_data.connections.usb.serial.parity      = `${req.body.connections.usb.serial.parity}` as SerialParity
-        if (req.body?.connections?.usb?.serial?.stop_bits)   new_data.connections.usb.serial.stop_bits   = parseInt(`${req.body.connections.usb.serial.stop_bits}`) as SerialStopBits;
+        if (req.body?.connections?.usb?.serial?.word_length) new_data.connections.usb.serial.word_length = `${req.body.connections.usb.serial.word_length}`.trim() as SerialWordLength;
+        if (req.body?.connections?.usb?.serial?.parity)      new_data.connections.usb.serial.parity      = `${req.body.connections.usb.serial.parity}`.trim() as SerialParity;
+        if (req.body?.connections?.usb?.serial?.stop_bits)   new_data.connections.usb.serial.stop_bits   = `${req.body.connections.usb.serial.stop_bits}`.trim() as SerialStopBits;
         if (req.body?.connections?.midi?.versions)           new_data.connections.midi.versions   = req.body.connections.midi.versions || [];
 
         new_data.connections.usb.serial.enabled = req.body?.connections?.usb?.serial?.enabled ? true : false;
@@ -161,19 +161,32 @@ export default function registerRoutes(app: Application): void {
             let board = parseInt(control.general?.board);
             let slot  = parseInt(control.general?.slot);
 
+            function _input(src: any|undefined, placeholder: string): InputParameters {
+                return {
+                    from:        parseFloat(`${src?.from    || "0.0"}`),
+                    to:          parseFloat(`${src?.to      || "0.0"}`),
+                    initial:     parseFloat(`${src?.initial || "0.0"}`),
+                    decimals:    parseInt(`${src?.decimals  || "0"}`),
+                    placeholder: `${src?.placeholder || placeholder}`.trim(),
+                    separator:   `${src?.separator   || "."}`.trim(),
+                };
+            }
+
             let new_control: Control = {
-                general: {
-                    board: board,
-                    slot:  slot,
-                    type:  "generic",
-                    name:  `Control ${board}-${slot}`,
-                },
-                range: {
-                    a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A}",  decimals: 0, separator: ""},
-                    b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{B}",  decimals: 0, separator: ""},
-                    c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{C}",  decimals: 0, separator: ""},
-                    a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
-                    a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: "{A0}", decimals: 0, separator: ""},
+                base: {
+                    general: {
+                        board: board,
+                        slot:  slot,
+                        type:  "generic",
+                        name:  `Control ${board}-${slot}`,
+                    },
+                    inputs: {
+                        a:  _input(control.inputs?.a, "{A}"),
+                        b:  _input(control.inputs?.b, "{B}"),
+                        c:  _input(control.inputs?.c, "{C}"),
+                        a0: _input(control.inputs?.a0, "{A0}"),
+                        a1: _input(control.inputs?.a1, "{A1}"),
+                    },
                 },
 
                 midi:   [],
@@ -186,28 +199,9 @@ export default function registerRoutes(app: Application): void {
                 throwError("invalid-value", `Invalid value for key 'controls[${i}].general.board'`, 400);
             } else if (Number.isNaN(slot)) {
                 throwError("invalid-value", `Invalid value for key 'controls[${i}].general.slot'`, 400);
-            } else if (control.general.type && !controlTypes.includes(control.general.type)) {
-                throwError("invalid-value", `Invalid value for key 'controls[${i}].general.type'`, 400);
             }
 
-            if (control.general?.name) new_control.general.name = `${control.general.name}`.trim();
-
-            function _move_range(src: any, dst: RangeParameters) {
-                let keys = Object.keys(src);
-    
-                if (keys.includes("from"))        dst.from        = parseFloat(`${src.from    || "0.0"}`);
-                if (keys.includes("to"))          dst.to          = parseFloat(`${src.to      || "0.0"}`);
-                if (keys.includes("initial"))     dst.initial     = parseFloat(`${src.initial || "0.0"}`);
-                if (keys.includes("decimals"))    dst.decimals    = parseInt(`${src.decimals  || "0"}`);
-                if (keys.includes("placeholder")) dst.placeholder = `${req.body.a.placeholder || ""}`.trim();
-                if (keys.includes("separator"))   dst.placeholder = `${req.body.a.separator   || "."}`.trim();
-            }
-
-            if (control.range?.a)  _move_range(control.range.a,  new_control.range.a);
-            if (control.range?.b)  _move_range(control.range.b,  new_control.range.b);
-            if (control.range?.c)  _move_range(control.range.c,  new_control.range.c);
-            if (control.range?.a0) _move_range(control.range.a0, new_control.range.a0);
-            if (control.range?.a1) _move_range(control.range.a1, new_control.range.a1);
+            if (control.base?.general?.name) new_control.base.general.name = `${control.base.general.name}`.trim();
 
             j = 0;
             for (let message of control.midi || []) {

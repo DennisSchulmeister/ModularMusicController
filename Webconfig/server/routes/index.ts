@@ -12,7 +12,6 @@ import api__config__control          from "./api/config/control.js";
 import api__config__control_midi     from "./api/config/control-midi.js";
 import api__config__control_mqtt     from "./api/config/control-mqtt.js";
 import api__config__control_osc      from "./api/config/control-osc.js";
-import api__config__control_range    from "./api/config/control-range.js";
 import api__config__control_serial   from "./api/config/control-serial.js";
 import api__config__controls         from "./api/config/controls.js";
 import api__config__device           from "./api/config/device.js";
@@ -33,7 +32,6 @@ export default [
     api__config__control_midi,
     api__config__control_mqtt,
     api__config__control_osc,
-    api__config__control_range,
     api__config__control_serial,
     api__config__controls,
     api__config__device,

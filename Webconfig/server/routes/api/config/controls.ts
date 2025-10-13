@@ -35,10 +35,10 @@ export default function registerRoutes(app: Application): void {
 
         for (let control of db.data.controls) {
             result.push({
-                board: control.general.board,
-                slot:  control.general.slot,
-                type:  control.general.type,
-                name:  control.general.name,
+                board: control.base.general.board,
+                slot:  control.base.general.slot,
+                type:  control.base.general.type,
+                name:  control.base.general.name,
 
                 midi: {
                     send:    control.midi.find(e => e.send)    ? true : false,
