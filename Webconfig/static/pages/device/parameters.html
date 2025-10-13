@@ -1,13 +1,12 @@
-<div
-    x-data = "new Backend('/config/device')"
-    x-init = "await load()"
->
+<div x-data="new Backend('/config/device', {'name': ''})">
     <form @submit.prevent="save">
-        <div class="mb-4">
-            <label class="form-label">Device Name:</label>
-            <input x-model="data.name" type="text" class="form-control" :readonly="!edit">
-        </div>
-
+        <template x-if="ready">
+            <div class="mb-4">
+                <label class="form-label">Device Name:</label>
+                <input x-model="data.name" type="text" class="form-control" :readonly="!edit">
+            </div>
+        </template>
+    
         <div class="p-4"></div>
         <div hx-get="components/edit-buttons.html" hx-trigger="load"></div>
     </form>

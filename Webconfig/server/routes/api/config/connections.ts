@@ -56,9 +56,9 @@ export default function registerRoutes(app: Application): void {
                 serial: {
                     enabled:     req.body.usb?.serial?.enabled ? true : false,
                     speed:       parseInt(`${req.body.usb?.serial?.speed || "115200"}`),
-                    word_length: parseInt(`${req.body.usb?.serial?.word_length || "8"}`) as SerialWordLength,
+                    word_length: req.body.usb?.serial?.word_length || "8" as SerialWordLength,
                     parity:      req.body.usb?.serial?.parity || "none",
-                    stop_bits:   parseFloat(`${req.body.usb?.serial?.stop_bits || "1"}`) as SerialStopBits,
+                    stop_bits:   req.body.usb?.serial?.stop_bits || "1" as SerialStopBits,
                 },
                 midi: {
                     enabled: req.body.usb?.midi?.enabled ? true : false,

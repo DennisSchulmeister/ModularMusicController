@@ -43,9 +43,9 @@ const defaultData: AllData = {
             serial: {
                 enabled:     true,
                 speed:       115200,
-                word_length: 8,
+                word_length: "8",
                 parity:      "none",
-                stop_bits:   1.5,
+                stop_bits:   "1.5",
             },
             midi: {
                 enabled: true,

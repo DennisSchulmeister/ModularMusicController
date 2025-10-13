@@ -16,6 +16,7 @@ export class Backend<Data> {
     url:    string;
     popup:  boolean;
     error:  string;
+    ready:  boolean;
     edit:   boolean;
     data?:  Data;
     saved?: Data;
@@ -24,13 +25,17 @@ export class Backend<Data> {
      * Initialize the object.
      * 
      * @param url API route to call (without the "/api/" prefix)
+     * @param initial Empty initial data object (required by Alpine.js to avoid rendering errors)
      * @param popup Show popup on error (otherwise `error` must be manually rendered)
      */
-    constructor(url: string, popup = true) {
+    constructor(url: string, initial: Data, popup = true) {
         this.url   = url;
         this.popup = popup;
         this.error = "";
+        this.ready = false;
         this.edit  = false;
+        this.data  = JSON.parse(JSON.stringify(initial));
+        this.saved = JSON.parse(JSON.stringify(initial));
     }
 
     /**
@@ -53,14 +58,16 @@ export class Backend<Data> {
 
     /**
      * Load saved data from the backend. Should be called shortly after the constructor.
+     * Note that Alpine.js will call this method automatically due to the name `init()`.
      */
-    async load() {
+    async init() {
         let result = await this._fetch(`/api${this.url}`) as Data|undefined;
 
         if (result) {
             this.saved = result;
             this.data  = JSON.parse(JSON.stringify(this.saved));
             this.edit  = false;
+            this.ready = true;
         }
     }
 

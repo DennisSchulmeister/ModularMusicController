@@ -7,11 +7,11 @@
  * (at your option) any later version.
  */
 
-export type SerialWordLength = 5 | 6 | 7 | 8;
-export const serialWordLengths = [5, 6, 7, 8];
+export type SerialWordLength = "5" | "6" | "7" | "8";
+export const serialWordLengths = ["5", "6", "7", "8"];
 
 export type SerialParity = "none" | "even" | "odd";
 export const serialParities = ["none", "even", "odd"];
 
-export type SerialStopBits = 1 | 1.5 | 2;
-export const serialStopBits = [1, 1.5, 2];
+export type SerialStopBits = "1" | "1.5" | "2";
+export const serialStopBits = ["1", "1.5", "2"];
