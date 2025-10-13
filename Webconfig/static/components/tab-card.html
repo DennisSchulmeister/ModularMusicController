@@ -13,9 +13,6 @@
                         :aria-controls  = "`tab-page-${tab.id}`"
                         :aria-selected  = "tab.id === active ? 'true' : 'false'"
                         x-text          = "tab.label"
-                        :hx-get         = "tab.page"
-                        :hx-target      = "`#tab-page-${tab.id}`"
-                        hx-trigger      = "load"
                     ></button>
                 </li>
             </template>
@@ -31,6 +28,7 @@
                     role             = "tabpanel"
                     :aria-labelledby = "`tab-button-${tab.id}`"
                     tabindex         = "0"
+                    x-init           = "showPage(tab.page, $el)"
                 ></div>
             </template>
         </div>

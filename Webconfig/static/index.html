@@ -44,15 +44,37 @@
 
             <!-- Navigation menu -->
             <nav id="nav-menu" class="navbar rounded collapse d-md-block bg-body-tertiary shadow-sm ps-3 pe-3">
-                <ul class="navbar-nav d-flex flex-md-row align-center gap-2 gap-md-3">
+                <ul
+                    class  = "navbar-nav d-flex flex-md-row align-center gap-2 gap-md-3"
+                    x-data = "{active: undefined}"
+                >
                     <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/device.html" hx-target="#page-content">Device Settings</a>
+                        <a
+                            @click        = "showPage('pages/device.html', '#page-content'); active = $el"
+                            x-init        = "showPage('pages/device.html', '#page-content'); active = $el"
+                            :class        = "`nav-link ${active === $el ? 'active' : ''}`"
+                            :aria-current = "active === $el ? 'page' : ''"
+                        >
+                            Device Settings
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/network.html" hx-target="#page-content">Network Settings</a>
+                        <a
+                            @click        = "showPage('pages/network.html', '#page-content'); active = $el"
+                            :class        = "`nav-link ${active === $el ? 'active' : ''}`"
+                            :aria-current = "active === $el ? 'page' : ''"
+                        >
+                            Network Settings
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" hx-get="pages/controls.html" hx-target="#page-content">Hardware Controls</a>
+                        <a
+                            @click        = "showPage('pages/controls.html', '#page-content'); active = $el"
+                            :class        = "`nav-link ${active === $el ? 'active' : ''}`"
+                            :aria-current = "active === $el ? 'page' : ''"
+                        >
+                            Hardware Controls
+                        </a>
                     </li>
                 </ul>
             </nav>

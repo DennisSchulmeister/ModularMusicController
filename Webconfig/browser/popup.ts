@@ -7,9 +7,9 @@
  * (at your option) any later version.
  */
 
-import Alpine  from "alpinejs";
-import htmx    from "htmx.org";
-import {Modal} from "bootstrap";
+import Alpine     from "alpinejs";
+import {Modal}    from "bootstrap";
+import {showPage} from "./page.js";
 
 export type PopupButton = {
     id:    string;
@@ -35,7 +35,7 @@ export type ButtonEventListener = {
 /**
  * Utility class to show a modal popup e.g. with an error message or a list of
  * data for the user to choose from. Contained data can be given as a DOM element
- * that will be placed inside the popup or fetched with HTMX from a file. Due to
+ * that will be placed inside the popup or fetched fromm a HTML fragment. Due to
  * the way modal popups work in Bootstrap only one can be shown at a time.
  */
 export class Popup {
@@ -88,7 +88,7 @@ export class Popup {
         if (this.options.body) {
             this.body.appendChild(this.options.body);
         } else if (this.options.url) {    
-            await htmx.ajax("get", this.options.url, this.body);
+            await showPage(this.options.url, this.body);
         }
 
         // Dispatch popup-load event

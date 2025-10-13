@@ -16,8 +16,8 @@
         versions:   [],
     }
 })">
-    <form @submit.prevent="save">
-        <template x-if="ready">
+    <template x-if="ready">
+        <form @submit.prevent="save">
             <section class="mb-4">
                 <h5 class="fw-bold">USB Serial</h5>
         
@@ -106,9 +106,9 @@
                     </div>
                 </div>
             </section>
-        </template>
-    
-        <div class="p-4"></div>
-        <div hx-get="components/edit-buttons.html" hx-trigger="load"></div>
-    </form>
+            
+            <div class="p-4"></div>
+            <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+        </form>
+    </template>
 </div>
