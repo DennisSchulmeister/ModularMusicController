@@ -1,1 +1,8 @@
-MQTT Brokers
+<div x-data="new Backend('/config/mqtt-servers', [])">
+    <form @submit.prevent="save">
+        <p>MQTT Brokers</p>
+        
+        <div class="p-4"></div>
+        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+    </form>
+</div>

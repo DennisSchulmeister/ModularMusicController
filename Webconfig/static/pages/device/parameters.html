@@ -1,13 +1,11 @@
 <div x-data="new Backend('/config/device', {'name': ''})">
-    <template x-if="ready">
-        <form @submit.prevent="save">
-            <div class="mb-3">
-                <label class="form-label">Device Name:</label>
-                <input x-model="data.name" type="text" class="form-control" :readonly="!edit">
-            </div>
+    <form @submit.prevent="save">
+        <div class="mb-3">
+            <label class="form-label">Device Name:</label>
+            <input x-model="data.name" type="text" class="form-control" :readonly="!edit">
+        </div>
 
-            <div class="p-4"></div>
-            <div x-init="showPage('components/edit-buttons.html', $el)"></div>
-        </form>
-    </template>
+        <div class="p-4"></div>
+        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+    </form>
 </div>

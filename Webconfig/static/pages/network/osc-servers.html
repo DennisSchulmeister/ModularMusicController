@@ -1,1 +1,49 @@
-OSC Applications
+<div x-data="new Backend('/config/osc-servers', [])">
+    <form @submit.prevent="save">
+        <!-- Table overview -->
+        <template x-if="line.index < 0">
+            <p class="fw-light fst-italic" x-show="!data.length">
+                There are no OSC Applications, yet.
+            </p>
+
+            <table class="table table-striped" x-show="data.length">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Prefix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="(entry, index) in data" :key="entry.id">
+                        <tr>
+                            <td>
+                                <a
+                                    href   = "#"
+                                    class  = "d-flex gap-1"
+                                    x-text = "entry.id"
+                                    @click = "line = {index, entry}"
+                                    ></a>
+                                </td>
+                            <td x-text="entry.name"></td>
+                            <td x-text="`${entry.protocol}://${entry.ip}:${entry.port}`"></td>
+                            <td x-text="entry.prefix"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <!-- Single entry -->
+        <template x-if="line.index >= 0">
+            <span>
+                SINGLE LINE
+            </span>
+        </template>
+
+        <!-- Buttons -->
+        <div class="p-4"></div>
+        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+    </form>
+</div>

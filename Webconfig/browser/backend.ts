@@ -9,17 +9,23 @@
 
 import Alpine from "alpinejs";
 
+type TableLine = {
+    index: number;
+    entry: any;
+}
+
 /**
  * Utility class to exchange data with the backend API.
  */
 export class Backend<Data> {
-    url?:   string;
-    ready:  boolean;
-    edit:   boolean;
-    data?:  Data;
-    saved?: Data;
+    url?:   string;         // Backend URL
+    ready:  boolean;        // Ready to render the data
+    edit:   boolean;        // Edit mode
+    data?:  Data;           // The data being edited
+    line?:  TableLine;      // A single table line being edited
+    saved?: Data;           // The saved data to revert the changes, if necessary
 
-    abortController = new AbortController();
+    abortController = new AbortController();    // Abort ongoing request
 
     /**
      * Initialize the object.
@@ -32,6 +38,7 @@ export class Backend<Data> {
         this.url   = url;
         this.ready = false;
         this.edit  = false;
+        this.line  = {index: -1, entry: undefined};
 
         if (initial) {
             this.data  = JSON.parse(JSON.stringify(initial));

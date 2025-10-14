@@ -16,109 +16,107 @@
         versions:   [],
     }
 })">
-    <template x-if="ready">
-        <form @submit.prevent="save">
-            <section class="mb-4">
-                <h5 class="fw-bold">USB Serial</h5>
+    <form @submit.prevent="save">
+        <section class="mb-4">
+            <h5 class="fw-bold">USB Serial</h5>
+    
+            <div class="form-check form-switch mb-4">
+                <input class="form-check-input" type="checkbox" x-model="data.usb.serial.enabled" :disabled="!edit">
+                <label class="form-check-label">Enable USB Serial</label>
+            </div>
+    
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label class="form-label">Baud Rate</label>
+                    <input type="number" class="form-control" x-model.number="data.usb.serial.speed" :readonly="!edit">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Word Length</label>
+                    <select class="form-select" x-model="data.usb.serial.word_length" :disabled="!edit">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Parity</label>
+                    <select class="form-select" x-model="data.usb.serial.parity" :disabled="!edit">
+                        <option value="none">None</option>
+                        <option value="even">Even</option>
+                        <option value="odd">Odd</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Stop Bits</label>
+                    <select class="form-select" x-model="data.usb.serial.stop_bits" :disabled="!edit">
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+            </div>
+            <template x-if="edit">
+                <div class="d-flex gap-2 mb-3">
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">4800</a>
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">9600</a>
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">19200</a>
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">38400</a>
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">57600</a>
+                    <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">115200</a>
+                </div>
+            </template>
+        </section>
+
+        <section class="mb-4">
+            <h5 class="fw-bold">MIDI</h5>
+
+            <div class="row mb-3">
+                <div class="col-md">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" x-model="data.usb.midi.enabled" :disabled="!edit">
+                        <label class="form-check-label">Enable USB MIDI</label>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" x-model="data.midi.connectors" :disabled="!edit">
+                        <label class="form-check-label">Enable MIDI Connectors</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Supported Versions</label>
+
+                <div class="d-flex gap-4">
+                    <div class="form-check">
+                        <input
+                            class     = "form-check-input"
+                            type      = "checkbox"
+                            value     = "1.0"
+                            :disabled = "!edit"
+                            x-model   = "data.midi.versions"
+                        >
+                        <label class="form-check-label">MIDI 1.0</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input
+                            class     = "form-check-input"
+                            type      = "checkbox"
+                            value     = "2.0"
+                            :disabled = "!edit"
+                            x-model   = "data.midi.versions"
+                        >
+                        <label class="form-check-label">MIDI 2.0</label>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-                <div class="form-check form-switch mb-4">
-                    <input class="form-check-input" type="checkbox" x-model="data.usb.serial.enabled" :disabled="!edit">
-                    <label class="form-check-label">Enable USB Serial</label>
-                </div>
-        
-                <div class="row mb-3">
-                    <div class="col-md-3">
-                        <label class="form-label">Baud Rate</label>
-                        <input type="number" class="form-control" x-model.number="data.usb.serial.speed" :readonly="!edit">
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Word Length</label>
-                        <select class="form-select" x-model="data.usb.serial.word_length" :disabled="!edit">
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Parity</label>
-                        <select class="form-select" x-model="data.usb.serial.parity" :disabled="!edit">
-                            <option value="none">None</option>
-                            <option value="even">Even</option>
-                            <option value="odd">Odd</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Stop Bits</label>
-                        <select class="form-select" x-model="data.usb.serial.stop_bits" :disabled="!edit">
-                            <option value="1">1</option>
-                            <option value="1.5">1.5</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                </div>
-                <template x-if="edit">
-                    <div class="d-flex gap-2 mb-3">
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">4800</a>
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">9600</a>
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">19200</a>
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">38400</a>
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">57600</a>
-                        <a href="#" @click.prevent="data.usb.serial.speed = $el.textContent">115200</a>
-                    </div>
-                </template>
-            </section>
-    
-            <section class="mb-4">
-                <h5 class="fw-bold">MIDI</h5>
-    
-                <div class="row mb-3">
-                    <div class="col-md">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" x-model="data.usb.midi.enabled" :disabled="!edit">
-                            <label class="form-check-label">Enable USB MIDI</label>
-                        </div>
-                    </div>
-    
-                    <div class="col-md">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" x-model="data.midi.connectors" :disabled="!edit">
-                            <label class="form-check-label">Enable MIDI Connectors</label>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="mb-3">
-                    <label class="form-label">Supported Versions</label>
-    
-                    <div class="d-flex gap-4">
-                        <div class="form-check">
-                            <input
-                                class     = "form-check-input"
-                                type      = "checkbox"
-                                value     = "1.0"
-                                :disabled = "!edit"
-                                x-model   = "data.midi.versions"
-                            >
-                            <label class="form-check-label">MIDI 1.0</label>
-                        </div>
-    
-                        <div class="form-check">
-                            <input
-                                class     = "form-check-input"
-                                type      = "checkbox"
-                                value     = "2.0"
-                                :disabled = "!edit"
-                                x-model   = "data.midi.versions"
-                            >
-                            <label class="form-check-label">MIDI 2.0</label>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <div class="p-4"></div>
-            <div x-init="showPage('components/edit-buttons.html', $el)"></div>
-        </form>
-    </template>
+        <div class="p-4"></div>
+        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+    </form>
 </div>
