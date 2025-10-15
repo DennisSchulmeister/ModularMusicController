@@ -1,5 +1,5 @@
 TODO:
 
-  - OSC Servers (as template for tables)
+  - Table sorting is not working?
   - Skeleton for control navigation
   - README file

@@ -1,6 +1,6 @@
 <div
     x-data="{
-        backend: new Backend(),
+        api: new APIClient({errorHandler: APIClient.alertErrorHandler}),
         results: [],
         confirm: function(ssid) {
             $store.popup.obj.setResult(ssid);
@@ -8,8 +8,8 @@
         },
     }"
     x-init="
-        $store.popup.obj.onClose(() => backend.abort());
-        results = await backend.callFunction('post', '/wifi-scan');
+        $store.popup.obj.onClose(() => api.abort());
+        results = await api.postFunction('wifi-scan');
     "
 >
     <div class="fs-4 text-center" x-show="!results.length">

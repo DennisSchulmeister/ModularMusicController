@@ -1,0 +1,80 @@
+<div class="col">
+    <template x-if="viewMode === 'table'">
+        <div>
+            <button
+                type  = "button"
+                class  = "btn btn-primary active"
+                x-show = "canEdit && !editMode"
+                @click = "enterEditMode()"
+            >
+                Edit
+            </button>
+        
+            <div class="btn-group" x-show="editMode">
+                <button
+                    type   = "submit"
+                    class  = "btn btn-primary active"
+                    @click = "leaveEditMode(true)"
+                >
+                    Save
+                </button>
+        
+                <button
+                    type   = "button"
+                    class  = "btn btn-dark"
+                    x-show = "canCreate"
+                    @click = "viewCreationForm()"
+                >
+                    New
+                </button>
+        
+                <button
+                    type      = "button"
+                    class     = "btn btn-dark"
+                    x-show    = "canDelete && selected.length !== 0"
+                    @click    = "deleteSelected()"
+                >
+                    Delete
+                </button>
+        
+                <button
+                    type   = "button"
+                    class  = "btn btn-dark"
+                    @click = "leaveEditMode(false)"
+                >
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <template x-if="viewMode !== 'table' && !editMode">
+        <button
+            type   = "button"
+            class  = "btn btn-dark"
+            @click = "viewTable(false)"
+        >
+            Go Back
+        </button>
+    </template>
+
+    <template x-if="viewMode !== 'table' && editMode">
+        <div class="btn-group">
+            <button
+                type   = "button"
+                class  = "btn btn-primary active"
+                @click = "viewTable(true)"
+            >
+                Apply
+            </button>
+
+            <button
+                type   = "button"
+                class  = "btn btn-dark"
+                @click = "viewTable(false)"
+            >
+                Dismiss
+            </button>
+        </div>
+    </template>
+</div>

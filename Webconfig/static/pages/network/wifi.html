@@ -1,15 +1,19 @@
-<div x-data="new Backend('/config/wifi', {
-    'mode':     '',
-    'ssid':     '',
-    'psk':      '',
-    'username': '',
-    'password': '',
+<div x-data = "new ConfigForm({
+    config: 'wifi',
+    canEdit: true,
+    initial: {
+        'mode':     '',
+        'ssid':     '',
+        'psk':      '',
+        'username': '',
+        'password': '',
+    },
 })">
-    <form @submit.prevent="save">
+    <form @submit.prevent="">
         <div class="row mb-3">
             <div class="col-md-6">
                 <label class="form-label">WiFi Mode</label>
-                <select class="form-select" x-model="data.mode" :disabled="!edit">
+                <select class="form-select" x-model="data.mode" :disabled="!editMode">
                     <option value="disabled">Disabled</option>
                     <option value="access_point">Access Point</option>
                     <option value="station">Station/Client</option>
@@ -20,7 +24,7 @@
                 <button
                     type   = "button"
                     class  = "btn btn-dark"
-                    x-show = "edit && data.mode === 'station'"
+                    x-show = "editMode && data.mode === 'station'"
                     @click = "
                         let popup = new Popup({
                             title: 'Scan Networks',
@@ -45,10 +49,10 @@
                 <button
                     type   = "button"
                     class  = "btn btn-danger active"
-                    x-show = "!edit"
+                    x-show = "!editMode"
                     @click = "
                         if (confirm('Do you really want to reconnect the WiFi network?')) {
-                            await callFunction('post', '/wifi-reconnect');
+                            await api.postFunction('wifi-reconnect');
                             await showPage('pages/network/wifi-reconnect.html', '#page-content');
                         }
                     "
@@ -62,12 +66,12 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Network Name (SSID)</label>
-                    <input x-model="data.ssid" type="text" class="form-control" :readonly="!edit">
+                    <input x-model="data.ssid" type="text" class="form-control" :readonly="!editMode">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label">Access Key (PSK)</label>
-                    <input x-model="data.psk" type="password" class="form-control" :readonly="!edit">
+                    <input x-model="data.psk" type="password" class="form-control" :readonly="!editMode">
                 </div>
             </div>
         </template>
@@ -75,12 +79,12 @@
         <div class="row mb-3" x-show="data.mode === 'station'">
             <div class="col-md-6">
                 <label class="form-label">Username</label>
-                <input x-model="data.username" type="text" class="form-control" :readonly="!edit">
+                <input x-model="data.username" type="text" class="form-control" :readonly="!editMode">
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">Password</label>
-                <input x-model="data.password" type="password" class="form-control" :readonly="!edit">
+                <input x-model="data.password" type="password" class="form-control" :readonly="!editMode">
             </div>
         </div>
 
@@ -95,6 +99,6 @@
         </div>
 
         <div class="p-4"></div>
-        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+        <div x-init="showPage('components/config-form-buttons.html', $el)"></div>
     </form>
 </div>

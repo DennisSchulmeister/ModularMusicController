@@ -1,8 +1,130 @@
-<div x-data="new Backend('/config/mqtt-servers', [])">
-    <form @submit.prevent="save">
-        <p>MQTT Brokers</p>
-        
+<div x-data = "new ConfigTable({
+    config:    'mqtt-servers',
+    canEdit:   true,
+    canCreate: true,
+    canDelete: true,
+    initial:   [],
+
+    emptyLine: {
+        id:       '',
+        name:     '',
+        protocol: 'mqtt',
+        ip:       '',
+        port:     8883,
+        username: '',
+        password: '',
+        prefix:   '',
+    },
+
+    sortFn: (lhs, rhs) => {
+        if (lhs.id > rhs.id) return -1;
+        if (lhs.id < rhs.id) return 1;
+        return 0;
+    },
+})">
+    <form @submit.prevent="">
+        <!-- Table overview -->
+        <template x-if="viewMode === 'table'">
+            <div>
+                <p class="fw-light fst-italic" x-show="!data.length">
+                    There are no MQTT Brokers, yet.
+                </p>
+
+                <table class="table table-striped" x-show="data.length">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Prefix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="(entry, index) in data" :key="entry.id">
+                            <tr>
+                                <td class="d-flex gap-2 align-items-center">
+                                    <input
+                                        class   = "form-check-input"
+                                        type    = "checkbox"
+                                        x-show  = "editMode"
+                                        x-model = "selected"
+                                        :value  = "index">
+                                    <a
+                                        href   = "#"
+                                        class  = "d-flex gap-1"
+                                        x-text = "entry.id"
+                                        @click = "viewDetails(index)"
+                                        ></a>
+                                    </td>
+                                <td x-text="entry.name"></td>
+                                <td x-text="`${entry.protocol}://${entry.ip}:${entry.port}`"></td>
+                                <td x-text="entry.username"></td>
+                                <td x-text="entry.prefix"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+        <!-- Single entry -->
+        <template x-if="viewMode !== 'table'">
+            <div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Id</label>
+                        <input type="text" class="form-control" x-model.number="currentLine.id" :readonly="!editMode">
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" x-model.number="currentLine.name" :readonly="!editMode">
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Protocol</label>
+                        <select class="form-select" x-model="currentLine.protocol" :disabled="!editMode">
+                            <option value="mqtt">MQTT</option>
+                            <option value="ws">WebSocket</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-4">
+                        <label class="form-label">Host</label>
+                        <input type="text" class="form-control" x-model.number="currentLine.ip" :readonly="!editMode">
+                    </div>
+    
+                    <div class="col-md-4">
+                        <label class="form-label">Port</label>
+                        <input type="number" class="form-control" x-model.number="currentLine.port" :readonly="!editMode">
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" x-model="currentLine.username" :readonly="!editMode">
+                    </div>
+    
+                    <div class="col-md-6">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" x-model="currentLine.password" :readonly="!editMode">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md">
+                        <label class="form-label">Topic Prefix</label>
+                        <input type="text" class="form-control" x-model="currentLine.prefix" :readonly="!editMode">
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Buttons -->
         <div class="p-4"></div>
-        <div x-init="showPage('components/edit-buttons.html', $el)"></div>
+        <div x-init="showPage('components/config-table-buttons.html', $el)"></div>
     </form>
 </div>
