@@ -85,6 +85,16 @@
                             Hardware Controls
                         </a>
                     </li>
+                    <li class="nav-item ms-md-auto">
+                        <a
+                            @click         = "showPage('pages/export-import.html', '#page-content'); active = $el"
+                            :class         = "`nav-link ${active === $el ? 'active' : ''}  ${$store.nav.enabled ? '' : 'disabled'}`"
+                            :aria-current  = "active === $el ? 'page' : ''"
+                            :aria-disabled = "!$store.nav.enabled"
+                        >
+                            Export / Import
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>

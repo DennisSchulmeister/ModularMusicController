@@ -1,0 +1,40 @@
+<div x-data = "new ConfigTable({
+    config:    `control/${$store.control.board}/${$store.control.slot}/serial`,
+    canEdit:   true,
+    canCreate: true,
+    canDelete: true,
+    initial:   [],
+
+    emptyLine: {
+        send:      false,
+        receive:   false,
+        format:    'text',
+        data:      '',
+    },
+
+    sortFn: (lhs, rhs) => {
+        if (lhs.data > rhs.data) return -1;
+        if (lhs.data < rhs.data) return 1;
+
+        return 0;
+    },
+})">
+    <form @submit.prevent="">
+        <div class="card-body">
+            SERIAL MESSAGES
+        </div>
+
+        <div class="card-footer d-flex align-items-center gap-2">
+            <div x-init="showPage('components/config-form-buttons.html', $el)" class="flex-fill"></div>
+
+            <button
+                type           = "button"
+                @click         = "$store.control.goBack()"
+                :class         = "`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`"
+                :aria-disabled = "!$store.nav.enabled"
+            >
+                Back to Overview
+            </button>
+        </div>
+    </form>
+</div>

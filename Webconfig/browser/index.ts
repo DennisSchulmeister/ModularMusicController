@@ -24,6 +24,12 @@ window.addEventListener("DOMContentLoaded", () => {
         enabled: true,
     });
 
+    Alpine.store("control", {
+        board:  0,
+        slot:   0,
+        goBack: null,
+    });
+
     Alpine.start();
 });
 

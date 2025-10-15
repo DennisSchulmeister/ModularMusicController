@@ -1,6 +1,7 @@
 <div
     x-init = "showPage('components/tab-card.html', $el)"
     x-data = "{
+        title: 'Device Settings',
         tabs: [
             {id: 'parameters',  label: 'Global Parameters',    page: 'pages/device/parameters.html'},
             {id: 'connections', label: 'Hardware Connections', page: 'pages/device/connections.html'},

@@ -1,6 +1,7 @@
 <div
     x-init = "showPage('components/tab-card.html', $el)"
     x-data = "{
+        title: 'Network Settings',
         tabs: [
             {id: 'wifi', label: 'WiFi Connection',  page: 'pages/network/wifi.html'},
             {id: 'osc',  label: 'OSC Applications', page: 'pages/network/osc-servers.html'},

@@ -1,0 +1,20 @@
+<div class="card shadow" style="width: 50em; max-width: 100%;">
+    <div class="card-header">
+        <div class="text-center text-primary-emphasis">
+            Export / Import
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div
+            x-init = "showPage('components/tab-panel.html', $el)"
+            x-data = "{
+                tabs: [
+                    {id: 'export', label: 'Export Settings', page: 'pages/export-import/export.html'},
+                    {id: 'import', label: 'Import Settings', page: 'pages/export-import/import.html'},
+                ],
+                active: 'export',
+            }"
+        ><div>
+    </div>
+</div>

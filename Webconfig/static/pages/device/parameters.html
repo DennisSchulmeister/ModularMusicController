@@ -4,12 +4,15 @@
     initial: {'name': ''},
 })">
     <form @submit.prevent="">
-        <div class="mb-3">
-            <label class="form-label">Device Name:</label>
-            <input x-model="data.name" type="text" class="form-control" :readonly="!editMode">
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label">Device Name:</label>
+                <input x-model="data.name" type="text" class="form-control" :readonly="!editMode">
+            </div>
         </div>
 
-        <div class="p-4"></div>
-        <div x-init="showPage('components/config-form-buttons.html', $el)"></div>
+        <div class="card-footer">
+            <div x-init="showPage('components/config-form-buttons.html', $el)"></div>
+        </div>
     </form>
 </div>

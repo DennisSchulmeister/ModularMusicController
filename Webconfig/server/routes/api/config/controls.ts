@@ -21,7 +21,7 @@ import {db}               from "../../../database.js";
  * @param {Express.Application} app Express application
  */
 export default function registerRoutes(app: Application): void {
-    app.get("/api/config/control", async (req: Request, res: Response) => {
+    app.get("/api/config/controls", async (req: Request, res: Response) => {
         let result: {
             board:  number;
             slot:   number;

@@ -1,0 +1,38 @@
+<div x-data = "new ConfigForm({
+    config: `control/${$store.control.board}/${$store.control.slot}`,
+    canEdit: true,
+    initial: {
+        general: {
+            board: 0,
+            slot:  0,
+            type:  'generic',
+            name:  '',
+        },
+        inputs: {
+            a:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: '{A}',  decimals: 0, separator: ''},
+            b:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: '{B}',  decimals: 0, separator: ''},
+            c:  {from: 0.0, to: 1.0, initial: 0.0, placeholder: '{C}',  decimals: 0, separator: ''},
+            a0: {from: 0.0, to: 1.0, initial: 0.0, placeholder: '{A0}', decimals: 0, separator: ''},
+            a1: {from: 0.0, to: 1.0, initial: 0.0, placeholder: '{A0}', decimals: 0, separator: ''},
+        },
+    },
+})">
+    <form @submit.prevent="">
+        <div class="card-body">
+            CONTROL DETAILS
+        </div>
+
+        <div class="card-footer d-flex align-items-center gap-2">
+            <div x-init="showPage('components/config-form-buttons.html', $el)" class="flex-fill"></div>
+
+            <button
+                type           = "button"
+                @click         = "$store.control.goBack()"
+                :class         = "`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`"
+                :aria-disabled = "!$store.nav.enabled"
+            >
+                Back to Overview
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+<div class="row mb-3">
+    <div class="col-md">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" x-model="data.usb.midi.enabled" :disabled="!editMode">
+            <label class="form-check-label">Enable USB MIDI</label>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" x-model="data.midi.connectors" :disabled="!editMode">
+            <label class="form-check-label">Enable MIDI Connectors</label>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Supported Versions</label>
+
+    <div class="d-flex gap-4">
+        <div class="form-check">
+            <input
+                class     = "form-check-input"
+                type      = "checkbox"
+                value     = "1.0"
+                :disabled = "!editMode"
+                x-model   = "data.midi.versions"
+            >
+            <label class="form-check-label">MIDI 1.0</label>
+        </div>
+
+        <div class="form-check">
+            <input
+                class     = "form-check-input"
+                type      = "checkbox"
+                value     = "2.0"
+                :disabled = "!editMode"
+                x-model   = "data.midi.versions"
+            >
+            <label class="form-check-label">MIDI 2.0</label>
+        </div>
+    </div>
+</div>
