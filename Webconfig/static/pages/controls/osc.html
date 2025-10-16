@@ -25,11 +25,19 @@
 })">
     <form @submit.prevent="">
         <div class="card-body">
-            OSC MESSAGES
+            <!-- Table overview -->
+            <template x-if="viewMode === 'table'">
+                <span>OSC MESSAGES</span>
+            </template>
+
+            <!-- Single entry -->
+            <template x-if="viewMode !== 'table'">
+                <span>SINGLE OSC MESSAGE</span>
+            </template>
         </div>
 
         <div class="card-footer d-flex align-items-center gap-2">
-            <div x-init="showPage('components/config-form-buttons.html', $el)" class="flex-fill"></div>
+            <div x-init="showPage('components/config-table-buttons.html', $el)" class="flex-fill"></div>
 
             <button
                 type           = "button"
