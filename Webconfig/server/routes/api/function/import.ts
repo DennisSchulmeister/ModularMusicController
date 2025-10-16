@@ -180,11 +180,11 @@ export default function registerRoutes(app: Application): void {
                         name:  `Control ${board}-${slot}`,
                     },
                     inputs: {
-                        a:  _input(control.inputs?.a, "{A}"),
-                        b:  _input(control.inputs?.b, "{B}"),
-                        c:  _input(control.inputs?.c, "{C}"),
-                        a0: _input(control.inputs?.a0, "{A0}"),
-                        a1: _input(control.inputs?.a1, "{A1}"),
+                        a:  _input(control.base?.inputs?.a, "{A}"),
+                        b:  _input(control.base?.inputs?.b, "{B}"),
+                        c:  _input(control.base?.inputs?.c, "{C}"),
+                        a0: _input(control.base?.inputs?.a0, "{A0}"),
+                        a1: _input(control.base?.inputs?.a1, "{A1}"),
                     },
                 },
 
@@ -210,8 +210,8 @@ export default function registerRoutes(app: Application): void {
                 }
 
                 new_control.midi.push({
-                    send:     message.id   ? true : false,
-                    receive:  message.name ? true : false,
+                    send:     message.send    ? true : false,
+                    receive:  message.receive ? true : false,
                     channel:  parseInt(`${message.channel|| "0"}`.trim()),
                     message:  `${message.message || ""}`.trim() as MIDIMessageType,
                     data:     `${message.data    || ""}`.trim(),
@@ -242,8 +242,8 @@ export default function registerRoutes(app: Application): void {
                 }
 
                 new_control.osc.push({
-                    send:      message.id   ? true : false,
-                    receive:   message.name ? true : false,
+                    send:      message.send    ? true : false,
+                    receive:   message.receive ? true : false,
                     server:    `${message.server  || ""}`.trim(),
                     address:   `${message.address || ""}`.trim(),
                     arguments: args,
@@ -261,8 +261,8 @@ export default function registerRoutes(app: Application): void {
                 }
 
                 new_control.mqtt.push({
-                    send:    message.id   ? true : false,
-                    receive: message.name ? true : false,
+                    send:    message.send    ? true : false,
+                    receive: message.receive ? true : false,
                     server: `${message.server || ""}`.trim(),
                     topic:  `${message.topic  || ""}`.trim(),
                     format: `${message.format || ""}`.trim() as Format,
@@ -277,8 +277,8 @@ export default function registerRoutes(app: Application): void {
                 }
 
                 new_control.serial.push({
-                    send:    message.id   ? true : false,
-                    receive: message.name ? true : false,
+                    send:    message.send    ? true : false,
+                    receive: message.receive ? true : false,
                     format: `${message.format || ""}`.trim() as Format,
                     data:   `${message.data   || ""}`.trim(),
                 });
