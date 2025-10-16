@@ -24,7 +24,6 @@ import type {SerialWordLength} from "../../../../types/serial.js";
 import type {WiFiMode}         from "../../../../types/wifi.js";
 import type {AllData}          from "../../../database.js";
 
-import {controlTypes}          from "../../../../types/control.js";
 import {formats}               from "../../../../types/binary.js";
 import {midiMessageTypes}      from "../../../../types/midi.js";
 import {midiVersions}          from "../../../../types/midi.js";
@@ -83,11 +82,11 @@ export default function registerRoutes(app: Application): void {
 
         if (req.body?.wifi?.mode && !wiFiModes.includes(req.body.wifi.mode)) {
             throwError("invalid-value", "Invalid value for key 'wifi.mode'", 400);
-        } else if (req.body?.connections?.usb?.serial?.word_length && !serialWordLengths.includes(req.body.req.body.connections.usb.serial.word_length)) {
+        } else if (req.body?.connections?.usb?.serial?.word_length && !serialWordLengths.includes(req.body.connections.usb.serial.word_length)) {
             throwError("invalid-value", "Invalid value for key 'connections.usb.serial.word_length'", 400);
-        } else if (req.body?.connections?.usb?.serial?.parity && !serialParities.includes(req.body.req.body.connections.usb.serial.parity)) {
+        } else if (req.body?.connections?.usb?.serial?.parity && !serialParities.includes(req.body.connections.usb.serial.parity)) {
             throwError("invalid-value", "Invalid value for key 'connections.usb.serial.parity'", 400);
-        } else if (req.body?.connections?.usb?.serial?.stop_bits && !serialStopBits.includes(req.body.req.body.connections.usb.serial.stop_bits)) {
+        } else if (req.body?.connections?.usb?.serial?.stop_bits && !serialStopBits.includes(req.body.connections.usb.serial.stop_bits)) {
             throwError("invalid-value", "Invalid value for key 'connections.midi.serial.stop_bits'", 400);
         }
 
@@ -158,8 +157,8 @@ export default function registerRoutes(app: Application): void {
         for (let control of req.body?.controls || []) {
             i++;
 
-            let board = parseInt(control.general?.board);
-            let slot  = parseInt(control.general?.slot);
+            let board = parseInt(control.base?.general?.board);
+            let slot  = parseInt(control.base?.general?.slot);
 
             function _input(src: any|undefined, placeholder: string): InputParameters {
                 return {
@@ -257,7 +256,7 @@ export default function registerRoutes(app: Application): void {
                     throwError("invalid-value", `Invalid value for key 'controls[${i}].mqtt[${j}].server' - no such server`);
                 }
 
-                if (!formats.includes(req.body.format)) {
+                if (!formats.includes(message.format)) {
                     throwError("invalid-value", `Invalid value for key 'controls[${i}].mqtt[${j}].format'`, 400);
                 }
 

@@ -1,15 +1,54 @@
-<div class="fw-light fst-italic mb-4">
-    Here you can import the settings from another device. But note that
-    all existing settings will be overwritten during the import.
-</div>
+<div x-data="{
+    api: new APIClient({
+        errorHandler: APIClient.alertErrorHandler,
+    }),
+    working: false,
+}">
+    <div class="fw-light fst-italic mb-4">
+        Here you can import the settings from another device. But note that
+        all existing settings will be overwritten during the import.
+    </div>
 
-<div class="mb-3">
-    <label class="form-label">Import File</label>
-    <input class="form-control" type="file" id="import-file">
-</div>
+    <div class="mb-3">
+        <label class="form-label">Import File</label>
+        <input class="form-control" type="file" x-ref="importFile" :disabled="working">
+    </div>
 
-<div>
-    <button type="button" class="btn btn-dark">
-        Import Settings
-    </button>
+    <div>
+        <button
+            type      = "button"
+            class     = "btn btn-dark"
+            :disabled = "working"
+            @click    = "
+                if (!$refs.importFile.files.length) {
+                    alert('Please select a file first.');
+                    return;
+                }
+
+                let file = $refs.importFile.files[0];
+
+                if (file.type && file.type !== 'application/json') {
+                    if (!confirm('The selected file seems not to be in JSON format.')) return;
+                }
+
+                if (!file.name.endsWith('.mmc.json')) {
+                    if (!confirm('The file name does not end with \'.mmc.json\'. Continue?')) return;
+                }
+
+                working = true;
+
+                try {
+                    let config = JSON.parse(await file.text());
+                    await api.postFunction('import', config);
+                    alert('The settings were successfully imported.');
+                } catch (error) {
+                    alert(`File input error: ${error.message}`);
+                }
+
+                working = false;
+            "
+        >
+            Import Settings
+        </button>
+    </div>
 </div>

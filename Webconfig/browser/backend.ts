@@ -131,11 +131,22 @@ export class APIClient {
         try {
             let response = await fetch(url, {...options, signal: this.abortController.signal});
 
-            if (response.status == 201) {
-                return;
-            } else {
+            if (response.status == 200) {
                 let result = await response.json() as ResponseData;
                 return result;
+            } else if (response.status == 201) {
+                return;
+            } else {
+                let text = await response.text();
+                
+                try {
+                    let result = JSON.parse(text);
+                    if (result.message) text = result.message;
+                } catch {
+                    // Nothing to do
+                }
+
+                throw new Error(text);
             }
         } catch (error) {
             if ((error as Error).name === "AbortError") {
