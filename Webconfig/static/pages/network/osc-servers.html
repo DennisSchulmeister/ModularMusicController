@@ -47,14 +47,15 @@
                                             type    = "checkbox"
                                             x-show  = "editMode"
                                             x-model = "selected"
-                                            :value  = "index">
+                                            :value  = "index"
+                                        >
                                         <a
                                             href   = "#"
-                                            class  = "d-flex gap-1"
                                             x-text = "entry.id"
                                             @click = "viewDetails(index)"
-                                            ></a>
-                                        </td>
+                                        >
+                                        </a>
+                                    </td>
                                     <td x-text="entry.name"></td>
                                     <td x-text="`${entry.protocol}://${entry.ip}:${entry.port}`"></td>
                                     <td x-text="entry.prefix"></td>
@@ -71,11 +72,11 @@
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label class="form-label">Id</label>
-                            <input type="text" class="form-control" x-model.number="currentLine.id" :readonly="!editMode">
+                            <input type="text" class="form-control" x-model="currentLine.id" :readonly="!editMode">
                         </div>
                         <div class="col-md-8">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control" x-model.number="currentLine.name" :readonly="!editMode">
+                            <input type="text" class="form-control" x-model="currentLine.name" :readonly="!editMode">
                         </div>
                     </div>
         
@@ -90,7 +91,7 @@
         
                         <div class="col-md-4">
                             <label class="form-label">Host</label>
-                            <input type="text" class="form-control" x-model.number="currentLine.ip" :readonly="!editMode">
+                            <input type="text" class="form-control" x-model="currentLine.ip" :readonly="!editMode">
                         </div>
         
                         <div class="col-md-4">
