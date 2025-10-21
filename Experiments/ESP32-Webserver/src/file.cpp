@@ -8,6 +8,7 @@
  */
 
 #include "file.h"
+#include <algorithm>        // std::min
 #include <cstring>          // std::memset
 #include <esp_log.h>        // ESP_LOG…
 #include <filesystem>       // std::filesystem
@@ -34,6 +35,11 @@ IFF_Reader::IFF_Reader(std::string filename)
     }
 }
 
+void IFF_Reader::close() {
+    if (!file.is_open()) return;
+    file.close();
+}
+
 ReadChunk IFF_Reader::peek() {
     ReadChunk header;
     if (!file.is_open())             return header;   // File not found
@@ -54,7 +60,10 @@ ReadChunk IFF_Reader::peek() {
 
 void IFF_Reader::skip() {
     ReadChunk header = peek();
-    cursor[level].offset += sizeof(header) + header.size;
+
+    if (!cursor[level].end_reached()) {
+        cursor[level].offset += sizeof(header) + header.size;
+    }
 }
 
 ReadChunk IFF_Reader::chunk(char* buffer, size_t maxlen) {
@@ -65,7 +74,7 @@ ReadChunk IFF_Reader::chunk(char* buffer, size_t maxlen) {
         auto pos = cursor[level].start + cursor[level].offset + sizeof(header);
         file.clear();
         file.seekg(pos, std::ios::beg);
-        file.read(buffer, maxlen);
+        file.read(buffer, std::min(static_cast<size_t>(header.size), maxlen));
     }
 
     if (!cursor[level].end_reached()) {
@@ -76,8 +85,10 @@ ReadChunk IFF_Reader::chunk(char* buffer, size_t maxlen) {
 }
 
 bool IFF_Reader::enter() {
+    if (!file.is_open()) return false;
+
     if (level >= MY_FILE_NESTING_LEVEL) {
-        ESP_LOGE(TAG, "Maximum IFF file nesting level exceeded! Please increase MY_FILE_NESTING_LEVEL.");
+        ESP_LOGE(TAG, "IFF_Reader::enter() called too often, MY_FILE_NESTING_LEVEL exceeded!");
         
         too_deep++;
         return false;
@@ -86,7 +97,7 @@ bool IFF_Reader::enter() {
     ReadChunk header = peek();
 
     cursor[level + 1] = {
-        .start  = cursor[level].offset + sizeof(header),                  /// TODO: ???
+        .start  = cursor[level].offset + sizeof(header),
         .end    = cursor[level].offset + sizeof(header) + header.size,
         .offset = 0,
     };
@@ -94,20 +105,65 @@ bool IFF_Reader::enter() {
     cursor[level].offset = cursor[level + 1].end;
 
     level++;
-    return cursor[level].has_data();
+    return peek().has_data();
 }
 
 void IFF_Reader::leave() {
+    if (!file.is_open()) return;
+
     if (too_deep > 0) {
         too_deep--;
         return;
     }
 
-    if (level > 0) level--;
+    if (level <= 0) {
+        ESP_LOGE(TAG, "IFF_Reader::leave() called too often!");
+    } else {
+        level--;
+    }
 }
 
 ////////////////////////////
 ///// class IFF_Writer /////
 ////////////////////////////
+
+IFF_Writer::IFF_Writer(std::string filename)
+    : file{filename, std::fstream::out | std::fstream::binary},
+      level{0},
+      cursor{},
+      too_deep(0)
+{
+}
+
+void IFF_Writer::close() {
+    if (!file.is_open()) return;
+    file.close();
+}
+
+void IFF_Writer::chunk(ChunkHeader header, const char* data) {
+    if (!file.is_open()) return;
+
+    file.write(header.type.code.data(), header.type.code.size());
+    file.write(reinterpret_cast<const char *>(&header.size), sizeof(header.size));
+    file.write(data, header.size);
+
+    auto written_size     = header.type.code.size() + sizeof(header.size) + header.size;
+    cursor[level].end    += written_size;
+    cursor[level].offset += written_size;
+
+    // TODO: How to use the cursor entries for nested lists?
+}
+
+void IFF_Writer::start_list(FourCC type) {
+    if (!file.is_open()) return;
+
+    // TODO
+}
+
+void IFF_Writer::end_list() {
+    if (!file.is_open()) return;
+
+    // TODO
+}
 
 } // namespace my_file
