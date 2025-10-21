@@ -1,4 +1,4 @@
-<div x-data = "new ConfigTable({
+<div x-data="new ConfigTable({
     config:    `control/${$store.control.board}/${$store.control.slot}/serial`,
     canEdit:   true,
     canCreate: true,
@@ -6,43 +6,84 @@
     initial:   [],
 
     emptyLine: {
-        send:      false,
-        receive:   false,
-        format:    'text',
-        data:      '',
+        send:    false,
+        receive: false,
+        format:  'text',   // 'text' | 'binary'
+        data:    '',
     },
 
-    sortFn: (lhs, rhs) => {
-        if (lhs.data > rhs.data) return -1;
-        if (lhs.data < rhs.data) return 1;
-
-        return 0;
-    },
+    sortFn: (a,b) => a.data.localeCompare(b.data),
 })">
     <form @submit.prevent="">
         <div class="card-body">
-            <!-- Table overview -->
             <template x-if="viewMode === 'table'">
-                <span>SERIAL MESSAGES</span>
+                <div>
+                    <p class="fw-light fst-italic" x-show="!data.length">There are no serial messages yet.</p>
+                    <table class="table table-striped" x-show="data.length">
+                        <thead>
+                            <tr>
+                                <th>Nr.</th>
+                                <th>Send</th>
+                                <th>Receive</th>
+                                <th>Format</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template x-for="(e,i) in data" :key="i">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <input class="form-check-input" type="checkbox" x-show="editMode" x-model="selected" :value="i">
+                                            <a href="#" x-text="i+1" @click="viewDetails(i)"></a>
+                                        </div>
+                                    </td>
+                                    <td><input class="form-check-input" type="checkbox" x-model="e.send" :value="true" disabled></td>
+                                    <td><input class="form-check-input" type="checkbox" x-model="e.receive" :value="true" disabled></td>
+                                    <td x-text="e.format"></td>
+                                    <td class="text-truncate" style="max-width:24rem;" x-text="e.data"></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
             </template>
 
-            <!-- Single entry -->
             <template x-if="viewMode !== 'table'">
-                <span>SINGLE SERIAL MESSAGE</span>
+                <div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" x-model="currentLine.send" :disabled="!editMode">
+                                <label class="form-check-label">Send Message</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" x-model="currentLine.receive" :disabled="!editMode">
+                                <label class="form-check-label">Receive Message</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Format</label>
+                            <select class="form-select" x-model="currentLine.format" :disabled="!editMode">
+                                <option value="text">Text</option>
+                                <option value="binary">Binary</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Data</label>
+                        <input type="text" class="form-control" x-model="currentLine.data" :readonly="!editMode" placeholder="ASCII / 0xFF / {A0}">
+                    </div>
+                </div>
             </template>
         </div>
 
         <div class="card-footer d-flex align-items-center gap-2">
             <div x-init="showPage('components/config-table-buttons.html', $el)" class="flex-fill"></div>
-
-            <button
-                type           = "button"
-                @click         = "$store.control.goBack()"
-                :class         = "`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`"
-                :aria-disabled = "!$store.nav.enabled"
-            >
-                Back to Overview
-            </button>
+            <button type="button" @click="$store.control.goBack()" :class="`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`" :aria-disabled="!$store.nav.enabled">Back to Overview</button>
         </div>
     </form>
 </div>

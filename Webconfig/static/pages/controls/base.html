@@ -22,6 +22,67 @@
             CONTROL DETAILS
         </div>
 
+         <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Board</label>
+                    <input type="number" class="form-control" :value="$store.control.board" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Slot</label>
+                    <input type="number" class="form-control" :value="$store.control.slot" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Type</label>
+                    <input type="text" class="form-control" :value="$store.control.type" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" x-model="data.general.name" :readonly="!editMode">
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h6 class="mb-2">Value Ranges &amp; Placeholders</h6>
+            <p class="fw-light fst-italic">
+                Hinweis: Für MIDI 1.0 werden Bereiche 0.0-1.0 intern nach 0-127 umgerechnet.
+                Für MIDI 2.0 je nach Nachrichtentyp nach 0-65 536 bzw. 0-4 294 967 296.
+            </p>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th style="width:8rem;">Input</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Initial</th>
+                            <th>Placeholder</th>
+                            <th>Decimals</th>
+                            <th>Separator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="key in ['a','b','c','a0','a1']" :key="key">
+                            <tr>
+                                <td class="fw-semibold" x-text="key.toUpperCase()"></td>
+                                <td><input type="number" step="any" class="form-control" x-model.number="data.inputs[key].from" :readonly="!editMode"></td>
+                                <td><input type="number" step="any" class="form-control" x-model.number="data.inputs[key].to" :readonly="!editMode"></td>
+                                <td><input type="number" step="any" class="form-control" x-model.number="data.inputs[key].initial" :readonly="!editMode"></td>
+                                <td><input type="text" class="form-control" x-model="data.inputs[key].placeholder" :readonly="!editMode"></td>
+                                <td><input type="number" class="form-control" x-model.number="data.inputs[key].decimals" :readonly="!editMode"></td>
+                                <td><input type="text" class="form-control" x-model="data.inputs[key].separator" :readonly="!editMode" placeholder="."></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="fw-light fst-italic mb-0">
+                Tipp: Nicht benötigte Eingänge können im UI ausgeblendet werden - bleiben aber konfigurierbar.
+            </p>
+        </div>
+
         <div class="card-footer d-flex align-items-center gap-2">
             <div x-init="showPage('components/config-form-buttons.html', $el)" class="flex-fill"></div>
 

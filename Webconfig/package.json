@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "start": "conc -c auto -n browser,server 'npm run watch:browser' 'npm run watch:server'",
+    "start": "concurrently -c auto -n browser,server \"npm run watch:browser\" \"npm run watch:server\"",
     "watch:browser": "tsx bin/esbuild.ts --watch",
     "watch:server": "tsx watch --exclude db.json server/main.ts",
     "debug": "tsx watch --inspect-brk src/main.ts",
