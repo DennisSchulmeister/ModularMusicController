@@ -54,9 +54,9 @@ export default function registerRoutes(app: Application): void {
                 if (!formats.includes(argument.format)) throwError("invalid-value", `Invalid value for key '[${i}].arguments[${j}].format'`, 400);
 
                 args.push({
-                    type:   `${message.type   || ""}`.trim() as OSCType,
-                    format: `${message.format || ""}`.trim() as Format,
-                    value:  `${message.value  || ""}`.trim(),
+                    type:   `${argument.type   || ""}`.trim() as OSCType,
+                    format: `${argument.format || ""}`.trim() as Format,
+                    value:  `${argument.value  || ""}`.trim(),
                 });
             }
 

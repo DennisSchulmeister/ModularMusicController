@@ -7,7 +7,7 @@
 
     extra: {
         servers: [{id: 't1', name: 'Test Server 1'}, {id: 't2', name: 'Test Server 2'}],
-        selected_arguments: [],
+        selectedArguments: [],
 
         argumentTypeLabel: t => {
             switch (t) {
@@ -21,7 +21,7 @@
                 case 'N': return 'NIL';     break;
                 default:  return t;
             }
-        }
+        },
     },
 
     emptyLine: {
@@ -149,17 +149,17 @@
                         
                         <template x-for="(argument, index) in currentLine.arguments" :key="index">
                             <tr>
-                                <td class="pt-2 pb-2">
+                                <td class="p-2">
                                     <input
                                         class   = "form-check-input"
                                         type    = "checkbox"
                                         x-show  = "editMode"
-                                        x-model = "extra.selected_arguments"
+                                        x-model = "extra.selectedArguments"
                                         :value  = "index"
                                     >
                                     <span x-text="index + 1"></span>
                                 </td>
-                                <td class="pt-2 pb-2">
+                                <td class="p-2">
                                     <select class="form-select" x-model="argument.type" :disabled="!editMode">
                                         <option value="i">Integer</option>
                                         <option value="f">Float</option>
@@ -171,13 +171,13 @@
                                         <option value="N">NIL</option>
                                     </select>
                                 </td>
-                                <td class="pt-2 pb-2" style="width: 7em;">
+                                <td class="p-2" style="width: 8em;">
                                     <select class="form-select" x-model="argument.format" :disabled="!editMode">
                                         <option value="text">Text</option>
                                         <option value="binary">Binary</option>
                                     </select>
                                 </td>
-                                <td class="pt-2 pb-2">
+                                <td class="p-2">
                                     <input
                                         type      = "text"
                                         class     = "form-control flex-grow-1"
@@ -189,8 +189,32 @@
                         </template>
                     </table>
     
-                    <div>
-                        TABLE EDIT ACTIONS
+                    <div x-show="editMode">
+                        <div class="d-flex gap-1">
+                            <button
+                                type   = "button"
+                                class  = "btn"
+                                @click = "currentLine.arguments.push({
+                                    type:   'i',
+                                    format: 'binary',
+                                    value:  '',
+                                })"
+                            >
+                                New
+                            </button>
+                    
+                            <button
+                                type      = "button"
+                                class     = "btn"
+                                x-show    = "extra.selectedArguments.length !== 0"
+                                @click    = "
+                                    currentLine.arguments = currentLine.arguments.filter((e, i) => !extra.selectedArguments.includes(`${i}`));
+                                    extra.selectedArguments = [];
+                                "
+                            >
+                                Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
             </template>
