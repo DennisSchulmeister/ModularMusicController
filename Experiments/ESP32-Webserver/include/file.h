@@ -94,7 +94,7 @@ struct FourCC {
  */
 struct ChunkHeader {
     FourCC type;                    ///< Chunk type
-    uint32_t size;                  ///< Number of bytes following the header
+    uint32_t size = 0;              ///< Number of bytes following the header
 
     /**
      * Check if the chunk has a size greater than zero.
@@ -112,7 +112,9 @@ struct ReadChunk : ChunkHeader {
 };
 
 /**
- * Internal read/write cursor to keep track of the file structure.
+ * Internal read/write cursor to keep track of the file structure. The cursor
+ * contains the start and end position of a data chunk. To support nested chunks
+ * an additional offset points to the next unread child chunk.
  */
 struct Cursor {
     std::streampos start;           ///< Start position of the chunk
@@ -142,11 +144,18 @@ public:
     /**
      * Open a file for reading. If the file doesn't exist nothing happens but reading
      * from the file will just return zero length chunks with four spaces as chunk type.
-     * The file will be automatically closed when the object is destroyed.
+     *
+     * The file will be automatically closed when the object is destroyed but can also be
+     * manually closed by calling `close()`.
      * 
      * @param[in] filename Filename
      */
     IFF_Reader(std::string filename) noexcept;
+
+    /**
+     * Close the file so that it cannot be read anymore.
+     */
+    void close() noexcept;
 
     /**
      * Preview the next chunk header. This either returns the next header without consuming
@@ -202,58 +211,59 @@ private:
     size_t too_deep;                                        ///< By which amount the maximum nesting depth is exceeded
 };
 
-// /**
-//  * Simplified IFF file writer. Overwrites the whole file with the given chunks.
-//  * 
-//  * Note that there is a maximum depth of nested lists as defined by `MY_FILE_NESTING_LEVEL`.
-//  * This allows us to work with pre-allocated memory of a fixed size.
-//  */
-// class IFF_Writer {
-// public:
-//     /**
-//      * Open a file for writing, possibly destroying all contents, if the file already exists.
-//      * It is simply assumed that the client will always write out the whole IFF file, even
-//      * when only changing a few bytes of it.
-//      * 
-//      * @param[in] filename Filename
-//      */
-//     IFF_Writer(std::string filename) noexcept;
-// 
-//     /**
-//      * Used internally to append a list of chunks.
-//      * 
-//      * @param[in] file Already opened binary file
-//      * @param[in] offset Byte offset to the list start
-//      */
-//     IFF_Writer(FILE* file, size_t offset) noexcept;
+/**
+ * Simplified IFF file writer. Overwrites the whole file with the given chunks.
+ * 
+ * Note that there is a maximum depth of nested lists as defined by `MY_FILE_NESTING_LEVEL`.
+ * This allows us to work with pre-allocated memory of a fixed size.
+ */
+class IFF_Writer {
+public:
+    /**
+     * Open a file for writing, possibly destroying all contents, if the file already exists.
+     * It is simply assumed that the client will always write out the whole IFF file, even
+     * when only changing a few bytes of it.
+     * 
+     * The file will be automatically closed when the object is destroyed but can also be
+     * manually closed by calling `close()`.
+     * 
+     * @param[in] filename Filename
+     */
+    IFF_Writer(std::string filename) noexcept;
 
-//     /**
-//      * Append a new chunk to the file.
-//      * 
-//      * @param[in] type Chunk type
-//      * @param[in] buffer Byte buffer to read from
-//      * @param[in] maxlen Buffer size
-//      */
-//     chunk_header_t chunk(char const * type, uint32_t size, void* buffer) noexcept;
-// 
-//     /**
-//      * Start a new child list of chunks. This returns a new object as a view on the source code.
-//      * Once the list is finished, `end_list()` must be called and afterwards only the parent
-//      * IFF writer shall be used.
-//      */
-//     IFF_Writer list(char const * type) noexcept;
-// 
-//     /**
-//      * Only relevant for chunk lists. This writes the final length of the whole list
-//      * in the length field of the parent chunk.
-//      */
-//     void end_list() noexcept;
-// 
-// private:
-//     FILE* file;         ///< File pointer
-//     size_t offset;      ///< Start offset in the file
-//     size_t index;       ///< Current writing offset in the file
-//     bool owner;         ///< File must be closed in the destructor
-// };
+    /**
+     * Close the file so that it cannot be changed anymore.
+     */
+    void close() noexcept;
+
+    /**
+     * Append a new chunk to the file. Note that the given chunk header must contain the size
+     * of the data buffer to be written.
+     * 
+     * @param[in] header Chunk header
+     * @param[in] data Chunk data
+     */
+    void chunk(ChunkHeader header, const char* data) noexcept;
+
+    /**
+     * Start a nested list. This writes a temporary chunk header for the whole list and remembers
+     * its position in an internal buffer. Subsequent calls to `chunk()` append entries to the list
+     * until `end_list()` is called to finish the list. Note that lists can be nested up to the level
+     * defined by `MY_FILE_NESTING_LEVEL`.
+     */
+    void start_list(FourCC type) noexcept;
+
+    /**
+     * Only relevant for chunk lists. This writes the final length of the whole list
+     * in the length field of the parent chunk.
+     */
+    void end_list() noexcept;
+
+private:
+    std::fstream file;                                      ///< File stream
+    size_t level;                                           ///< Current index in the cursor table
+    std::array<Cursor, MY_FILE_NESTING_LEVEL> cursor{};     ///< Read cursors for nested chunks
+    size_t too_deep;                                        ///< By which amount the maximum nesting depth is exceeded
+};
 
 } // namespace my_file
