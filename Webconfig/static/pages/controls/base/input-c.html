@@ -1,0 +1,28 @@
+<div class="row mb-3 g-3">
+    <div class="col-md-4">
+        <label class="form-label">From Value</label>
+        <input x-model="data.inputs.c.from" type="number" :step="1.0 / 10 ** data.inputs.c.decimals" class="form-control" :readonly="!editMode">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">To Value</label>
+        <input x-model="data.inputs.c.to" type="number" :step="1.0 / 10 ** data.inputs.c.decimals" class="form-control" :readonly="!editMode">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Initial Value</label>
+        <input x-model="data.inputs.c.initial" type="number" :step="1.0 / 10 ** data.inputs.c.decimals" class="form-control" :readonly="!editMode">
+    </div>
+</div>
+
+<div class="row mb-3 g-3">
+    <div class="col-md-4">
+        <label class="form-label">Decimals</label>
+        <input x-model="data.inputs.c.decimals" type="number" step="1" class="form-control" :readonly="!editMode">
+    </div>
+
+    <div class="col-md-8">
+        <label class="form-label">Placeholder</label>
+        <input x-model="data.inputs.c.placeholder" type="text" class="form-control" :readonly="!editMode">
+    </div>
+</div>

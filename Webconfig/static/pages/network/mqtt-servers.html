@@ -31,48 +31,52 @@
                         There are no MQTT Brokers, yet.
                     </p>
 
-                    <table class="table table-striped" x-show="data.length">
-                        <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Prefix</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <template x-for="(entry, index) in data" :key="entry.id">
+                    <div class="table-responsive">
+                        <table class="table table-striped" x-show="data.length">
+                            <thead>
                                 <tr>
-                                    <td class="d-flex gap-2 align-items-center">
-                                        <input
-                                            class   = "form-check-input"
-                                            type    = "checkbox"
-                                            x-show  = "editMode"
-                                            x-model = "selected"
-                                            :value  = "index"
-                                        >
-                                        <a
-                                            href   = "#"
-                                            x-text = "entry.id"
-                                            @click = "viewDetails(index)"
-                                        ></a>
-                                        </td>
-                                    <td x-text="entry.name"></td>
-                                    <td x-text="`${entry.protocol}://${entry.ip}:${entry.port}`"></td>
-                                    <td x-text="entry.username"></td>
-                                    <td x-text="entry.prefix"></td>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Prefix</th>
                                 </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <template x-for="(entry, index) in data" :key="entry.id">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <input
+                                                    class   = "form-check-input"
+                                                    type    = "checkbox"
+                                                    x-show  = "editMode"
+                                                    x-model = "selected"
+                                                    :value  = "index"
+                                                >
+                                                <a
+                                                    href   = "#"
+                                                    x-text = "entry.id"
+                                                    @click = "viewDetails(index)"
+                                                ></a>
+                                            </div>
+                                        </td>
+                                        <td x-text="entry.name"></td>
+                                        <td x-text="`${entry.protocol}://${entry.ip}:${entry.port}`"></td>
+                                        <td x-text="entry.username"></td>
+                                        <td x-text="entry.prefix"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </template>
 
             <!-- Single entry -->
             <template x-if="viewMode !== 'table'">
                 <div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md-4">
                             <label class="form-label">Id</label>
                             <input type="text" class="form-control" x-model="currentLine.id" :readonly="!editMode">
@@ -83,7 +87,7 @@
                         </div>
                     </div>
         
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md-4">
                             <label class="form-label">Protocol</label>
                             <select class="form-select" x-model="currentLine.protocol" :disabled="!editMode">
@@ -103,7 +107,7 @@
                         </div>
                     </div>
         
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md-6">
                             <label class="form-label">Username</label>
                             <input type="text" class="form-control" x-model="currentLine.username" :readonly="!editMode">
@@ -115,7 +119,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md">
                             <label class="form-label">Topic Prefix</label>
                             <input type="text" class="form-control" x-model="currentLine.prefix" :readonly="!editMode">

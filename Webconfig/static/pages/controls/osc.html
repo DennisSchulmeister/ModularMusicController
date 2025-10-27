@@ -54,68 +54,72 @@
                         There are no OSC Messages, yet.
                     </p>
 
-                    <table class="table table-striped" x-show="data.length">
-                        <thead>
-                            <tr scope="col">
-                                <th scope="col">Nr.</th>
-                                <th scope="col">Send</th>
-                                <th scope="col">Receive</th>
-                                <th scope="col">Server</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Arguments</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <template x-for="(entry, index) in data" :key="index">
+                    <div class="table-responsive">
+                        <table class="table table-striped" x-show="data.length">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <div class="d-flex gap-2 align-items-center">
-                                            <input
-                                                class   = "form-check-input"
-                                                type    = "checkbox"
-                                                x-show  = "editMode"
-                                                x-model = "selected"
-                                                :value  = "index"
-                                            >
-                                            <a
-                                                href   = "#"
-                                                x-text = "index + 1"
-                                                @click = "viewDetails(index); extra.selected_arguments = []"
-                                            >
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input class="form-check-input" type="checkbox" x-model="entry.read" :value="true" disabled>
-                                    </td>
-                                    <td>
-                                        <input class="form-check-input" type="checkbox" x-model="entry.write" :value="true" disabled>
-                                    </td>
-                                    <td x-text="entry.server"></td>
-                                    <td x-text="entry.address"></td>
-                                    <td class="d-flex gap-1">
-                                        <template x-for="arg in entry.arguments">
-                                            <span x-text="extra.argumentTypeLabel(arg.type)"></span>
-                                        </template>
-                                    </td>
+                                    <th scope="col">Nr.</th>
+                                    <th scope="col">Send</th>
+                                    <th scope="col">Receive</th>
+                                    <th scope="col">Server</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Arguments</th>
                                 </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                            </thead>
+    
+                            <tbody>
+                                <template x-for="(entry, index) in data" :key="index">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <input
+                                                    class   = "form-check-input"
+                                                    type    = "checkbox"
+                                                    x-show  = "editMode"
+                                                    x-model = "selected"
+                                                    :value  = "index"
+                                                >
+                                                <a
+                                                    href   = "#"
+                                                    x-text = "index + 1"
+                                                    @click = "viewDetails(index); extra.selected_arguments = []"
+                                                ></a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" x-model="entry.read" :value="true" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" x-model="entry.write" :value="true" disabled>
+                                        </td>
+                                        <td x-text="entry.server"></td>
+                                        <td x-text="entry.address"></td>
+                                        <td class="text-truncate">
+                                            <div class="d-flex gap-1">
+                                                <template x-for="arg in entry.arguments">
+                                                    <span x-text="extra.argumentTypeLabel(arg.type)"></span>
+                                                </template>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </template>
 
             <!-- Single entry -->
             <template x-if="viewMode !== 'table'">
                 <div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md-3">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" x-model="currentLine.send" :disabled="!editMode">
                                 <label class="form-check-label">Send Message</label>
                             </div>
                         </div>
+
                         <div class="col-md-3">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" x-model="currentLine.receive" :disabled="!editMode">
@@ -124,7 +128,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-5">
+                    <div class="row mb-5 g-3">
                         <div class="col-md-6">
                             <label class="form-label">OSC Server</label>
                             <select class="form-select" x-model="currentLine.server" :disabled="!editMode">
@@ -133,6 +137,7 @@
                                 </template>
                             </select>
                         </div>
+
                         <div class="col-md-6">
                             <label class="form-label">Address</label>
                             <input type="text" class="form-control" x-model="currentLine.address" :readonly="!editMode">
@@ -141,56 +146,59 @@
 
                     <h5>Arguments</h5>
 
-                    <table class="table table-striped" x-show="currentLine.arguments.length">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nr.</th>
-                                <th scope="col">Data Type</th>
-                                <th scope="col" colspan="2">Value</td>
-                            </tr>
-                        </thead>
-                        
-                        <template x-for="(argument, index) in currentLine.arguments" :key="index">
-                            <tr>
-                                <td class="p-2">
-                                    <input
-                                        class   = "form-check-input"
-                                        type    = "checkbox"
-                                        x-show  = "editMode"
-                                        x-model = "extra.selectedArguments"
-                                        :value  = "index"
-                                    >
-                                    <span x-text="index + 1"></span>
-                                </td>
-                                <td class="p-2">
-                                    <select class="form-select" x-model="argument.type" :disabled="!editMode">
-                                        <option value="i">Integer</option>
-                                        <option value="f">Float</option>
-                                        <option value="s">String</option>
-                                        <option value="b">Bytes</option>
-                                        <option value="S">Symbol</option>
-                                        <option value="T">True</option>
-                                        <option value="F">False</option>
-                                        <option value="N">NIL</option>
-                                    </select>
-                                </td>
-                                <td class="p-2" style="width: 8em;">
-                                    <select class="form-select" x-model="argument.format" :disabled="!editMode">
-                                        <option value="text">Text</option>
-                                        <option value="binary">Binary</option>
-                                    </select>
-                                </td>
-                                <td class="p-2">
-                                    <input
-                                        type      = "text"
-                                        class     = "form-control flex-grow-1"
-                                        x-model   = "argument.value"
-                                        :readonly = "!editMode && !['T', 'F', 'N'].includes(argument.type)"
-                                    >
-                                </td>
-                            </tr>
-                        </template>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-striped" x-show="currentLine.arguments.length">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nr.</th>
+                                    <th scope="col">Data Type</th>
+                                    <th scope="col" colspan="2">Value</td>
+                                </tr>
+                            </thead>
+                            
+                            <template x-for="(argument, index) in currentLine.arguments" :key="index">
+                                <tr>
+                                    <td class="p-2">
+                                        <input
+                                            class   = "form-check-input"
+                                            type    = "checkbox"
+                                            x-show  = "editMode"
+                                            x-model = "extra.selectedArguments"
+                                            :value  = "index"
+                                        >
+                                        <span x-text="index + 1"></span>
+                                    </td>
+                                    <td class="p-2">
+                                        <select class="form-select" x-model="argument.type" :disabled="!editMode">
+                                            <option value="i">Integer</option>
+                                            <option value="f">Float</option>
+                                            <option value="s">String</option>
+                                            <option value="b">Bytes</option>
+                                            <option value="S">Symbol</option>
+                                            <option value="T">True</option>
+                                            <option value="F">False</option>
+                                            <option value="N">NIL</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-2" style="width: 8em;">
+                                        <select class="form-select" x-model="argument.format" :disabled="!editMode">
+                                            <option value="text">Text</option>
+                                            <option value="binary">Binary</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-2">
+                                        <input
+                                            type        = "text"
+                                            class       = "form-control flex-grow-1"
+                                            x-model     = "argument.value"
+                                            :readonly   = "!editMode && !['T', 'F', 'N'].includes(argument.type)"
+                                            placeholder = "ASCII / 0xFF / {A0}"
+                                        >
+                                    </td>
+                                </tr>
+                            </template>
+                        </table>
+                    </div>
     
                     <div x-show="editMode">
                         <div class="d-flex gap-1">

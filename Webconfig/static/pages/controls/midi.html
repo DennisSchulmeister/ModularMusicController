@@ -6,32 +6,30 @@
     initial:   [],
 
     extra: {
-        versions: ['1.0','2.0','both'],
         types: [
-            {v:'80', l:'80  - Note Off'},
-            {v:'90', l:'90  - Note On'},
-            {v:'A0', l:'A0  - Poly Key Pressure'},
-            {v:'B0', l:'B0  - Control Change'},
-            {v:'C0', l:'C0  - Program Change'},
-            {v:'D0', l:'D0  - Channel Pressure'},
-            {v:'E0', l:'E0  - Pitch Bend'},
-            {v:'F0', l:'F0  - System Exclusive'},
-            {v:'F1', l:'F1  - Time Code Quarter Frame'},
-            {v:'F2', l:'F2  - Song Position Pointer'},
-            {v:'F3', l:'F3  - Song Select'},
-            {v:'F6', l:'F6  - Tune Request'},
-            {v:'F8', l:'F8  - Timing Clock'},
-            {v:'FA', l:'FA  - Start'},
-            {v:'FB', l:'FB  - Continue'},
-            {v:'FC', l:'FC  - Stop'},
-            {v:'FF', l:'FF  - System Reset'},
+            {value: '80', label: '0x80 – Note Off'},
+            {value: '90', label: '0x90 – Note On'},
+            {value: 'A0', label: '0xA0 – Poly Key Pressure'},
+            {value: 'B0', label: '0xB0 – Control Change'},
+            {value: 'C0', label: '0xC0 – Program Change'},
+            {value: 'D0', label: '0xD0 – Channel Pressure'},
+            {value: 'E0', label: '0xE0 – Pitch Bend'},
+            {value: 'F0', label: '0xF0 – System Exclusive'},
+            {value: 'F1', label: '0xF1 – Time Code Quarter Frame'},
+            {value: 'F2', label: '0xF2 – Song Position Pointer'},
+            {value: 'F3', label: '0xF3 – Song Select'},
+            {value: 'F6', label: '0xF6 – Tune Request'},
+            {value: 'F8', label: '0xF8 – Timing Clock'},
+            {value: 'FA', label: '0xFA – Start'},
+            {value: 'FB', label: '0xFB – Continue'},
+            {value: 'FC', label: '0xFC – Stop'},
+            {value: 'FF', label: '0xFF – System Reset'},
         ],
     },
 
     emptyLine: {
         send:     false,
         receive:  false,
-        version:  'both',   // '1.0' | '2.0' | 'both'
         channel:  -1,       // -1 = unused
         message:  '',
         data:     '',
@@ -41,50 +39,65 @@
 })">
     <form @submit.prevent="">
         <div class="card-body">
+            <!-- Table overview -->
             <template x-if="viewMode === 'table'">
                 <div>
-                    <p class="fw-light fst-italic" x-show="!data.length">There are no MIDI messages yet.</p>
-                    <table class="table table-striped" x-show="data.length">
-                        <thead>
-                            <tr>
-                                <th>Nr.</th>
-                                <th>Send</th>
-                                <th>Receive</th>
-                                <th>Version</th>
-                                <th>Channel</th>
-                                <th>Type</th>
-                                <th>Data</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <template x-for="(e,i) in data" :key="i">
-                                <tr>
-                                    <td>
-                                        <div class="d-flex gap-2 align-items-center">
-                                            <input class="form-check-input" type="checkbox" x-show="editMode" x-model="selected" :value="i">
-                                            <a href="#" x-text="i+1" @click="viewDetails(i)"></a>
-                                        </div>
-                                    </td>
-                                    <td><input class="form-check-input" type="checkbox" x-model="e.send" :value="true" disabled></td>
-                                    <td><input class="form-check-input" type="checkbox" x-model="e.receive" :value="true" disabled></td>
-                                    <td x-text="e.version"></td>
-                                    <td x-text="e.channel > 0 ? e.channel : '-'"></td>
-                                    <td x-text="e.message"></td>
-                                    <td class="text-truncate" style="max-width:20rem;" x-text="e.data"></td>
-                                </tr>
-                            </template>
-                        </tbody>
-                    </table>
-
-                    <p class="fw-light fst-italic mt-3 mb-0">
-                        Hinweis: Wertebereiche 0.0-1.0 werden bei MIDI 1.0 nach 0-127 gemappt.
+                    <p class="fw-light fst-italic" x-show="!data.length">
+                        There are no MIDI messages, yet.
                     </p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped" x-show="data.length">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nr.</th>
+                                    <th scope="col">Send</th>
+                                    <th scope="col">Receive</th>
+                                    <th scope="col">Channel</th>
+                                    <th scope="col">Message Type</th>
+                                    <th scope="col">Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template x-for="(entry, index) in data" :key="index">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <input
+                                                    class   = "form-check-input"
+                                                    type    = "checkbox"
+                                                    x-show  = "editMode"
+                                                    x-model = "selected"
+                                                    :value  = "index"
+                                                >
+                                                <a
+                                                    href   = "#"
+                                                    x-text = "index + 1"
+                                                    @click = "viewDetails(index)"
+                                                ></a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" x-model="entry.send" :value="true" disabled>
+                                        </td>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" x-model="entry.receive" :value="true" disabled>
+                                        </td>
+                                        <td x-text="entry.channel > 0 ? entry.channel : '-'"></td>
+                                        <td x-text="extra.types.find(e => e.value == entry.message)?.label || entry.message"></td>
+                                        <td class="text-truncate" x-text="entry.data"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </template>
 
+            <!-- Single entry -->
             <template x-if="viewMode !== 'table'">
                 <div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 g-3">
                         <div class="col-md-3">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" x-model="currentLine.send" :disabled="!editMode">
@@ -97,32 +110,26 @@
                                 <label class="form-check-label">Receive Message</label>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label class="form-label">MIDI Version</label>
-                            <select class="form-select" x-model="currentLine.version" :disabled="!editMode">
-                                <template x-for="v in extra.versions">
-                                    <option :value="v" x-text="v"></option>
-                                </template>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Channel (1-16, optional)</label>
-                            <input type="number" min="1" max="16" class="form-control" x-model.number="currentLine.channel" :readonly="!editMode" placeholder="- unused -">
-                        </div>
                     </div>
 
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Message Type (Status Byte)</label>
+                    <div class="row mb-3 g-3">
+                        <div class="col-md-2">
+                            <label class="form-label">Channel</label>
+                            <input type="number" min="1" max="16" class="form-control" x-model.number="currentLine.channel" :readonly="!editMode" placeholder="- unused -">
+                        </div>
+
+                        <div class="col-md-5">
+                            <label class="form-label">Message Type</label>
                             <select class="form-select" x-model="currentLine.message" :disabled="!editMode">
-                                <template x-for="t in extra.types">
-                                    <option :value="t.v" x-text="t.l"></option>
+                                <template x-for="type in extra.types">
+                                    <option :value="type.value" x-text="type.label"></option>
                                 </template>
                             </select>
                         </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-5">
                             <label class="form-label">Data Bytes</label>
-                            <input type="text" class="form-control" x-model="currentLine.data" :readonly="!editMode" placeholder="Hex und Platzhalter, z. B. 0xC3 {A0}">
+                            <input type="text" class="form-control" x-model="currentLine.data" :readonly="!editMode" placeholder="0xC3 {A0}">
                         </div>
                     </div>
                 </div>
@@ -131,7 +138,15 @@
 
         <div class="card-footer d-flex align-items-center gap-2">
             <div x-init="showPage('components/config-table-buttons.html', $el)" class="flex-fill"></div>
-            <button type="button" @click="$store.control.goBack()" :class="`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`" :aria-disabled="!$store.nav.enabled">Back to Overview</button>
+
+            <button
+                type           = "button"
+                @click         = "$store.control.goBack()"
+                :class         = "`btn btn-light ${$store.nav.enabled ? '' : 'disabled'}`"
+                :aria-disabled = "!$store.nav.enabled"
+            >
+                Back to Overview
+            </button>
         </div>
     </form>
 </div>

@@ -32,57 +32,61 @@
                     </p>
                 </div>
     
-                <table class="table table-striped" x-show="data.length">
-                    <thead>
-                        <tr>
-                            <th scope="col">Control</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Sent Messages</th>
-                            <th scope="col">Received Messages</th>
-                        </tr>
-                    </thead>
-
-                    <template x-for="(entry, index) in data" :key="`${entry.board}.${entry.slot}`">
-                        <tbody>
-                            <tr x-show="entry.slot === 0">
-                                <td colspan="5" x-text="`Board ${entry.board + 1}`"></td>
-                            </tr>
+                <div class="table-responsive">
+                    <table class="table table-striped" x-show="data.length">
+                        <thead>
                             <tr>
-                                <td class="d-flex gap-2 align-items-center">
-                                    <a
-                                        href   = "#"
-                                        class  = "d-flex gap-1"
-                                        x-text = "`Control ${entry.slot + 1}`"
-                                        @click = "
-                                            $store.control.board = entry.board;
-                                            $store.control.slot  = entry.slot;
-                                            viewDetails(index);
-                                        "
-                                        ></a>
-                                    </td>
-                                <td x-text="entry.type"></td>
-                                <td x-text="entry.name"></td>
-                                <td>
-                                    <div class="d-flex gap-3 fw-light">
-                                        <span class="text-primary-emphasis" x-show="entry.midi.send">MIDI</span>
-                                        <span class="text-success"          x-show="entry.osc.send">OSC</span>
-                                        <span class="text-info-emphasis"    x-show="entry.mqtt.send">MQTT</span>
-                                        <span class="text-danger-emphasis"  x-show="entry.serial.send">Serial</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex gap-3 fw-light">
-                                        <span class="text-primary-emphasis" x-show="entry.midi.receive">MIDI</span>
-                                        <span class="text-success"          x-show="entry.osc.receive">OSC</span>
-                                        <span class="text-info-emphasis"    x-show="entry.mqtt.receive">MQTT</span>
-                                        <span class="text-danger-emphasis"  x-show="entry.serial.receive">Serial</span>
-                                    </div>
-                                </td>
+                                <th scope="col">Control</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Sent Messages</th>
+                                <th scope="col">Received Messages</th>
                             </tr>
-                        </tbody>
-                    </template>
-                </table>
+                        </thead>
+    
+                        <template x-for="(entry, index) in data" :key="`${entry.board}.${entry.slot}`">
+                            <tbody>
+                                <tr x-show="entry.slot === 0">
+                                    <td colspan="5" x-text="`Board ${entry.board + 1}`"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <a
+                                                href   = "#"
+                                                class  = "d-flex gap-1"
+                                                x-text = "`Control ${entry.slot + 1}`"
+                                                @click = "
+                                                    $store.control.board = entry.board;
+                                                    $store.control.slot  = entry.slot;
+                                                    viewDetails(index);
+                                                "
+                                            ></a>
+                                        </div>
+                                    </td>
+                                    <td x-text="entry.type"></td>
+                                    <td x-text="entry.name"></td>
+                                    <td>
+                                        <div class="d-flex gap-3 fw-light">
+                                            <span class="text-primary-emphasis" x-show="entry.midi.send">MIDI</span>
+                                            <span class="text-success"          x-show="entry.osc.send">OSC</span>
+                                            <span class="text-info-emphasis"    x-show="entry.mqtt.send">MQTT</span>
+                                            <span class="text-danger-emphasis"  x-show="entry.serial.send">Serial</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-3 fw-light">
+                                            <span class="text-primary-emphasis" x-show="entry.midi.receive">MIDI</span>
+                                            <span class="text-success"          x-show="entry.osc.receive">OSC</span>
+                                            <span class="text-info-emphasis"    x-show="entry.mqtt.receive">MQTT</span>
+                                            <span class="text-danger-emphasis"  x-show="entry.serial.receive">Serial</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </template>
+                    </table>
+                </div>
             </div>
         </div>
     </template>

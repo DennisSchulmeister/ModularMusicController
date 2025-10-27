@@ -20,28 +20,30 @@
         Please select the WiFi network below.
     </p>
 
-    <table class="table table-striped" x-show="results.length">
-        <thead>
-            <tr>
-                <th scope="col">Network Name (SSID)</th>
-                <th scope="col">Type</th>
-                <th scope="col" class="text-end">Strength</th>
-            </tr>
-        </thead>
-        <tbody>
-            <template x-for="result in results" :key="result.ssid">
+    <div class="table-responsive">
+        <table class="table table-striped" x-show="results.length">
+            <thead>
                 <tr>
-                    <td>
-                        <a href="#" x-text="result.ssid" @click.prevent="confirm(result.ssid)"></a>
-                    </td>
-                    <td>
-                        <span x-show="result.type === 'open'">Open</span>
-                        <span x-show="result.type === 'wpa'">Pre-Shared Key</span>
-                        <span x-show="result.type === 'enterprise'">Enterprise</span>
-                    </td>
-                    <td x-text="result.strength" class="text-end"></td>
+                    <th scope="col">Network Name (SSID)</th>
+                    <th scope="col">Type</th>
+                    <th scope="col" class="text-end">Strength</th>
                 </tr>
-            </template>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <template x-for="result in results" :key="result.ssid">
+                    <tr>
+                        <td>
+                            <a href="#" x-text="result.ssid" @click.prevent="confirm(result.ssid)"></a>
+                        </td>
+                        <td>
+                            <span x-show="result.type === 'open'">Open</span>
+                            <span x-show="result.type === 'wpa'">Pre-Shared Key</span>
+                            <span x-show="result.type === 'enterprise'">Enterprise</span>
+                        </td>
+                        <td x-text="result.strength" class="text-end"></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
 </div>
