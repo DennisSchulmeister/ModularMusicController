@@ -114,13 +114,12 @@ void IFF_Reader::leave() {
     if (too_deep > 0) {
         too_deep--;
         return;
+    } else if (level <= 0) {
+        ESP_LOGE(TAG, "IFF_Reader::leave() called too often!");
+        return;
     }
 
-    if (level <= 0) {
-        ESP_LOGE(TAG, "IFF_Reader::leave() called too often!");
-    } else {
-        level--;
-    }
+    level--;
 }
 
 ////////////////////////////
@@ -143,27 +142,59 @@ void IFF_Writer::close() {
 void IFF_Writer::chunk(ChunkHeader header, const char* data) {
     if (!file.is_open()) return;
 
+    // Write header
     file.write(header.type.code.data(), header.type.code.size());
     file.write(reinterpret_cast<const char *>(&header.size), sizeof(header.size));
-    file.write(data, header.size);
 
-    auto written_size     = header.type.code.size() + sizeof(header.size) + header.size;
-    cursor[level].end    += written_size;
-    cursor[level].offset += written_size;
+    cursor[level].end += header.type.code.size() + sizeof(header.size);
 
-    // TODO: How to use the cursor entries for nested lists?
+    // Write data
+    if (data && header.size) {
+        file.write(data, header.size);
+        cursor[level].end += header.size;
+    }
 }
 
-void IFF_Writer::start_list(FourCC type) {
+void IFF_Writer::enter(FourCC type) {
     if (!file.is_open()) return;
 
-    // TODO
+    if (level >= MY_FILE_NESTING_LEVEL) {
+        ESP_LOGE(TAG, "IFF_Writer::enter() called too often, MY_FILE_NESTING_LEVEL exceeded!");
+        
+        too_deep++;
+        return;
+    }
+
+    ChunkHeader header = {type, 0};
+
+    level++;
+    cursor[level].start  = cursor[level].end = cursor[level - 1].end;
+    cursor[level].offset = header.type.code.size(); // Offset of the length field
+
+    chunk(header, nullptr);
 }
 
-void IFF_Writer::end_list() {
+void IFF_Writer::leave() {
     if (!file.is_open()) return;
 
-    // TODO
+    if (too_deep > 0) {
+        too_deep--;
+        return;
+    } else if (level <= 0) {
+        ESP_LOGE(TAG, "IFF_Writer::leave() called too often!");
+        return;
+    }
+    
+    // Write list length
+    ChunkHeader header;
+    header.size = cursor[level].end - cursor[level].start;
+
+    file.seekp(cursor[level].start + cursor[level].offset);
+    file.write(reinterpret_cast<const char *>(&header.size), sizeof(header.size));
+    file.seekp(0, std::ios_base::end);
+
+    level--;
+    cursor[level].end = cursor[level + 1].end;
 }
 
 } // namespace my_file

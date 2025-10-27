@@ -1,1 +1,79 @@
-This is the index.html file
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ESP32 Config</title>
+    </head>
+    <body style="display: none">
+        <h1>Device Config</h1>
+        <p>
+            <label>Name:</label>
+            <input id="device-name">
+        </p>
+        
+        <h2>WiFi Config</h2>
+        <p>
+            <label>Mode:</label>
+            <select id="wifi-mode">
+                <option value="">Access Point</option>
+                <option value="S">Station</option>
+            </select>
+        </p>
+        <p>
+            <label>SSID:</label>
+            <input id="wifi-ssid">
+        </p>
+        <p>
+            <label>PSK:</label>
+            <input id="wifi-psk">
+        </p>
+
+        <button onclick="save()">Save</button>
+
+        <script>
+            let body       = document.querySelector("body");
+            let deviceName = document.getElementById("device-name");
+            let wifiMode   = document.getElementById("wifi-mode");
+            let wifiSSID   = document.getElementById("wifi-ssid");
+            let wifiPSK    = document.getElementById("wifi-psk");
+
+            async function load() {
+                let response = await fetch("/api/config");
+                let config   = await response.json();
+
+                deviceName.value = config.device?.name || "";
+                wifiMode.value   = config.wifi?.mode   || "";
+                wifiSSID.value   = config.wifi?.ssid   || "";
+                wifiPSK.value    = config.wifi?.psk    || "";
+            }
+
+            async function save() {
+                await fetch("/api/config", {
+                    method: "POST",
+                    headers: {"content-type": "application/json"},
+                    body: JSON.stringify({
+                        device: {
+                            name: deviceName.value,
+                        },
+                        wifi: {
+                            mode: wifiMode.value,
+                            ssid: wifiSSID.value,
+                            psk:  wifiPSK.value,
+                        },
+                    }),
+                });
+
+                alert("Saved!");
+            }
+
+            try {
+                await load();
+            } catch (error) {
+                body.textContent = error.message;
+            }
+            
+            body.style.display = "";
+        </script>
+    </body>
+</html>

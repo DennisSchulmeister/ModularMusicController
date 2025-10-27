@@ -251,13 +251,13 @@ public:
      * until `end_list()` is called to finish the list. Note that lists can be nested up to the level
      * defined by `MY_FILE_NESTING_LEVEL`.
      */
-    void start_list(FourCC type) noexcept;
+    void enter(FourCC type) noexcept;
 
     /**
      * Only relevant for chunk lists. This writes the final length of the whole list
      * in the length field of the parent chunk.
      */
-    void end_list() noexcept;
+    void leave() noexcept;
 
 private:
     std::fstream file;                                      ///< File stream
