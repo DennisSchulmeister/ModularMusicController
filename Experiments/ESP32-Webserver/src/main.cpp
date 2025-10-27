@@ -31,6 +31,19 @@ void sleep_on_error(esp_err_t ret) {
  * Main entry point
  */
 extern "C" void app_main() {
-    sleep_on_error(my_fs::mount_all());
+    auto static_partition = my_fs::Partition::mount({
+        .partition = "static",
+        .base_path = "/static",
+        .readonly  = true,
+    });
+    
+    auto var_partition = my_fs::Partition::mount({
+        .partition = "var",
+        .base_path = "/var",
+        .readonly  = false,
+    });
+    
+    sleep_on_error(static_partition.get_error());
+    sleep_on_error(var_partition.get_error());
     sleep_on_error(my_wifi::restart());
 }

@@ -14,52 +14,61 @@
 namespace my_fs {
 constexpr char const* TAG = "fs";
 
-esp_vfs_littlefs_conf_t fs_static = {
-    .base_path              = "/static",
-    .partition_label        = "static",
-    .partition              = nullptr,
-    .format_if_mount_failed = false,
-    .read_only              = true,
-    .dont_mount             = false,
-    .grow_on_mount          = false,
-};
+///////////////////////////
+///// class Partition /////
+///////////////////////////
 
-esp_vfs_littlefs_conf_t fs_var = {
-    .base_path              = "/var",
-    .partition_label        = "var",
-    .partition              = nullptr,
-    .format_if_mount_failed = true,
-    .read_only              = false,
-    .dont_mount             = false,
-    .grow_on_mount          = false,
-};
-
-esp_err_t mount_all() {
-    ESP_LOGI(TAG, "Mounting filesystems");
-
-    // Static data
-    esp_err_t ret = esp_vfs_littlefs_register(&fs_static);
-
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to mount filesystem for static data: %s", esp_err_to_name(ret));
-        return ret;
-    }
-
-    // Variable data
-    ret = esp_vfs_littlefs_register(&fs_var);
-
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to mount filesystem for variable data: %s", esp_err_to_name(ret));
-        return ret;
-    }
-
-    return ESP_OK;
+Partition::Partition(MountOptions options)
+    : options(options),
+      mounted(false),
+      error(ESP_OK)
+{
+    remount();
 }
 
-void unmount_all() {
-    ESP_LOGI(TAG, "Unmounting filesystems");
-    esp_vfs_littlefs_unregister(fs_static.partition_label);
-    esp_vfs_littlefs_unregister(fs_var.partition_label);
+Partition::~Partition() {
+    unmount();
+}
+
+Partition Partition::mount(MountOptions options) {
+    return Partition(options);
+}
+
+esp_err_t Partition::remount() {
+    ESP_LOGI(TAG, "Mounting %s", options.partition.c_str());
+
+    esp_vfs_littlefs_conf_t conf_littlefs = {
+        .base_path              = options.base_path.c_str(),
+        .partition_label        = options.partition.c_str(),
+        .partition              = nullptr,
+        .format_if_mount_failed = !options.readonly,
+        .read_only              = options.readonly,
+        .dont_mount             = false,
+        .grow_on_mount          = false,
+    };
+
+    error = esp_vfs_littlefs_register(&conf_littlefs);
+
+    if (error != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to mount %s: %s", options.partition.c_str(), esp_err_to_name(error));
+    } else {
+        mounted = true;
+    }
+
+    return error;
+}
+
+void Partition::unmount() {
+    if (!mounted) return;
+
+    ESP_LOGI(TAG, "Unmounting %s", options.partition.c_str());
+
+    esp_vfs_littlefs_unregister(options.partition.c_str());
+    mounted = false;
+}
+
+esp_err_t Partition::get_error() {
+    return error;
 }
 
 } // namespace my_fs
