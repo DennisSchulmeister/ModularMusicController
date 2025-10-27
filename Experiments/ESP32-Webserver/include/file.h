@@ -99,7 +99,7 @@ struct ChunkHeader {
     /**
      * Check if the chunk has a size greater than zero.
      */
-    constexpr bool has_data() {
+    constexpr bool has_data() noexcept {
         return size > 0;
     }
 };
@@ -124,7 +124,7 @@ struct Cursor {
     /**
      * Check whether the end of the parent chunk has been reached.
      */
-    constexpr bool end_reached() {
+    constexpr bool end_reached() noexcept {
         return start + offset >= end;
     }
 };
