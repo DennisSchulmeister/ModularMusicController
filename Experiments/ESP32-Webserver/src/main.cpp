@@ -26,7 +26,10 @@ constexpr char const* TAG = "main";
  */
 void sleep_on_error(esp_err_t ret) {
     if (ret == ESP_OK) return;
-    ESP_LOGE(TAG, "Going into deep sleep due to unrecoverable error");
+
+    const char* name = esp_err_to_name(ret);
+    ESP_LOGE(TAG, "Going into deep sleep due to unrecoverable error %s", name ? name : "UNKNOWN");
+
     esp_deep_sleep_start();
 }
 
@@ -53,13 +56,14 @@ extern "C" void app_main() {
         .readonly  = true,
     });
     
+    sleep_on_error(static_partition.error());
+
     auto var_partition = my_fs::Partition::mount({
         .partition = "var",
         .base_path = "/var",
         .readonly  = false,
     });
     
-    sleep_on_error(static_partition.error());
     sleep_on_error(var_partition.error());
 
     // Start WiFi

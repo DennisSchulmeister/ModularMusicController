@@ -34,7 +34,7 @@ Schematics and Pictures
 -----------------------
 
 This project has no special schematics. Simply connect an ESP32 development board with power.
-Below are some screenshots of the configuration portal in different states (w/o WiFi credentions,
+Below are some screenshots of the configuration portal in different states (w/o WiFi credentials,
 w/ credentials, …).
 
 TODO
@@ -59,7 +59,7 @@ pio run --target menuconfig
 ```
 
 It is worth to check the [ESP32 page](https://docs.platformio.org/en/latest/platforms/espressif32.html)
-in the PlatfromIO documentation to see which other options exist.
+in the PlatformIO documentation to see which other options exist.
 
 ### ESP32 Flash Memory Size
 
@@ -80,7 +80,7 @@ memory devices more or less out of the box. Each has its strenghts and weaknesse
   (no sub-directories, instead each `/` is part of the filename) and propably no active
   development anymore.
 
-* *LittelFS:** Optimized for flash memory, nested directories and actively maintained. Plus
+* **LittelFS:** Optimized for flash memory, nested directories and actively maintained. Plus
   RAM usage is strictly limited for use on embedded systems with little memory.
 
 * **NVS:** Special key/value store specificly for the ESP32. Best suited for only a few entries
@@ -122,11 +122,11 @@ are `default.cvs` for Arduino and `partitions_singleapp.csv` for the ESP-IDF fra
 A simple layout as used for this experiment could be:
 
 ```csv
-#Name,  Type, SubType,  Offset, Size,     Flags
-nvs,    data, nvs,      ,       0x6000,
-app,    app,  factory,  ,       0x100000,
-static, data, littlefs, ,       0x2C7000, readonly
-var,    data, littlefs, ,       0x20000,
+#Name,  Type, SubType,  Offset,   Size,     Flags
+nvs,    data, nvs,      ,         0x7000,
+app,    app,  factory,  ,         0x2C7000,
+var,    data, littlefs, ,         0x20000,
+static, data, littlefs, ,         0x100000,
 ```
 
 The offset is automatically calculated by the build tool. The size is given in bytes, though
@@ -136,18 +136,40 @@ the ESP32 logs the partition table on the serial console:
 ```text
 I (43) boot.esp32: SPI Flash Size : 4MB
 I (47) boot: Enabling RNG early entropy source...
-I (51) boot: Partition Table:
-I (54) boot: ## Label            Usage          Type ST Offset   Length
-I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
-I (67) boot:  1 app              factory app      00 00 00010000 00100000
-I (73) boot:  2 static           Unknown data     01 83 00110000 002c7000
-I (80) boot:  3 var              Unknown data     01 83 003d7000 00020000
-I (86) boot: End of partition table
+I (53) boot: Partition Table:
+I (56) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00007000
+I (67) boot:  1 app              factory app      00 00 00010000 002c7000
+I (73) boot:  2 var              Unknown data     01 83 002d7000 00020000
+I (80) boot:  3 static           Unknown data     01 83 002f7000 00100000
+I (88) boot: End of partition table
 ```
 
-PlatformIO for ESP32 allows to automatically upload data into one filesystem. The first filesystem
-of type `data` will be used and its type must be given in the configuration with `board_build.filesystem = littlefs`.
-By default the content of the `data/` directory will be uploaded, but this can be changed with the
-`data_dir` option. The PlatformIO target is called `uploadfs`.
+Caveat: PlatformIO uploads to the **last** partition of type `data` and subtype `littlefs`.
+For this reason the static partition is defined last. Other things to consider:
+
+* The bootloader is at address `0x8000`.
+* The first partition can start at `0x9000`.
+* The app partition must start at `0x10000`.
+* Partitions must be aligned to `0x1000` boundaries.
+* Static files for PlatformIO `uploadfs` should be last
+
+Relevant PlatformIO commands:
+
+* `pio run -t buildfs`
+* `pio run -t uploadfs`
+
+Compare the flash address in the `uploadfs` output with the partition table logged by the
+ESP32 during startup:
+
+```text
+Flash will be erased from 0x002f7000 to 0x003f6fff...
+Compressed 1048576 bytes to 2308...
+Writing at 0x002f7000... (100 %)
+```
+
+By default the content of the `data` directory will be uploaded, but this can be changed with the
+`data_dir` option. Since we are using LittleFS we also need `board_build.filesystem = littlefs`.
+
 See [Uploading files to the filesystem](https://docs.platformio.org/en/latest/platforms/espressif32.html#uploading-files-to-file-system)
 for details.
