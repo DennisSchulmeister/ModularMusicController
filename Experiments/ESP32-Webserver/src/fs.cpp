@@ -21,7 +21,7 @@ constexpr char const* TAG = "fs";
 Partition::Partition(MountOptions options)
     : options(options),
       mounted(false),
-      error(ESP_OK)
+      _error(ESP_OK)
 {
     remount();
 }
@@ -47,15 +47,15 @@ esp_err_t Partition::remount() {
         .grow_on_mount          = false,
     };
 
-    error = esp_vfs_littlefs_register(&conf_littlefs);
+    _error = esp_vfs_littlefs_register(&conf_littlefs);
 
-    if (error != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to mount %s: %s", options.partition.c_str(), esp_err_to_name(error));
+    if (_error != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to mount %s: %s", options.partition.c_str(), esp_err_to_name(_error));
     } else {
         mounted = true;
     }
 
-    return error;
+    return _error;
 }
 
 void Partition::unmount() {
@@ -65,10 +65,6 @@ void Partition::unmount() {
 
     esp_vfs_littlefs_unregister(options.partition.c_str());
     mounted = false;
-}
-
-esp_err_t Partition::get_error() {
-    return error;
 }
 
 } // namespace my_fs

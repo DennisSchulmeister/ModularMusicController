@@ -43,7 +43,7 @@ extern "C" void app_main() {
         .readonly  = false,
     });
     
-    sleep_on_error(static_partition.get_error());
-    sleep_on_error(var_partition.get_error());
-    sleep_on_error(my_wifi::restart());
+    sleep_on_error(static_partition.error());
+    sleep_on_error(var_partition.error());
+    // sleep_on_error(my_wifi::restart());
 }

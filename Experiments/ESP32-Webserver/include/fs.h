@@ -64,7 +64,7 @@ public:
     /**
      * @returns The error code from mounting the partition
      */
-    esp_err_t get_error() noexcept;
+    esp_err_t error() noexcept { return _error; }
 
     /**
      * Destructor – automatically unmounts the partition.
@@ -80,7 +80,7 @@ private:
 
     MountOptions options;           ///< Mount options
     bool mounted;                   ///< Partition is mounted
-    esp_err_t error;                ///< Last error code
+    esp_err_t _error;               ///< Last error code
 };
 
 } // namespace my_fs

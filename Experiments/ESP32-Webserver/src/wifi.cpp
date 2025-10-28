@@ -10,35 +10,48 @@
 using namespace std;
 
 #include "wifi.h"
+#include <esp_wifi.h>       // esp_wifi_…
 
 namespace my_wifi {
 constexpr char const* TAG = "wifi";
 
-// Current connection status
-Status status = {
-    .mode  = Mode::disabled,
-    .state = State::disconnected,
-    .ssid  = "",
-    .ip    = "",
-};
+/////////////////////////
+///// struct Config /////
+/////////////////////////
 
-void save_config(const Config& config) {
+Config Config::read() {
 }
 
-Config read_config() {
-    return {};
+void Config::save() {
 }
 
-Status get_status() {
-    return status;
+//////////////////////
+///// class WiFi /////
+//////////////////////
+
+WiFi* WiFi::instance() {
+    if (WiFi::_instance == nullptr) WiFi::_instance = new WiFi();
+    return WiFi::_instance;
 }
 
-esp_err_t restart() {
-    return ESP_OK;
+WiFi::WiFi()
+    : _error(ESP_OK),
+      _status{
+          .mode  = Mode::disabled,
+          .state = State::disconnected,
+          .ssid  = "",
+          .ip    = "",
+      }
+{
 }
 
-esp_err_t stop() {
-    return ESP_OK;
+std::list<AccessPoint> WiFi::scan() {
+}
+
+esp_err_t WiFi::connect(Config config) {
+}
+
+esp_err_t WiFi::disconnect() {
 }
 
 } // namespace my_wifi
