@@ -20,7 +20,7 @@ constexpr char const* TAG = "file";
 ///// class IFF_Reader /////
 ////////////////////////////
 
-IFF_Reader::IFF_Reader(std::string filename)
+IFF_Reader::IFF_Reader(std::string filename) noexcept
     : file{filename, std::fstream::in | std::fstream::binary},
       level{0},
       cursor{},
@@ -35,12 +35,12 @@ IFF_Reader::IFF_Reader(std::string filename)
     }
 }
 
-void IFF_Reader::close() {
+void IFF_Reader::close() noexcept {
     if (!file.is_open()) return;
     file.close();
 }
 
-ReadChunk IFF_Reader::peek() {
+ReadChunk IFF_Reader::peek() noexcept {
     ReadChunk header;
     if (!file.is_open())             return header;   // File not found
     if (too_deep > 0)                return header;   // Maximum nesting exceeded
@@ -58,7 +58,7 @@ ReadChunk IFF_Reader::peek() {
     return header;
 }
 
-void IFF_Reader::skip() {
+void IFF_Reader::skip() noexcept {
     ReadChunk header = peek();
 
     if (!cursor[level].end_reached()) {
@@ -66,25 +66,25 @@ void IFF_Reader::skip() {
     }
 }
 
-ReadChunk IFF_Reader::chunk(char* buffer, size_t maxlen) {
+ReadChunk IFF_Reader::chunk(char* buffer, size_t maxlen) noexcept {
     ReadChunk header = peek();
     std::memset(buffer, 0, maxlen);
     
     if (header.size > 0) {
-        auto pos = cursor[level].start + cursor[level].offset + sizeof(header);
+        auto pos = cursor[level].start + cursor[level].offset + static_cast<std::streampos>(sizeof(header));
         file.clear();
         file.seekg(pos, std::ios::beg);
         file.read(buffer, std::min(static_cast<size_t>(header.size), maxlen));
     }
 
     if (!cursor[level].end_reached()) {
-        cursor[level].offset += sizeof(header) + header.size;
+        cursor[level].offset += static_cast<std::streampos>(sizeof(header) + header.size);
     }
 
     return header;
 }
 
-bool IFF_Reader::enter() {
+bool IFF_Reader::enter() noexcept {
     if (!file.is_open()) return false;
 
     if (level >= MY_FILE_NESTING_LEVEL) {
@@ -108,7 +108,7 @@ bool IFF_Reader::enter() {
     return peek().has_data();
 }
 
-void IFF_Reader::leave() {
+void IFF_Reader::leave() noexcept {
     if (!file.is_open()) return;
 
     if (too_deep > 0) {
@@ -126,7 +126,7 @@ void IFF_Reader::leave() {
 ///// class IFF_Writer /////
 ////////////////////////////
 
-IFF_Writer::IFF_Writer(std::string filename)
+IFF_Writer::IFF_Writer(std::string filename) noexcept
     : file{filename, std::fstream::out | std::fstream::binary},
       level{0},
       cursor{},
@@ -134,12 +134,12 @@ IFF_Writer::IFF_Writer(std::string filename)
 {
 }
 
-void IFF_Writer::close() {
+void IFF_Writer::close() noexcept {
     if (!file.is_open()) return;
     file.close();
 }
 
-void IFF_Writer::chunk(FourCC type, const char* data, chunk_size_t len) {
+void IFF_Writer::chunk(FourCC type, const char* data, chunk_size_t len) noexcept {
     if (!file.is_open()) return;
 
     // Write header
@@ -155,7 +155,7 @@ void IFF_Writer::chunk(FourCC type, const char* data, chunk_size_t len) {
     }
 }
 
-void IFF_Writer::enter(FourCC type) {
+void IFF_Writer::enter(FourCC type) noexcept {
     if (!file.is_open()) return;
 
     if (level >= MY_FILE_NESTING_LEVEL) {
@@ -172,7 +172,7 @@ void IFF_Writer::enter(FourCC type) {
     chunk(type, nullptr, 0);
 }
 
-void IFF_Writer::leave() {
+void IFF_Writer::leave() noexcept {
     if (!file.is_open()) return;
 
     if (too_deep > 0) {

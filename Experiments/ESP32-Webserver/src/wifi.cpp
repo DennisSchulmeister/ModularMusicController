@@ -30,7 +30,7 @@ constexpr char const* TAG = "wifi";
 
 constexpr const char* config_file = "/var/config/wifi";
 
-Config Config::read() {
+Config Config::read() noexcept {
     Config config{
         .mode     = Mode::access_point,
         .ssid     = "Modular-Music-Controller",
@@ -72,7 +72,7 @@ Config Config::read() {
     return config;
 }
 
-void Config::save() {
+void Config::save() noexcept {
     my_file::IFF_Writer iff_writer{config_file};
 
     iff_writer.chunk("mode", reinterpret_cast<const char *>(&mode), sizeof(mode));
@@ -88,21 +88,24 @@ void Config::save() {
 ///// class WiFi /////
 //////////////////////
 
-WiFi* WiFi::instance() {
+WiFi* WiFi::_instance = nullptr;
+
+WiFi* WiFi::instance() noexcept {
     if (WiFi::_instance == nullptr) WiFi::_instance = new WiFi();
     return WiFi::_instance;
 }
 
-WiFi::WiFi()
+WiFi::WiFi() noexcept
     : _status{
-        .mode  =   Mode::disabled,
-        .state =   State::disconnected,
-        .ssid  =   "",
-        .mac   =   "",
-        .ip4   =   "",
-        .netmask = "",
-        .gateway = "",
-        .ip6 =     "",
+        .mode            =   Mode::disabled,
+        .state           =   State::disconnected,
+        .reconnect_count = 0,
+        .ssid            = "",
+        .mac             = "",
+        .ip4             = "",
+        .netmask         = "",
+        .gateway         = "",
+        .ip6             = "",
     },
     interface(nullptr),
     _error(ESP_OK),
@@ -111,7 +114,7 @@ WiFi::WiFi()
 {
 }
 
-esp_err_t WiFi::connect(Config config) {
+esp_err_t WiFi::connect(Config config) noexcept {
     // Initialize network device
     disconnect();
 
@@ -219,6 +222,9 @@ esp_err_t WiFi::connect(Config config) {
             _status.state = State::connecting;
             break;
         }
+        default:
+            // Nothig to do – Surpress compilation error
+            break;
     }
 
     _error = esp_wifi_start();
@@ -227,7 +233,7 @@ esp_err_t WiFi::connect(Config config) {
     return ESP_OK;
 }
 
-void WiFi::_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
+void WiFi::_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) noexcept {
     WiFi* wifi = reinterpret_cast<WiFi*>(arg);
     
     if (event_base == WIFI_EVENT) {
@@ -237,7 +243,7 @@ void WiFi::_event_handler(void* arg, esp_event_base_t event_base, int32_t event_
     }
 }
 
-void WiFi::wifi_event_handler(int32_t event_id, void* event_data) {
+void WiFi::wifi_event_handler(int32_t event_id, void* event_data) noexcept {
     char buffer[128] = {};
 
     switch (event_id) {
@@ -268,19 +274,21 @@ void WiFi::wifi_event_handler(int32_t event_id, void* event_data) {
         }
         case WIFI_EVENT_AP_STACONNECTED: {
             auto event = reinterpret_cast<wifi_event_ap_staconnected_t*>(event_data);
-            ESP_LOGI(TAG, "Station "MACSTR" connected to access point", MAC2STR(event->mac));
+            ESP_LOGI(TAG, "Station " MACSTR " connected to access point", MAC2STR(event->mac));
+            break;
         }
         case WIFI_EVENT_AP_STADISCONNECTED: {
             auto event = reinterpret_cast<wifi_event_ap_stadisconnected_t*>(event_data);
-            ESP_LOGI(TAG, "Station "MACSTR" disconnected from access point", MAC2STR(event->mac));
+            ESP_LOGI(TAG, "Station " MACSTR " disconnected from access point", MAC2STR(event->mac));
+            break;
         }
     }
 }
 
-void WiFi::ip_event_handler(int32_t event_id, void* event_data) {
-    switch (event_id) {
-        char buffer[128] = {};
+void WiFi::ip_event_handler(int32_t event_id, void* event_data) noexcept {
+    char buffer[128] = {};
 
+    switch (event_id) {
         case IP_EVENT_STA_GOT_IP: {
             auto event = reinterpret_cast<ip_event_got_ip_t*>(event_data);
 
@@ -322,7 +330,7 @@ void WiFi::ip_event_handler(int32_t event_id, void* event_data) {
     }
 }
 
-std::vector<AccessPoint> WiFi::scan() {
+std::vector<AccessPoint> WiFi::scan() noexcept {
     ESP_LOGI(TAG, "Starting WiFi scan");
 
     _error = esp_wifi_scan_start(
@@ -330,11 +338,11 @@ std::vector<AccessPoint> WiFi::scan() {
         /* block  */ true
     );
 
-    if (_error != ESP_OK) return;
+    if (_error != ESP_OK) return {};
 
     uint16_t number = 0;
     _error = esp_wifi_scan_get_ap_num(&number);
-    if (!_error != ESP_OK) return;
+    if (!_error != ESP_OK) return {};
 
     std::vector<AccessPoint> result{};
     result.reserve(number);
@@ -343,7 +351,7 @@ std::vector<AccessPoint> WiFi::scan() {
         wifi_ap_record_t ap_record{};
 
         _error = esp_wifi_scan_get_ap_record(&ap_record);
-        if (_error != ESP_OK) return;
+        if (_error != ESP_OK) return {};
 
         char mac_address[18];
         snprintf(mac_address, sizeof(mac_address), "%02x:%02x:%02x:%02x:%02x:%02x",
@@ -367,9 +375,9 @@ std::vector<AccessPoint> WiFi::scan() {
     return result;
 }
 
-esp_err_t WiFi::disconnect() {
+esp_err_t WiFi::disconnect() noexcept {
     // Unregister event handlers
-    if (!interface) return;
+    if (!interface) return ESP_OK;
     ESP_LOGI(TAG, "Disconnecting from WiFi");
     
     if (eh_wifi_event) {

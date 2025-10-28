@@ -1,11 +1,13 @@
 # See: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/partition-tables.html
 # 4 MB flash = 36 kB for bootloader and the partition table itself + 4060 kB for the partitions below
-# nvs (64 kB); app (1024 kB); static (2844); var (128 kB)
+# nvs (64 kB); app (2844 kB); static (1024 kB); var (128 kB)
 # Note that in the final firmware we might need to adjust these sizes
 
+# Caveat: PlatformIO uploads to the first partition of type "data". Therefor we need to define the
+# static partition before all others. This means we need to manually calculate the offsets. :-(
 
-#Name,  Type, SubType,  Offset, Size,     Flags
-nvs,    data, nvs,      ,       0x6000,
-app,    app,  factory,  ,       0x100000,
-static, data, littlefs, ,       0x2C7000,
-var,    data, littlefs, ,       0x20000,
+#Name,  Type, SubType,  Offset,   Size,     Flags
+nvs,    data, nvs,      ,         0x6000,
+app,    app,  factory,  ,         0x2C7000,
+static, data, littlefs, ,         0x100000,
+var,    data, littlefs, ,         0x20000,

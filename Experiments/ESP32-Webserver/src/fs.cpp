@@ -18,7 +18,7 @@ constexpr char const* TAG = "fs";
 ///// class Partition /////
 ///////////////////////////
 
-Partition::Partition(MountOptions options)
+Partition::Partition(MountOptions options) noexcept
     : options(options),
       mounted(false),
       _error(ESP_OK)
@@ -26,15 +26,15 @@ Partition::Partition(MountOptions options)
     remount();
 }
 
-Partition::~Partition() {
+Partition::~Partition() noexcept {
     unmount();
 }
 
-Partition Partition::mount(MountOptions options) {
+Partition Partition::mount(MountOptions options) noexcept {
     return Partition(options);
 }
 
-esp_err_t Partition::remount() {
+esp_err_t Partition::remount() noexcept {
     ESP_LOGI(TAG, "Mounting %s", options.partition.c_str());
 
     esp_vfs_littlefs_conf_t conf_littlefs = {
@@ -58,7 +58,7 @@ esp_err_t Partition::remount() {
     return _error;
 }
 
-void Partition::unmount() {
+void Partition::unmount() noexcept {
     if (!mounted) return;
     
     ESP_LOGI(TAG, "Unmounting %s", options.partition.c_str());
