@@ -139,19 +139,19 @@ void IFF_Writer::close() {
     file.close();
 }
 
-void IFF_Writer::chunk(ChunkHeader header, const char* data) {
+void IFF_Writer::chunk(FourCC type, const char* data, chunk_size_t len) {
     if (!file.is_open()) return;
 
     // Write header
-    file.write(header.type.code.data(), header.type.code.size());
-    file.write(reinterpret_cast<const char *>(&header.size), sizeof(header.size));
+    file.write(type.code.data(), type.code.size());
+    file.write(reinterpret_cast<const char *>(&len), sizeof(len));
 
-    cursor[level].end += header.type.code.size() + sizeof(header.size);
+    cursor[level].end += type.code.size() + sizeof(len);
 
     // Write data
-    if (data && header.size) {
-        file.write(data, header.size);
-        cursor[level].end += header.size;
+    if (data && len) {
+        file.write(data, len);
+        cursor[level].end += len;
     }
 }
 
@@ -165,13 +165,11 @@ void IFF_Writer::enter(FourCC type) {
         return;
     }
 
-    ChunkHeader header = {type, 0};
-
     level++;
     cursor[level].start  = cursor[level].end = cursor[level - 1].end;
-    cursor[level].offset = header.type.code.size(); // Offset of the length field
+    cursor[level].offset = type.code.size(); // Offset of the length field
 
-    chunk(header, nullptr);
+    chunk(type, nullptr, 0);
 }
 
 void IFF_Writer::leave() {

@@ -37,6 +37,7 @@
  * left to be done by the clients of this file.
  */
 #pragma once
+
 #include <cstdint>      // uint32_t
 #include <fstream>      // std::fstream
 #include <iostream>     // std::streampos, std::streamoff
@@ -90,11 +91,16 @@ struct FourCC {
 };
 
 /**
+ * Number of data bytes in a chunk
+ */
+typedef uint32_t chunk_size_t;
+
+/**
  * Header of a data chunk
  */
 struct ChunkHeader {
     FourCC type;                    ///< Chunk type
-    uint32_t size = 0;              ///< Number of bytes following the header
+    chunk_size_t size = 0;          ///< Number of bytes following the header
 
     /**
      * Check if the chunk has a size greater than zero.
@@ -240,16 +246,19 @@ public:
      * Append a new chunk to the file. Note that the given chunk header must contain the size
      * of the data buffer to be written.
      * 
-     * @param[in] header Chunk header
+     * @param[in] type Chunk type
      * @param[in] data Chunk data
+     * @param[in] len Chunk size
      */
-    void chunk(ChunkHeader header, const char* data) noexcept;
+    void chunk(FourCC type, const char* data, chunk_size_t len) noexcept;
 
     /**
      * Start a nested list. This writes a temporary chunk header for the whole list and remembers
      * its position in an internal buffer. Subsequent calls to `chunk()` append entries to the list
      * until `end_list()` is called to finish the list. Note that lists can be nested up to the level
      * defined by `MY_FILE_NESTING_LEVEL`.
+     * 
+     * @param[in] type Chunk type
      */
     void enter(FourCC type) noexcept;
 

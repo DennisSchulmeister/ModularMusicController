@@ -60,7 +60,7 @@ esp_err_t Partition::remount() {
 
 void Partition::unmount() {
     if (!mounted) return;
-
+    
     ESP_LOGI(TAG, "Unmounting %s", options.partition.c_str());
 
     esp_vfs_littlefs_unregister(options.partition.c_str());

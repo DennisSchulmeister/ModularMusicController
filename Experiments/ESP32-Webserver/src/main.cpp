@@ -9,8 +9,11 @@
 
 #include "fs.h"
 #include "wifi.h"
-#include <esp_log.h>    // ESP_LOG…
-#include <esp_sleep.h>  // esp_deep_sleep_start
+
+#include <esp_event.h>      // esp_event_loop_create_default
+#include <esp_log.h>        // ESP_LOG…
+#include <esp_sleep.h>      // esp_deep_sleep_start
+#include <nvs_flash.h>      // nvs_flash_init
 
 constexpr char const* TAG = "main";
 
@@ -31,6 +34,19 @@ void sleep_on_error(esp_err_t ret) {
  * Main entry point
  */
 extern "C" void app_main() {
+    // Initialize core functions
+    esp_err_t error = nvs_flash_init();
+
+    if (error == ESP_ERR_NVS_NO_FREE_PAGES || error == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        sleep_on_error(nvs_flash_erase());
+        sleep_on_error(nvs_flash_init());
+    } else {
+        sleep_on_error(error);
+    }
+
+    sleep_on_error(esp_event_loop_create_default());
+
+    // Mount flash partitions
     auto static_partition = my_fs::Partition::mount({
         .partition = "static",
         .base_path = "/static",
@@ -45,5 +61,11 @@ extern "C" void app_main() {
     
     sleep_on_error(static_partition.error());
     sleep_on_error(var_partition.error());
-    // sleep_on_error(my_wifi::restart());
+
+    // Start WiFi
+    my_wifi::Config wifi_config = my_wifi::Config::read();
+    my_wifi::WiFi::instance()->connect(wifi_config);
+    sleep_on_error(my_wifi::WiFi::instance()->error());
+
+    my_wifi::WiFi::instance()->scan();
 }

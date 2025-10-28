@@ -5,19 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ESP32 Config</title>
     </head>
-    <body style="display: none">
-        <h1>Device Config</h1>
-        <p>
-            <label>Name:</label>
-            <input id="device-name">
-        </p>
-        
-        <h2>WiFi Config</h2>
+    <body style="display: none">        
+        <h1>WiFi Config</h1>
         <p>
             <label>Mode:</label>
             <select id="wifi-mode">
-                <option value="">Access Point</option>
-                <option value="S">Station</option>
+                <option value="access_point">Access Point</option>
+                <option value="station">Station</option>
             </select>
         </p>
         <p>
@@ -28,24 +22,34 @@
             <label>PSK:</label>
             <input id="wifi-psk">
         </p>
+        <p>
+            <label>Username:</label>
+            <input id="wifi-username">
+        </p>
+        <p>
+            <label>Password:</label>
+            <input id="wifi-password">
+        </p>
 
         <button onclick="save()">Save</button>
 
         <script>
-            let body       = document.querySelector("body");
-            let deviceName = document.getElementById("device-name");
-            let wifiMode   = document.getElementById("wifi-mode");
-            let wifiSSID   = document.getElementById("wifi-ssid");
-            let wifiPSK    = document.getElementById("wifi-psk");
+            let body         = document.querySelector("body");
+            let wifiMode     = document.getElementById("wifi-mode");
+            let wifiSSID     = document.getElementById("wifi-ssid");
+            let wifiPSK      = document.getElementById("wifi-psk");
+            let wifiUsername = document.getElementById("wifi-username");
+            let wifiPassword = document.getElementById("wifi-password");
 
             async function load() {
                 let response = await fetch("/api/config");
                 let config   = await response.json();
 
-                deviceName.value = config.device?.name || "";
-                wifiMode.value   = config.wifi?.mode   || "";
-                wifiSSID.value   = config.wifi?.ssid   || "";
-                wifiPSK.value    = config.wifi?.psk    || "";
+                wifiMode.value   = config.wifi?.mode       || "station";
+                wifiSSID.value   = config.wifi?.ssid       || "";
+                wifiPSK.value    = config.wifi?.psk        || "";
+                wifiUsername.value = config.wifi?.username || "";
+                wifiPassword.value = config.wifi?.password || "";
             }
 
             async function save() {
@@ -53,13 +57,12 @@
                     method: "POST",
                     headers: {"content-type": "application/json"},
                     body: JSON.stringify({
-                        device: {
-                            name: deviceName.value,
-                        },
                         wifi: {
-                            mode: wifiMode.value,
-                            ssid: wifiSSID.value,
-                            psk:  wifiPSK.value,
+                            mode:     wifiMode.value,
+                            ssid:     wifiSSID.value,
+                            psk:      wifiPSK.value,
+                            username: wifiUsername.value,
+                            password: wifiPassword.value,
                         },
                     }),
                 });
