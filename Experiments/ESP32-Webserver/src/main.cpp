@@ -66,10 +66,13 @@ extern "C" void app_main() {
     
     sleep_on_error(var_partition.error());
 
-    // Start WiFi
+    // Start WiFi    
     my_wifi::Config wifi_config = my_wifi::Config::read();
     my_wifi::WiFi::instance()->connect(wifi_config);
     sleep_on_error(my_wifi::WiFi::instance()->error());
 
-    my_wifi::WiFi::instance()->scan();
+    // // Wait to let the WiFi AP settle
+    // vTaskDelay(25000 / portTICK_PERIOD_MS);
+    // my_wifi::WiFi::instance()->scan();   
+    // sleep_on_error(my_wifi::WiFi::instance()->error());
 }

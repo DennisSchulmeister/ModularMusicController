@@ -46,6 +46,7 @@ Learnings
 1. [ESP32 Flash Memory Size](#esp32-flash-memory-size)
 1. [Flash Storage Options](#flash-storage-options)
 1. [Custom Partition Table](#custom-partition-table)
+1. [Application Size](#application-size)
 
 ### ESP-IDF instead of Arduino
 
@@ -173,3 +174,8 @@ By default the content of the `data` directory will be uploaded, but this can be
 
 See [Uploading files to the filesystem](https://docs.platformio.org/en/latest/platforms/espressif32.html#uploading-files-to-file-system)
 for details.
+
+### Application Size
+
+Applications using the ESP-IDF WiFi, Network, FS and LittleFS functionatliy get huge rather quickly.
+Even this simple example weigthed more than 1 MB even before the webserver was developed.

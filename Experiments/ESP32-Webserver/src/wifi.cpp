@@ -19,6 +19,7 @@ using namespace std;
 #include <esp_log.h>        // ESP_LOG…
 #include <esp_mac.h>        // MAC2STR, MACSTR
 #include <esp_netif.h>      // esp_netif_…
+#include <esp_timer.h>      // esp_timer_…
 #include <esp_wifi.h>       // esp_wifi_…
 
 namespace my_wifi {
@@ -32,9 +33,13 @@ constexpr const char* config_file = "/var/config/wifi";
 
 Config Config::read() noexcept {
     Config config{
-        .mode     = Mode::access_point,
-        .ssid     = "Modular-Music-Controller",
-        .psk      = "Modular-Music-Controller",
+        // .mode     = Mode::access_point,
+        // .ssid     = "Modular-Music-Controller",
+        // .psk      = "Modular-Music-Controller",
+        .mode     = Mode::station,
+        // .ssid     = "wahlmodul-iot",
+        // .psk      = "wahlmodul-iot",
+        ////////
         .username = "",
         .password = "",
     };
@@ -143,6 +148,8 @@ esp_err_t WiFi::connect(Config config) noexcept {
 
     _error = esp_wifi_init(&wifi_init_config);
     if (_error != ESP_OK) return _error;
+
+    esp_wifi_set_ps(WIFI_PS_NONE);
     
     // Register event handlers
     esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &WiFi::_event_handler, this, &eh_wifi_event);
@@ -154,6 +161,7 @@ esp_err_t WiFi::connect(Config config) noexcept {
     switch (config.mode) {
         case Mode::access_point: {
             wifi_config.ap.authmode = config.psk.size() > 0 ? WIFI_AUTH_WPA2_WPA3_PSK : WIFI_AUTH_OPEN;
+            wifi_config.ap.max_connection = 255;
             wifi_config.ap.sae_pwe_h2e = WPA3_SAE_PWE_BOTH;
             wifi_config.ap.bss_max_idle_cfg.period = WIFI_AP_DEFAULT_MAX_IDLE_PERIOD;
             wifi_config.ap.bss_max_idle_cfg.protected_keep_alive = 1;
@@ -170,7 +178,7 @@ esp_err_t WiFi::connect(Config config) noexcept {
                 /* len */ std::min(config.ssid.size(), static_cast<std::size_t>(MAX_PASSPHRASE_LEN))
             );
 
-            _error = esp_wifi_set_mode(WIFI_MODE_STA);
+            _error = esp_wifi_set_mode(WIFI_MODE_AP);
             if (_error != ESP_OK) return _error;
 
             _error = esp_wifi_set_config(WIFI_IF_AP, &wifi_config);
@@ -180,10 +188,20 @@ esp_err_t WiFi::connect(Config config) noexcept {
             break;
         }
         case Mode::station: {
-            wifi_config.sta.threshold.authmode = WIFI_AUTH_OPEN;
-            wifi_config.sta.failure_retry_cnt  = MY_WIFI_MAX_RETRY_COUNT;
-            wifi_config.sta.scan_method        = WIFI_ALL_CHANNEL_SCAN;         // Required for failure_retry_cnt
-
+            wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK; //WIFI_AUTH_OPEN;
+            wifi_config.sta.scan_method = WIFI_ALL_CHANNEL_SCAN;
+            wifi_config.sta.sort_method = WIFI_CONNECT_AP_BY_SIGNAL;
+            
+            // Disable advanced roaming / WPA3 / OWE features
+            wifi_config.sta.btm_enabled      = true;         // 802.11v - OK, helps Fritz!Mesh suggest roaming
+            wifi_config.sta.mbo_enabled      = true;         // 802.11k/v add-on, Fritz!Box ignores
+            wifi_config.sta.ft_enabled       = false;        // 802.11r - disable (breaks WPA2 handshake)
+            wifi_config.sta.owe_enabled      = false;        // disable open network enhancements
+            wifi_config.sta.pmf_cfg.capable  = true;
+            wifi_config.sta.pmf_cfg.required = false;
+            wifi_config.sta.sae_pwe_h2e      = WPA3_SAE_PWE_UNSPECIFIED;
+            wifi_config.sta.sae_pk_mode      = WPA3_SAE_PK_MODE_DISABLED;
+            
             std::strncpy(
                 /* dst */ reinterpret_cast<char*>(&wifi_config.sta.ssid),
                 /* src */ config.ssid.c_str(),
@@ -196,14 +214,22 @@ esp_err_t WiFi::connect(Config config) noexcept {
                 /* len */ std::min(config.ssid.size(), static_cast<std::size_t>(MAX_PASSPHRASE_LEN))
             );
 
-            _error = esp_wifi_set_mode(WIFI_MODE_AP);
+            _error = esp_wifi_set_mode(WIFI_MODE_STA);
             if (_error != ESP_OK) return _error;
 
             _error = esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
             if (_error != ESP_OK) return _error;
 
+            _error = esp_wifi_set_bandwidth(WIFI_IF_STA, WIFI_BW_HT20);
+            if (_error != ESP_OK) return _error;
+
+            _error = esp_wifi_set_protocol(WIFI_IF_STA, WIFI_PROTOCOL_11B | WIFI_PROTOCOL_11G | WIFI_PROTOCOL_11N);
+            if (_error != ESP_OK) return _error;
+
             // Enable enterprise authentication
             if (config.username.size() > 0) {
+                ESP_LOGI(TAG, "Enabling EAP authentication with username %s", config.username.c_str());
+
                 _error = esp_eap_client_set_username(reinterpret_cast<const unsigned char*>(config.username.c_str()), config.username.size());
                 if (_error != ESP_OK) return _error;
 
@@ -249,13 +275,36 @@ void WiFi::wifi_event_handler(int32_t event_id, void* event_data) noexcept {
     switch (event_id) {
         case WIFI_EVENT_STA_START:
         case WIFI_EVENT_STA_DISCONNECTED: {
-            if (_status.reconnect_count++ < MY_WIFI_MAX_RETRY_COUNT) {
-                ESP_LOGI(TAG, "Trying to connect ...");
-                _status.state = State::connecting;
-                _error = esp_wifi_connect();
-            } else {
-                ESP_LOGI(TAG, "Unable to connect to access point after %i atempts", _status.reconnect_count);
-                _status.state = State::disconnected;
+            int timeout_s = 1;
+
+            if (event_id == WIFI_EVENT_STA_DISCONNECTED) {                
+                auto event = reinterpret_cast<wifi_event_sta_disconnected_t*>(event_data);
+                ESP_LOGW(TAG, "Disconnected from access point, reason: %d, signal strength %i dBm, MAC " MACSTR, event->reason, event->rssi, MAC2STR(event->bssid));
+
+                // Wait 30 seconds before reconnecting, because some APs might otherwise block the station
+                timeout_s = 3;
+            }
+
+            static esp_timer_handle_t reconnect_timer = 0;
+            
+            if (reconnect_timer == 0 || !esp_timer_is_active(reconnect_timer)) {
+                ESP_LOGI(TAG, "Scheduling reconnect in %i seconds", timeout_s);
+
+                if (reconnect_timer) {
+                    esp_timer_stop(reconnect_timer);
+                    esp_timer_delete(reconnect_timer);
+                }
+                
+                const esp_timer_create_args_t timer_args = {
+                    .callback              = &WiFi::sta_reconnect_timer_cb,
+                    .arg                   = this,
+                    .dispatch_method       = ESP_TIMER_TASK,
+                    .name                  = "wifi_reconnect",
+                    .skip_unhandled_events = false,
+                };
+                
+                esp_timer_create(&timer_args, &reconnect_timer);
+                esp_timer_start_once(reconnect_timer, timeout_s * 1000000);
             }
 
             break;
@@ -285,6 +334,14 @@ void WiFi::wifi_event_handler(int32_t event_id, void* event_data) noexcept {
     }
 }
 
+void WiFi::sta_reconnect_timer_cb(void* arg) noexcept {
+    auto wifi = reinterpret_cast<WiFi*>(arg);
+
+    ESP_LOGI(TAG, "Trying to connect ...");
+    wifi->__set_state(State::connecting);
+    wifi->__set_error(esp_wifi_connect());
+}
+
 void WiFi::ip_event_handler(int32_t event_id, void* event_data) noexcept {
     char buffer[128] = {};
 
@@ -304,7 +361,7 @@ void WiFi::ip_event_handler(int32_t event_id, void* event_data) noexcept {
             std::snprintf(buffer, sizeof(buffer), IPSTR, IP2STR(&event->ip_info.gw));
             _status.gateway = buffer;
 
-            ESP_LOGI(TAG, "Got IPv4 address %s", _status.ip4);
+            ESP_LOGI(TAG, "Got IPv4 address %s", _status.ip4.c_str());
             break;
         }
         case IP_EVENT_GOT_IP6: {
@@ -316,7 +373,7 @@ void WiFi::ip_event_handler(int32_t event_id, void* event_data) noexcept {
             std::snprintf(buffer, sizeof(buffer), IPV6STR, IPV62STR(event->ip6_info.ip));
             _status.ip6 = buffer;
 
-            ESP_LOGI(TAG, "Got IPv6 address %s", _status.ip6);
+            ESP_LOGI(TAG, "Got IPv6 address %s", _status.ip6.c_str());
             break;
         }
         case IP_EVENT_STA_LOST_IP: {
@@ -340,19 +397,26 @@ std::vector<AccessPoint> WiFi::scan() noexcept {
 
     if (_error != ESP_OK) return {};
 
+    ESP_LOGI(TAG, "1"); ////
     uint16_t number = 0;
     _error = esp_wifi_scan_get_ap_num(&number);
+    ESP_LOGI(TAG, "1a, %i", _error); ////
     if (!_error != ESP_OK) return {};
+
+    ESP_LOGI(TAG, "Found %i access points", number);
 
     std::vector<AccessPoint> result{};
     result.reserve(number);
+    ESP_LOGI(TAG, "2"); ////
 
     for (int i = 0; i < number; i++) {
         wifi_ap_record_t ap_record{};
 
+        ESP_LOGI(TAG, "A"); ////
         _error = esp_wifi_scan_get_ap_record(&ap_record);
         if (_error != ESP_OK) return {};
 
+        ESP_LOGI(TAG, "B"); ////
         char mac_address[18];
         snprintf(mac_address, sizeof(mac_address), "%02x:%02x:%02x:%02x:%02x:%02x",
             ap_record.bssid[0], ap_record.bssid[1], ap_record.bssid[2],

@@ -22,10 +22,6 @@
 
 namespace my_wifi {
 
-#ifndef MY_WIFI_MAX_RETRY_COUNT
-#define MY_WIFI_MAX_RETRY_COUNT 5   ///< Maximum number of connection retries
-#endif
-
 /**
  * WiFi mode
  */
@@ -112,6 +108,7 @@ struct Config {
  * More advanced features might be added in future based on demand.
  * 
  * NOTE: IPv6 might need more code to actually work.
+ * TODO: For unknown reasons this cannot connect to Fritz! mesh networks.
  */
 class WiFi {
 public:
@@ -150,6 +147,9 @@ public:
      */
     Status status() noexcept { return _status; }
 
+    // Required by sta_reconnect_timer_cb()
+    void __set_state(State state) noexcept { _status.state = state; }
+    void __set_error(esp_err_t error) noexcept { _error = error; }
 private:
     /**
      * Constructor.
@@ -166,6 +166,11 @@ private:
      * WiFi event handler responding to WiFi connection changes. Updates the WiFi status.
      */
     void wifi_event_handler(int32_t event_id, void* event_data) noexcept;
+
+    /**
+     * Timer callback to try reconnecting as an access point.
+     */
+    static void sta_reconnect_timer_cb(void* arg) noexcept;
 
     /**
      * IP event handler responding to IP address changes. Updates the WiFi status.
