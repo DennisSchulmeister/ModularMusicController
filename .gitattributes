@@ -15,6 +15,7 @@ Firmware/main/data/** binary
 Webconfig/static/*.bundle.* binary
 
 *.pd binary
+*.step binary
 
 *.a binary
 *.png binary
