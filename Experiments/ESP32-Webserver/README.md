@@ -14,7 +14,7 @@ and the [Espressif IDF](https://docs.espressif.com/projects/esp-idf/en/stable/es
 to implement a typical web-based configuration portal with the following features:
 
 * Run in WiFi AP mode to provide its own network
-* Alternatively connect to an existing WiFi network, supporting PSK2 and EAP
+* Alternatively connect to an existing WiFi network, supporting WPA2, WPA3 and EAP
 * Run a minimal web server on device that hosts the web interface
 * Permanently store configuration values in non-volatile memory
 * Integrate an external build system like [npm](https://www.npmjs.com/) to build the static web assets

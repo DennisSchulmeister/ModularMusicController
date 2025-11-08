@@ -37,8 +37,8 @@ Config Config::read() noexcept {
         // .ssid     = "Modular-Music-Controller",
         // .psk      = "Modular-Music-Controller",
         .mode     = Mode::station,
-        // .ssid     = "wahlmodul-iot",
-        // .psk      = "wahlmodul-iot",
+        .ssid     = "Emil-Wachter-Str. 14",
+        .psk      = "DanaKatharinaZimolong",
         ////////
         .username = "",
         .password = "",
