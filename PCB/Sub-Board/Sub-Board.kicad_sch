@@ -39,6 +39,12 @@
 		(uuid "5070a027-cb84-4a1e-b210-11ab28629c48")
 	)
 	(junction
+		(at 81.28 25.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bcc5223-6b6d-4f97-846b-7b9600f6f69f")
+	)
+	(junction
 		(at 124.46 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -78,7 +84,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 40.64) (xy 63.5 40.64)
+			(xy 50.8 62.23) (xy 63.5 62.23)
 		)
 		(stroke
 			(width 0)
@@ -105,6 +111,16 @@
 			(type default)
 		)
 		(uuid "3230edd7-3013-4082-9fc1-5d8d65b3e2e3")
+	)
+	(wire
+		(pts
+			(xy 48.26 25.4) (xy 81.28 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3303bca4-5a87-4cc4-ba9c-826f62a2ed08")
 	)
 	(wire
 		(pts
@@ -286,6 +302,16 @@
 		)
 		(uuid "c64d4f76-87da-4dd5-b173-305c1351a5ba")
 	)
+	(wire
+		(pts
+			(xy 48.26 38.1) (xy 48.26 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7bd6215-a13b-40f8-841b-de173406286b")
+	)
 	(bus
 		(pts
 			(xy 177.8 69.85) (xy 190.5 69.85)
@@ -463,7 +489,7 @@
 			)
 		)
 		(pin "+5V" input
-			(at 63.5 40.64 180)
+			(at 63.5 62.23 180)
 			(uuid "1ff9cd1f-f6a0-4a7c-8cff-29f661474754")
 			(effects
 				(font
@@ -899,7 +925,7 @@
 			)
 		)
 		(pin "+5V" output
-			(at 50.8 40.64 0)
+			(at 50.8 62.23 0)
 			(uuid "da22308d-ee98-4045-8be8-7482a904923d")
 			(effects
 				(font
@@ -911,6 +937,16 @@
 		(pin "SystemBus.Data" output
 			(at 50.8 91.44 0)
 			(uuid "457e5268-1bab-472b-bfc2-de697d43556e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+3.3V Digital" input
+			(at 48.26 38.1 90)
+			(uuid "943e87f0-a231-4598-a545-18fe0182cf76")
 			(effects
 				(font
 					(size 1.27 1.27)

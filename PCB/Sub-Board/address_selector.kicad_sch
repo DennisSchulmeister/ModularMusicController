@@ -1703,7 +1703,7 @@
 		)
 		(uuid "6595bfbd-9d91-4ddc-a01d-0da1c65bb8da")
 	)
-	(hierarchical_label "+3.3V"
+	(hierarchical_label "+3.3V Digital"
 		(shape input)
 		(at 33.02 69.85 180)
 		(effects
@@ -1735,7 +1735,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "026286e9-3ed7-4cf1-899b-63d147077a80")
-		(property "Reference" "R8"
+		(property "Reference" "R9"
 			(at 90.678 82.6078 0)
 			(effects
 				(font
@@ -1789,7 +1789,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R8")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -1805,7 +1805,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "133f15eb-b287-4814-b01f-95c9995dca3c")
-		(property "Reference" "R11"
+		(property "Reference" "R12"
 			(at 113.538 82.6078 0)
 			(effects
 				(font
@@ -1859,7 +1859,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R11")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -1979,7 +1979,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22517b44-871d-4031-bf9b-b0d307e38966")
-		(property "Reference" "R7"
+		(property "Reference" "R8"
 			(at 83.058 82.6078 0)
 			(effects
 				(font
@@ -2033,7 +2033,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R7")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -2049,7 +2049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27f16b63-81bf-46f9-90f3-58414cf57b47")
-		(property "Reference" "R2"
+		(property "Reference" "R13"
 			(at 121.158 54.6678 0)
 			(effects
 				(font
@@ -2103,7 +2103,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R2")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -2119,7 +2119,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6021e257-92a6-4fe4-8bad-aa3d79200555")
-		(property "Reference" "R9"
+		(property "Reference" "R10"
 			(at 98.298 82.6078 0)
 			(effects
 				(font
@@ -2173,7 +2173,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R9")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -2255,7 +2255,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aa2790e6-9dbb-43e1-ba7c-ebbaacb12b51")
-		(property "Reference" "R5"
+		(property "Reference" "R6"
 			(at 67.818 82.6078 0)
 			(effects
 				(font
@@ -2309,7 +2309,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R5")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -2325,7 +2325,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d833bece-f3e6-4007-b4b4-5de6c0103922")
-		(property "Reference" "R4"
+		(property "Reference" "R5"
 			(at 39.37 64.6895 90)
 			(effects
 				(font
@@ -2377,7 +2377,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R4")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -2393,7 +2393,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e4c46de3-a3ec-4d6d-b5bb-64e90658704f")
-		(property "Reference" "R10"
+		(property "Reference" "R11"
 			(at 105.918 82.6078 0)
 			(effects
 				(font
@@ -2447,7 +2447,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R10")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -2463,7 +2463,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fed73014-5ae3-482e-91d0-ee172ea22639")
-		(property "Reference" "R6"
+		(property "Reference" "R7"
 			(at 75.438 82.6078 0)
 			(effects
 				(font
@@ -2517,7 +2517,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/0d3a9f9f-f57a-40a2-884d-240f1a33dfd6"
-					(reference "R6")
+					(reference "R7")
 					(unit 1)
 				)
 			)
