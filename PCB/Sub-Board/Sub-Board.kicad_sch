@@ -416,7 +416,7 @@
 				(justify right)
 			)
 		)
-		(pin "BoardAddress" output
+		(pin "BoardAddress[0..7]" output
 			(at 127 62.23 0)
 			(uuid "5822b72d-888f-49b4-8588-e2cfaea0acf7")
 			(effects
@@ -550,7 +550,7 @@
 				(justify left top)
 			)
 		)
-		(pin "Slot(0)" bidirectional
+		(pin "Slot0{Slot}" bidirectional
 			(at 190.5 62.23 180)
 			(uuid "9922b4eb-a344-4b95-996f-d11cd61b6287")
 			(effects
@@ -560,7 +560,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(6)" bidirectional
+		(pin "Slot6{Slot}" bidirectional
 			(at 190.5 77.47 180)
 			(uuid "55b01894-0347-4109-9498-5c49ab74a76b")
 			(effects
@@ -570,7 +570,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(4)" bidirectional
+		(pin "Slot4{Slot}" bidirectional
 			(at 190.5 72.39 180)
 			(uuid "3a07efeb-7f76-4656-ae7c-daf6de431861")
 			(effects
@@ -580,7 +580,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(5)" bidirectional
+		(pin "Slot5{Slot}" bidirectional
 			(at 190.5 74.93 180)
 			(uuid "ba06627f-9015-4a46-b252-4dc5e47c2687")
 			(effects
@@ -590,7 +590,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(2)" bidirectional
+		(pin "Slot2{Slot}" bidirectional
 			(at 190.5 67.31 180)
 			(uuid "0e15f7be-01ad-408d-940e-33ed94ea9d67")
 			(effects
@@ -600,7 +600,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(3)" bidirectional
+		(pin "Slot3{Slot}" bidirectional
 			(at 190.5 69.85 180)
 			(uuid "59244c86-cbad-4c53-8b2c-92fc97b154ee")
 			(effects
@@ -620,7 +620,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(7)" bidirectional
+		(pin "Slot7{Slot}" bidirectional
 			(at 190.5 80.01 180)
 			(uuid "ca5006e4-222a-4934-b558-adf6af08cb11")
 			(effects
@@ -660,7 +660,7 @@
 				(justify left)
 			)
 		)
-		(pin "Slot(1)" bidirectional
+		(pin "Slot1{Slot}" bidirectional
 			(at 190.5 64.77 180)
 			(uuid "84b61f86-163a-427a-9943-edc33e44fb16")
 			(effects
@@ -772,7 +772,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(2)" bidirectional
+		(pin "Slot2{Slot}" bidirectional
 			(at 177.8 67.31 0)
 			(uuid "02ae1fd1-6238-4af6-84c1-eb52e5679655")
 			(effects
@@ -782,7 +782,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(0)" bidirectional
+		(pin "Slot0{Slot}" bidirectional
 			(at 177.8 62.23 0)
 			(uuid "c176b801-420c-471f-8627-67984220d93e")
 			(effects
@@ -792,7 +792,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(3)" bidirectional
+		(pin "Slot3{Slot}" bidirectional
 			(at 177.8 69.85 0)
 			(uuid "92ea735a-179c-469b-9732-88f6f4bd9dee")
 			(effects
@@ -802,7 +802,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(1)" bidirectional
+		(pin "Slot1{Slot}" bidirectional
 			(at 177.8 64.77 0)
 			(uuid "2baeabd4-70a6-41c9-9e03-6916266120e5")
 			(effects
@@ -812,7 +812,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(5)" bidirectional
+		(pin "Slot5{Slot}" bidirectional
 			(at 177.8 74.93 0)
 			(uuid "d39049b6-5cd8-4606-aa12-94fbf3f2c0b4")
 			(effects
@@ -822,7 +822,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(4)" bidirectional
+		(pin "Slot4{Slot}" bidirectional
 			(at 177.8 72.39 0)
 			(uuid "4666b306-f036-440d-bed5-7c0f4409e088")
 			(effects
@@ -832,7 +832,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(6)" bidirectional
+		(pin "Slot6{Slot}" bidirectional
 			(at 177.8 77.47 0)
 			(uuid "292d40b8-3e86-4f9e-8a68-c64fc55c772c")
 			(effects
@@ -842,7 +842,7 @@
 				(justify right)
 			)
 		)
-		(pin "Slot(7)" bidirectional
+		(pin "Slot7{Slot}" bidirectional
 			(at 177.8 80.01 0)
 			(uuid "5bb6ce7d-791a-4387-88f7-ae83494188bc")
 			(effects
@@ -852,7 +852,7 @@
 				(justify right)
 			)
 		)
-		(pin "BoardAddress" input
+		(pin "BoardAddress[0..7]" input
 			(at 139.7 62.23 180)
 			(uuid "99fec083-ec7c-4f19-8acd-5724a129974a")
 			(effects

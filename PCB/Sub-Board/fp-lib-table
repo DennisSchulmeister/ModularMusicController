@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "TPS629210DRLR")(type "KiCad")(uri "${KIPRJMOD}/TPS629210DRLR")(options "")(descr "DC/DC Buck Converter"))
+  (lib (name "TPD2E001DZDR")(type "KiCad")(uri "${KIPRJMOD}/TPD2E001DZDR")(options "")(descr "TVS/EVD Diode Array"))
+)

@@ -1612,7 +1612,7 @@
 		)
 		(uuid "f7f1e92e-2389-4daa-94fd-12f407c2edbb")
 	)
-	(label "BoardAddress(2)"
+	(label "BoardAddress2"
 		(at 143.51 67.31 180)
 		(effects
 			(font
@@ -1622,7 +1622,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4a")
 	)
-	(label "BoardAddress(3)"
+	(label "BoardAddress3"
 		(at 143.51 69.85 180)
 		(effects
 			(font
@@ -1632,7 +1632,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4b")
 	)
-	(label "BoardAddress(0)"
+	(label "BoardAddress0"
 		(at 143.51 62.23 180)
 		(effects
 			(font
@@ -1642,7 +1642,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4c")
 	)
-	(label "BoardAddress(1)"
+	(label "BoardAddress1"
 		(at 143.51 64.77 180)
 		(effects
 			(font
@@ -1652,7 +1652,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4d")
 	)
-	(label "BoardAddress(7)"
+	(label "BoardAddress7"
 		(at 143.51 80.01 180)
 		(effects
 			(font
@@ -1662,7 +1662,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4e")
 	)
-	(label "BoardAddress(4)"
+	(label "BoardAddress4"
 		(at 143.51 72.39 180)
 		(effects
 			(font
@@ -1672,7 +1672,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d4f")
 	)
-	(label "BoardAddress(5)"
+	(label "BoardAddress5"
 		(at 143.51 74.93 180)
 		(effects
 			(font
@@ -1682,7 +1682,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d50")
 	)
-	(label "BoardAddress(6)"
+	(label "BoardAddress6"
 		(at 143.51 77.47 180)
 		(effects
 			(font
@@ -1692,7 +1692,7 @@
 		)
 		(uuid "4d1b789a-79dd-4028-9e0e-59fa55786d51")
 	)
-	(hierarchical_label "BoardAddress"
+	(hierarchical_label "BoardAddress[0..7]"
 		(shape output)
 		(at 146.05 46.99 90)
 		(effects
