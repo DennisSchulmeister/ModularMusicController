@@ -11,6 +11,9 @@
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols)
+	(bus_alias "I2C"
+		(members "Clock" "Data")
+	)
 	(text "Sub-Board System Architecture"
 		(exclude_from_sim no)
 		(at 17.272 17.78 0)
@@ -92,6 +95,16 @@
 		)
 		(uuid "15420ad0-171f-427e-a4c8-66a28499b28f")
 	)
+	(bus
+		(pts
+			(xy 50.8 88.9) (xy 139.7 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16d4193a-1a9c-42cb-b52b-65c169fb6a89")
+	)
 	(wire
 		(pts
 			(xy 175.26 30.48) (xy 213.36 30.48)
@@ -101,16 +114,6 @@
 			(type default)
 		)
 		(uuid "21546f7b-247c-45ab-aa30-5d26dd81f55b")
-	)
-	(wire
-		(pts
-			(xy 177.8 88.9) (xy 190.5 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3230edd7-3013-4082-9fc1-5d8d65b3e2e3")
 	)
 	(wire
 		(pts
@@ -141,16 +144,6 @@
 			(type default)
 		)
 		(uuid "56ac0516-f3bc-4d2a-9b9b-bf5b03ed4463")
-	)
-	(wire
-		(pts
-			(xy 50.8 88.9) (xy 139.7 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c23e83c-d8b7-482b-ab99-78928e388c45")
 	)
 	(wire
 		(pts
@@ -244,16 +237,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 91.44) (xy 190.5 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9669b872-9f4f-44a7-86fc-e401296948c2")
-	)
-	(wire
-		(pts
 			(xy 83.82 27.94) (xy 83.82 38.1)
 		)
 		(stroke
@@ -342,16 +325,6 @@
 		)
 		(uuid "dca1d601-8a46-41cc-9bdf-11c87894c8f1")
 	)
-	(wire
-		(pts
-			(xy 50.8 91.44) (xy 139.7 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7fc5e1f-cf31-4693-832f-4c3e72da7f24")
-	)
 	(bus
 		(pts
 			(xy 177.8 62.23) (xy 190.5 62.23)
@@ -361,6 +334,16 @@
 			(type default)
 		)
 		(uuid "e91fa278-40d9-4b3f-8147-fffac83e5f12")
+	)
+	(bus
+		(pts
+			(xy 177.8 88.9) (xy 190.5 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecaf53cd-d644-4ea5-8c26-35ba640853ce")
 	)
 	(wire
 		(pts
@@ -518,7 +501,7 @@
 	)
 	(sheet
 		(at 190.5 38.1)
-		(size 25.4 57.15)
+		(size 25.4 54.61)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -542,7 +525,7 @@
 			)
 		)
 		(property "Sheetfile" "slots.kicad_sch"
-			(at 190.5 95.8346 0)
+			(at 190.5 93.2946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -610,7 +593,7 @@
 				(justify left)
 			)
 		)
-		(pin "SlotBus.Clock" input
+		(pin "SlotBus{I2C}" input
 			(at 190.5 88.9 180)
 			(uuid "9b7f7954-51d2-4812-880b-87de5337d7ca")
 			(effects
@@ -650,16 +633,6 @@
 				(justify right)
 			)
 		)
-		(pin "SlotBus.Data" input
-			(at 190.5 91.44 180)
-			(uuid "0280b497-b295-40b2-8631-b480d107c4b5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "Slot1{Slot}" bidirectional
 			(at 190.5 64.77 180)
 			(uuid "84b61f86-163a-427a-9943-edc33e44fb16")
@@ -680,7 +653,7 @@
 	)
 	(sheet
 		(at 139.7 38.1)
-		(size 38.1 57.15)
+		(size 38.1 54.61)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -704,7 +677,7 @@
 			)
 		)
 		(property "Sheetfile" "stm32-mcu.kicad_sch"
-			(at 139.7 95.8346 0)
+			(at 139.7 93.2946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -722,7 +695,7 @@
 				(justify right)
 			)
 		)
-		(pin "SystemBus.Clock" input
+		(pin "SystemBus{I2C}" input
 			(at 139.7 88.9 180)
 			(uuid "caa219dc-4690-4ea4-9fb7-1f47790de3cd")
 			(effects
@@ -742,27 +715,7 @@
 				(justify right)
 			)
 		)
-		(pin "SystemBus.Data" input
-			(at 139.7 91.44 180)
-			(uuid "b54944b3-3b0c-43de-8f52-687daf0e3361")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SlotBus.Data" output
-			(at 177.8 91.44 0)
-			(uuid "7615370c-c8ce-4969-abc0-d3eea1326f7f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "SlotBus.Clock" output
+		(pin "SlotBus{I2C}" output
 			(at 177.8 88.9 0)
 			(uuid "6d8029df-fd4e-4591-a665-b3d870eecaf3")
 			(effects
@@ -882,7 +835,7 @@
 	)
 	(sheet
 		(at 25.4 38.1)
-		(size 25.4 57.15)
+		(size 25.4 54.61)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -906,7 +859,7 @@
 			)
 		)
 		(property "Sheetfile" "system_bus.kicad_sch"
-			(at 25.4 95.8346 0)
+			(at 25.4 93.2946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -914,7 +867,7 @@
 				(justify left top)
 			)
 		)
-		(pin "SystemBus.Clock" output
+		(pin "SystemBus{I2C}" output
 			(at 50.8 88.9 0)
 			(uuid "022f61f3-e115-4f8e-ab10-5781f5d677e8")
 			(effects
@@ -927,16 +880,6 @@
 		(pin "+5V" output
 			(at 50.8 62.23 0)
 			(uuid "da22308d-ee98-4045-8be8-7482a904923d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "SystemBus.Data" output
-			(at 50.8 91.44 0)
-			(uuid "457e5268-1bab-472b-bfc2-de697d43556e")
 			(effects
 				(font
 					(size 1.27 1.27)
