@@ -5,7 +5,7 @@
 	(uuid "f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a")
 	(paper "A4")
 	(title_block
-		(title "Modular Music Controller – Template")
+		(title "Modular Music Controller / Sub-Board / Architecture")
 		(date "2025-11-01")
 		(rev "1")
 		(company "Dennis Schulmeister-Zimolong")
@@ -27,7 +27,7 @@
 		)
 		(uuid "4e297d83-fae7-48fc-8cba-adc0d89d5c70")
 	)
-	(text "TODO:\nFootprint assignments\nPBC layout template\nESP32 version for the main board"
+	(text "TODO:\nPBC layout template\nESP32 version for the main board"
 		(exclude_from_sim no)
 		(at 44.196 120.396 0)
 		(effects

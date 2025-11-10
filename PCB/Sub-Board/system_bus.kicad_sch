@@ -5,7 +5,7 @@
 	(uuid "626ee972-d014-4b22-a4ef-d0eeb0e89e51")
 	(paper "A4")
 	(title_block
-		(title "Modular Music Controller – System Bus")
+		(title "Modular Music Controller / Sub-Board / System Bus")
 		(date "2025-11-02")
 		(rev "1")
 		(company "Dennis Schulmeister-Zimolong")
@@ -2815,7 +2815,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Horizontal"
 			(at 78.74 72.39 0)
 			(effects
 				(font
@@ -3122,7 +3122,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 158.75 69.088 90)
 			(effects
 				(font
@@ -3190,7 +3190,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 158.75 66.548 90)
 			(effects
 				(font

@@ -5,7 +5,7 @@
 	(uuid "d5154dc9-2d22-438b-beb0-1be0a48f2774")
 	(paper "A4")
 	(title_block
-		(title "Modular Music Controller – Address Selector")
+		(title "Modular Music Controller / Sub-Board / Address Selector")
 		(date "2025-11-02")
 		(rev "1")
 		(company "Dennis Schulmeister-Zimolong")
@@ -1753,7 +1753,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 87.122 83.82 90)
 			(effects
 				(font
@@ -1823,7 +1823,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 109.982 83.82 90)
 			(effects
 				(font
@@ -1891,7 +1891,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx07_Slide_6.7x19.34mm_W6.73mm_P2.54mm_LowProfile_JPin"
 			(at 55.88 72.39 0)
 			(effects
 				(font
@@ -1997,7 +1997,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 79.502 83.82 90)
 			(effects
 				(font
@@ -2067,7 +2067,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 117.602 55.88 90)
 			(effects
 				(font
@@ -2137,7 +2137,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 94.742 83.82 90)
 			(effects
 				(font
@@ -2273,7 +2273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 64.262 83.82 90)
 			(effects
 				(font
@@ -2341,7 +2341,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 39.37 71.628 90)
 			(effects
 				(font
@@ -2411,7 +2411,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 102.362 83.82 90)
 			(effects
 				(font
@@ -2481,7 +2481,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 71.882 83.82 90)
 			(effects
 				(font
