@@ -1454,6 +1454,16 @@
 		)
 		(uuid "fec382c2-86e5-42d1-8959-61e74f21a5f3")
 	)
+	(label "MODE{slash}S-CONF"
+		(at 93.98 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6a21c437-69e0-43b0-a6da-f0dd58b8805e")
+	)
 	(hierarchical_label "+5V"
 		(shape input)
 		(at 80.01 53.34 180)
