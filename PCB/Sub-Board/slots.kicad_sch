@@ -12074,7 +12074,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 248.92 114.3 0)
 			(effects
 				(font
@@ -12213,7 +12213,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 81.28 168.91 0)
 			(effects
 				(font
@@ -12688,7 +12688,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 327.66 72.39 0)
 			(effects
 				(font
@@ -12768,7 +12768,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 241.3 72.39 0)
 			(effects
 				(font
@@ -12844,7 +12844,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 248.92 168.91 0)
 			(effects
 				(font
@@ -13124,7 +13124,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 88.9 114.3 0)
 			(effects
 				(font
@@ -13532,7 +13532,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 88.9 168.91 0)
 			(effects
 				(font
@@ -13810,7 +13810,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 327.66 168.91 0)
 			(effects
 				(font
@@ -13889,7 +13889,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 327.66 114.3 0)
 			(effects
 				(font
@@ -13963,7 +13963,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 241.3 114.3 0)
 			(effects
 				(font
@@ -14167,7 +14167,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 88.9 72.39 0)
 			(effects
 				(font
@@ -14714,7 +14714,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 161.29 72.39 0)
 			(effects
 				(font
@@ -14791,7 +14791,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 161.29 210.82 0)
 			(effects
 				(font
@@ -15199,7 +15199,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 320.04 210.82 0)
 			(effects
 				(font
@@ -15672,7 +15672,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 241.3 168.91 0)
 			(effects
 				(font
@@ -15882,7 +15882,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 168.91 210.82 0)
 			(effects
 				(font
@@ -16289,7 +16289,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 168.91 114.3 0)
 			(effects
 				(font
@@ -17163,7 +17163,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 81.28 72.39 0)
 			(effects
 				(font
@@ -17840,7 +17840,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 88.9 210.82 0)
 			(effects
 				(font
@@ -18649,7 +18649,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 168.91 168.91 0)
 			(effects
 				(font
@@ -18929,7 +18929,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 248.92 72.39 0)
 			(effects
 				(font
@@ -19273,7 +19273,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 320.04 168.91 0)
 			(effects
 				(font
@@ -19817,7 +19817,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 248.92 210.82 0)
 			(effects
 				(font
@@ -20093,7 +20093,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 241.3 210.82 0)
 			(effects
 				(font
@@ -20968,7 +20968,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 320.04 114.3 0)
 			(effects
 				(font
@@ -21042,7 +21042,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 161.29 114.3 0)
 			(effects
 				(font
@@ -21384,7 +21384,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 320.04 72.39 0)
 			(effects
 				(font
@@ -21594,7 +21594,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 327.66 210.82 0)
 			(effects
 				(font
@@ -22000,7 +22000,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 81.28 210.82 0)
 			(effects
 				(font
@@ -22475,7 +22475,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 161.29 168.91 0)
 			(effects
 				(font
@@ -22752,7 +22752,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
 			(at 81.28 114.3 0)
 			(effects
 				(font
@@ -22958,7 +22958,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
 			(at 168.91 72.39 0)
 			(effects
 				(font

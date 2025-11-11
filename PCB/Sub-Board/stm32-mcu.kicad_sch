@@ -3564,7 +3564,7 @@
 		)
 		(uuid "9f9b329a-ac24-4f6e-9139-2476a02f45ba")
 	)
-	(text "Place one 100 nF capacatior near or under each VDD pin"
+	(text "Place one 100 nF capacatior near each VDD pin"
 		(exclude_from_sim no)
 		(at 292.608 132.334 0)
 		(effects
