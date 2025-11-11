@@ -278,7 +278,7 @@
 	(net 129 "/STM32-MCU/SystemBus.Clock")
 	(net 130 "Net-(L1-Pad1)")
 	(net 131 "Net-(U1-SW)")
-	(net 132 "Net-(U1-MODE{slash}S-CONF)")
+	(net 132 "GNDD")
 	(net 133 "Net-(R5-Pad2)")
 	(net 134 "/Board Address/BoardAddress6")
 	(net 135 "/Board Address/BoardAddress5")
@@ -337,6 +337,7 @@
 	(net 188 "unconnected-(U3-PB2-Pad37)")
 	(net 189 "/System Bus/SystemBus-Data")
 	(net 190 "/System Bus/SystemBus-Clock")
+	(net 191 "/Power Supply/MODE{slash}S-CONF")
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "0049348d-0e0d-4ca4-903d-bab937b635b5")
@@ -344,13 +345,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R113"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "858e4037-ba70-4e7a-8f1e-227af9b71c8f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -500,8 +501,8 @@
 			(uuid "7c2fff41-f9f5-414e-8ff0-fd3456527725")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -510,7 +511,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "bd505332-2e62-4228-9855-f584f28507a7")
 		)
@@ -543,13 +544,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R78"
-			(at -1.778 0 0)
+			(at -2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "72a1bb87-cd86-4405-bd4e-42e178ed8ade")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -699,8 +700,8 @@
 			(uuid "d7b93326-3c58-4172-8bd3-1aa3539610dc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -742,13 +743,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R66"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "b23e14ad-c070-408e-b34c-11c6edfa2fd0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -898,8 +899,8 @@
 			(uuid "6b56c397-98da-4aaa-b8bd-ddf24d2876d5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -908,7 +909,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "76da1145-274c-4a33-b909-9f1cbf833bad")
 		)
@@ -941,13 +942,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R73"
-			(at -1.776 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "c2de2ed4-960e-4ce9-9159-4683e242da4e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1097,8 +1098,8 @@
 			(uuid "678fe06c-62f6-45fc-b87b-4821a9d99951")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1107,7 +1108,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "7bc35c5a-ccf9-4876-b87a-c7c30c2aba8a")
 		)
@@ -1140,13 +1141,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R99"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "7d34e84c-090d-4576-8f1f-5623d348fef4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1296,8 +1297,8 @@
 			(uuid "b26fc8af-b426-497b-8f50-1ef713556959")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1306,7 +1307,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "39624986-fb52-464e-8b9e-09af92df078d")
 		)
@@ -1339,13 +1340,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R67"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "9c6b04c4-237e-4742-8d7d-8e89cd7d778b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1495,8 +1496,8 @@
 			(uuid "3d94fd52-a16a-4972-b8b8-0ff1ab100194")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1505,7 +1506,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "c000d7d1-d190-49cb-9b3f-0fca995513b8")
 		)
@@ -1538,13 +1539,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R57"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "7a84457a-8a19-49f7-ba43-f21ab78879fa")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1694,8 +1695,8 @@
 			(uuid "0698a1c9-72ee-4394-9e2e-18efbbb5f63c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1713,7 +1714,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4e9da2c7-973e-4c3d-a257-a619e96a5baa")
 		)
@@ -1737,13 +1738,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J33"
-			(at -0.025 8.142 0)
+			(at -0.001 8.904 0)
 			(layer "F.SilkS")
 			(uuid "d42aed89-d032-40fb-9a39-4968a32d566a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -1963,8 +1964,8 @@
 			(uuid "07cc2aa1-1843-4cbe-a0fe-1feaaf005366")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2054,13 +2055,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R64"
-			(at -1.776 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "0522d6ca-1625-447a-bdd5-872019813b7e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2210,8 +2211,8 @@
 			(uuid "76f26cb0-bcc3-4acb-87b4-42e4d3503153")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2220,7 +2221,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "96552a65-7058-414f-8a9a-507c357f2ea7")
 		)
@@ -2253,13 +2254,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R39"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "1e65f372-631d-444a-9446-057bda0e2257")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2409,8 +2410,8 @@
 			(uuid "236c3519-fc11-4da7-8f6b-7423a4bdfd79")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2419,7 +2420,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f4e8adcd-412d-460e-a827-ad875173f84e")
 		)
@@ -2452,13 +2453,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R60"
-			(at -1.776 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "e120bf53-aaf7-490d-a7cd-8689164d3559")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2608,8 +2609,8 @@
 			(uuid "946ac3c6-8d38-4905-9049-f5d96bd7692c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2618,7 +2619,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "568227fe-9cb3-46a4-8c69-9d0828b9743d")
 		)
@@ -2651,13 +2652,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R46"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "bb4bd7f5-66eb-489f-90b1-01bf9c967bfe")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2807,8 +2808,8 @@
 			(uuid "e5da816c-d99d-4b10-9461-6ce396bef5fe")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -2817,7 +2818,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "cc72872e-e815-4966-a705-cf3cbc80eebf")
 		)
@@ -2850,13 +2851,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R114"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "f0e21f77-0185-4d67-9b00-e2492232be73")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3006,8 +3007,8 @@
 			(uuid "5dcb094d-381c-47e4-945b-a77978b1915a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3016,7 +3017,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "83668cb6-ad95-445e-9abf-3af107957096")
 		)
@@ -3049,13 +3050,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R37"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "60ce6c58-6f32-4d19-b7b7-f70f83a855ad")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3205,8 +3206,8 @@
 			(uuid "2dac4d8b-b8d0-44c2-8f63-49fae40e21c4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3215,7 +3216,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "6d7258bc-8242-481b-b8a6-7efffe4d8e24")
 		)
@@ -3248,13 +3249,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R86"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "2b3dc28b-e9d9-4161-ad67-1136e744bf11")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3404,8 +3405,8 @@
 			(uuid "8a240a22-8849-410b-b577-fadee4a81bc7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3414,7 +3415,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "23a65f23-48c9-44e8-b4b6-c72f52d7cb0e")
 		)
@@ -3447,13 +3448,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R88"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "3daa9629-48e3-4936-b68c-8f80c322c226")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3603,8 +3604,8 @@
 			(uuid "447bbedc-7dfd-4309-a018-5f096e3e0a9d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3613,7 +3614,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "689797da-b625-4b3a-a0e3-bdd6b5d9bf0d")
 		)
@@ -3646,13 +3647,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R70"
-			(at -1.776 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "beacaf85-e2b8-42ab-9933-daf5561c4710")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3802,8 +3803,8 @@
 			(uuid "0c869c4e-1879-4bc4-acec-233333e69e92")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -3812,7 +3813,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "9cbd1f64-01d2-4fc0-b5d4-a875b4756ba4")
 		)
@@ -3845,13 +3846,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R87"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "98ca346f-a8cf-4eb6-b832-469da5e3c205")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4001,8 +4002,8 @@
 			(uuid "7b52e644-ea66-44ae-8b79-f4a8d465fa4d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4011,7 +4012,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "a4badff4-a46e-464e-abdc-dd0f9b0c864e")
 		)
@@ -4044,13 +4045,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J31"
-			(at -0.025 8.142 0)
+			(at -0.001 8.65 0)
 			(layer "F.SilkS")
 			(uuid "7c70e1ad-038e-4681-9551-a4fb116ab310")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4270,8 +4271,8 @@
 			(uuid "3dd81728-7f65-45d8-8128-d8de1833981e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4361,13 +4362,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J21"
-			(at -0.025 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "2608c98d-fb28-4ffd-a10e-9190a7472e00")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4587,8 +4588,8 @@
 			(uuid "fa3ed36c-bcf7-437b-84ca-e8c0e4ec553a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4667,13 +4668,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R29"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "ec0421a3-4834-46a7-b2ff-4285a17ec47b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4823,8 +4824,8 @@
 			(uuid "2c4258cd-8aff-4292-b469-18c18fabbf92")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -4842,7 +4843,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "07bc2b89-b093-420a-b59d-d76d95080cc7")
 		)
@@ -4866,13 +4867,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R72"
-			(at -1.776 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "227500c2-fb5e-4a2c-acbe-f9b514cbfd98")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5022,8 +5023,8 @@
 			(uuid "27879e5e-ee0a-4f9b-b59b-ee57e7525c59")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5032,7 +5033,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "ba7385ad-4076-4206-8773-96bee2c914ed")
 		)
@@ -5065,13 +5066,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R112"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "42c984d2-df0c-4b8d-90a4-a0272b2d6103")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5221,8 +5222,8 @@
 			(uuid "6fcf7714-9033-499b-973c-617d67f00b0e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5231,7 +5232,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b9bce726-4675-46e6-8876-3fe9132c8534")
 		)
@@ -5264,13 +5265,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R95"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "d8144374-d5d8-4965-8a69-491d28b96e1d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5420,8 +5421,8 @@
 			(uuid "b3f9bdb8-ecb2-43e4-b7a7-75cdf8830999")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5430,7 +5431,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f5b9aefb-b17f-4764-b24c-fd3a90fd5c4d")
 		)
@@ -5463,13 +5464,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R121"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "8c6f2dd0-10f6-4aac-89a5-2ab1461e5abd")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5619,8 +5620,8 @@
 			(uuid "f05d3100-ae75-477f-8012-b3b94012cb97")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5629,7 +5630,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "550f48a0-d83b-4ade-b097-30aee64b344e")
 		)
@@ -5662,13 +5663,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R55"
-			(at 1.776 0 0)
+			(at 2.284 0 0)
 			(layer "F.SilkS")
 			(uuid "652b3954-3eb4-4069-8c51-c787e3ccb302")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5818,8 +5819,8 @@
 			(uuid "1b2240fd-e820-4a57-877a-c5a36f3001ef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -5837,7 +5838,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "dfdbb51a-a413-4e1f-97e5-86261b954520")
 		)
@@ -5861,13 +5862,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R34"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "cfecc10d-66f9-44d0-a412-2a50ccd88d11")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6017,8 +6018,8 @@
 			(uuid "33096594-63ab-4998-a0f5-b44ae2db6660")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6027,7 +6028,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "2f712aff-13a8-4e34-ab9c-7266181a9989")
 		)
@@ -6060,13 +6061,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R125"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "aa22e070-6931-4325-b621-26d40453a2e7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6216,8 +6217,8 @@
 			(uuid "70c258fc-15ba-4718-9d28-a296796ba289")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6226,7 +6227,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "5edd668b-8d97-4b6e-b923-e8d99e4d8652")
 		)
@@ -6259,13 +6260,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R107"
-			(at -2.032 0 0)
+			(at -2.794 0 0)
 			(layer "F.SilkS")
 			(uuid "8132dcc7-1991-4dfe-b5f5-e3fddb7388ba")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6415,8 +6416,8 @@
 			(uuid "a4709f22-e121-4654-bf57-cc09440706bf")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6458,13 +6459,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R96"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "6214596f-7809-46ee-be14-55aa1255e86c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6614,8 +6615,8 @@
 			(uuid "ddd22e17-a2a7-46cb-8c2e-f57b2cc25e99")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6624,7 +6625,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "182f5934-3f25-4a3b-8d65-eacfbc2fda0a")
 		)
@@ -6657,13 +6658,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J4"
-			(at -0.025 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "fc48d903-5fcf-4150-8f69-9b8827704bb0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6883,8 +6884,8 @@
 			(uuid "1a6481a6-d9aa-4980-a225-b7e772afb97f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -6952,13 +6953,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R119"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "5ac12fcd-6722-47d3-a657-3ce47ed19f34")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7108,8 +7109,8 @@
 			(uuid "cfef5554-7124-4f0c-a7e0-7cbf8f4348c0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7118,7 +7119,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "728b5460-bc9f-4cdf-84e9-fd91a1b8a87f")
 		)
@@ -7151,13 +7152,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R38"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "f79a4f20-c5ba-481d-94ae-be36c1d19280")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7307,8 +7308,8 @@
 			(uuid "e96247b3-2ed7-4133-9af2-5342f6fb8adb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7317,7 +7318,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "868b326b-312d-410c-ba1c-d2c1a7c5e599")
 		)
@@ -7350,13 +7351,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R85"
-			(at 1.778 0 0)
+			(at 2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "5d4d1d94-d008-48f2-8400-f7098606648c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7506,8 +7507,8 @@
 			(uuid "d0c629ed-c12b-42eb-aaaa-a5125ec79f1f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7525,7 +7526,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b0d80195-265d-4e1c-89a6-c18b391d9b86")
 		)
@@ -7549,13 +7550,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R32"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "72740330-5f71-4abe-9a6e-d06c2f76cfdb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7705,8 +7706,8 @@
 			(uuid "f5d7ea0a-e6f5-4d02-9800-85e7909e756d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7724,7 +7725,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4a6cf316-9609-40b0-b1f7-6bf19f0355fa")
 		)
@@ -7748,13 +7749,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R63"
-			(at -1.776 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "394e7f6f-a12f-4ebc-b897-0fe4642de2bd")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7904,8 +7905,8 @@
 			(uuid "a2f060c0-2d74-42fa-8724-d9a03c09a06d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -7914,7 +7915,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f5d7e69e-fe33-4b01-9abe-340c910f8210")
 		)
@@ -7947,13 +7948,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J12"
-			(at 0 5.221 180)
+			(at 0.126 5.729 180)
 			(layer "F.SilkS")
 			(uuid "af70e9ac-41a8-4089-8bab-78b022cd06a1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8173,8 +8174,8 @@
 			(uuid "c569846e-a348-467f-8b44-db2af42556d1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8242,13 +8243,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R31"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "3101ab3e-93c3-4e65-8735-5bab38fbedff")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8398,8 +8399,8 @@
 			(uuid "9e5971c1-7542-4d92-b5c3-40601fd1a327")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8417,7 +8418,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "db77f47b-0227-4dfb-9f89-11f518933011")
 		)
@@ -8441,13 +8442,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R56"
-			(at 1.776 0 0)
+			(at 2.284 0 0)
 			(layer "F.SilkS")
 			(uuid "0f2a08a3-935a-4b34-9051-7653f3911842")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8597,8 +8598,8 @@
 			(uuid "da652b24-7f38-47ef-af40-31d38bcb45c5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8616,7 +8617,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f0677e82-b7b3-4562-841e-9bd87818803d")
 		)
@@ -8640,13 +8641,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R83"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "55b320f5-2769-4b75-b19f-420fb8e53671")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8796,8 +8797,8 @@
 			(uuid "32693855-6fa2-442b-8cc9-e1cac8b31600")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8815,7 +8816,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b975efc0-f38c-4293-8bde-92519e7a403b")
 		)
@@ -8839,13 +8840,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R42"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "b02d6364-4f61-4171-8ee0-e7fd2000e32a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -8995,8 +8996,8 @@
 			(uuid "33dcf72f-1840-4cfe-8772-57d37e4108b0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9005,7 +9006,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "61daf461-c1fb-48dd-8ff6-52fd7a835bba")
 		)
@@ -9038,13 +9039,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R49"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "67ca5a3c-ff32-4da1-82fe-0686d0225714")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9194,8 +9195,8 @@
 			(uuid "a0864291-a4d7-4900-ad27-46d46714cde2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9204,7 +9205,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "5f9fb44a-1647-4107-9d81-1cb75b5ad164")
 		)
@@ -9237,13 +9238,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R82"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "e28ddb8e-60df-4337-a939-85aacdab00de")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9393,8 +9394,8 @@
 			(uuid "44da3a5f-e319-435e-a491-83db3d7bf541")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9412,7 +9413,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d49cfad6-d1e1-4f2a-9c59-ca17cc75568c")
 		)
@@ -9436,13 +9437,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R65"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "7416a15c-874e-423a-a93f-286516e5682f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9592,8 +9593,8 @@
 			(uuid "cb84687b-f31d-4fc8-9cb3-fca2e4294bb1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9602,7 +9603,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "5318e3ca-d29a-48a4-9ff4-5975b6ab55b1")
 		)
@@ -9635,13 +9636,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R111"
-			(at 1.957 0 0)
+			(at 2.794 0 0)
 			(layer "F.SilkS")
 			(uuid "564548a1-dacc-4ce6-af00-90f67821005b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9791,8 +9792,8 @@
 			(uuid "8c53fc44-5e47-4b00-8135-39c5efde3035")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -9810,7 +9811,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "cd49ab53-f8c3-4b3a-8904-931897a06125")
 		)
@@ -9834,20 +9835,20 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R123"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
-			(uuid "2b77a0af-b94c-4db9-8c2c-f0b3c658b132")
+			(uuid "7664748a-c9f2-4c74-ba3b-56f8d0763530")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
 		(property "Value" "10k"
 			(at 0 1.17 90)
 			(layer "F.Fab")
-			(uuid "0b2b1284-e9f8-4fab-bdb5-c9d0d1ff02f3")
+			(uuid "0a967821-02c1-413d-b88b-f1142c334c7a")
 			(effects
 				(font
 					(size 1 1)
@@ -9859,7 +9860,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "801bbdc9-5f66-4726-af4f-1ecc15414610")
+			(uuid "b37446a9-36dd-4437-bf62-a79a625115bc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9871,7 +9872,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "af61cde8-34e9-4bb4-8387-da7277d9aae7")
+			(uuid "fdf4a268-132a-478e-a60b-c09caf6b660f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9990,8 +9991,8 @@
 			(uuid "7360405e-9893-40aa-8961-5f7454534daa")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10000,7 +10001,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d6f7ce52-ba83-49c8-ae23-6963334e0062")
 		)
@@ -10033,13 +10034,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J25"
-			(at -0.025 8.142 0)
+			(at -0.001 8.904 0)
 			(layer "F.SilkS")
 			(uuid "6117e097-be48-4900-b3d6-713fb71a52ac")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10259,8 +10260,8 @@
 			(uuid "67bc977d-0053-4149-b649-12f7cbba74e6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10350,13 +10351,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R61"
-			(at -1.776 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "0367d2bb-282a-422e-95ac-6fce5f3527db")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10506,8 +10507,8 @@
 			(uuid "8842b043-924a-437b-aba1-9fe28e1ae5bb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10516,7 +10517,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "45e08c43-bd36-4bdd-80f8-61dfe86d2275")
 		)
@@ -10549,13 +10550,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R108"
-			(at -2.032 0 0)
+			(at -2.869 0 0)
 			(layer "F.SilkS")
 			(uuid "d89a6483-9c69-4319-a7aa-3cd5468ec039")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10705,8 +10706,8 @@
 			(uuid "3e126e0c-1080-4bf3-a467-d91349761eb2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10748,13 +10749,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R52"
-			(at -1.778 0 0)
+			(at -2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "58771344-51bc-4156-bfc7-74b140cef660")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10904,8 +10905,8 @@
 			(uuid "64a30900-f291-4f72-958c-edbdd748a9e6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -10947,13 +10948,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J34"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "48dacfa4-4817-49d6-8bd1-47734469f3b2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11173,8 +11174,8 @@
 			(uuid "78537a7d-9a88-4708-8e6d-bbad306ec316")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11242,13 +11243,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R104"
-			(at -2.032 0 0)
+			(at -2.869 0 0)
 			(layer "F.SilkS")
 			(uuid "0db1b9cc-b3cc-490a-8146-c87700795905")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11398,8 +11399,8 @@
 			(uuid "142f9e97-d48e-4b53-a040-bc7d70718052")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11441,13 +11442,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R97"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "241bd77c-7d87-4e27-8b08-3908d555b460")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11597,8 +11598,8 @@
 			(uuid "f3ef2d53-929c-4538-ac34-f900f6f0a282")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11607,7 +11608,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "16e9ec01-96b0-412b-9f19-e6e4ad8b4965")
 		)
@@ -11640,13 +11641,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R35"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "824f5f84-7ae8-425c-b789-a9333f8b4fd0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11796,8 +11797,8 @@
 			(uuid "06032c75-69da-434f-a616-e693964e3821")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -11806,7 +11807,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "2878c9d5-b3d3-4b85-a6b9-926cdd17d789")
 		)
@@ -11839,13 +11840,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J3"
-			(at -0.025 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "a72590bb-05ca-4da0-91c1-2576f4add926")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12065,8 +12066,8 @@
 			(uuid "3aac4a29-b8f9-4ad8-94ca-dff42c1471e5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12145,13 +12146,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J10"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "16aea693-4a04-4b35-a10d-cfabe6211445")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12371,8 +12372,8 @@
 			(uuid "10efbd21-8fa9-4663-8fb4-10742d405331")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12440,13 +12441,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R51"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "1a843fc9-ff2b-4e66-a45d-3a0ecfe4bf40")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12596,8 +12597,8 @@
 			(uuid "1f54cd76-2adc-467b-ad40-70dddcb96ad9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12606,7 +12607,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "ee4b073d-0f47-4b7f-962c-60b7e30265e7")
 		)
@@ -12639,13 +12640,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J29"
-			(at -0.001 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "ad2a518d-c512-4f3d-b382-7bb75a962d99")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12865,8 +12866,8 @@
 			(uuid "e5dbb709-d3a3-4cc2-a03d-4386bc8b6847")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -12945,13 +12946,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J22"
-			(at -0.025 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "fb3d2a3d-c812-4cee-8507-5ed38b9a59f9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13171,8 +13172,8 @@
 			(uuid "2937178c-10e4-4c4e-ab3e-1741c1f7c2a4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13240,13 +13241,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R100"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "c76818ab-4c92-499f-94cc-754f519ee190")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13396,8 +13397,8 @@
 			(uuid "c472abf8-9435-4126-9f5d-e6e7c150f99a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13406,7 +13407,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d4d84a1c-2f14-4a66-8e13-25e2d89f885e")
 		)
@@ -13439,13 +13440,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R68"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "9c8ad95c-73a8-4a92-967b-0b7b93dd9bbf")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13595,8 +13596,8 @@
 			(uuid "6636e048-e3cc-4841-9649-9c86fc671b93")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13605,7 +13606,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d2d5aebf-763e-4aa9-b9c5-4d9a4b69d520")
 		)
@@ -13638,13 +13639,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R103"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "2cceba0b-2a79-4838-8f4f-88c3322b16e5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13794,8 +13795,8 @@
 			(uuid "0f525868-1a48-4707-a219-3b3ad4705eb0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -13804,7 +13805,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4b4955cb-e78f-44c6-aaa9-bf38ae499a58")
 		)
@@ -13837,13 +13838,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J17"
-			(at -0.025 8.142 0)
+			(at -0.001 8.904 0)
 			(layer "F.SilkS")
 			(uuid "be382e75-3951-420e-82d4-7be3375014b7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14063,8 +14064,8 @@
 			(uuid "b823d94d-85d4-4292-a9a9-29ebc6cea424")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14154,13 +14155,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J18"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "eae1061a-4155-418c-bd4f-294c039bdc24")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14380,8 +14381,8 @@
 			(uuid "fb5dee95-3f49-4587-b440-edc1afc9ddd6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14449,13 +14450,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R27"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "1686c9bd-cd2d-416b-88a9-1a8962cf8919")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14605,8 +14606,8 @@
 			(uuid "a0556171-c0ec-4a03-a45e-ceae9914d237")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14624,7 +14625,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "cfc1c13c-cba9-475b-b4a7-9d17c3a2bb3a")
 		)
@@ -14648,13 +14649,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R92"
-			(at -1.778 0 90)
+			(at -2.288 0 90)
 			(layer "F.SilkS")
 			(uuid "6e53123d-049e-4b85-863b-117db7c47f96")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14804,8 +14805,8 @@
 			(uuid "46cef4cc-0578-4a4d-8b60-bcb6c7007952")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -14814,7 +14815,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "2d51a4c6-5a45-4564-a90d-58c9b1c8dd1d")
 		)
@@ -14847,13 +14848,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R127"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "772f5281-c2c4-4816-979e-057556041aa0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15003,8 +15004,8 @@
 			(uuid "a994bc2b-cd99-4fc8-9247-192d478642ab")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15013,7 +15014,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d26014bc-7c3a-4a5e-ae38-e64e70d6c2dd")
 		)
@@ -15046,13 +15047,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J30"
-			(at -0.001 5.221 180)
+			(at 0.126 5.729 180)
 			(layer "F.SilkS")
 			(uuid "d5713888-9df5-47b2-a8d7-7ba097cb2ef2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15272,8 +15273,8 @@
 			(uuid "9fa29f0a-004e-4c11-acd1-2ec9a16c1c83")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15341,13 +15342,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J28"
-			(at -0.025 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "c7ce3c46-4220-4513-bec2-9a263ef499db")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15567,8 +15568,8 @@
 			(uuid "2fcd3660-a43a-47ef-b099-108e90c75a59")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15636,13 +15637,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R102"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "4f99841d-3bbf-4302-a65b-f0523af570fd")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15792,8 +15793,8 @@
 			(uuid "021c8512-3ff3-4dff-9c4b-d5aeb70219fc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15802,7 +15803,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "25a6e2cc-bec4-48a4-9bbf-fc230b973be1")
 		)
@@ -15835,13 +15836,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R59"
-			(at 1.778 0 0)
+			(at 2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "3fc3cf89-05ff-411b-9268-3b10e419507e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -15991,8 +15992,8 @@
 			(uuid "92cc9e7a-4e93-4c47-bddd-4aefe8ab8183")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16010,7 +16011,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "e8993c35-86fb-40f0-ba13-1afc583ebc09")
 		)
@@ -16034,13 +16035,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R79"
-			(at -1.778 0 0)
+			(at -2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "40b46e46-bf45-4e30-9024-ba9abe581262")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16190,8 +16191,8 @@
 			(uuid "d063cddf-ead1-4480-a294-a07d4096ba44")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16233,13 +16234,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R45"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "8d44b33a-44c3-46a0-96fd-162aa094e3ba")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16389,8 +16390,8 @@
 			(uuid "13e1bde0-ae2f-46a1-8995-8cecc60dd1a0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16399,7 +16400,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "92385026-14dd-415a-a5a7-3abd3d45163f")
 		)
@@ -16432,13 +16433,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R33"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "f86e4e1b-6d79-4bcf-b118-b844d7727b15")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16588,8 +16589,8 @@
 			(uuid "478d7a30-738c-4266-99a8-3985b3d64c49")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16607,7 +16608,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "a6e45f65-1e40-4508-8403-f845c459a024")
 		)
@@ -16631,13 +16632,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R101"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "bcc9b39f-acf3-47ee-9528-eb508bb80a5f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16787,8 +16788,8 @@
 			(uuid "e65c5323-987a-42bb-878e-4db99c7a0419")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16797,7 +16798,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4f8c814f-c161-41bc-8711-298da5571570")
 		)
@@ -16830,13 +16831,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R50"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "9bf6fcc1-6a0e-4188-9ace-df591dbfad57")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16986,8 +16987,8 @@
 			(uuid "25a8d8c4-090d-42ea-8bbb-a9d826c1cdc1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -16996,7 +16997,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "df60f34f-ff0d-4cf9-a442-37a59b4dc8ba")
 		)
@@ -17029,13 +17030,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R44"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "1920cdbf-2d7d-40c2-9f21-2cd8569f4315")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17185,8 +17186,8 @@
 			(uuid "0137f32a-e958-4b36-8e59-7670aac9e4d4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17195,7 +17196,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b6e7bdfa-aed9-4b0a-90e9-6bf3cc81e4b4")
 		)
@@ -17228,13 +17229,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R116"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "add7cb03-a3d4-4f57-9338-51c9d5b6c1bc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17384,8 +17385,8 @@
 			(uuid "16786261-d7ce-40f4-b7b1-baefad17b3bb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17394,7 +17395,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "7eae15ec-d616-4806-8b3f-8bc0ca625923")
 		)
@@ -17427,13 +17428,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R129"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "871b1aae-07a4-488e-8dfe-416a8df79b0a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17583,8 +17584,8 @@
 			(uuid "041203e2-bc76-4fb8-a25e-1ba7243ba86c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17593,7 +17594,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "99f87e20-349f-4efb-b19a-2382e6f8d756")
 		)
@@ -17626,13 +17627,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R58"
-			(at 1.78 -0.12 0)
+			(at 2.29 -0.12 0)
 			(layer "F.SilkS")
 			(uuid "e1a51ff6-5474-4bea-9929-30efad0b44ae")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17782,8 +17783,8 @@
 			(uuid "f9ae9d5d-8e5b-4acc-8cc3-d2d2efe69a59")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17801,7 +17802,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "7dceb1b5-20ba-40b6-b3a5-0b4d2e0518e3")
 		)
@@ -17825,13 +17826,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R81"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "c3e79aec-b401-4e3c-9480-a3f685ae0f01")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -17981,8 +17982,8 @@
 			(uuid "e41e741e-5058-411b-85ed-dc7bbe70cae1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18000,7 +18001,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4cf3680f-8de9-4653-a9d1-fdba9f1307d3")
 		)
@@ -18024,13 +18025,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R84"
-			(at 1.778 0 0)
+			(at 2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "4692ed89-ce72-4dfc-9652-cf3019f91881")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18180,8 +18181,8 @@
 			(uuid "708b6f27-dc96-4012-9dfe-cc3b2d768c12")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18199,7 +18200,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "0fbb949c-f4d4-43e8-9e11-fbeef3663f57")
 		)
@@ -18223,13 +18224,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R48"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "34945448-f25d-4cb8-82c0-a1050d92e276")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18379,8 +18380,8 @@
 			(uuid "764e8116-fdb8-48a8-b206-064047c38315")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18389,7 +18390,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "23d715ec-0ae5-4f9e-8657-3ddff6f02695")
 		)
@@ -18422,13 +18423,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R115"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "b10cde55-c75c-4521-bded-324c4f571f9b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18578,8 +18579,8 @@
 			(uuid "71517f61-5bf6-4682-b81e-48de454e7a92")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18588,7 +18589,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "6513cd11-0345-4045-a82e-883adcb4847b")
 		)
@@ -18621,13 +18622,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R47"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "84c8f6f8-4490-4e56-bc27-9715b056dce7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18777,8 +18778,8 @@
 			(uuid "3bbc1547-726b-4cf1-82be-2df33431172a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18787,7 +18788,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "5ef23f0e-a25a-4256-99a2-7e2d1bd21215")
 		)
@@ -18820,13 +18821,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R89"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "2fd95d2c-7f09-45c9-bd5a-27c916fe5421")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18976,8 +18977,8 @@
 			(uuid "d84ae08b-073a-499e-8aab-c87f5d983434")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -18986,7 +18987,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "6b41f614-143c-4f35-9cff-7cb206e79441")
 		)
@@ -19019,13 +19020,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R110"
-			(at 2.032 0 0)
+			(at 2.794 0 0)
 			(layer "F.SilkS")
 			(uuid "652300e8-db17-416c-a99f-249a70be53a0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19175,8 +19176,8 @@
 			(uuid "8467a4af-7260-4b51-9edc-3b2d461f4a57")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19194,7 +19195,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "98f2a65d-6af5-4c6b-8999-dff6892f2e90")
 		)
@@ -19218,13 +19219,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J19"
-			(at -0.025 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "c3d1947d-6498-4650-a71f-6c7a54badd25")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19444,8 +19445,8 @@
 			(uuid "8255bb8d-7538-415c-98b2-7ff42feb1633")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19524,13 +19525,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R105"
-			(at -2.032 0 0)
+			(at -2.794 0 0)
 			(layer "F.SilkS")
 			(uuid "e1e91db3-8def-4355-9e19-32e011ca375b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19680,8 +19681,8 @@
 			(uuid "5458dd9c-ea0a-4ead-8058-086f763bbac5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19723,13 +19724,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J5"
-			(at -0.128 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "75aea2e5-14f0-4baa-904f-1f88a1634195")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -19949,8 +19950,8 @@
 			(uuid "d45a63ee-da0e-4ee7-bd77-af9c4520f890")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20029,13 +20030,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J26"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "01510b5e-86ab-4abc-9cf7-f5aa6f28dcfc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20255,8 +20256,8 @@
 			(uuid "c16f0cca-f541-4611-a639-7332894032ef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20324,13 +20325,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R36"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "70cd3833-4f91-4dc9-a1af-62ff386ea3eb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20480,8 +20481,8 @@
 			(uuid "1955006a-db66-4f7f-849e-0f11549cd4e5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20490,7 +20491,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "168723df-8200-46b7-8e84-64e362d0c968")
 		)
@@ -20523,13 +20524,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R128"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "15ad7f2d-6153-45dd-bb00-5dfff9108f98")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20679,8 +20680,8 @@
 			(uuid "4810a801-5a65-460f-ae4b-105c3c5e8787")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20689,7 +20690,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "085d9e9f-578b-407d-b548-d5fc62bd2152")
 		)
@@ -20722,13 +20723,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R93"
-			(at -1.778 0 90)
+			(at -2.288 0 90)
 			(layer "F.SilkS")
 			(uuid "146ed318-5957-41a6-981e-5480dcd77354")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20878,8 +20879,8 @@
 			(uuid "d51ebf5d-1578-4ae5-8cc3-623f7fb508e6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -20888,7 +20889,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "23f4f4da-c136-402f-8cff-1c2e3608a420")
 		)
@@ -20921,13 +20922,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R76"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "c65b7326-593d-4c95-b0e4-759c33790bf5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21077,8 +21078,8 @@
 			(uuid "cf307d9b-de21-4e67-8dd5-52c76af70ff3")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21087,7 +21088,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "a83f01dd-ee9d-41e8-92e8-f925334f5edd")
 		)
@@ -21120,13 +21121,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R28"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "342e01df-975d-4179-9695-0cb6ca4ed72a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21276,8 +21277,8 @@
 			(uuid "9c75f15d-06df-4975-aaad-314461892938")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21295,7 +21296,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "8393ec21-0f4a-4048-9643-493a0a217f09")
 		)
@@ -21319,13 +21320,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R118"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "695cfbff-8bf1-48fb-b970-7c594acb8f82")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21475,8 +21476,8 @@
 			(uuid "57bda482-506b-43d4-b590-655c23beaea6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21485,7 +21486,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "cdb653d9-18c5-43c0-8c35-f4dbb4ebc846")
 		)
@@ -21518,13 +21519,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R71"
-			(at -1.776 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "18254820-d313-4c21-9af5-257cfd34ace6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21674,8 +21675,8 @@
 			(uuid "97703ef2-8b56-4a07-9090-c1c1b7049e9b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21684,7 +21685,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "145e01ba-caf7-4fe4-bb79-8334c4c97f99")
 		)
@@ -21717,13 +21718,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R122"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "63a1a855-1576-42bb-b39e-30fff3276df5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21873,8 +21874,8 @@
 			(uuid "c386317d-4617-4cad-9008-311b754eb101")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -21883,7 +21884,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "3071e45e-de89-49f4-8664-a18a7e4441b1")
 		)
@@ -21916,13 +21917,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R91"
-			(at -1.778 0 90)
+			(at -2.288 0 90)
 			(layer "F.SilkS")
 			(uuid "73ecf910-828b-4226-81c8-8feb62635cef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22072,8 +22073,8 @@
 			(uuid "03713bf1-18c9-421a-a7f1-3f34b255cc46")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22082,7 +22083,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "4769a791-887c-41a2-94ee-2ccec2ab4e89")
 		)
@@ -22115,13 +22116,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R74"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "27c09368-181b-43b4-aaa3-1dab10ca7f83")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22271,8 +22272,8 @@
 			(uuid "8ab428ac-85c1-4d65-a4d7-88499eaf240f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22281,7 +22282,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "05bff2f9-1970-4e9f-990d-df7aa054ff54")
 		)
@@ -22314,13 +22315,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J23"
-			(at 0.126 8.142 0)
+			(at -0.001 8.904 0)
 			(layer "F.SilkS")
 			(uuid "d31e02ab-3c45-4d9a-904c-3dc1f1790cbb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22540,8 +22541,8 @@
 			(uuid "bc58e395-547c-4e14-8e02-de5b9d2607d7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22631,13 +22632,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R124"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "063467f7-f18e-42d1-b88e-2ea49287cbb0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22787,8 +22788,8 @@
 			(uuid "b64ec7f3-6ef2-4517-8439-3903008e6fe9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22797,7 +22798,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "0a1fa184-99b4-4787-afa3-8defeef9534c")
 		)
@@ -22830,13 +22831,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R53"
-			(at -1.776 0 0)
+			(at -2.284 0 0)
 			(layer "F.SilkS")
 			(uuid "001e0825-5e4a-4d72-8dcd-8de78f8dc218")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -22986,8 +22987,8 @@
 			(uuid "25e4868c-8da7-4a47-86de-570fd9a08723")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23029,13 +23030,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J14"
-			(at -0.025 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "73f7d632-fb07-43f0-88f9-5ba886c977ea")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23255,8 +23256,8 @@
 			(uuid "ee8e4b80-75db-4ed8-8058-36e1674c14bc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23324,13 +23325,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J15"
-			(at -0.025 8.142 0)
+			(at -0.001 8.65 0)
 			(layer "F.SilkS")
 			(uuid "dab764ca-73f8-48a5-9a5b-f4060714b780")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23550,8 +23551,8 @@
 			(uuid "45c3fcb6-60a0-4a98-a1bd-cf11fff9eb1b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23641,13 +23642,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R62"
-			(at -1.776 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "e50be9eb-0124-402c-af61-ed392d031b64")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23797,8 +23798,8 @@
 			(uuid "bfb5fce8-7d98-4233-90fd-9b036b7cae50")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23807,7 +23808,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "aaab7118-a374-4f8a-8ad7-6ae056eae080")
 		)
@@ -23840,13 +23841,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R43"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "843aaa1d-664a-4c08-b4f4-fbdf60e165df")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -23996,8 +23997,8 @@
 			(uuid "a9d4e7f3-98f0-4359-a407-9aa96ef7eabf")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24006,7 +24007,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "088bbb21-c2d0-41da-8f7e-e5296f5afa53")
 		)
@@ -24039,13 +24040,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J32"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "c4b68754-b9a6-4ea6-a3c5-dca9da8bec02")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24265,8 +24266,8 @@
 			(uuid "ad08ab2e-4b6e-49aa-a096-70f9fe0d52dc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24334,13 +24335,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J9"
-			(at -0.025 7.888 0)
+			(at -0.001 8.396 0)
 			(layer "F.SilkS")
 			(uuid "bc80149e-8aea-4918-a473-77fce1d5a8b6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24560,8 +24561,8 @@
 			(uuid "ce6baf48-f44b-4d9c-ba41-9f1c536b8136")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24651,13 +24652,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R126"
-			(at -2.032 0 90)
+			(at -2.796 0 90)
 			(layer "F.SilkS")
 			(uuid "f2180c1b-8350-4dcf-9e02-24344775f740")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24807,8 +24808,8 @@
 			(uuid "2916d41b-7edc-4604-a78f-9473a6014984")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -24817,7 +24818,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f4598cce-8e7b-46ef-8910-180f31c6a475")
 		)
@@ -24850,13 +24851,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J6"
-			(at -0.001 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "eea505dd-b6e3-4d95-8758-4e29c735d4b2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25076,8 +25077,8 @@
 			(uuid "f84cb2e4-2792-457c-a885-9396efe8ab3a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25145,13 +25146,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R54"
-			(at -1.778 0 0)
+			(at -2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "e2a259cc-adb6-4354-a258-2fda7d091b92")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25301,8 +25302,8 @@
 			(uuid "cd81915b-15cf-4cbe-a06a-c0136dd61407")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25344,13 +25345,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J13"
-			(at -0.001 6.491 0)
+			(at -0.128 6.999 0)
 			(layer "F.SilkS")
 			(uuid "aee4f44a-d5c5-49b8-84a8-2cbc3680bd82")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25570,8 +25571,8 @@
 			(uuid "2ada1095-61ef-48c5-b703-2b8f361cf5d5")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25650,13 +25651,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J11"
-			(at -0.025 6.491 0)
+			(at 0.126 6.999 0)
 			(layer "F.SilkS")
 			(uuid "f11de5ae-9c56-4679-b811-c0090d3dc49b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25876,8 +25877,8 @@
 			(uuid "8b15232a-7e7b-432b-bc5d-eb1748177809")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -25956,13 +25957,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R94"
-			(at -1.778 0 90)
+			(at -2.288 0 90)
 			(layer "F.SilkS")
 			(uuid "42c2da80-3547-468e-86c5-c9b094f119af")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26112,8 +26113,8 @@
 			(uuid "03aae2fc-afe7-4245-a306-a2aae7a76300")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26122,7 +26123,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d52340c8-12f6-4ea6-b7c5-2643fa4ea3d1")
 		)
@@ -26155,13 +26156,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R90"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "d09c64b0-9e6e-4e7b-a540-be542d7f6aef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26311,8 +26312,8 @@
 			(uuid "09ac5237-7734-4223-ba74-cec3e4fb41ae")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26321,7 +26322,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b41d7903-bbb7-4e14-8101-77c0cb8c1ee5")
 		)
@@ -26354,13 +26355,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R30"
-			(at 1.778 0 0)
+			(at 2.286 0 0)
 			(layer "F.SilkS")
 			(uuid "60f212c8-e51c-4194-8541-9768ac620551")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26510,8 +26511,8 @@
 			(uuid "ce7e286a-fc52-499f-bcdd-085445deb61b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26529,7 +26530,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "17d23a88-248c-4bd3-8c82-8ee384f46919")
 		)
@@ -26553,13 +26554,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R117"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "bb5ff942-b134-429b-9507-5dee7f16ea76")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26709,8 +26710,8 @@
 			(uuid "904893a1-c0f9-47c6-afde-cd0426d075a4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26719,7 +26720,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "ca397b69-8ef0-4c99-956e-2e7fd0499013")
 		)
@@ -26752,13 +26753,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J8"
-			(at -0.001 5.348 180)
+			(at -0.001 5.856 180)
 			(layer "F.SilkS")
 			(uuid "b1112e9d-c361-4241-a5ce-947a64c2a116")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -26978,8 +26979,8 @@
 			(uuid "b95ec59b-3fd7-4a50-b9bf-2b5e938a2559")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27047,13 +27048,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R106"
-			(at -2.032 0 0)
+			(at -2.869 0 0)
 			(layer "F.SilkS")
 			(uuid "04d42123-bca2-4ed1-a13c-ea216fdd3b35")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27203,8 +27204,8 @@
 			(uuid "471fc767-6835-405d-90ac-4d25929304b6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27246,13 +27247,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R98"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "68c24aeb-f15d-44b7-9969-eff2d0e345ef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27402,8 +27403,8 @@
 			(uuid "1329310d-c497-4b58-a62c-ae9f67181ab4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27412,7 +27413,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "3f9d87f3-f3d1-4569-a4cf-35d925f41cb9")
 		)
@@ -27445,13 +27446,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J24"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "a18bf78d-6b99-45e8-9ad5-2422aed61d95")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27671,8 +27672,8 @@
 			(uuid "5f35bcaa-4d25-4a79-a4fc-837201de24f4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27740,13 +27741,13 @@
 		(descr "Through hole straight socket strip, 1x06, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x06 1.27mm single row")
 		(property "Reference" "J7"
-			(at -0.025 7.888 0)
+			(at -0.001 8.396 0)
 			(layer "F.SilkS")
 			(uuid "1bd508b0-a971-41be-a343-2a5ccbeea583")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -27966,8 +27967,8 @@
 			(uuid "63f95b8f-3d52-475e-a17e-977537a90556")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28057,13 +28058,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R41"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "1203b59a-43ce-403f-ae72-fc9f0ccc47ca")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28213,8 +28214,8 @@
 			(uuid "5a96cfbc-e909-46d8-8827-56fd69a625e0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28223,7 +28224,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b527c4bd-cc62-4108-b6af-2acf2a5ef98b")
 		)
@@ -28256,13 +28257,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R69"
-			(at -1.776 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "f221c108-9768-4894-bf32-74fec067b360")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28412,8 +28413,8 @@
 			(uuid "55681dea-9633-484d-b33e-8880c81ff09f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28422,7 +28423,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "e15c5ff1-566c-461f-80cf-ec6d257d3f0c")
 		)
@@ -28455,13 +28456,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R80"
-			(at -1.778 0 0)
+			(at -2.288 0 0)
 			(layer "F.SilkS")
 			(uuid "972a8c41-3660-4bdc-8897-6c961670a43e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28611,8 +28612,8 @@
 			(uuid "8393274b-7408-4eec-b5da-ac40bbfef2ef")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28654,13 +28655,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R75"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "429db8fc-aa44-42cb-92ad-ca4883146848")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28810,8 +28811,8 @@
 			(uuid "b8ea58d2-21da-46ed-8a61-7a0655e10e2d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -28820,7 +28821,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "8bcf5847-d136-4e45-aee1-1ff01aa8280a")
 		)
@@ -28853,13 +28854,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R40"
-			(at -1.778 0 90)
+			(at -2.286 0 90)
 			(layer "F.SilkS")
 			(uuid "7a25adaa-235b-42ad-ba64-8f55dffd9ae3")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29009,8 +29010,8 @@
 			(uuid "dc0cb331-ead1-4eae-aeca-313e62ea612d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29019,7 +29020,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "111998c4-1932-4a88-a4eb-ed930d475659")
 		)
@@ -29052,13 +29053,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R77"
-			(at -1.778 0 90)
+			(at -2.284 0 90)
 			(layer "F.SilkS")
 			(uuid "8af1554c-0e0e-446c-84c9-3ecf71566f64")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29208,8 +29209,8 @@
 			(uuid "18c5e758-22cf-45cd-a29e-01ff931c00ba")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29218,7 +29219,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "82db2caa-d25e-4c24-9f16-acd8e0c9ad38")
 		)
@@ -29251,13 +29252,13 @@
 		(descr "Through hole straight socket strip, 1x05, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x05 1.27mm single row")
 		(property "Reference" "J27"
-			(at -0.025 6.491 0)
+			(at 0.126 6.999 0)
 			(layer "F.SilkS")
 			(uuid "4a2b65cc-f2e7-4c48-a77c-26a48f15b8e9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29477,8 +29478,8 @@
 			(uuid "4e8edc9b-75b7-4283-9afc-683ef14032f4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29557,13 +29558,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J20"
-			(at -0.025 5.221 180)
+			(at -0.128 5.729 180)
 			(layer "F.SilkS")
 			(uuid "2fa84396-ce06-4e42-a81d-632e898d61b6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29783,8 +29784,8 @@
 			(uuid "cbf29e9f-00e5-44cb-a251-4b617ea6d64f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -29852,13 +29853,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R26"
-			(at -1.776 0 0)
+			(at -2.284 0 0)
 			(layer "F.SilkS")
 			(uuid "2b0a9d3f-e27a-4350-8345-1cb2f9839c8e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30008,8 +30009,8 @@
 			(uuid "f304e526-1ba2-4fde-b6c3-ef22b568b641")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30051,13 +30052,13 @@
 		(descr "Through hole straight socket strip, 1x04, 1.27mm pitch, single row (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 1x04 1.27mm single row")
 		(property "Reference" "J16"
-			(at -0.001 5.602 180)
+			(at -0.001 6.364 180)
 			(layer "F.SilkS")
 			(uuid "7f23f3e9-8b91-4e3d-b34f-c1be13166a51")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30277,8 +30278,8 @@
 			(uuid "b520991d-1af0-4fe6-8ffb-2c7b19bde961")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30346,13 +30347,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R120"
-			(at -2.032 0 90)
+			(at -2.794 0 90)
 			(layer "F.SilkS")
 			(uuid "5849b200-0cd1-403f-ab87-ebe0febc3527")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30502,8 +30503,8 @@
 			(uuid "990f0acc-399b-4fcf-9c39-bc4acf3a86d7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30512,7 +30513,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "2391d75f-9bb3-41f4-bb4c-6b5ea98137a4")
 		)
@@ -30545,13 +30546,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R109"
-			(at 2.032 0 0)
+			(at 2.794 0 0)
 			(layer "F.SilkS")
 			(uuid "3751844e-63cf-4c59-a7c4-d89f00393820")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30701,8 +30702,8 @@
 			(uuid "4f6530b8-89f6-4dc8-8fde-78ff8a022eb9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 			)
 		)
@@ -30720,7 +30721,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b1203563-2d1a-4350-93c7-16fc965beb23")
 		)
@@ -30744,13 +30745,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C11"
-			(at -1.778 0 0)
+			(at 2.159 0.127 0)
 			(layer "B.SilkS")
 			(uuid "1bf506c7-9694-4e2f-934e-36277c087b44")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -30904,8 +30905,8 @@
 			(uuid "48ecbdbd-2657-45e7-b63f-1af498881fd9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -30948,13 +30949,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C6"
-			(at 2.172173 -0.092321 0)
+			(at 2.389 -0.0685 0)
 			(layer "B.SilkS")
 			(uuid "71770d81-cde3-4190-a724-778fdf874217")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31108,8 +31109,8 @@
 			(uuid "582d64ce-1d28-4427-a168-5f6396e28f2c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31128,7 +31129,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "6535fa98-3c19-439b-bb84-7f5402c1e870")
 		)
@@ -31152,13 +31153,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C8"
-			(at 2.032 0 0)
+			(at 2.352 0 0)
 			(layer "B.SilkS")
 			(uuid "c25d8cde-49fd-4ee4-a708-f169cb907526")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31312,8 +31313,8 @@
 			(uuid "66a28b72-2a37-4e8d-a166-ccfbbfc59953")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31356,13 +31357,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R21"
-			(at -1.27 0 0)
+			(at -1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "f3c5fcff-c37b-4117-9463-cc15f5bcf3a9")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31516,8 +31517,8 @@
 			(uuid "0b26f69f-be3d-4eac-9007-2e79443d4069")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31560,13 +31561,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R3"
-			(at 1.499 0 0)
+			(at 1.778 0 0)
 			(layer "B.SilkS")
 			(uuid "f85cef6d-0f48-4283-8f7a-22f8ac2a7d84")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31720,8 +31721,8 @@
 			(uuid "faf697b3-3269-427d-956a-61be1102aa1d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31731,7 +31732,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 132 "Net-(U1-MODE{slash}S-CONF)")
+			(net 191 "/Power Supply/MODE{slash}S-CONF")
 			(pintype "passive")
 			(uuid "a8fdc3b9-62bd-41ff-97fb-3f6637bbc105")
 		)
@@ -31764,13 +31765,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C23"
-			(at 2.098 0 0)
+			(at 2.479 0 0)
 			(layer "B.SilkS")
 			(uuid "ea8c415e-2ad0-407d-a9bf-54f44bf5bd68")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31924,8 +31925,8 @@
 			(uuid "82803e17-9ac1-4b62-9dc3-9cbee73a2a4a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -31968,13 +31969,13 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C2"
-			(at -2.745 0 0)
+			(at -2.872 0 0)
 			(layer "B.SilkS")
 			(uuid "09e4d88a-25d6-43ae-8135-6f870c1c3373")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32030,7 +32031,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "a75a5f36-c92f-4d42-818b-d591844ad9bd")
+			(uuid "0b543d93-ea11-494b-8821-3554a4f27090")
 		)
 		(fp_line
 			(start -0.711252 -0.91)
@@ -32040,7 +32041,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "2eeeecb5-03c7-4151-9cd7-b12994923c76")
+			(uuid "50c20965-c0cd-42a7-813b-195a1f101d00")
 		)
 		(fp_line
 			(start -2.3 1.15)
@@ -32050,7 +32051,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "a6dedfa0-2c66-4144-a525-13662a2d54ff")
+			(uuid "02b34e7e-4b1e-4743-b982-df8beda4320a")
 		)
 		(fp_line
 			(start 2.3 1.15)
@@ -32060,7 +32061,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "2b70b3fa-dec3-484c-ae6a-6b190a127026")
+			(uuid "69884540-a77d-4d70-90fd-388b19a35e1b")
 		)
 		(fp_line
 			(start -2.3 -1.15)
@@ -32070,7 +32071,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "0c29550c-eba8-40bd-b423-ecaa82c5012d")
+			(uuid "14c8fd13-bd44-4d80-a920-ed4098f02a95")
 		)
 		(fp_line
 			(start 2.3 -1.15)
@@ -32080,7 +32081,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "2ee1c72c-7652-4c8d-a1ed-7653d83578a1")
+			(uuid "751b87b4-1b03-4aab-a9a1-a3efe42e3cdb")
 		)
 		(fp_line
 			(start -1.6 0.8)
@@ -32090,7 +32091,7 @@
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "efed84ee-af82-4bd1-8526-97a9720c6536")
+			(uuid "c9dc4fd4-96e6-4d68-b7f6-151afaa47716")
 		)
 		(fp_line
 			(start 1.6 0.8)
@@ -32100,7 +32101,7 @@
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "02a27d20-5559-4aad-9680-1322b6a424c1")
+			(uuid "ffcbe0ea-92fb-4b83-bcb5-ac6b917de131")
 		)
 		(fp_line
 			(start -1.6 -0.8)
@@ -32110,7 +32111,7 @@
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "8fc51e45-7b2d-4e48-b396-d12dd63ecda2")
+			(uuid "a4e15664-8dbf-4507-bc2b-fda560cb05e3")
 		)
 		(fp_line
 			(start 1.6 -0.8)
@@ -32120,7 +32121,7 @@
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "234b5d25-7f03-466f-8f37-6855264e0c16")
+			(uuid "03514b3f-da64-4179-a017-e31b810b3c52")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -32128,15 +32129,15 @@
 			(uuid "f79dc297-2f7f-44c7-8124-f78a4ef17669")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
 		)
 		(pad "1" smd roundrect
 			(at -1.475 0 270)
-			(size 1.2 1.8)
+			(size 1.15 1.8)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.217391)
 			(net 3 "/Board Address/+3.3V Digital")
@@ -32172,13 +32173,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C15"
-			(at 1.778 0 0)
+			(at 2.159 0.254 0)
 			(layer "B.SilkS")
 			(uuid "91fd9a0c-074b-4b5a-b798-682418762db0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32332,8 +32333,8 @@
 			(uuid "8477e45c-5daa-44ed-9328-5d53d17575eb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32376,13 +32377,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R13"
-			(at 0 0.762 0)
+			(at -0.243 1.2115 0)
 			(layer "B.SilkS")
-			(uuid "f84cdb54-9fea-476b-b401-6fca8b8dd901")
+			(uuid "87c0a520-d46d-4323-8426-64d1185e3ddc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32390,7 +32391,7 @@
 		(property "Value" "10k"
 			(at 0 -1.17 0)
 			(layer "B.Fab")
-			(uuid "d92796b7-9265-4cdb-97a5-eda86ace2b7d")
+			(uuid "ffe040d7-cd3e-4446-8982-af9f2747f1d6")
 			(effects
 				(font
 					(size 1 1)
@@ -32403,7 +32404,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d61f39e6-b068-4175-bc96-06217a357038")
+			(uuid "e5a163a0-948c-4dca-ab53-0f443b51d44a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32416,7 +32417,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "49842e26-fa4a-4d2f-9239-379f43278b61")
+			(uuid "ddd072b7-7555-4cbb-80a6-9870ace3e1c5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32536,8 +32537,8 @@
 			(uuid "6214149b-06fe-463c-9e1f-4f12699061de")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32580,13 +32581,13 @@
 		(descr "surface-mounted straight pin header, 1x04, 2.54mm pitch, single row, style 2 (pin 1 right)")
 		(tags "Surface mounted pin header SMD 1x04 2.54mm single row style2 pin1 right")
 		(property "Reference" "J2"
-			(at 0 -6.096 0)
+			(at 0 -6.604 0)
 			(layer "B.SilkS")
-			(uuid "1fecd598-058f-45a4-85b3-0070393b2b83")
+			(uuid "1500b5c0-f430-4158-b152-09d9ce018a3a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -32594,7 +32595,7 @@
 		(property "Value" "Conn_01x04_Pin"
 			(at 0 -6.19 90)
 			(layer "B.Fab")
-			(uuid "d1589c79-824d-454a-b54b-346d4e9822f5")
+			(uuid "313be910-451d-45de-909f-c70c41efe236")
 			(effects
 				(font
 					(size 1 1)
@@ -32607,7 +32608,7 @@
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "daf43e3d-d24c-4a70-8d5c-9148d22c6110")
+			(uuid "9ffeff73-4acd-4fd5-91d4-70fc020e6a5a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32620,7 +32621,7 @@
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "60c5a702-eadd-42b3-abcd-12bdaadc1552")
+			(uuid "5cdd2870-69b1-460c-8526-201ceddccabd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32950,8 +32951,8 @@
 			(uuid "dd6b62cd-81c2-424e-86d9-bf27556f877a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33012,13 +33013,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C1"
-			(at -2.22 0 0)
+			(at -2.245 0 0)
 			(layer "B.SilkS")
 			(uuid "4d7d70a6-337e-4f2b-b1f5-650d3c4bf1ec")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33172,8 +33173,8 @@
 			(uuid "de8dfc95-80a3-4689-b712-f61c0bb543b4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33221,8 +33222,8 @@
 			(uuid "ebfe2882-58cf-4742-b6b7-06656934565b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33440,8 +33441,8 @@
 			(uuid "38d15b04-7d17-4055-983c-a9271702d0d3")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33591,7 +33592,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "~{CE}")
 			(pintype "input")
 			(uuid "4ed95da8-7c38-4bfa-8937-94723f4ee52f")
@@ -33626,14 +33627,14 @@
 		(descr "WE-CNSW SMT Common Mode Line Filter, https://www.we-online.com/components/products/datasheet/744232090.pdf")
 		(tags "common mode choke 1206 cnsw")
 		(property "Reference" "L1"
-			(at 0 -1.524 0)
+			(at 0 -1.651 0)
 			(unlocked yes)
 			(layer "B.SilkS")
 			(uuid "f3be9bb1-04ea-4810-86e0-9281f465491f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33772,8 +33773,8 @@
 			(uuid "50cc2986-4c5a-4cea-b6d4-69c83a74a06f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33838,13 +33839,13 @@
 		(descr "Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "inductor")
 		(property "Reference" "L2"
-			(at 0.0465 -1.295 0)
+			(at 0.0465 -1.397 0)
 			(layer "B.SilkS")
 			(uuid "496a31ed-236b-439a-86ad-f9828d6fdb28")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -33998,8 +33999,8 @@
 			(uuid "be7c0090-c61a-4e5a-ba3d-64607dab216c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -34042,13 +34043,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C22"
-			(at -1.791 0 0)
+			(at -2.045 0 0)
 			(layer "B.SilkS")
 			(uuid "a491ca58-104f-4974-9eb0-4546086f50da")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -34202,8 +34203,8 @@
 			(uuid "89b5d13f-0e04-468f-a42f-ef34b354f045")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -34246,13 +34247,13 @@
 		(descr "LQFP, 100 Pin (https://www.nxp.com/docs/en/package-information/SOT407-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "LQFP QFP")
 		(property "Reference" "U3"
-			(at -7.874 7.366 0)
+			(at -8.128 7.62 0)
 			(layer "B.SilkS")
 			(uuid "9242f177-9550-450a-ad36-dd18803fd818")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -34610,8 +34611,8 @@
 			(uuid "e2259e0c-d071-4cc7-8ac5-c1cb81e4c0fd")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -35636,13 +35637,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R8"
-			(at 1.207 0 0)
+			(at 1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "f8c396b2-5228-4da4-a1b2-e661027ab3d8")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -35796,8 +35797,8 @@
 			(uuid "1e60b662-4427-44fc-9472-d59eaae1de54")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -35816,7 +35817,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "7fbf1a88-cbf8-46b0-a95f-d90e05fd1b3f")
 		)
@@ -35836,17 +35837,17 @@
 	(footprint "Inductor_SMD:L_0603_1608Metric"
 		(layer "B.Cu")
 		(uuid "412df79d-4bd5-4e3e-89e7-60778facd356")
-		(at 107.992 120.904)
+		(at 108.248 120.904)
 		(descr "Inductor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
 		(tags "inductor")
 		(property "Reference" "FB1"
-			(at -2.203 0.127 0)
+			(at -2.709 0.127 0)
 			(layer "B.SilkS")
 			(uuid "cb8fc43a-57a8-4806-bd90-c495590dcf01")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36000,8 +36001,8 @@
 			(uuid "3e1bceaf-5bd9-477b-94e7-a6b9f20ee22f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36044,13 +36045,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C3"
-			(at 2.032 0 0)
+			(at 2.402 -0.0685 0)
 			(layer "B.SilkS")
 			(uuid "f213aa50-b838-4547-b6eb-8db8aa0cc558")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36204,8 +36205,8 @@
 			(uuid "cc69f0db-5c8b-403a-8cc1-aeeb6d001eaa")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36224,7 +36225,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "17355bb5-1a67-4931-a8d4-a2bb99d3b6c0")
 		)
@@ -36248,13 +36249,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R15"
-			(at -1.78 0 180)
+			(at -2.116 0.0685 180)
 			(layer "B.SilkS")
 			(uuid "923c9b84-9419-4f64-8c7a-71519cfc29af")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36408,8 +36409,8 @@
 			(uuid "5690c63b-6bea-425b-ba73-09e9bf446540")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36452,13 +36453,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C18"
-			(at 1.778 0 0)
+			(at 2.159 0.889 0)
 			(layer "B.SilkS")
 			(uuid "966f4883-9846-4dea-a73f-6d41b8bceda6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36612,8 +36613,8 @@
 			(uuid "ecffe687-391b-4725-a543-8a638405d091")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36656,13 +36657,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R16"
-			(at 1.268 0 0)
+			(at 1.526 0 0)
 			(layer "B.SilkS")
 			(uuid "fea6e350-6b96-46df-af61-8f0c1341cfd8")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36816,8 +36817,8 @@
 			(uuid "209542f7-cdd9-46f3-83a2-7e5bda3b0fe4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -36860,13 +36861,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R2"
-			(at -1.526 0 0)
+			(at -1.776 0 0)
 			(layer "B.SilkS")
 			(uuid "f0c6b402-0988-4ac1-b6a3-865f4a27fde0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37020,8 +37021,8 @@
 			(uuid "1a53de9a-e396-4727-8fa7-ffd6317f69b8")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37064,13 +37065,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C5"
-			(at 2.032 0 0)
+			(at 2.413 0 0)
 			(layer "B.SilkS")
 			(uuid "46e4fd55-eca9-4760-b385-39369f90c617")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37224,8 +37225,8 @@
 			(uuid "b694fea5-1ffc-49e8-bcae-788c365a248c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37244,7 +37245,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "16764af5-b9d6-4daf-85bc-b1e8d433a916")
 		)
@@ -37268,13 +37269,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R10"
-			(at 1.205 0 0)
+			(at 1.522 0 0)
 			(layer "B.SilkS")
 			(uuid "64811afe-385c-4638-998f-a66db2e22fe2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37428,8 +37429,8 @@
 			(uuid "8af1101d-ab6b-4afb-be2b-4751298d764f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37448,7 +37449,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "d22571b6-a752-4ca6-ae6d-301f5bbc405e")
 		)
@@ -37472,13 +37473,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C7"
-			(at -2.032 -0.066 0)
+			(at -2.286 0 0)
 			(layer "B.SilkS")
 			(uuid "f5ce9b18-8dc3-4aa5-859f-cca08513ca17")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37632,8 +37633,8 @@
 			(uuid "98c042e9-8a65-4b45-8c14-f38fef6bf3da")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37676,13 +37677,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R20"
-			(at -1.27 0 0)
+			(at -1.649 0 0)
 			(layer "B.SilkS")
 			(uuid "b4b613b0-d3d3-4234-b5ff-e338e5a564e3")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37836,8 +37837,8 @@
 			(uuid "55a8a0d6-ba1b-4a51-9449-5f35fa138fae")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -37880,13 +37881,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C12"
-			(at 1.826 0 0)
+			(at -2.238 -0.254 0)
 			(layer "B.SilkS")
 			(uuid "b90d33f6-bc30-45d7-b1ae-5acaee42ecf2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38040,8 +38041,8 @@
 			(uuid "51f6e1e1-d691-430f-8b6f-276375d593c8")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38084,13 +38085,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R1"
-			(at -1.524 0 0)
+			(at -1.778 0 0)
 			(layer "B.SilkS")
 			(uuid "490bcb76-fe76-42ab-8839-60e1d0df518f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38244,8 +38245,8 @@
 			(uuid "09f67456-8369-4ddc-86a2-0fa3db81a9f0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38288,13 +38289,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C10"
-			(at 1.778 0.013 0)
+			(at 2.191 0 0)
 			(layer "B.SilkS")
 			(uuid "0434585e-6955-4394-b732-ea746f76570d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38448,8 +38449,8 @@
 			(uuid "aa0ce217-9693-4106-be73-fcfb793d4c77")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38492,13 +38493,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R14"
-			(at 0 0.76 0)
+			(at 0.265 1.2115 0)
 			(layer "B.SilkS")
 			(uuid "0ab09dee-5324-402e-abf6-c2f3c44ad3ee")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38652,8 +38653,8 @@
 			(uuid "edc7847d-742d-49bb-970b-bf34dc2b35c6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38696,13 +38697,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C9"
-			(at 1.778 0 0)
+			(at 2.159 0 0)
 			(layer "B.SilkS")
 			(uuid "a6376ed0-76a6-4bf7-97b8-18f28128473e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38856,8 +38857,8 @@
 			(uuid "58e168c7-53b2-4da5-83df-19f92bf0c8c4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -38900,13 +38901,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C4"
-			(at 2.045 0 0)
+			(at 2.359 -0.0685 0)
 			(layer "B.SilkS")
 			(uuid "a3fac283-8840-4f3f-9364-c3e30a42a63b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39060,8 +39061,8 @@
 			(uuid "f39e152f-dba4-4ef1-890d-ca6b9a67838f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39080,7 +39081,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "9fa46895-9c42-4ca2-8b47-5cf7f588cc3c")
 		)
@@ -39104,13 +39105,13 @@
 		(descr "TSSOP, 16 Pin (https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "TSSOP SO JEDEC-MO-153-AB Texas_PW0016A Microchip-ST Toshiba-TSSOP16-P-0044-0.65A NXP-SOT403-1 Infineon-P-TSSOP-16-800")
 		(property "Reference" "U2"
-			(at -4.7575 2.275 0)
+			(at -4.826 2.54 0)
 			(layer "B.SilkS")
 			(uuid "f9cef526-4ea7-4358-a5ca-d1e078afbb64")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39328,8 +39329,8 @@
 			(uuid "c798730a-8f7f-4ba1-b506-299a9e05383b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39429,7 +39430,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "DS")
 			(pintype "input")
 			(uuid "4d79acf6-319c-4e81-8298-ccc1d2f9f577")
@@ -39479,7 +39480,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "~{CE}")
 			(pintype "input")
 			(uuid "f36210d2-b224-4d31-9a4c-e81ea89ddcd1")
@@ -39514,13 +39515,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R23"
-			(at -0.002 0.762 0)
+			(at -0.129 1.016 0)
 			(layer "B.SilkS")
 			(uuid "43769307-65ed-4c29-8c2a-33a1dd29691f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39674,8 +39675,8 @@
 			(uuid "784da127-b37e-4e96-9b06-662ba0c676db")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39718,13 +39719,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C21"
-			(at 0 1.016 0)
+			(at 2.68 0 0)
 			(layer "B.SilkS")
 			(uuid "c84efb05-7fbf-4cef-98ca-ff0291463aec")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39878,8 +39879,8 @@
 			(uuid "8954e2e2-94f8-4130-96b4-c78a160ac24e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -39898,7 +39899,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "94ad5ac3-e17d-4f2f-bd48-9591342a57f4")
 		)
@@ -39922,13 +39923,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R7"
-			(at 1.207 0 0)
+			(at 1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "9bda6ce6-d239-4a53-9903-5b5f826cfcc1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40082,8 +40083,8 @@
 			(uuid "84900966-b7ae-4290-9246-6e2fd8536464")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40102,7 +40103,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "f7be38f5-0dc1-4153-8356-2937d796e14d")
 		)
@@ -40126,13 +40127,13 @@
 		(descr "SMD Crystal FC-135 https://support.epson.biz/td/api/doc_check.php?dl=brief_FC-135R_en.pdf")
 		(tags "SMD SMT Crystal")
 		(property "Reference" "Y1"
-			(at 2.286 0 0)
+			(at 0 1.694 0)
 			(layer "B.SilkS")
 			(uuid "0f1d1559-6a95-4a09-8aaf-ad5ebcbc5f3c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40288,8 +40289,8 @@
 			(uuid "77f3a07f-c1e8-42f9-b293-6a427f41171c")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40332,13 +40333,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R18"
-			(at -1.778 0 0)
+			(at -2.157 0 0)
 			(layer "B.SilkS")
 			(uuid "f7f2a9ff-05bd-4434-a094-3a6fb6f271f7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40492,8 +40493,8 @@
 			(uuid "5caa7cd2-a942-49ab-be36-cfaef96d7ebc")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40536,13 +40537,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C16"
-			(at 1.826 0 0)
+			(at 2.08 -0.254 0)
 			(layer "B.SilkS")
 			(uuid "99272db1-640b-43bd-9d09-8276a96987c7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40696,8 +40697,8 @@
 			(uuid "4beb616b-03a9-4294-a586-61445c15d113")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40740,13 +40741,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C19"
-			(at -2.146 0 0)
+			(at -2.781 0 0)
 			(layer "B.SilkS")
 			(uuid "ea7753ec-2526-483f-924d-4e5980816b62")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40900,8 +40901,8 @@
 			(uuid "5a42d7f2-8c9e-4d72-99ea-d4655fbaa759")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -40949,8 +40950,8 @@
 			(uuid "232b5edd-bd45-4ae4-8644-75b8f5cf9925")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -41168,8 +41169,8 @@
 			(uuid "a512b7d6-ae12-4062-8d85-cc7fb046cd20")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -41319,7 +41320,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "~{CE}")
 			(pintype "input")
 			(uuid "d7ddcf1a-911b-4dd3-b7a9-aaef24d46954")
@@ -41354,13 +41355,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C14"
-			(at 1.778 0.14 0)
+			(at -2.299 0 0)
 			(layer "B.SilkS")
 			(uuid "d036a876-508c-4b39-8690-a14c6250ba30")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -41514,8 +41515,8 @@
 			(uuid "638645e8-a04d-456c-b6e9-84e6472fae11")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -41534,7 +41535,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "a7246581-cd1a-4dc8-998f-600cc7256ab4")
 		)
@@ -41556,13 +41557,13 @@
 		(uuid "afe8a107-62e9-4f43-948d-73de68e71fc2")
 		(at 104.167 138.824)
 		(property "Reference" "U1"
-			(at 0 1.778 180)
+			(at -0.027 1.892 180)
 			(layer "B.SilkS")
 			(uuid "f2fefe97-9907-409f-9795-f1b24b5ecd27")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42062,7 +42063,7 @@
 			(at 0.735 0.75)
 			(size 0.66 0.32)
 			(layers "B.Cu" "B.Paste")
-			(net 132 "Net-(U1-MODE{slash}S-CONF)")
+			(net 191 "/Power Supply/MODE{slash}S-CONF")
 			(pinfunction "MODE/S-CONF")
 			(pintype "input")
 			(uuid "6290659f-038f-424d-a9f2-5952991f125c")
@@ -42076,13 +42077,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R17"
-			(at 1.268 0 0)
+			(at 1.649 0 0)
 			(layer "B.SilkS")
 			(uuid "dba8626e-f932-4083-a352-1573994ee7e7")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42236,8 +42237,8 @@
 			(uuid "c4f65e48-4b87-4b03-a448-a70b756baf66")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42285,8 +42286,8 @@
 			(uuid "9be7a9c0-3cff-4b69-a095-f41eed812321")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42504,8 +42505,8 @@
 			(uuid "4ff08f57-7f8e-4a33-abe8-350d1b2e3e59")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42655,7 +42656,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "~{CE}")
 			(pintype "input")
 			(uuid "51cadf74-7c76-4c39-ac27-8b70ae50aef7")
@@ -42690,13 +42691,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C13"
-			(at 2.032 0 0)
+			(at -2.413 0 0)
 			(layer "B.SilkS")
 			(uuid "a67482c8-ed02-4f87-af9e-32375429d3ca")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42850,8 +42851,8 @@
 			(uuid "45ff4083-6c54-42b8-862e-0a620d5d17c0")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -42894,13 +42895,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C17"
-			(at 2.275 -0.0685 0)
+			(at 2.783 -0.0685 0)
 			(layer "B.SilkS")
 			(uuid "4e562bae-42bb-4570-9ceb-f7ee378d043f")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -43054,8 +43055,8 @@
 			(uuid "f8608dc6-ce71-49f0-9a1d-fcdd4d64743d")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -43074,7 +43075,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "7a676153-9bb3-45de-af73-bf4ad05ee562")
 		)
@@ -43103,8 +43104,8 @@
 			(uuid "beb00cf7-a8e9-4aea-84cd-00ef2019b251")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -43322,8 +43323,8 @@
 			(uuid "c640ac24-ecd2-413e-aa1f-cea82c0f7b5b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -43473,7 +43474,7 @@
 			(size 1.475 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pinfunction "~{CE}")
 			(pintype "input")
 			(uuid "28898b74-2ad4-4014-87b2-19787a3cf890")
@@ -43508,13 +43509,13 @@
 		(descr "SMD 7x-dip-switch SPST , Slide, row spacing 6.73 mm (264 mils), body size 6.7x19.34mm (see e.g. https://www.ctscorp.com/wp-content/uploads/219.pdf), SMD, LowProfile, JPin")
 		(tags "SMD DIP Switch SPST Slide 6.73mm 264mil SMD LowProfile JPin")
 		(property "Reference" "SW1"
-			(at 3.619 9.779 0)
+			(at 3.619 10.795 0)
 			(layer "B.SilkS")
 			(uuid "eb5a9ba8-cb23-4228-8e15-56baa919b98b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify left bottom mirror)
 			)
@@ -44289,8 +44290,8 @@
 			(uuid "409ab0ea-3dc1-4ed9-82f8-3b546704b7e4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -44437,17 +44438,17 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "B.Cu")
 		(uuid "c622407d-65d1-4ac4-9f16-45154fbc945f")
-		(at 107.442 122.301 180)
+		(at 107.698 122.301 180)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R4"
-			(at 1.526 0 0)
+			(at 1.778 0 0)
 			(layer "B.SilkS")
 			(uuid "48f6af1c-9b59-4ea7-8b02-b68e443d5bec")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -44601,8 +44602,8 @@
 			(uuid "99ae924c-c7f0-459e-b6de-0c8ff226b8e6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -44645,13 +44646,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R22"
-			(at -1.767 0.0685 0)
+			(at -2.119827 -0.023821 0)
 			(layer "B.SilkS")
 			(uuid "73ba5125-cef0-4346-b16c-8881356bab8e")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -44805,8 +44806,8 @@
 			(uuid "c3362c9f-e99b-4663-a9a9-ea03f754245a")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -44849,13 +44850,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R25"
-			(at 1.3365 -0.011 0)
+			(at 1.5905 0.497 0)
 			(layer "B.SilkS")
 			(uuid "cad2c0ba-27c9-413c-8722-16645e288414")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45009,8 +45010,8 @@
 			(uuid "e2510741-8909-47b2-afd2-adf7e31ecb05")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45053,13 +45054,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C20"
-			(at 0 1.27 180)
+			(at 2.921 0 180)
 			(layer "B.SilkS")
 			(uuid "61097e15-ddb3-4ffe-8d9c-5787772e38aa")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45213,8 +45214,8 @@
 			(uuid "66789fe8-2f89-4965-add5-7b70af938b34")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45257,13 +45258,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R6"
-			(at 1.207 0 0)
+			(at 1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "7f169f7b-0d7d-4215-bc64-22bbda6c0baa")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45417,8 +45418,8 @@
 			(uuid "17b0223e-49d3-49bb-abd6-188e763121c2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45437,7 +45438,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "0b2fd6ce-771c-4e91-9e03-bb362d34cbdf")
 		)
@@ -45459,13 +45460,13 @@
 		(uuid "d6b70fd2-5751-485c-a888-b7e47a068b7c")
 		(at 107.315 129.003 -90)
 		(property "Reference" "D1"
-			(at 0.132 2.2464 0)
+			(at 0.156 2.54 0)
 			(layer "B.SilkS")
 			(uuid "2fb91108-1915-4d17-90a9-5bfd5ae0f691")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -45945,13 +45946,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R12"
-			(at 1.205 0 0)
+			(at 1.522 0 0)
 			(layer "B.SilkS")
 			(uuid "934852c1-95cd-43c4-b7c1-d6bc77a8cbbb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46105,8 +46106,8 @@
 			(uuid "3fbaacc3-6139-4875-9c26-27ce996450a2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46125,7 +46126,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "b46892ef-e7fc-443a-aedc-3391904a4977")
 		)
@@ -46149,13 +46150,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R5"
-			(at -1.207 0 0)
+			(at -1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "89481cde-2c22-4569-8b83-4dd538beb1d2")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46309,8 +46310,8 @@
 			(uuid "6a50999f-8671-4b14-9e55-65fe30b466d4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46353,13 +46354,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R24"
-			(at -1.268 0 0)
+			(at -1.651 0 0)
 			(layer "B.SilkS")
 			(uuid "588e4be2-0939-41a7-9274-0ca06e63bcbb")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46513,8 +46514,8 @@
 			(uuid "4357c19c-b8a4-4929-bc5f-0b56160bb523")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -46524,7 +46525,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "863c4e0f-2ecb-4705-86a7-bdd8930ae8f7")
 		)
@@ -46557,13 +46558,13 @@
 		(descr "surface-mounted straight pin header, 2x08, 2.54mm pitch, double rows")
 		(tags "Surface mounted pin header SMD 2x08 2.54mm double row")
 		(property "Reference" "J1"
-			(at -0.112 11.049 0)
+			(at -0.112 11.176 0)
 			(layer "B.SilkS")
 			(uuid "a5be7668-0330-4e84-a0d2-5580283b16af")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47397,8 +47398,8 @@
 			(uuid "f2761a94-e13f-4ffc-99ea-5ed7499afad4")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47567,13 +47568,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R19"
-			(at -1.677173 0.092321 0)
+			(at -2.119827 -0.023821 0)
 			(layer "B.SilkS")
 			(uuid "532db011-1075-4070-ac11-3e4915693d6b")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47727,8 +47728,8 @@
 			(uuid "9011d1c3-f2d0-4fe6-8724-a01b0b0826a6")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47771,13 +47772,13 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C24"
-			(at 0 1.016 0)
+			(at 2.68 0 0)
 			(layer "B.SilkS")
 			(uuid "4e8969df-fe6f-45eb-ad80-29b80c1a70d1")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47931,8 +47932,8 @@
 			(uuid "4b4a2c8e-9386-4343-9c46-5b99027b1278")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -47951,7 +47952,7 @@
 			(size 0.9 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "16733758-0fe2-4fda-b15a-611364728fbb")
 		)
@@ -47975,13 +47976,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R9"
-			(at 1.207 0 0)
+			(at 1.524 0 0)
 			(layer "B.SilkS")
 			(uuid "7a299080-8882-4341-8c2f-5e40b7a388ea")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -48135,8 +48136,8 @@
 			(uuid "649cd7cd-421b-4d9f-857b-6d794996faca")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -48155,7 +48156,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "56066f3f-f57d-46aa-844f-30782f445933")
 		)
@@ -48179,13 +48180,13 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R11"
-			(at 1.205 0 0)
+			(at 1.522 0 0)
 			(layer "B.SilkS")
 			(uuid "fd7089cd-4350-4126-a973-87f0500434db")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -48339,8 +48340,8 @@
 			(uuid "4ffb3040-159f-4189-9c5c-c514b15d6211")
 			(effects
 				(font
-					(size 0.508 0.508)
-					(thickness 0.04699)
+					(size 0.8128 0.8128)
+					(thickness 0.1016)
 				)
 				(justify mirror)
 			)
@@ -48359,7 +48360,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 132 "GNDD")
 			(pintype "passive")
 			(uuid "fc0bd1c3-50ba-418a-a575-d51d6c4417e0")
 		)
@@ -48684,7 +48685,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.1016)
 			)
 			(justify left mirror)
 		)
@@ -48696,7 +48697,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.1016)
 			)
 			(justify left mirror)
 		)
@@ -48721,7 +48722,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.1016)
 			)
 			(justify left mirror)
 		)
@@ -48746,7 +48747,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.1016)
 			)
 			(justify left mirror)
 		)
