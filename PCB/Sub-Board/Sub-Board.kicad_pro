@@ -493,7 +493,36 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Default",
+        "pattern": "/System Bus/+5V"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/System Bus/+12V"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Power GND"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Board Address/+3.3V Digital"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Power Supply/+3.3V Analog"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Power Supply/AREF"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GND"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {

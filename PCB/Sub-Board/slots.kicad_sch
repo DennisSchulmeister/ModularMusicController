@@ -12274,7 +12274,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "046efdd1-06da-4d8f-aa51-e3cbd707f1a9")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR32"
 			(at 81.28 236.22 0)
 			(effects
 				(font
@@ -12283,7 +12283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 81.28 234.0031 0)
 			(effects
 				(font
@@ -12324,7 +12324,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR032")
+					(reference "#PWR32")
 					(unit 1)
 				)
 			)
@@ -14086,7 +14086,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2663d6e7-aa7b-4ea4-8051-83eda20e32e3")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR44"
 			(at 168.91 236.22 0)
 			(effects
 				(font
@@ -14095,7 +14095,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 168.91 234.0031 0)
 			(effects
 				(font
@@ -14136,7 +14136,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR044")
+					(reference "#PWR44")
 					(unit 1)
 				)
 			)
@@ -14916,7 +14916,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34ff934a-b226-4bc2-83b0-5d9a0758848d")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR56"
 			(at 320.04 236.22 0)
 			(effects
 				(font
@@ -14925,7 +14925,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 320.04 234.0031 0)
 			(effects
 				(font
@@ -14966,7 +14966,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR056")
+					(reference "#PWR56")
 					(unit 1)
 				)
 			)
@@ -15458,7 +15458,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e326bca-d0e8-42a6-8bf6-898cd25d4fec")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR60"
 			(at 327.66 236.22 0)
 			(effects
 				(font
@@ -15467,7 +15467,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 327.66 234.0031 0)
 			(effects
 				(font
@@ -15508,7 +15508,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR060")
+					(reference "#PWR60")
 					(unit 1)
 				)
 			)
@@ -15524,7 +15524,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e555330-8940-4117-adc2-9a57ea0e9f94")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR43"
 			(at 168.91 199.39 0)
 			(effects
 				(font
@@ -15533,7 +15533,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 168.91 197.1731 0)
 			(effects
 				(font
@@ -15574,7 +15574,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR043")
+					(reference "#PWR43")
 					(unit 1)
 				)
 			)
@@ -15590,7 +15590,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "408a819d-5819-45d2-871f-644020caecf8")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR48"
 			(at 241.3 236.22 0)
 			(effects
 				(font
@@ -15599,7 +15599,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 241.3 234.0031 0)
 			(effects
 				(font
@@ -15640,7 +15640,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR048")
+					(reference "#PWR48")
 					(unit 1)
 				)
 			)
@@ -16007,7 +16007,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46a86182-0a04-46d9-8724-4cf1c3228fb3")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR59"
 			(at 327.66 199.39 0)
 			(effects
 				(font
@@ -16016,7 +16016,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 327.66 197.1731 0)
 			(effects
 				(font
@@ -16057,7 +16057,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR059")
+					(reference "#PWR59")
 					(unit 1)
 				)
 			)
@@ -16414,7 +16414,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f4d0daf-65dd-4b9b-a652-82fe8fde952f")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR58"
 			(at 327.66 139.7 0)
 			(effects
 				(font
@@ -16423,7 +16423,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 327.66 137.4831 0)
 			(effects
 				(font
@@ -16464,7 +16464,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR058")
+					(reference "#PWR58")
 					(unit 1)
 				)
 			)
@@ -16882,7 +16882,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "693078fc-289a-45f4-8e0d-a50be08a903b")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR34"
 			(at 88.9 139.7 0)
 			(effects
 				(font
@@ -16891,7 +16891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 88.9 137.4831 0)
 			(effects
 				(font
@@ -16932,7 +16932,7 @@
 		(instances
 			(project ""
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR034")
+					(reference "#PWR34")
 					(unit 1)
 				)
 			)
@@ -17425,7 +17425,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "743deae6-c516-4333-9aa9-43390e5d4e91")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR36"
 			(at 88.9 236.22 0)
 			(effects
 				(font
@@ -17434,7 +17434,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 88.9 234.0031 0)
 			(effects
 				(font
@@ -17475,7 +17475,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR036")
+					(reference "#PWR36")
 					(unit 1)
 				)
 			)
@@ -17759,7 +17759,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "792deae1-b2bc-479d-9c53-ef7a0e089983")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR52"
 			(at 248.92 236.22 0)
 			(effects
 				(font
@@ -17768,7 +17768,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 248.92 234.0031 0)
 			(effects
 				(font
@@ -17809,7 +17809,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR052")
+					(reference "#PWR52")
 					(unit 1)
 				)
 			)
@@ -18166,7 +18166,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e85f1bc-b040-4640-a53e-33c01bbca856")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR47"
 			(at 241.3 139.7 0)
 			(effects
 				(font
@@ -18175,7 +18175,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 241.3 137.4831 0)
 			(effects
 				(font
@@ -18216,7 +18216,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR047")
+					(reference "#PWR47")
 					(unit 1)
 				)
 			)
@@ -19669,7 +19669,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e72f183-d0e8-4930-b10c-29ba393f41a8")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR51"
 			(at 248.92 199.39 0)
 			(effects
 				(font
@@ -19678,7 +19678,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 248.92 197.1731 0)
 			(effects
 				(font
@@ -19719,7 +19719,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR051")
+					(reference "#PWR51")
 					(unit 1)
 				)
 			)
@@ -20151,7 +20151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af9d98a5-b7a3-42f3-8da5-7a72dc47064c")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR39"
 			(at 161.29 139.7 0)
 			(effects
 				(font
@@ -20160,7 +20160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 161.29 137.4831 0)
 			(effects
 				(font
@@ -20201,7 +20201,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR039")
+					(reference "#PWR39")
 					(unit 1)
 				)
 			)
@@ -20485,7 +20485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b64508ca-bb67-4526-a9ed-45aca50c5a76")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR57"
 			(at 327.66 102.87 0)
 			(effects
 				(font
@@ -20494,7 +20494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 327.66 100.6531 0)
 			(effects
 				(font
@@ -20535,7 +20535,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR057")
+					(reference "#PWR57")
 					(unit 1)
 				)
 			)
@@ -20618,7 +20618,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "baad8f44-f64a-43d6-9a9d-ff704ff4adb6")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR42"
 			(at 168.91 139.7 0)
 			(effects
 				(font
@@ -20627,7 +20627,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 168.91 137.4831 0)
 			(effects
 				(font
@@ -20668,7 +20668,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR042")
+					(reference "#PWR42")
 					(unit 1)
 				)
 			)
@@ -21652,7 +21652,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c997d56d-a187-4ce0-93a3-9434ce7bbb07")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR55"
 			(at 320.04 139.7 0)
 			(effects
 				(font
@@ -21661,7 +21661,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 320.04 137.4831 0)
 			(effects
 				(font
@@ -21702,7 +21702,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR055")
+					(reference "#PWR55")
 					(unit 1)
 				)
 			)
@@ -21852,7 +21852,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb698be5-e779-4b59-b3c1-67ee1f43bea7")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR35"
 			(at 88.9 199.39 0)
 			(effects
 				(font
@@ -21861,7 +21861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 88.9 197.1731 0)
 			(effects
 				(font
@@ -21902,7 +21902,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR035")
+					(reference "#PWR35")
 					(unit 1)
 				)
 			)
@@ -21918,7 +21918,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cdaa45d2-558f-42af-acc0-e4adcbf76a88")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR49"
 			(at 248.92 102.87 0)
 			(effects
 				(font
@@ -21927,7 +21927,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 248.92 100.6531 0)
 			(effects
 				(font
@@ -21968,7 +21968,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR049")
+					(reference "#PWR49")
 					(unit 1)
 				)
 			)
@@ -22192,7 +22192,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d69b2efb-3662-431a-a993-b905894089f0")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR50"
 			(at 248.92 139.7 0)
 			(effects
 				(font
@@ -22201,7 +22201,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 248.92 137.4831 0)
 			(effects
 				(font
@@ -22242,7 +22242,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR050")
+					(reference "#PWR50")
 					(unit 1)
 				)
 			)
@@ -22670,7 +22670,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed07ee6f-1331-4fd4-8452-dfab684f80e1")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR31"
 			(at 81.28 139.7 0)
 			(effects
 				(font
@@ -22679,7 +22679,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 81.28 137.4831 0)
 			(effects
 				(font
@@ -22720,7 +22720,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR031")
+					(reference "#PWR31")
 					(unit 1)
 				)
 			)
@@ -22877,7 +22877,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef8e71b8-2728-4099-a3c5-4f46591bad9f")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR33"
 			(at 88.9 102.87 0)
 			(effects
 				(font
@@ -22886,7 +22886,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 88.9 100.6531 0)
 			(effects
 				(font
@@ -22927,7 +22927,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR033")
+					(reference "#PWR33")
 					(unit 1)
 				)
 			)
@@ -23089,7 +23089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3c9d3d7-3ce8-45bd-8dee-daa7b962bf96")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR41"
 			(at 168.91 102.87 0)
 			(effects
 				(font
@@ -23098,7 +23098,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 168.91 100.6531 0)
 			(effects
 				(font
@@ -23139,7 +23139,7 @@
 		(instances
 			(project "Template"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR041")
+					(reference "#PWR41")
 					(unit 1)
 				)
 			)
@@ -23423,7 +23423,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f932a82d-73bf-4f11-a450-6a1ac3c6416e")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR40"
 			(at 161.29 236.22 0)
 			(effects
 				(font
@@ -23432,7 +23432,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GNDD"
 			(at 161.29 234.0031 0)
 			(effects
 				(font
@@ -23473,7 +23473,7 @@
 		(instances
 			(project "Sub-Board"
 				(path "/f9cf8dcb-b299-4fad-bb24-e1dfd3a00b1a/ab7b82b4-1aa0-4f6e-8727-84bfead47e04"
-					(reference "#PWR040")
+					(reference "#PWR40")
 					(unit 1)
 				)
 			)
