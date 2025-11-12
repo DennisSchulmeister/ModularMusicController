@@ -12283,7 +12283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 81.28 234.0031 0)
 			(effects
 				(font
@@ -14095,7 +14095,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 168.91 234.0031 0)
 			(effects
 				(font
@@ -14925,7 +14925,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 320.04 234.0031 0)
 			(effects
 				(font
@@ -15467,7 +15467,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 327.66 234.0031 0)
 			(effects
 				(font
@@ -15533,7 +15533,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 168.91 197.1731 0)
 			(effects
 				(font
@@ -15599,7 +15599,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 241.3 234.0031 0)
 			(effects
 				(font
@@ -16016,7 +16016,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 327.66 197.1731 0)
 			(effects
 				(font
@@ -16423,7 +16423,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 327.66 137.4831 0)
 			(effects
 				(font
@@ -16891,7 +16891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 88.9 137.4831 0)
 			(effects
 				(font
@@ -17434,7 +17434,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 88.9 234.0031 0)
 			(effects
 				(font
@@ -17768,7 +17768,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 248.92 234.0031 0)
 			(effects
 				(font
@@ -18175,7 +18175,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 241.3 137.4831 0)
 			(effects
 				(font
@@ -19678,7 +19678,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 248.92 197.1731 0)
 			(effects
 				(font
@@ -20160,7 +20160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 161.29 137.4831 0)
 			(effects
 				(font
@@ -20494,7 +20494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 327.66 100.6531 0)
 			(effects
 				(font
@@ -20627,7 +20627,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 168.91 137.4831 0)
 			(effects
 				(font
@@ -21661,7 +21661,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 320.04 137.4831 0)
 			(effects
 				(font
@@ -21861,7 +21861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 88.9 197.1731 0)
 			(effects
 				(font
@@ -21927,7 +21927,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 248.92 100.6531 0)
 			(effects
 				(font
@@ -22201,7 +22201,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 248.92 137.4831 0)
 			(effects
 				(font
@@ -22679,7 +22679,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 81.28 137.4831 0)
 			(effects
 				(font
@@ -22886,7 +22886,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 88.9 100.6531 0)
 			(effects
 				(font
@@ -23098,7 +23098,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 168.91 100.6531 0)
 			(effects
 				(font
@@ -23432,7 +23432,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND"
 			(at 161.29 234.0031 0)
 			(effects
 				(font

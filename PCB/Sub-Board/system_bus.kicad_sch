@@ -2231,18 +2231,6 @@
 		)
 		(uuid "27def060-dabb-4494-83c6-2ce33b5815c2")
 	)
-	(text "Run signal traces through the IC below"
-		(exclude_from_sim no)
-		(at 136.398 118.872 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(italic yes)
-			)
-			(justify left top)
-		)
-		(uuid "5c0c8720-15ea-4a0f-bd67-9bd9dd4d8ded")
-	)
 	(text "Place all components as near to the connector as possible"
 		(exclude_from_sim no)
 		(at 204.47 130.81 0)
@@ -3683,6 +3671,7 @@
 	(symbol
 		(lib_id "Filter:Choke_Wurth_WE-CNSW_744232090")
 		(at 184.15 66.04 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3690,7 +3679,7 @@
 		(dnp no)
 		(uuid "c63bcb40-4913-46b5-8920-f2d15d04472d")
 		(property "Reference" "L1"
-			(at 184.15 58.0277 0)
+			(at 184.15 61.0983 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3698,7 +3687,7 @@
 			)
 		)
 		(property "Value" "Choke_Wurth_WE-CNSW_744232090"
-			(at 184.15 60.452 0)
+			(at 184.15 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3706,7 +3695,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_CommonMode_Wurth_WE-CNSW-1206"
-			(at 184.15 76.2 0)
+			(at 184.15 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3715,7 +3704,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/744232090.pdf"
-			(at 184.15 73.66 0)
+			(at 184.15 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)

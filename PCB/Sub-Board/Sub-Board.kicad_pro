@@ -123,7 +123,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.1524,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
@@ -136,9 +136,9 @@
         "min_text_height": 0.8128,
         "min_text_thickness": 0.1016,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
-        "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_track_width": 0.1524,
+        "min_via_annular_width": 0.1016,
+        "min_via_diameter": 0.4572,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -471,10 +471,10 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.1,
+        "clearance": 0.1524,
+        "diff_pair_gap": 0.1524,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1,
+        "diff_pair_width": 0.1524,
         "line_style": 0,
         "microvia_diameter": 0.25,
         "microvia_drill": 0.1,
@@ -482,16 +482,16 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
-        "via_diameter": 0.5,
+        "track_width": 0.1524,
+        "via_diameter": 0.5532,
         "via_drill": 0.35,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.2,
-        "diff_pair_width": 0.2,
+        "clearance": 0.1778,
+        "diff_pair_gap": 0.3048,
+        "diff_pair_width": 0.3048,
         "line_style": 0,
         "microvia_diameter": 0.25,
         "microvia_drill": 0.1,
@@ -499,8 +499,8 @@
         "pcb_color": "rgb(194, 0, 0)",
         "priority": 0,
         "schematic_color": "rgb(194, 0, 0)",
-        "track_width": 0.15,
-        "via_diameter": 0.6,
+        "track_width": 0.1778,
+        "via_diameter": 0.6032,
         "via_drill": 0.4,
         "wire_width": 6
       }
