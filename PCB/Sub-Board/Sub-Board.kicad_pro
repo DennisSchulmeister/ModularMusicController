@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 1.2,
-          "width": 0.875
+          "drill": 0.7,
+          "height": 1.0,
+          "width": 1.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -512,40 +512,28 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "/System Bus/+5V"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "/System Bus/+12V"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "Power GND"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "/Board Address/+3.3V Digital"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "/Power Supply/+3.3V Analog"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "/Power Supply/AREF"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "GND"
-      },
-      {
-        "netclass": "Power",
-        "pattern": "/System Bus/+5V"
-      },
-      {
-        "netclass": "Power",
-        "pattern": "/System Bus/+12V"
       },
       {
         "netclass": "Power",

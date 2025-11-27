@@ -8049,6 +8049,46 @@
 		)
 		(uuid "4146f79a-5509-48ec-a956-73f96fa5c7c5")
 	)
+	(label "Config.Out4"
+		(at 309.88 57.15 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+	)
+	(label "Config.Out3"
+		(at 238.76 57.15 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+	)
+	(label "Config.Out1"
+		(at 96.52 57.15 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+	)
+	(label "Config.Out2"
+		(at 167.64 57.15 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+	)
 	(label "Slot5.A0"
 		(at 142.24 220.98 0)
 		(effects
