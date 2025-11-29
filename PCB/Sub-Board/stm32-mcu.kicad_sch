@@ -8067,7 +8067,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbe")
 	)
 	(label "Config.Out1"
 		(at 96.52 57.15 90)
@@ -8077,7 +8077,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbf")
 	)
 	(label "Config.Out2"
 		(at 167.64 57.15 90)
@@ -8087,7 +8087,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadbd")
+		(uuid "42c6314e-17f1-4c07-9498-0cf9518cadc0")
 	)
 	(label "Slot5.A0"
 		(at 142.24 220.98 0)

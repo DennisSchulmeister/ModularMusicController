@@ -10452,7 +10452,7 @@
 		)
 		(uuid "15e7abc1-f31c-4a0d-8dac-64f317837d4e")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 149.86 173.99 180)
 		(effects
 			(font
@@ -10662,7 +10662,7 @@
 		)
 		(uuid "3a1b04ee-5be1-4218-b52c-901527d1b4cb")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 149.86 74.93 180)
 		(effects
 			(font
@@ -10712,7 +10712,7 @@
 		)
 		(uuid "43df39d2-10b7-4cc6-8ca4-b0e0da65f070")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 229.87 74.93 180)
 		(effects
 			(font
@@ -10752,7 +10752,7 @@
 		)
 		(uuid "4c0e784e-c8f1-4b89-bb33-930044a53f19")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 308.61 171.45 180)
 		(effects
 			(font
@@ -10802,7 +10802,7 @@
 		)
 		(uuid "54920d31-7288-49d0-8656-96c7be7e5dbf")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 69.85 171.45 180)
 		(effects
 			(font
@@ -10832,7 +10832,7 @@
 		)
 		(uuid "5abdc85f-dedd-47cd-8834-0952359ad52b")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 69.85 77.47 180)
 		(effects
 			(font
@@ -10862,7 +10862,7 @@
 		)
 		(uuid "6a5e2445-2b65-4615-a389-5fd3bd93aac6")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 229.87 77.47 180)
 		(effects
 			(font
@@ -10892,7 +10892,7 @@
 		)
 		(uuid "6d671484-5ba5-4c89-a252-bd9b08551d07")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 229.87 173.99 180)
 		(effects
 			(font
@@ -10922,7 +10922,7 @@
 		)
 		(uuid "7196a7ae-36ed-426e-a7d5-35ed675cff52")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 308.61 74.93 180)
 		(effects
 			(font
@@ -11022,7 +11022,7 @@
 		)
 		(uuid "817fedb2-8ef6-44fc-9332-1bd3eaa4fb26")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 69.85 74.93 180)
 		(effects
 			(font
@@ -11102,7 +11102,7 @@
 		)
 		(uuid "901b04bb-2178-4743-ae28-f14d58db4c50")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 149.86 77.47 180)
 		(effects
 			(font
@@ -11202,7 +11202,7 @@
 		)
 		(uuid "a6388ee4-2a96-4ee0-b898-c8b597b8a5a2")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 69.85 173.99 180)
 		(effects
 			(font
@@ -11372,7 +11372,7 @@
 		)
 		(uuid "c4ba09c1-35bd-4dd3-9061-e07d6918fd0f")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 308.61 173.99 180)
 		(effects
 			(font
@@ -11452,7 +11452,7 @@
 		)
 		(uuid "d2c48eb5-4a52-4c48-af23-0b505da3ffda")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 149.86 171.45 180)
 		(effects
 			(font
@@ -11542,7 +11542,7 @@
 		)
 		(uuid "e91a7f34-0618-4870-9944-0e4839795d26")
 	)
-	(label "SlotBus.Data"
+	(label "SlotBus.Clock"
 		(at 308.61 77.47 180)
 		(effects
 			(font
@@ -11602,7 +11602,7 @@
 		)
 		(uuid "ff859873-24c5-4216-b5d5-4a4c62dc247d")
 	)
-	(label "SlotBus.Clock"
+	(label "SlotBus.Data"
 		(at 229.87 171.45 180)
 		(effects
 			(font

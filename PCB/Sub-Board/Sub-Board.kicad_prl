@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 2,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [
@@ -135,6 +135,8 @@
       "/STM32-MCU/Slot7.Typ1",
       "/STM32-MCU/Slot7.Typ0",
       "/STM32-MCU/Slot7.Typ3",
+      "/STM32-MCU/SystemBus.Data",
+      "/STM32-MCU/SystemBus.Clock",
       "Net-(U1-SW)",
       "Net-(R5-Pad2)",
       "/Board Address/BoardAddress6",
@@ -145,6 +147,7 @@
       "/Board Address/BoardAddress1",
       "/Board Address/BoardAddress0",
       "/Board Address/BoardAddress7",
+      "/STM32-MCU/Config.Clock",
       "Net-(U2-CP)",
       "Net-(U4-CP)",
       "Net-(U3-PA13)",
@@ -153,10 +156,13 @@
       "Net-(U6-CP)",
       "Net-(U7-CP)",
       "/STM32-MCU/BOOT0",
+      "/STM32-MCU/Config.Data",
       "Net-(U7-Q7)",
       "unconnected-(U1-PG-Pad2)",
       "unconnected-(U1-FB{slash}VSET-Pad1)",
       "unconnected-(U2-~{Q7}-Pad7)",
+      "/STM32-MCU/Config.Out1",
+      "/STM32-MCU/Config.Latch",
       "unconnected-(U3-PB5-Pad91)",
       "unconnected-(U3-PC10-Pad78)",
       "unconnected-(U3-PC7-Pad64)",
@@ -179,7 +185,10 @@
       "unconnected-(U3-PC15-Pad9)",
       "unconnected-(U3-PB15-Pad54)",
       "unconnected-(U4-~{Q7}-Pad7)",
+      "/STM32-MCU/Config.Out2",
+      "/STM32-MCU/Config.Out3",
       "unconnected-(U5-~{Q7}-Pad7)",
+      "/STM32-MCU/Config.Out4",
       "unconnected-(U6-~{Q7}-Pad7)",
       "unconnected-(U7-~{Q7}-Pad7)",
       "/System Bus/+12V",
@@ -218,7 +227,6 @@
       "vias",
       "footprint_text",
       "footprint_anchors",
-      "ratsnest",
       "grid",
       "footprints_front",
       "footprints_back",
@@ -236,8 +244,8 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_00000000_82002227",
-    "zone_display_mode": 0
+    "visible_layers": "00000000_00000000_00000000_2200880c",
+    "zone_display_mode": 1
   },
   "git": {
     "repo_type": "",
