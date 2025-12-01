@@ -22,5 +22,7 @@ Webconfig/static/*.bundle.* binary
 *.jpg binary
 *.dxf binary
 *.mpy binary
+*.pdf binary
+*.svg binary
 
 *.ttf binary
