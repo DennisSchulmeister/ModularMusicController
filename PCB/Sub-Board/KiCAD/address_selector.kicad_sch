@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Modular Music Controller / Sub-Board / Address Selector")
-		(date "2025-11-02")
-		(rev "1")
+		(date "2025-12-02")
+		(rev "2")
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols
@@ -1876,19 +1876,20 @@
 		(fields_autoplaced yes)
 		(uuid "151c7ec3-b339-4e80-82c1-a614f19689a4")
 		(property "Reference" "SW1"
-			(at 55.88 55.5455 0)
+			(at 55.88 57.9699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x07"
+		(property "Value" "CTS 219-7LPSTR"
 			(at 55.88 57.9698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx07_Slide_6.7x19.34mm_W6.73mm_P2.54mm_LowProfile_JPin"

@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "TPS629210")(type "KiCad")(uri "${KIPRJMOD}/TPS629210DRLR/TPS629210DRLR.kicad_sym")(options "")(descr "DC/DC Buck Converter"))
   (lib (name "TPD2E001DZDR")(type "KiCad")(uri "${KIPRJMOD}/TPD2E001DZDR/TPD2E001DZDR.kicad_sym")(options "")(descr "ESD/TVS Protection Diode Array"))
+  (lib (name "CX2016DB26000H0FLJC2")(type "KiCad")(uri "${KIPRJMOD}/CX2016DB26000H0FLJC2/CX2016DB26000H0FLJC2.kicad_sym")(options "")(descr "26 MHz Crystal"))
 )

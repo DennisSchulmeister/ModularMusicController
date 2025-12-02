@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Modular Music Controller / Sub-Board / Power Supply")
-		(date "2025-11-02")
-		(rev "1")
+		(date "2025-12-02")
+		(rev "2")
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols
@@ -1122,6 +1122,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "650Ω @ 100MHz ~300mA"
+		(exclude_from_sim no)
+		(at 182.88 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "03de041e-cfa4-4819-b926-8ee2118276f7")
+	)
 	(text "Power Supply"
 		(exclude_from_sim no)
 		(at 25.4 25.4 0)
@@ -1665,12 +1675,13 @@
 				)
 			)
 		)
-		(property "Value" "600Ω @ 100MHz ~300-500mA"
+		(property "Value" "Laird HZ0603C651R-10"
 			(at 181.5592 65.4882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
@@ -1691,7 +1702,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Ferrite bead"
+		(property "Description" "Ferrite bead - 650Ω @ 100MHz ~300-500mA"
 			(at 181.61 69.85 0)
 			(effects
 				(font

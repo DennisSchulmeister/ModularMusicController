@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "Modular Music Controller / Sub-Board / Controller Slots")
-		(date "2025-11-06")
-		(rev "1")
+		(date "2025-12-02")
+		(rev "2")
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols
@@ -1191,6 +1191,61 @@
 		)
 		(uuid e31be341-ca71-47c5-9b7f-8c75172ac240)
 	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 330.454 205.486 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "0409545b-337a-4f80-84a9-d9b7db76d6f5")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 158.496 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "1d91da2b-7ec0-4adb-a727-99d0d927b0e7")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 318.008 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "20bfa4b2-d240-4d74-8f13-730b054d79cf")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 239.268 108.966 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "3a5db340-2362-4f21-9d9e-660968e28b71")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 251.714 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "3b06e031-b54c-42d9-88ce-284a31defa7b")
+	)
 	(text "Slot 6"
 		(exclude_from_sim no)
 		(at 212.344 146.05 0)
@@ -1203,6 +1258,72 @@
 			(justify left top)
 		)
 		(uuid "419cc4c4-5b2d-45de-9aed-220c030501e8")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 78.74 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "4bdbd01c-8acb-446e-ba29-da4ede05c34f")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 330.708 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "5b203fba-d721-4e6f-b245-0275b787a095")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 91.44 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "5d5927a3-40f9-43b8-9079-22de5320a287")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 91.44 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "61dad568-a545-42b9-b3ff-3bd29daa0568")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 159.004 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "63735c84-72a8-4160-b7dc-3e8953521de3")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 239.014 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "65a391d7-e871-4f50-87d2-c14ed7c23486")
 	)
 	(text "Slot 0"
 		(exclude_from_sim no)
@@ -1230,6 +1351,39 @@
 		)
 		(uuid "70e9129d-3bd7-40f8-909e-1259e9eea248")
 	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 239.268 64.516 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "764a1d98-8dc1-4264-bd30-3ec60b09bfec")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 318.008 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "766e6dc3-27fc-469b-aef9-8f471105482d")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 78.74 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "76a91775-51c0-4f6b-b85c-8e83a8434667")
+	)
 	(text "Slot 4"
 		(exclude_from_sim no)
 		(at 52.324 146.05 0)
@@ -1255,6 +1409,61 @@
 			(justify left top)
 		)
 		(uuid "8b4a16df-ea67-4446-9a15-09773c1375ea")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 239.014 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "94bdc4f6-77da-4600-bcbc-edeab78e4148")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 171.196 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "ab3eb366-a491-42f6-8b66-7a39e7a5884f")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 317.754 205.486 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "ad41e6be-218b-4445-a01e-877c0baee7bf")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 91.44 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "aebaa379-2544-464a-a096-ea475cf37c58")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 317.754 161.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "b04d00ef-e408-40e5-8dcf-ef933a0fa890")
 	)
 	(text "Slot 1"
 		(exclude_from_sim no)
@@ -1295,6 +1504,105 @@
 		)
 		(uuid "b6912c80-564e-4ccc-b8e4-ec8c9fd96843")
 	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 78.74 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "ba02ee15-b362-4c4d-85fe-6c1c21298b49")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 330.708 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "c229430c-255c-4afb-bff1-176e0e5125b9")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 171.704 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "c4d8e606-4b88-48ac-9c2b-351ce8220c61")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 251.714 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "c707a444-02ab-4125-9d63-96d87068215e")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 171.196 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "d4663cdc-7a9a-4d36-8b8a-e5d6adc9c249")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 78.74 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "de932aa9-d7f4-4149-ae74-13a8b99a6201")
+	)
+	(text "Address"
+		(exclude_from_sim no)
+		(at 158.496 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "e0b2c841-4f62-49f3-b280-1f9b4cbfbe71")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 330.454 161.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "e1babbe2-5c47-471a-a151-748e3ca2adae")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 251.968 64.516 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "eb05ec57-caac-4bff-b454-3e342d5c7315")
+	)
 	(text "Slot 7"
 		(exclude_from_sim no)
 		(at 291.084 146.05 0)
@@ -1307,6 +1615,50 @@
 			(justify left top)
 		)
 		(uuid "ec0e6841-2595-4086-917f-1f171a557578")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 251.968 108.966 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "ec6585d0-26c6-4408-b980-0fb39c7fe80c")
+	)
+	(text "GPIO"
+		(exclude_from_sim no)
+		(at 171.704 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "ef4aec58-5cbb-432c-a0e8-8adbc6cb876a")
+	)
+	(text "Type"
+		(exclude_from_sim no)
+		(at 91.44 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "f8ae4343-8b87-4e91-8e79-03241a679f9f")
+	)
+	(text "Power/I2C"
+		(exclude_from_sim no)
+		(at 159.004 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify bottom)
+		)
+		(uuid "fbd0c2f6-b504-49d6-b0b3-3232d0682ecc")
 	)
 	(junction
 		(at 113.03 116.84)
@@ -12066,12 +12418,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 251.714 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -12205,12 +12558,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 78.994 160.4123 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -12680,12 +13034,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 330.2 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -12760,12 +13115,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 239.014 63.8923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -12836,12 +13192,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 251.46 160.528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -13107,6 +13464,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "1340aa4f-49ea-47b9-91ef-d9ec13056026")
 		(property "Reference" "J8"
 			(at 91.694 105.7797 0)
@@ -13116,12 +13474,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 91.694 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -13524,12 +13883,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 91.44 160.528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -13802,12 +14162,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 330.2 160.528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -13881,12 +14242,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 330.454 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -13955,12 +14317,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 239.014 108.0883 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -14159,12 +14522,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 91.44 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -14706,12 +15070,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 159.004 63.8923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -14783,12 +15148,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 159.004 204.6083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -15191,12 +15557,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 317.754 204.6083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -15664,12 +16031,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 239.014 160.4123 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -15874,12 +16242,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 171.704 204.724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -16281,12 +16650,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 171.704 108.204 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -17155,12 +17525,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 78.994 63.8923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -17832,12 +18203,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 91.694 204.724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -18641,12 +19013,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 171.45 160.528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -18921,12 +19294,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 251.46 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"
@@ -19265,12 +19639,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 317.754 160.4123 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -19809,12 +20184,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 251.714 204.724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -20085,12 +20461,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 239.014 204.6083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -20960,12 +21337,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 317.754 108.0883 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -21034,12 +21412,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 159.004 108.0883 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -21376,12 +21755,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 317.754 63.8923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -21586,12 +21966,13 @@
 				)
 			)
 		)
-		(property "Value" "Type"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 330.454 204.724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -21992,12 +22373,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 78.994 204.6083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -22467,12 +22849,13 @@
 				)
 			)
 		)
-		(property "Value" "Power/I2C"
+		(property "Value" "Samtec RSM-105-02-L-S"
 			(at 159.004 160.4123 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
@@ -22735,6 +23118,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "ee55a8e5-af6b-4b0b-a234-464a76d79968")
 		(property "Reference" "J4"
 			(at 78.994 105.664 0)
@@ -22744,12 +23128,13 @@
 				)
 			)
 		)
-		(property "Value" "Address"
+		(property "Value" "Samtec RSM-104-02-L-S"
 			(at 78.994 108.0883 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical"
@@ -22950,12 +23335,13 @@
 				)
 			)
 		)
-		(property "Value" "GPIO"
+		(property "Value" "Samtec RSM-106-02-L-S"
 			(at 171.45 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x06_P1.27mm_Vertical"

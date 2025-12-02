@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Modular Music Controller / Sub-Board / System Bus")
-		(date "2025-11-02")
-		(rev "1")
+		(date "2025-12-02")
+		(rev "2")
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols
@@ -2896,19 +2896,20 @@
 		(fields_autoplaced yes)
 		(uuid "08eb40fb-118a-4b17-8da1-7f4e7ceda8e8")
 		(property "Reference" "J1"
-			(at 80.01 59.3555 0)
+			(at 80.01 61.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "Conn_02x08"
+		(property "Value" "Harwin M20-8760846"
 			(at 80.01 61.7798 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical_SMD"
@@ -3376,7 +3377,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "TPD2E001 SOP23 package"
+		(property "Description" "TPD2E001 SOP23 package (alternatively TPD2E2U06DRLR)"
 			(at 149.86 106.68 0)
 			(effects
 				(font
@@ -3686,12 +3687,13 @@
 				)
 			)
 		)
-		(property "Value" "Choke_Wurth_WE-CNSW_744232090"
+		(property "Value" "Wuerth 744232090"
 			(at 184.15 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_CommonMode_Wurth_WE-CNSW-1206"

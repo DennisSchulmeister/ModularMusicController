@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Modular Music Controller / Sub-Board / Architecture")
-		(date "2025-11-01")
-		(rev "1")
+		(date "2025-12-02")
+		(rev "2")
 		(company "Dennis Schulmeister-Zimolong")
 	)
 	(lib_symbols)
