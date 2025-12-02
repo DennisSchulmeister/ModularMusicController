@@ -1,0 +1,11 @@
+### Footprint positions - created on 2025-12-02T21:50:38+0100 ###
+### Printed by KiCad version 9.0.5-1.fc42
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val                          Package                               PosX       PosY       Rot  Side
+J1        Samtec_MTMS-105-02-T-S-100   PinHeader_1x05_P1.27mm_Vertical   128.5250  -103.1250  180.0000  bottom
+J2        Samtec_MTMS-104-02-T-S-100   PinHeader_1x04_P1.27mm_Vertical   149.6050  -124.2050    0.0000  bottom
+J3        Samtec__MTMS-106-02-T-S-100  PinHeader_1x06_P1.27mm_Vertical   149.6050  -103.1250   90.0000  bottom
+J4        Samtec_MTMS-104-02-T-S-100   PinHeader_1x04_P1.27mm_Vertical   128.5250  -124.2050  -90.0000  bottom
+R1        1k                           R_0402_1005Metric                 132.1054  -111.4150   -0.0000  bottom
+## End
