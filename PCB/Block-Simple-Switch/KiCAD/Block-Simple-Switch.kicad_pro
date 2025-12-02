@@ -518,6 +518,10 @@
       {
         "netclass": "Power",
         "pattern": "/+3.3V Digital"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/AREF"
       }
     ]
   },
@@ -526,8 +530,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "pos_files": "",
+      "plot": "../PDF/PCB Layers/",
+      "pos_files": "../Gerber/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
