@@ -5,7 +5,7 @@
 	(uuid "ef0a2fdf-fd1b-46fa-a506-bb0b560acc45")
 	(paper "A4")
 	(title_block
-		(title "Modular Music Controller / Block / Simple Switch")
+		(title "Modular Music Controller / Block / One Switch")
 		(date "2025-12-01")
 		(rev "1")
 		(company "Dennis Schulmeister-Zimolong")
@@ -1949,7 +1949,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "06a1a22c-cdaf-4e60-bf7b-fb443df59fa9")
+		(uuid "06a1a22c-cdaf-4e60-bf7b-fb443df59faa")
 	)
 	(label "SlotBus.Data"
 		(at 111.76 53.34 0)
@@ -1969,7 +1969,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2789b59e-b0bd-4e1c-9cf7-199167cde4df")
+		(uuid "2789b59e-b0bd-4e1c-9cf7-199167cde4e0")
 	)
 	(label "A"
 		(at 167.64 55.88 180)
@@ -1999,7 +1999,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "5acbd9b9-85e2-49b0-829e-8dcec774780c")
+		(uuid "5acbd9b9-85e2-49b0-829e-8dcec774780d")
 	)
 	(label "LED"
 		(at 167.64 63.5 180)
@@ -2062,7 +2062,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a61")
+		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a62")
 	)
 	(label "Typ2"
 		(at 167.64 121.92 180)
@@ -2072,7 +2072,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a61")
+		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a63")
 	)
 	(label "Typ3"
 		(at 167.64 119.38 180)
@@ -2082,7 +2082,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a61")
+		(uuid "d5b6f729-17e3-48c3-8a0f-788f04074a64")
 	)
 	(label "AREF"
 		(at 129.54 58.42 0)
@@ -2112,7 +2112,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec276cf6-419c-49a3-a405-9155899c2941")
+		(uuid "ec276cf6-419c-49a3-a405-9155899c2942")
 	)
 	(label "Addr0"
 		(at 111.76 127 0)
@@ -2122,7 +2122,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec276cf6-419c-49a3-a405-9155899c2941")
+		(uuid "ec276cf6-419c-49a3-a405-9155899c2943")
 	)
 	(label "Addr3"
 		(at 111.76 119.38 0)
@@ -2132,7 +2132,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec276cf6-419c-49a3-a405-9155899c2941")
+		(uuid "ec276cf6-419c-49a3-a405-9155899c2944")
 	)
 	(label "+3.3V Digital"
 		(at 124.46 83.82 180)

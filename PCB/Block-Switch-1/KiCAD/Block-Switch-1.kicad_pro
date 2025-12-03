@@ -472,7 +472,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Block-Simple-Switch.kicad_pro",
+    "filename": "Block-Switch-1.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -530,7 +530,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../PDF/PCB Layers/",
+      "plot": "../Gerber/",
       "pos_files": "../Gerber/",
       "specctra_dsn": "",
       "step": "",

@@ -7,6 +7,11 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "Modular Music Controller / Block / One Switch")
+		(date "2025-12-03")
+		(rev "1")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
@@ -70,11 +75,11 @@
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
-			(outputformat 4)
+			(outputformat 1)
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "../PDF/PCB Layers/")
+			(outputdirectory "../Gerber/")
 		)
 	)
 	(net 0 "")
@@ -2328,7 +2333,7 @@
 		(uuid "1aab0ccf-e80b-4ec1-9744-d7990183384f")
 	)
 	(gr_text "Switch & LED"
-		(at 139.065 124.206 0)
+		(at 133.1468 124.205 0)
 		(layer "F.SilkS")
 		(uuid "1073b825-bab6-4c62-b9b3-0ee4e185a182")
 		(effects
@@ -2336,18 +2341,19 @@
 				(size 1 1)
 				(thickness 0.125)
 			)
+			(justify left)
 		)
 	)
 	(gr_text "Modular Music Controller"
-		(at 129.5908 103.125 0)
+		(at 127.762 121.6152 0)
 		(layer "F.SilkS")
-		(uuid "85d60f8d-a980-4654-a4a5-77c0befc209d")
+		(uuid "ec8cf1f0-6de0-43b2-b762-64e44bea9cb2")
 		(effects
 			(font
-				(size 0.5 0.5)
-				(thickness 0.0625)
+				(size 1 1)
+				(thickness 0.125)
 			)
-			(justify left)
+			(justify left top)
 		)
 	)
 	(segment

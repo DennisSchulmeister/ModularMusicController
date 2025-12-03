@@ -1,0 +1,486 @@
+%PDF-1.5
+%ÄÅÇÉ
+5 0 obj
+<< /Length 6 0 R /Filter /FlateDecode >>
+stream
+x⁄uUKéA›œ)˙®¢ÄD 2GHë¢Ò&õ\?T˜x¶
+‹≤,yÊ…¯˝†ïúØØèøﬂ„˝ÁBéøø?>¸¯v¥>˙8˛ΩÏ’b*6oäﬂêa8Ä›ô⁄—‘DÅÜ4È«„ƒx˛ubmÄ±∏ı„=0umdé#±ÜJ¶∫ôÎò‡†Nza“Ä∫º∞H¢›N,TÄI∞Î/0 D»ΩŒË¿√≠\ƒ4¸≠ƒhòl∫kœòaaóÀyfxÇ¥#ç¬%$ tŒ^4
+Å7™E{`AíÖãg[ºŒ3◊å2ó5€¨aÌD÷~◊ó˜∑ü/⁄& ®`◊Ë‹Ø¿Zƒ1áólîú°·ﬁJ¶J*ˇ¨AÈÇítPÓΩtH±Ñq‰˙„Œ±÷ôH·∏SÂ2‹¨˝r`q™˝Z±ÏÒ:3e≥qIônR6Ì©Cõg[ºŒ3◊å2ó5€¨aÌD“~€óõ~uo¡Ôºg1ãb˘∆Âˇcb=¯MYsß(¨I?úø€4wjƒ ML5ñËôiwÔëÕ,˘ƒ‹Ä/Sã%∏h`å‚·ÿ˘=aÊ∞ÁS1	j√yO“Lû{Í≥åÖã4¢Ûë˜Æ!0Éπ˘ÕvÌSÑˆÈˇ6SïZ˚úπr—aÎôÈ¶A« –π"≠h◊Öö∂w/û%lÛ:Õ‹2J\∂lìÜ≠I˚m_Ó˙Eæ‹Â‘/éB0YÌsóx|Ù⁄/ñËA]Jb≥cÊ±ØÍ›bOü}Nò0A>w“ÃHM™\d>?û}Nƒ¢h„‰≤˜k√≤«ÎÃúÕ %g∫j»]XµÁ≠ûlÒ:œ\3 \÷l≥ÜµY˚]_fø˛•[ˆ™
+endstream
+endobj
+6 0 obj
+658
+endobj
+17 0 obj
+[7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R]
+endobj
+18 0 obj
+<<
+/Type /Page
+/Parent 1 0 R
+/Resources <<
+    /ProcSet [/PDF /Text /ImageC /ImageB]
+    /Font 2 0 R
+    /XObject 3 0 R >>
+/MediaBox [0 0 841.896 595.296]
+/Contents 5 0 R
+/Annots 17 0 R>>
+endobj
+19 0 obj
+<</S /GoTo /D [18 0 R /Fit]
+>>
+endobj
+22 0 obj
+<</S /GoTo /D [18 0 R /FitR 364 311 428 268]
+>>
+endobj
+24 0 obj
+<</S /GoTo /D [18 0 R /FitR 364 277 428 234]
+>>
+endobj
+26 0 obj
+<</S /GoTo /D [18 0 R /FitR 401 277 423 268]
+>>
+endobj
+28 0 obj
+<</S /GoTo /D [18 0 R /FitR 381 278 412 267]
+>>
+endobj
+30 0 obj
+<</S /GoTo /D [18 0 R /FitR 352 252 387 234]
+>>
+endobj
+32 0 obj
+<</S /GoTo /D [18 0 R /FitR 391 261 397 250]
+>>
+endobj
+34 0 obj
+<</S /GoTo /D [18 0 R /FitR 391 295 397 284]
+>>
+endobj
+36 0 obj
+<</S /GoTo /D [18 0 R /FitR 415 266 433 231]
+>>
+endobj
+38 0 obj
+<</S /GoTo /D [18 0 R /FitR 355 316 373 274]
+>>
+endobj
+40 0 obj
+<</S /GoTo /D [18 0 R /FitR 390 311 439 294]
+>>
+endobj
+42 0 obj
+<< /BaseFont /Helvetica
+   /Type /Font
+   /Subtype /Type1
+   /Encoding /WinAnsiEncoding
+>>
+endobj
+43 0 obj
+<< /BaseFont /Helvetica-Oblique
+   /Type /Font
+   /Subtype /Type1
+   /Encoding /WinAnsiEncoding
+>>
+endobj
+44 0 obj
+<< /BaseFont /Helvetica-Bold
+   /Type /Font
+   /Subtype /Type1
+   /Encoding /WinAnsiEncoding
+>>
+endobj
+45 0 obj
+<< /BaseFont /Helvetica-BoldOblique
+   /Type /Font
+   /Subtype /Type1
+   /Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<<
+    /KicadFont 42 0 R
+    /KicadFontI 43 0 R
+    /KicadFontB 44 0 R
+    /KicadFontBI 45 0 R
+>>
+endobj
+3 0 obj
+<<
+>>
+endobj
+7 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [380.665 279.496 407.735 300.898]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = SW1"],
+["Value = SW_Push"],
+["Footprint = SW_PUSH_6mm"],
+["Datasheet = ~"],
+["Description = Push button switch, generic, two pins"],
+]\);) >>
+>>
+endobj
+8 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [380.665 245.294 407.735 266.696]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = SW2"],
+["Value = SW_Push"],
+["Footprint = SW_PUSH_6mm"],
+["Datasheet = ~"],
+["Description = Push button switch, generic, two pins"],
+]\);) >>
+>>
+endobj
+9 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [406.979 271.693 412.393 274.499]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = R3"],
+["Value = 1k"],
+["Footprint = R_0402_1005Metric"],
+["Datasheet = ~"],
+["Description = Resistor"],
+]\);) >>
+>>
+endobj
+10 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [389.31 270.205 399.09 275.987]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = D1"],
+["Value = LED"],
+["Footprint = LED_0805_2012Metric"],
+["Datasheet = ~"],
+["Description = Light emitting diode"],
+["Sim.Pins = 1=K 2=A"],
+]\);) >>
+>>
+endobj
+11 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [361.02 238.754 378.425 247.683]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = J4"],
+["Value = Samtec MTMS-104-02-T-S-100"],
+["Footprint = PinHeader_1x04_P1.27mm_Vertical"],
+["Datasheet = ~"],
+["Description = Single row pin header"],
+]\);) >>
+>>
+endobj
+12 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [392.797 253.288 395.603 258.702]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = R2"],
+["Value = 1k"],
+["Footprint = R_0402_1005Metric"],
+["Datasheet = ~"],
+["Description = Resistor"],
+]\);) >>
+>>
+endobj
+13 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [392.797 287.49 395.603 292.904]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = R1"],
+["Value = 1k"],
+["Footprint = R_0402_1005Metric"],
+["Datasheet = ~"],
+["Description = Resistor"],
+]\);) >>
+>>
+endobj
+14 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [419.613 239.916 428.542 257.321]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = J2"],
+["Value = Samtec MTMS-104-02-T-S-100"],
+["Footprint = PinHeader_1x04_P1.27mm_Vertical"],
+["Datasheet = ~"],
+["Description = Single row pin header"],
+]\);) >>
+>>
+endobj
+15 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [359.858 285.271 368.787 306.276]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = J1"],
+["Value = Samtec MTMS-105-02-T-S-100"],
+["Footprint = PinHeader_1x05_P1.27mm_Vertical"],
+["Datasheet = ~"],
+["Description = Single row pin header"],
+]\);) >>
+>>
+endobj
+16 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/Rect [402.775 298.509 427.38 307.438]
+/Border [16 16 0]
+/A << /Type /Action /S /JavaScript /JS (ShM\([
+["Reference designator = J3"],
+["Value = Samtec  MTMS-106-02-T-S-100"],
+["Footprint = PinHeader_1x06_P1.27mm_Vertical"],
+["Datasheet = ~"],
+["Description = Single row pin header"],
+]\);) >>
+>>
+endobj
+4 0 obj
+<< /JavaScript
+ << /Names
+    [ (JSInit) << /Type /Action /S /JavaScript /JS (
+function ShM\(aEntries\) {
+    var aParams = [];
+    for \(var i in aEntries\) {
+        aParams.push\({
+            cName: aEntries[i][0],
+            cReturn: aEntries[i][1]
+        }\)
+    }
+
+    var cChoice = app.popUpMenuEx.apply\(app, aParams\);
+    if \(cChoice != null && cChoice.substring\(0, 1\) == '#'\) this.pageNum = parseInt\(cChoice.slice\(1\)\);
+    else if \(cChoice != null && cChoice.substring\(0, 4\) == 'http'\) app.launchURL\(cChoice\);
+    else if \(cChoice != null && cChoice.substring\(0, 4\) == 'file'\) app.openDoc\(cChoice.substring\(7\)\);
+}
+) >> ]
+ >>
+>>
+endobj
+1 0 obj
+<<
+/Type /Pages
+/Kids [
+18 0 R
+]
+/Count 1
+>>
+endobj
+46 0 obj
+<<
+/Producer (KiCad PDF)
+/CreationDate (D:20251203030737)
+/Creator (PCBNEW)
+/Title (Modular Music Controller / Block / Two Switches \(Vertical\))
+/Author ()
+/Subject ()
+>>
+endobj
+29 0 obj
+<<
+/Title (D1)
+/Parent 21 0 R
+/Next 39 0 R
+/A 28 0 R
+>>
+endobj
+39 0 obj
+<<
+/Title (J1)
+/Parent 21 0 R
+/Next 37 0 R
+/Prev 29 0 R
+/A 38 0 R
+>>
+endobj
+37 0 obj
+<<
+/Title (J2)
+/Parent 21 0 R
+/Next 41 0 R
+/Prev 39 0 R
+/A 36 0 R
+>>
+endobj
+41 0 obj
+<<
+/Title (J3)
+/Parent 21 0 R
+/Next 31 0 R
+/Prev 37 0 R
+/A 40 0 R
+>>
+endobj
+31 0 obj
+<<
+/Title (J4)
+/Parent 21 0 R
+/Next 35 0 R
+/Prev 41 0 R
+/A 30 0 R
+>>
+endobj
+35 0 obj
+<<
+/Title (R1)
+/Parent 21 0 R
+/Next 33 0 R
+/Prev 31 0 R
+/A 34 0 R
+>>
+endobj
+33 0 obj
+<<
+/Title (R2)
+/Parent 21 0 R
+/Next 27 0 R
+/Prev 35 0 R
+/A 32 0 R
+>>
+endobj
+27 0 obj
+<<
+/Title (R3)
+/Parent 21 0 R
+/Next 23 0 R
+/Prev 33 0 R
+/A 26 0 R
+>>
+endobj
+23 0 obj
+<<
+/Title (SW1)
+/Parent 21 0 R
+/Next 25 0 R
+/Prev 27 0 R
+/A 22 0 R
+>>
+endobj
+25 0 obj
+<<
+/Title (SW2)
+/Parent 21 0 R
+/Prev 23 0 R
+/A 24 0 R
+>>
+endobj
+21 0 obj
+<<
+/Title (Footprints)
+/Parent 20 0 R
+/Count -10
+/First 29 0 R
+/Last 25 0 R
+/A 19 0 R
+>>
+endobj
+20 0 obj
+<<
+/Title (F.Paste \(Page 3\))
+/Parent 47 0 R
+/Count -1
+/First 21 0 R
+/Last 21 0 R
+/A 19 0 R
+>>
+endobj
+47 0 obj
+<< /Type /Outlines
+   /Count 12
+   /First 20 0 R
+   /Last 20 0 R
+>>
+endobj
+48 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/Version /1.5
+/PageMode /UseOutlines
+/Outlines 47 0 R
+/Names 4 0 R
+/PageLayout /SinglePage
+>>
+endobj
+xref
+0 49
+0000000000 65535 f 
+0000006232 00000 n 
+0000002195 00000 n 
+0000002308 00000 n 
+0000005553 00000 n 
+0000000015 00000 n 
+0000000747 00000 n 
+0000002329 00000 n 
+0000002650 00000 n 
+0000002971 00000 n 
+0000003263 00000 n 
+0000003593 00000 n 
+0000003936 00000 n 
+0000004229 00000 n 
+0000004521 00000 n 
+0000004865 00000 n 
+0000005209 00000 n 
+0000000766 00000 n 
+0000000851 00000 n 
+0000001055 00000 n 
+0000007411 00000 n 
+0000007306 00000 n 
+0000001102 00000 n 
+0000007147 00000 n 
+0000001166 00000 n 
+0000007233 00000 n 
+0000001230 00000 n 
+0000007062 00000 n 
+0000001294 00000 n 
+0000006480 00000 n 
+0000001358 00000 n 
+0000006807 00000 n 
+0000001422 00000 n 
+0000006977 00000 n 
+0000001486 00000 n 
+0000006892 00000 n 
+0000001550 00000 n 
+0000006637 00000 n 
+0000001614 00000 n 
+0000006552 00000 n 
+0000001678 00000 n 
+0000006722 00000 n 
+0000001742 00000 n 
+0000001849 00000 n 
+0000001964 00000 n 
+0000002076 00000 n 
+0000006292 00000 n 
+0000007523 00000 n 
+0000007607 00000 n 
+trailer
+<< /Size 49 /Root 48 0 R /Info 46 0 R >>
+startxref
+7748
+%%EOF

@@ -1,7 +1,0 @@
-"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
-1;"D1";"LED_0805_2012Metric";1;"LED";;;
-2;"J1";"PinHeader_1x05_P1.27mm_Vertical";1;"Samtec MTMS-105-02-T-S-100";;;
-3;"J2,J4";"PinHeader_1x04_P1.27mm_Vertical";2;"Samtec MTMS-104-02-T-S-100";;;
-4;"J3";"PinHeader_1x06_P1.27mm_Vertical";1;"Samtec  MTMS-106-02-T-S-100";;;
-5;"R1,R2";"R_0402_1005Metric";2;"1k";;;
-6;"SW1";"SW_PUSH_6mm";1;"SW_Push";;;
